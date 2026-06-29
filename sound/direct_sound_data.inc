@@ -2630,6 +2630,10 @@ Cry_Milotic::
 	.align 2
 Cry_Castform::
 	.incbin "sound/direct_sound_samples/cries/castform.bin"
+
+	.align 2
+Cry_Cloudform::
+	.incbin "sound/direct_sound_samples/cries/cloudform.bin"
 .endif @ P_FAMILY_CASTFORM
 
 .if P_FAMILY_KECLEON == TRUE
@@ -2646,6 +2650,10 @@ Cry_Shuppet::
 	.align 2
 Cry_Banette::
 	.incbin "sound/direct_sound_samples/cries/banette.bin"
+
+	.align 2
+Cry_Bayanette::
+	.incbin "sound/direct_sound_samples/cries/banette_mega.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
 	.align 2
@@ -2674,6 +2682,10 @@ Cry_Dusknoir::
 	.align 2
 Cry_Tropius::
 	.incbin "sound/direct_sound_samples/cries/tropius.bin"
+
+	.align 2
+Cry_Tropisaur::
+	.incbin "sound/direct_sound_samples/cries/tropisaur.bin"
 .endif @ P_FAMILY_TROPIUS
 
 .if P_FAMILY_CHIMECHO == TRUE

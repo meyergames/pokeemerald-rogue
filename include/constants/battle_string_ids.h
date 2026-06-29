@@ -709,7 +709,24 @@
 #define STRINGID_POISONPUPPETEER					  707
 #define STRINGID_BOOSTERENERGYACTIVATES               708
 
-#define BATTLESTRINGS_COUNT                           709
+
+
+// D2D Custom Strings
+#define STRINGID_D2D_WEATHERCLEARED					  709
+#define STRINGID_D2D_SHAREDBERRY                      710
+#define STRINGID_PROTEANLICKEFFECT					  711
+#define STRINGID_PKMNACQUIREDOWNTEMPO				  712
+#define STRINGID_D2D_STATUSIMBUED					  713
+#define STRINGID_D2D_BLENDINACTIVATES				  714
+#define STRINGID_D2D_MACH5SPEED						  715
+#define STRINGID_D2D_SCAVENGEITEMFOUND				  716
+#define STRINGID_D2D_ELEMENTALACTIVATES				  717
+#define STRINGID_D2D_PKMNHIDEBEHINDALLY				  718
+#define STRINGID_D2D_PKMNDEEPBREATH					  719
+
+
+
+#define BATTLESTRINGS_COUNT                           720
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,

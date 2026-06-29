@@ -936,6 +936,10 @@ static const union AnimCmd sSpriteAnim_TypeStellar[] = {
     ANIMCMD_FRAME(TYPE_STELLAR * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
+static const union AnimCmd sSpriteAnim_TypeSound[] = {
+    ANIMCMD_FRAME(TYPE_SOUND * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
 static const union AnimCmd sSpriteAnim_CategoryCool[] = {
     ANIMCMD_FRAME((CONTEST_CATEGORY_COOL + NUMBER_OF_MON_TYPES) * 8, 0, FALSE, FALSE),
     ANIMCMD_END
@@ -1037,6 +1041,10 @@ static const union AnimCmd sSpriteAnim_TeraTypeStellar[] = {
     ANIMCMD_FRAME((TERA_TYPE_OFFSET + TYPE_STELLAR) * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
+static const union AnimCmd sSpriteAnim_TeraTypeSound[] = {
+    ANIMCMD_FRAME((TERA_TYPE_OFFSET + TYPE_SOUND) * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
 
 
 static const union AnimCmd *const sSpriteAnimTable_MoveTypes[NUMBER_OF_MON_TYPES + CONTEST_CATEGORIES_COUNT + NUMBER_OF_MON_TYPES] = {
@@ -1060,6 +1068,7 @@ static const union AnimCmd *const sSpriteAnimTable_MoveTypes[NUMBER_OF_MON_TYPES
     sSpriteAnim_TypeDark,
     sSpriteAnim_TypeFairy,
     sSpriteAnim_TypeStellar,
+    sSpriteAnim_TypeSound,
     sSpriteAnim_CategoryCool,
     sSpriteAnim_CategoryBeauty,
     sSpriteAnim_CategoryCute,
@@ -1085,6 +1094,7 @@ static const union AnimCmd *const sSpriteAnimTable_MoveTypes[NUMBER_OF_MON_TYPES
     sSpriteAnim_TeraTypeDark,
     sSpriteAnim_TeraTypeFairy,
     sSpriteAnim_TeraTypeStellar,
+    sSpriteAnim_TeraTypeSound,
 };
 
 const struct CompressedSpriteSheet gSpriteSheet_MoveTypes =
@@ -1126,6 +1136,7 @@ static const u8 sMoveTypeToOamPaletteNum[NUMBER_OF_MON_TYPES + CONTEST_CATEGORIE
     [TYPE_DARK] = 13,
     [TYPE_FAIRY] = 14,
     [TYPE_STELLAR] = 15,
+    [TYPE_SOUND] = 15,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_COOL] = 13,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_BEAUTY] = 14,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_CUTE] = 14,
@@ -1151,6 +1162,7 @@ static const u8 sMoveTypeToOamPaletteNum[NUMBER_OF_MON_TYPES + CONTEST_CATEGORIE
     [TERA_TYPE_OFFSET + TYPE_DARK] = 13,
     [TERA_TYPE_OFFSET + TYPE_FAIRY] = 14,
     [TERA_TYPE_OFFSET + TYPE_STELLAR] = 15,
+    [TERA_TYPE_OFFSET + TYPE_SOUND] = 15,
 };
 static const struct OamData sOamData_MoveSelector =
 {
@@ -4452,6 +4464,7 @@ static void SetMonTypeIcons(void)
     }
     else
     {
+        // D2D TODO: Show dynamic types in the Summary while in battle?
         u8 type0 = GetTypeBySpecies(summary->species, 0, summary->OTID);
         u8 type1 = GetTypeBySpecies(summary->species, 1, summary->OTID);
         

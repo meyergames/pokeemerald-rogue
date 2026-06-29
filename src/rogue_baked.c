@@ -1128,6 +1128,9 @@ const void* Rogue_GetItemIconPicOrPalette(u16 itemId, u8 which)
 #ifdef ROGUE_EXPANSION
             case TYPE_FAIRY:
                 return gItemIconPalette_FairyTMHM;
+
+            case TYPE_SOUND:
+                return gItemIconPalette_SoundTMHM;
 #endif
             
             default: // TYPE_NORMAL, TYPE_MYSTERY
@@ -1383,6 +1386,7 @@ u16 Rogue_GetPrice(u16 itemId)
         case ITEM_TIMER_BALL:
         case ITEM_QUICK_BALL:
         case ITEM_BEAST_BALL:
+        // case ITEM_POWER_BALL:
             price = 2500;
             break;
 
@@ -2103,6 +2107,9 @@ u8 const* Rogue_TryOverrideAbilityDescription(u16 ability)
 // Taken straight from daycare
 u16 Rogue_GetEggSpecies(u16 species)
 {
+    // DebugPrintf("Looking for egg species for %S", species);
+    // TODO: DISABLE DEBUGGING IN CONFIG.H BEFORE BUILDING TO 3DS
+
 #ifdef ROGUE_BAKE_VALID
     return gRogueBake_SpeciesData[species].eggSpecies;
 

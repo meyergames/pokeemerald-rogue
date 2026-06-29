@@ -331,6 +331,7 @@ const u8 gTypeNames[NUMBER_OF_MON_TYPES][TYPE_NAME_LENGTH + 1] =
     [TYPE_DARK] = _("Dark"),
     [TYPE_FAIRY] = _("Fairy"),
     [TYPE_STELLAR] = _("Stellr"),
+    [TYPE_SOUND] = _("Sound"),
 };
 
 // This is a factor in how much money you get for beating a trainer.
@@ -4827,6 +4828,12 @@ static bool32 IsWeatherAffectedMove(u16 move)
         case MOVE_CHILLY_RECEPTION:
         case MOVE_SANDSTORM:
         case MOVE_SHORE_UP:
+        case MOVE_D2D_CLOUDBURST:
+        case MOVE_D2D_SUNFLARE:
+        case MOVE_D2D_WHITEOUT:
+        case MOVE_D2D_DOWNPOUR:
+        case MOVE_D2D_DUST_DEVIL:
+        case MOVE_D2D_SKYBREAKER:
             return TRUE;
     }
 
@@ -5796,7 +5803,6 @@ void RunBattleScriptCommands(void)
         gBattleScriptingCommandsTable[gBattlescriptCurrInstr[0]]();
 }
 
-
 static u32 TrySetAteType(u16 move, u16 battlerAtk, u16 attackerAbility)
 {
     u32 ateType = TYPE_NONE;
@@ -5863,7 +5869,7 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
     gBattleStruct->ateBoost[battlerAtk] = 0;
     gSpecialStatuses[battlerAtk].gemBoost = FALSE;
 
-    if (gBattleMoves[move].effect == EFFECT_WEATHER_BALL)
+    if ( gBattleMoves[move].effect == EFFECT_WEATHER_BALL || gBattleMoves[move].effect == EFFECT_D2D_SKYBREAKER )
     {
         u32 weather = GetAttackerWeather(holdEffect, GetBattlerAbility(battlerAtk), GetWeather());
 
@@ -5876,7 +5882,14 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
         else if (weather & (B_WEATHER_HAIL | B_WEATHER_SNOW))
             gBattleStruct->dynamicMoveType = TYPE_ICE | F_DYNAMIC_TYPE_SET;
         else
+            // if ( gBattleMoves[move].effect == EFFECT_WEATHER_BALL )
+            // {
             gBattleStruct->dynamicMoveType = TYPE_NORMAL | F_DYNAMIC_TYPE_SET;
+            // }
+            // else if ( gBattleMoves[move].effect == EFFECT_D2D_SKYBREAKER )
+            // {
+            //     gBattleStruct->dynamicMoveType = TYPE_FLYING | F_DYNAMIC_TYPE_SET;
+            // }
     }
     else if (gBattleMoves[move].effect == EFFECT_HIDDEN_POWER)
     {
@@ -5898,6 +5911,24 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
     else if (gBattleMoves[move].effect == EFFECT_CHANGE_TYPE_ON_ITEM && holdEffect == gBattleMoves[move].argument)
     {
         gBattleStruct->dynamicMoveType = ItemId_GetSecondaryId(gBattleMons[battlerAtk].item) | F_DYNAMIC_TYPE_SET;
+    }
+    else if (gBattleMoves[move].effect == EFFECT_PRESENT)
+    {
+        u8 allTypes[] = {
+            TYPE_NORMAL, TYPE_FIGHTING, TYPE_FLYING, TYPE_POISON,
+            TYPE_GROUND, TYPE_ROCK, TYPE_BUG, TYPE_GHOST,
+            TYPE_STEEL, TYPE_FIRE, TYPE_WATER, TYPE_GRASS,
+            TYPE_ELECTRIC, TYPE_PSYCHIC, TYPE_ICE, TYPE_DRAGON,
+            TYPE_DARK, TYPE_FAIRY
+        };
+
+        u8 type = Random() % ARRAY_COUNT(allTypes);
+        gBattleStruct->dynamicMoveType = type | F_DYNAMIC_TYPE_SET;
+    }
+    else if (gStatuses3[battlerAtk] & STATUS3_CHARGED_UP && gBattleMoves[move].type == TYPE_NORMAL)
+    {
+        // gBattleStruct->dynamicMoveType = TYPE_ELECTRIC | F_DYNAMIC_TYPE_SET;
+        // modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
     }
     else if (gBattleMoves[move].effect == EFFECT_REVELATION_DANCE)
     {
@@ -5979,11 +6010,33 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
     {
         gBattleStruct->dynamicMoveType = TYPE_DARK | F_DYNAMIC_TYPE_SET;
     }
+    else if (gBattleMoves[move].effect == EFFECT_EXPLOSION && attackerAbility == ABILITY_D2D_BOMBER)
+    {
+        gBattleStruct->dynamicMoveType = GetBattlerType(battlerAtk, 0, FALSE) | F_DYNAMIC_TYPE_SET;
+    }
+    else if (move == MOVE_D2D_CAMO_CLAW)
+    {
+        gBattleStruct->dynamicMoveType = GetBattlerType(battlerAtk, 0, FALSE) | F_DYNAMIC_TYPE_SET;
+    }
+    else if (gBattleMoves[move].type == TYPE_NORMAL && attackerAbility == ABILITY_D2D_ELEMENTAL)
+    {
+        gBattleStruct->dynamicMoveType = GetBattlerType(battlerAtk, 0, FALSE) | F_DYNAMIC_TYPE_SET;
+    }
 
     GET_MOVE_TYPE(move, moveType);
     if ((gFieldStatuses & STATUS_FIELD_ION_DELUGE && moveType == TYPE_NORMAL)
         || gStatuses4[battlerAtk] & STATUS4_ELECTRIFIED)
         gBattleStruct->dynamicMoveType = TYPE_ELECTRIC | F_DYNAMIC_TYPE_SET;
+
+    if (moveType == TYPE_NORMAL)
+    {
+        if (gStatuses4[battlerAtk] & STATUS4_D2D_ENFLAME)
+            gBattleStruct->dynamicMoveType = TYPE_FIRE | F_DYNAMIC_TYPE_SET;
+        if (gStatuses4[battlerAtk] & STATUS4_D2D_ENFROST)
+            gBattleStruct->dynamicMoveType = TYPE_ICE | F_DYNAMIC_TYPE_SET;
+        if (gStatuses4[battlerAtk] & STATUS4_D2D_ENTHUNDER)
+            gBattleStruct->dynamicMoveType = TYPE_ELECTRIC | F_DYNAMIC_TYPE_SET;
+    }
 
     // Check if a gem should activate.
     GET_MOVE_TYPE(move, moveType);

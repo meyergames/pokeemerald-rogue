@@ -1414,7 +1414,7 @@ const struct RogueSpeciesBakedData gRogueBake_SpeciesData[NUM_SPECIES] =
 	[201] =
 	{
 		.eggSpecies = 201,
-		.evolutionCount = 0,
+		.evolutionCount = 1,
 		.evolutionChainTypeFlags = 8192,
 		.evolutionChainTypeFlags_Revised = 8192,
 	},
@@ -2464,9 +2464,9 @@ const struct RogueSpeciesBakedData gRogueBake_SpeciesData[NUM_SPECIES] =
 	[351] =
 	{
 		.eggSpecies = 351,
-		.evolutionCount = 0,
-		.evolutionChainTypeFlags = 1,
-		.evolutionChainTypeFlags_Revised = 1,
+		.evolutionCount = 1,
+		.evolutionChainTypeFlags = 5,
+		.evolutionChainTypeFlags_Revised = 5,
 	},
 	[352] =
 	{
@@ -2485,7 +2485,7 @@ const struct RogueSpeciesBakedData gRogueBake_SpeciesData[NUM_SPECIES] =
 	[354] =
 	{
 		.eggSpecies = 353,
-		.evolutionCount = 0,
+		.evolutionCount = 1,
 		.evolutionChainTypeFlags = 128,
 		.evolutionChainTypeFlags_Revised = 129,
 	},
@@ -2506,9 +2506,9 @@ const struct RogueSpeciesBakedData gRogueBake_SpeciesData[NUM_SPECIES] =
 	[357] =
 	{
 		.eggSpecies = 357,
-		.evolutionCount = 0,
-		.evolutionChainTypeFlags = 2052,
-		.evolutionChainTypeFlags_Revised = 2052,
+		.evolutionCount = 1,
+		.evolutionChainTypeFlags = 34820,
+		.evolutionChainTypeFlags_Revised = 34820,
 	},
 	[358] =
 	{
@@ -2597,7 +2597,7 @@ const struct RogueSpeciesBakedData gRogueBake_SpeciesData[NUM_SPECIES] =
 	[370] =
 	{
 		.eggSpecies = 370,
-		.evolutionCount = 0,
+		.evolutionCount = 1,
 		.evolutionChainTypeFlags = 1024,
 		.evolutionChainTypeFlags_Revised = 132096,
 	},
@@ -4164,7 +4164,7 @@ const struct RogueSpeciesBakedData gRogueBake_SpeciesData[NUM_SPECIES] =
 	},
 	[594] =
 	{
-		.eggSpecies = 594,
+		.eggSpecies = 370,
 		.evolutionCount = 0,
 		.evolutionChainTypeFlags = 1024,
 		.evolutionChainTypeFlags_Revised = 1024,
@@ -11022,6 +11022,72 @@ const struct RogueSpeciesBakedData gRogueBake_SpeciesData[NUM_SPECIES] =
 		.evolutionChainTypeFlags = 40,
 		.evolutionChainTypeFlags_Revised = 40,
 	},
+	// [1574] = // Castform Sandy
+	// {
+	// 	.eggSpecies = 1525,
+	// 	.evolutionCount = 0,
+	// 	.evolutionChainTypeFlags = 4100,
+	// },
+	[1575] = // Cloudform Normal
+	{
+		.eggSpecies = 351,
+		.evolutionCount = 0,
+		.evolutionChainTypeFlags = 5, // normal (1) + flying (4)
+	},
+	[1576] = // Cloudform Sunny
+	{
+		.eggSpecies = 1527,
+		.evolutionCount = 0,
+		.evolutionChainTypeFlags = 5,
+	},
+	[1577] = // Cloudform Rainy
+	{
+		.eggSpecies = 1528,
+		.evolutionCount = 0,
+		.evolutionChainTypeFlags = 5,
+	},
+	[1578] = // Cloudform Snowy
+	{
+		.eggSpecies = 1529,
+		.evolutionCount = 0,
+		.evolutionChainTypeFlags = 5,
+	},
+	[1579] = // Cloudform Sandy
+	{
+		.eggSpecies = 1530,
+		.evolutionCount = 0,
+		.evolutionChainTypeFlags = 5,
+	},
+	[1580] = // Tropisaur
+	{
+		.eggSpecies = 357,
+		.evolutionCount = 0,
+		.evolutionChainTypeFlags = 34820, // grass (2048) + flying (4) + dragon (32768)
+	},
+	// [1532] = // Unohm
+	// {
+	// 	.eggSpecies = 201,
+	// 	.evolutionCount = 0,
+	// 	.evolutionChainTypeFlags = 8192,
+	// },
+	[1581] = // Bayanette
+	{
+		.eggSpecies = 353,
+		.evolutionCount = 0,
+		.evolutionChainTypeFlags = 128,
+	},
+	// [1532] = // Hatchlin
+	// {
+	// 	.eggSpecies = 1532,
+	// 	.evolutionCount = 0,
+	// 	.evolutionChainTypeFlags = 257, // normal (1) + steel (256)
+	// },
+	// [1533] = // Teerax
+	// {
+	// 	.eggSpecies = 1533,
+	// 	.evolutionCount = 0,
+	// 	.evolutionChainTypeFlags = 257, // normal (1) + steel (256)
+	// },
 };
 
 const u16 gRogueBake_FinalEvoSpecies[] =
@@ -11139,6 +11205,7 @@ const u16 gRogueBake_FinalEvoSpecies[] =
 	199,
 	985,
 	201,
+	// 1532, // UNOHM
 	202,
 	205,
 	208,
@@ -11216,10 +11283,13 @@ const u16 gRogueBake_FinalEvoSpecies[] =
 	346,
 	348,
 	350,
-	351,
+	// 351, <-- Castform is now no longer a final evo
+	1575, // CLOUDFORM
 	352,
-	354,
-	357,
+	// 354, <-- Banette "
+	1581, // BAYANETTE
+	// 357, <--- Tropisaur "
+	1580, // TROPISAUR
 	358,
 	359,
 	362,
@@ -11227,7 +11297,7 @@ const u16 gRogueBake_FinalEvoSpecies[] =
 	367,
 	368,
 	369,
-	370,
+	// 370, // LUVDISC
 	373,
 	376,
 	377,
@@ -11632,6 +11702,7 @@ const u16 gRogueBake_FinalEvoSpecies[] =
 	1430,
 	1431,
 	1434,
+	// 1533, // UNOHM
 };
 const u16 gRogueBake_FinalEvoSpecies_Count = ARRAY_COUNT(gRogueBake_FinalEvoSpecies);
 
@@ -11839,11 +11910,11 @@ const u16 gRogueBake_EggSpecies[] =
 	345,
 	347,
 	349,
-	351,
+	351, // Castform is now a baby
 	352,
 	353,
 	355,
-	357,
+	357, // Tropius should now also be a baby
 	433,
 	359,
 	361,
@@ -11958,7 +12029,7 @@ const u16 gRogueBake_EggSpecies[] =
 	588,
 	590,
 	592,
-	594,
+	// 594, alomomola now has Luvdisc as a pre-evo
 	595,
 	597,
 	599,
@@ -12206,6 +12277,7 @@ const u16 gRogueBake_EggSpecies[] =
 	1430,
 	1431,
 	1434,
+	1532,
 };
 const u16 gRogueBake_EggSpecies_Count = ARRAY_COUNT(gRogueBake_EggSpecies);
 

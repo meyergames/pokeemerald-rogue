@@ -1774,8 +1774,7 @@
 
 // Rogue Forms
 #define SPECIES_WOBBUFFET_PUNCHING                      SPECIES_ROGUE_START + 1
-#define SPECIES_PIKIN_MEGA                              SPECIES_ROGUE_START + 2
-
+#define SPECIES_PIKIN_MEGA                              SPECIES_ROGUE_START + 2 // 1524
 
 // Legends Z-A
 #define  SPECIES_CLEFABLE_MEGA                          SPECIES_ROGUE_START + 3
@@ -1828,8 +1827,25 @@
 #define  SPECIES_TATSUGIRI_STRETCHY_MEGA                SPECIES_ROGUE_START + 50
 #define  SPECIES_GLIMMORA_MEGA                          SPECIES_ROGUE_START + 51
 
-#define SPECIES_EGG SPECIES_GLIMMORA_MEGA + 1
 
-#define NUM_SPECIES SPECIES_EGG
+// D2D Species
+#define SPECIES_D2D_START								SPECIES_GLIMMORA_MEGA + 1 // 1573 (+49 since 2.1.2)
+
+#define SPECIES_CASTFORM_SANDY                          SPECIES_D2D_START + 1 // 1574
+#define SPECIES_CLOUDFORM  		                        SPECIES_CLOUDFORM_NORMAL // 1575
+#define SPECIES_CLOUDFORM_NORMAL                        SPECIES_D2D_START + 2 // 1575
+#define SPECIES_CLOUDFORM_SUNNY                         SPECIES_D2D_START + 3 // 1576
+#define SPECIES_CLOUDFORM_RAINY                         SPECIES_D2D_START + 4 // 1577
+#define SPECIES_CLOUDFORM_SNOWY                         SPECIES_D2D_START + 5 // 1578
+#define SPECIES_CLOUDFORM_SANDY                         SPECIES_D2D_START + 6 // 1579
+#define SPECIES_TROPISAUR	                            SPECIES_D2D_START + 7 // 1580
+#define SPECIES_BAYANETTE	                            SPECIES_D2D_START + 8 // 1581
+// #define SPECIES_UNOHM		                            SPECIES_D2D_START + 9 // 1582
+// #define SPECIES_HATCHLIN	                            SPECIES_D2D_START + 8
+// #define SPECIES_TEERAX		                            SPECIES_D2D_START + 9
+
+#define SPECIES_EGG 									SPECIES_BAYANETTE + 1 // "1582" in default rogue_bake_data
+
+#define NUM_SPECIES 									SPECIES_EGG
 
 #endif  // GUARD_CONSTANTS_SPECIES_H

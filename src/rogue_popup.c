@@ -95,6 +95,7 @@ enum
     POPUP_CUSTOM_ICON_TYPE_DRAGON,
     POPUP_CUSTOM_ICON_TYPE_DARK,
     POPUP_CUSTOM_ICON_TYPE_FAIRY,
+    POPUP_CUSTOM_ICON_TYPE_SOUND,
     POPUP_CUSTOM_ICON_COUNT,
 };
 
@@ -279,6 +280,11 @@ static struct CustomIcon const sRoguePopupCustomIcons[POPUP_CUSTOM_ICON_COUNT] =
     {
         .icon = gItemIcon_TypeFairy,
         .palette = gItemIconPalette_TypeFairy
+    },
+    [POPUP_CUSTOM_ICON_TYPE_SOUND] = 
+    {
+        .icon = gItemIcon_TypeSound,
+        .palette = gItemIconPalette_TypeSound
     }
 };
 

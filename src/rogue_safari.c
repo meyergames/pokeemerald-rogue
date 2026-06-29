@@ -104,6 +104,11 @@ void RogueSafari_PushMon(struct Pokemon* mon)
     }
 }
 
+// void RogueSafari_PushD2DTestMon()
+// {
+//     RogueSafari_PushMon(???)
+// }
+
 void RogueSafari_PushLowPriorityMon(struct Pokemon* mon)
 {
     if(!GetMonData(mon, MON_DATA_TEMP_SAFARI_ILLEGAL_RIBBON))
