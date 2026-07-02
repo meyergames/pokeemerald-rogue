@@ -20,6 +20,10 @@
       "Level": 14
     },
     {
+      "Move": "MOVE_D2D_BEAM",
+      "Level": 15
+    },
+    {
       "Move": "MOVE_HYPNOSIS",
       "Level": 19
     },
@@ -30,6 +34,10 @@
     {
       "Move": "MOVE_SUCKER_PUNCH",
       "Level": 28
+    },
+    {
+      "Move": "MOVE_D2D_POWER_BEAM",
+      "Level": 30
     },
     {
       "Move": "MOVE_TEETER_DANCE",

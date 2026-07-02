@@ -24,6 +24,10 @@
       "Level": 12
     },
     {
+      "Move": "MOVE_D2D_ENERGIZE",
+      "Level": 15
+    },
+    {
       "Move": "MOVE_SHOCK_WAVE",
       "Level": 16
     },

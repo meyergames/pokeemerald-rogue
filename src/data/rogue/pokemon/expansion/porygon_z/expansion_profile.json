@@ -4,76 +4,88 @@
   ],
   "LevelUpMoves": [
     {
-      "Move": "MOVE_TACKLE",
-      "Level": 1
-    },
-    {
-      "Move": "MOVE_DEFENSE_CURL",
-      "Level": 1
+      "Move": "MOVE_REFLECT_TYPE",
+      "Level": 0
     },
     {
       "Move": "MOVE_CONVERSION",
       "Level": 1
     },
     {
-      "Move": "MOVE_RECYCLE",
+      "Move": "MOVE_D2D_BEAM",
       "Level": 1
     },
     {
       "Move": "MOVE_MAGNET_RISE",
-      "Level": 1
+      "Level": 10
     },
     {
-      "Move": "MOVE_NASTY_PLOT",
-      "Level": 1
+      "Move": "MOVE_CHARGE_BEAM",
+      "Level": 12
     },
     {
-      "Move": "MOVE_TRICK_ROOM",
-      "Level": 1
+      "Move": "MOVE_BUBBLE_BEAM",
+      "Level": 16
     },
     {
-      "Move": "MOVE_THUNDER_SHOCK",
-      "Level": 15
-    },
-    {
-      "Move": "MOVE_PSYBEAM",
+      "Move": "MOVE_SIGNAL_BEAM",
       "Level": 20
     },
     {
-      "Move": "MOVE_CONVERSION_2",
-      "Level": 25
+      "Move": "MOVE_AURORA_BEAM",
+      "Level": 24
     },
     {
-      "Move": "MOVE_AGILITY",
-      "Level": 30
+      "Move": "MOVE_PSYBEAM",
+      "Level": 28
+    },
+    {
+      "Move": "MOVE_D2D_POWER_BEAM",
+      "Level": 32
     },
     {
       "Move": "MOVE_RECOVER",
-      "Level": 35
-    },
-    {
-      "Move": "MOVE_DISCHARGE",
-      "Level": 40
+      "Level": 36
     },
     {
       "Move": "MOVE_TRI_ATTACK",
-      "Level": 45
+      "Level": 40
     },
     {
-      "Move": "MOVE_DOUBLE_EDGE",
-      "Level": 50
+      "Move": "MOVE_ICE_BEAM",
+      "Level": 44
     },
     {
-      "Move": "MOVE_LOCK_ON",
-      "Level": 55
-    },
-    {
-      "Move": "MOVE_ZAP_CANNON",
-      "Level": 60
+      "Move": "MOVE_SOLAR_BEAM",
+      "Level": 48
     },
     {
       "Move": "MOVE_HYPER_BEAM",
-      "Level": 65
+      "Level": 52
+    },
+    {
+      "Move": "MOVE_ENTRAINMENT",
+      "Level": 56
+    },
+    {
+      "Move": "MOVE_FLASH_CANNON",
+      "Level": 60
+    },
+    {
+      "Move": "MOVE_LOCK_ON",
+      "Level": 64
+    },
+    {
+      "Move": "MOVE_ZAP_CANNON",
+      "Level": 68
+    },
+    {
+      "Move": "MOVE_DISCHARGE",
+      "Level": 72
+    },
+    {
+      "Move": "MOVE_EXPLOSION",
+      "Level": 76
     }
   ],
   "TutorMoves": [
@@ -103,6 +115,7 @@
     "MOVE_REFLECT",
     "MOVE_REST",
     "MOVE_SHADOW_BALL",
+    "MOVE_SKILL_SWAP",
     "MOVE_SLEEP_TALK",
     "MOVE_SOLAR_BEAM",
     "MOVE_SUBSTITUTE",

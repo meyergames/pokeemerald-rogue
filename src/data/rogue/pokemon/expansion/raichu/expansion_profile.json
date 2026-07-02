@@ -62,6 +62,10 @@
       "Level": 1
     },
     {
+      "Move": "MOVE_D2D_ENERGIZE",
+      "Level": 1
+    },
+    {
       "Move": "MOVE_FEINT",
       "Level": 1
     },

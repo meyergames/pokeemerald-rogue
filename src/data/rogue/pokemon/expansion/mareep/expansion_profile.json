@@ -45,6 +45,10 @@
       "Level": 29
     },
     {
+      "Move": "MOVE_D2D_ENERGIZE",
+      "Level": 30
+    },
+    {
       "Move": "MOVE_DISCHARGE",
       "Level": 32
     },
