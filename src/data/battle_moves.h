@@ -3901,14 +3901,14 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     [MOVE_PRESENT] =
     {
         .effect = EFFECT_PRESENT,
-        .power = 1,
-        .type = TYPE_NORMAL,
-        .accuracy = 90,
+        .power = 100,
+        .type = TYPE_MYSTERY,
+        .accuracy = 100,
         .pp = 15,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .split = SPLIT_PHYSICAL,
+        .split = SPLIT_SPECIAL,
         .zMoveEffect = Z_EFFECT_NONE,
         .ignoresKingsRock = B_UPDATED_MOVE_FLAGS < GEN_5, // && B_UPDATED_MOVE_FLAGS > GEN_2
     },

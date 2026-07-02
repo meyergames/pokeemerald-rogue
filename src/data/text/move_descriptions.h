@@ -877,8 +877,8 @@ static const u8 sReturnDescription[] = _(
     "in power with friendship.");
 
 static const u8 sPresentDescription[] = _(
-    "A gift in the form of a\n"
-    "bomb. May restore HP.");
+    "Type is random. Increased\n"
+    "chance to heal allies.");
 
 static const u8 sFrustrationDescription[] = _(
     "An attack that is stronger\n"

@@ -5899,6 +5899,19 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
     {
         gBattleStruct->dynamicMoveType = ItemId_GetSecondaryId(gBattleMons[battlerAtk].item) | F_DYNAMIC_TYPE_SET;
     }
+    else if (gBattleMoves[move].effect == EFFECT_PRESENT)
+    {
+        u8 allTypes[] = {
+            TYPE_NORMAL, TYPE_FIGHTING, TYPE_FLYING, TYPE_POISON,
+            TYPE_GROUND, TYPE_ROCK, TYPE_BUG, TYPE_GHOST,
+            TYPE_STEEL, TYPE_FIRE, TYPE_WATER, TYPE_GRASS,
+            TYPE_ELECTRIC, TYPE_PSYCHIC, TYPE_ICE, TYPE_DRAGON,
+            TYPE_DARK, TYPE_FAIRY
+        };
+
+        u8 type = Random() % ARRAY_COUNT(allTypes);
+        gBattleStruct->dynamicMoveType = type | F_DYNAMIC_TYPE_SET;
+    }
     else if (gBattleMoves[move].effect == EFFECT_REVELATION_DANCE)
     {
         if (IsTerastallized(battlerAtk) && GetBattlerTeraType(battlerAtk) != TYPE_STELLAR)

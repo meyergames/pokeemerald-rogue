@@ -13407,49 +13407,31 @@ static void Cmd_presentdamagecalculation(void)
     CMD_ARGS();
 
     u32 rand = Random() & 0xFF;
+    u8 atkSide = GetBattlerSide(gBattlerAttacker);
+    u8 defSide = GetBattlerSide(gBattlerTarget);
 
-    /* Don't reroll present effect/power for the second hit of Parental Bond.
-     * Not sure if this is the correct behaviour, but bulbapedia states
-     * that if present heals the foe, it doesn't strike twice, and if it deals
-     * damage, the second strike will always deal damage too. This is a simple way
-     * to replicate that effect.
-     */
-    if (gSpecialStatuses[gBattlerAttacker].parentalBondState != PARENTAL_BOND_2ND_HIT)
+    // 90% chance to heal an ally, 90% chance to damage an enemy (10% chance to invert)
+    if ( ( atkSide == defSide && rand < 223 ) || ( atkSide != defSide && rand >= 223 ) )
     {
-        if (rand < 102)
+        gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerTarget) / 1.5;
+        if (gBattleMoveDamage == 0)
+            gBattleMoveDamage = 1;
+        gBattleMoveDamage *= -1;
+        gBattleStruct->presentBasePower = 0;
+
+        if (gBattleMons[gBattlerTarget].maxHP == gBattleMons[gBattlerTarget].hp)
         {
-            gBattleStruct->presentBasePower = 40;
-        }
-        else if (rand < 178)
-        {
-            gBattleStruct->presentBasePower = 80;
-        }
-        else if (rand < 204)
-        {
-            gBattleStruct->presentBasePower = 120;
+            gBattlescriptCurrInstr = BattleScript_AlreadyAtFullHp;
         }
         else
         {
-            gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerTarget) / 4;
-            if (gBattleMoveDamage == 0)
-                gBattleMoveDamage = 1;
-            gBattleMoveDamage *= -1;
-            gBattleStruct->presentBasePower = 0;
+            gMoveResultFlags &= ~MOVE_RESULT_DOESNT_AFFECT_FOE;
+            gBattlescriptCurrInstr = BattleScript_PresentHealTarget;
         }
-    }
-
-    if (gBattleStruct->presentBasePower)
-    {
-        gBattlescriptCurrInstr = BattleScript_HitFromCritCalc;
-    }
-    else if (gBattleMons[gBattlerTarget].maxHP == gBattleMons[gBattlerTarget].hp)
-    {
-        gBattlescriptCurrInstr = BattleScript_AlreadyAtFullHp;
     }
     else
     {
-        gMoveResultFlags &= ~MOVE_RESULT_DOESNT_AFFECT_FOE;
-        gBattlescriptCurrInstr = BattleScript_PresentHealTarget;
+        gBattlescriptCurrInstr = BattleScript_HitFromCritCalc;
     }
 }
 
