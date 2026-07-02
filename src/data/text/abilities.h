@@ -307,6 +307,9 @@ static const u8 sSpicySprayDescription[] = _("Burns the foe when damaged.");
 
 static const u8 sForecastPriorityDescription[] = _("Weather moves go first.");
 
+// D2D ABILITIES
+static const u8 sElementalDescription[] = _("Normal moves match type.");
+
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -954,6 +957,9 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_SPICY_SPRAY] = _("Spicy Spray"),
     
     [ABILITY_FORECAST_PRIORITY] = _("Instant Forecast"),
+
+    // D2D ABILITIES
+    [ABILITY_D2D_ELEMENTAL] = _("Elemental"),
 };
 #endif
 
@@ -1278,4 +1284,7 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_317] = sNoneDescription,
     [ABILITY_SPICY_SPRAY] = sSpicySprayDescription,
     [ABILITY_FORECAST_PRIORITY] = sForecastPriorityDescription,
+
+    // D2D ABILITIES
+    [ABILITY_D2D_ELEMENTAL] = sElementalDescription,
 };

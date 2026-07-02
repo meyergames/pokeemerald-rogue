@@ -5115,6 +5115,15 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                     effect++;
                 }
                 break;
+            // case ABILITY_D2D_HYBRID_POWER:
+            //     if (CompareStat(battler, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN) && gDisableStructs[battler].isFirstTurn != 2)
+            //     {
+            //         SET_STATCHANGER(STAT_SPEED, 1, FALSE);
+            //         BattleScriptPushCursorAndCallback(BattleScript_SpeedBoostActivates);
+            //         gBattleScripting.battler = battler;
+            //         effect++;
+            //     }
+            //     break;
             case ABILITY_MOODY:
                 if (gDisableStructs[battler].isFirstTurn != 2)
                 {
@@ -11840,6 +11849,8 @@ bool32 AreBattlersOfSameGender(u32 battler1, u32 battler2)
 
 u32 CalcSecondaryEffectChance(u32 battler, u8 secondaryEffectChance, u16 moveEffect)
 {
+    // D2D TODO: Here be the place for that item idea that guarantees one secondary effect trigger!
+
     bool8 hasSereneGrace = (GetBattlerAbility(battler) == ABILITY_SERENE_GRACE);
     bool8 hasRainbow = (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_RAINBOW) != 0;
 

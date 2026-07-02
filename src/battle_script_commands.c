@@ -13438,6 +13438,7 @@ static void Cmd_presentdamagecalculation(void)
     }
     else
     {
+        gBattleStruct->presentBasePower = 100;
         gBattlescriptCurrInstr = BattleScript_HitFromCritCalc;
     }
 }

@@ -289,6 +289,8 @@ void LaunchBattleAnimation(u32 animType, u32 animId)
             sAnimHideHpBoxes = FALSE;
             break;
         }
+
+        // D2D TODO: Hiding hp boxes?
     }
 
     if (!IsContest())

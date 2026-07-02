@@ -877,6 +877,19 @@ gBattleAnims_Moves::
 	.4byte Move_MALIGNANT_CHAIN
 @@@@ EXTRA MOVES
 	.4byte Move_SWIRLING_BLADE
+
+
+
+
+	
+@@@@ D2D MOVES
+	.4byte Move_D2D_BEAM
+	.4byte Move_D2D_POWER_BEAM
+
+
+
+
+
 @@@@ Z MOVES
 	.4byte Move_BREAKNECK_BLITZ
 	.4byte Move_ALL_OUT_PUMMELING
@@ -34614,5 +34627,40 @@ General_DynamaxGrowth:: @ PORTED FROM CFRU
 
 General_D2D_HealerHeal:
 	call PresentHeal
+	end
+
+Move_D2D_BEAM:
+	loadspritegfx ANIM_TAG_RAINBOW_RINGS
+	playsewithpan SE_M_BUBBLE_BEAM, SOUND_PAN_ATTACKER
+	setarg 7, 0
+	createvisualtask AnimTask_RotateAuroraRingColors, 10, 130
+	call AuroraBeamCreateRings
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_TARGET, 1, 0, 17, 1
+	call AuroraBeamCreateRings
+	call AuroraBeamCreateRings
+	call AuroraBeamCreateRings
+	waitforvisualfinish
+	end
+
+Move_D2D_POWER_BEAM:
+	loadspritegfx ANIM_TAG_RAINBOW_RINGS
+	playsewithpan SE_M_BUBBLE_BEAM, SOUND_PAN_ATTACKER
+	setarg 7, 0
+	createvisualtask AnimTask_RotateAuroraRingColors, 10, 130
+	call AuroraBeamCreateRings
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_TARGET, 1, 0, 17, 1
+	call AuroraBeamCreateRings
+	call AuroraBeamCreateRings
+	call AuroraBeamCreateRings
+	setarg 7, 0xFFFF
+	createsoundtask SoundTask_LoopSEAdjustPanning, SE_M_BUBBLE_BEAM2, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, 3, 6, 0, 10
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_TARGET, 2, 0, 40, 1
+	call AuroraBeamCreateRings
+	call AuroraBeamCreateRings
+	call AuroraBeamCreateRings
+	call AuroraBeamCreateRings
+	call AuroraBeamCreateRings
+	call AuroraBeamCreateRings
+	waitforvisualfinish
 	end
 

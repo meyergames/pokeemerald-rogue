@@ -15905,4 +15905,46 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .split = SPLIT_PHYSICAL,
         .argument = MAX_EFFECT_BYPASS_PROTECT,
     },
+
+
+
+
+
+
+
+
+
+
+
+
+    // D2D MOVES
+
+    [MOVE_D2D_BEAM] =
+    {
+        .effect = EFFECT_HIT,
+        .type = TYPE_NORMAL,
+        .power = 65,
+        .accuracy = 100,
+        .pp = 30,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_D2D_POWER_BEAM] =
+    {
+        .effect = EFFECT_HIT,
+        .type = TYPE_NORMAL,
+        .power = 95,
+        .accuracy = 100,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
 };

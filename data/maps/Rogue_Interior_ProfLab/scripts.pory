@@ -166,6 +166,31 @@ script Rogue_Interior_ProfLab_TalkAssistant
             msgbox(format("Hi {PLAYER}! Would you like to experiment with some of your new discoveries?"), MSGBOX_YESNO)
             if(var(VAR_RESULT) == YES)
             {
+                msgbox(format("Would you like an Ampharos?"), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES)
+                {
+                    givemon(SPECIES_AMPHAROS, 56)
+                }
+                msgbox(format("Would you like a Claydol?"), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES)
+                {
+                    givemon(SPECIES_CLAYDOL, 56)
+                }
+                msgbox(format("Would you like a Kecleon?"), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES)
+                {
+                    givemon(SPECIES_KECLEON, 56)
+                }
+                msgbox(format("Would you like a Porygon?"), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES)
+                {
+                    givemon(SPECIES_PORYGON, 56)
+                }
+                msgbox(format("Would you like a Bellossom?"), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES)
+                {
+                    givemon(SPECIES_BELLOSSOM, 30)
+                }
                 msgbox(format("Would you like a Delibird?"), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES)
                 {
@@ -181,11 +206,13 @@ script Rogue_Interior_ProfLab_TalkAssistant
                 {
                     givemon(SPECIES_VOLTORB, 46)
                 }
-                // msgbox(format("Would you like some rare candies with that?"), MSGBOX_YESNO)
-                // if(var(VAR_RESULT) == YES)
-                // {
-                //     giveitem(ITEM_RARE_CANDY, 99)
-                // }
+                msgbox(format("Would you like some snacks with that?"), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES)
+                {
+                    giveitem(ITEM_RARE_CANDY, 99)
+                    giveitem(ITEM_ABILITY_PATCH, 99)
+                    giveitem(ITEM_ABILITY_CAPSULE, 99)
+                }
                 msgbox(format("Have fun!"))
             }
             else
