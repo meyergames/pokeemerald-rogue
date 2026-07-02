@@ -4805,12 +4805,12 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #if P_FAMILY_DELIBIRD
     [SPECIES_DELIBIRD] =
     {
-        .baseHP        = 45,
+        .baseHP        = 60,
         .baseAttack    = 55,
-        .baseDefense   = 45,
-        .baseSpeed     = 75,
+        .baseDefense   = 60,
         .baseSpAttack  = 65,
-        .baseSpDefense = 45,
+        .baseSpDefense = 60,
+        .baseSpeed     = 90,
         .types = { TYPE_ICE, TYPE_FLYING },
         .catchRate = 45,
         .expYield = 116,
@@ -4820,7 +4820,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD },
-        .abilities = { ABILITY_VITAL_SPIRIT, ABILITY_HUSTLE, ABILITY_INSOMNIA },
+        .abilities = { ABILITY_VITAL_SPIRIT, ABILITY_SLUSH_RUSH, ABILITY_SNOW_WARNING },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Delibird"),
         .cryId = CRY_DELIBIRD,

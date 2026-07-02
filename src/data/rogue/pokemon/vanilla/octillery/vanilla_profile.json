@@ -59,10 +59,6 @@
       "Move": "MOVE_SNIPE_SHOT",
       "Level": 87
     }
-    // {
-    //   "Move": "MOVE_ZAP_CANNON",
-    //   "Level": 99
-    // },
   ],
   "TutorMoves": [
     "MOVE_ATTRACT",
