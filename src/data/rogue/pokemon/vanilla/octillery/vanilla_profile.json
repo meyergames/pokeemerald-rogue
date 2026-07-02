@@ -38,7 +38,7 @@
     {
       "Move": "MOVE_HYPER_BEAM",
       "Level": 70
-    },
+    }
   ],
   "TutorMoves": [
     "MOVE_ATTRACT",

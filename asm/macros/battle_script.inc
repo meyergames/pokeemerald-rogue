@@ -2347,9 +2347,14 @@
 	manipulatedamage DMG_1_2_ATTACKER_HP
 	.endm
 
-	@ D2D
+@ D2D INSTRUCTIONS
+
 	.macro dmg_set_hp_to_one
 	manipulatedamage DMG_SURVIVE_WITH_1_HP
+	.endm
+
+	.macro forcerecharge
+	various BS_ATTACKER, VARIOUS_FORCE_RECHARGE 
 	.endm
 
 	.macro jumpifflowerveil jumpInstr:req

@@ -1101,7 +1101,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_HYPER_BEAM] =
     {
-        .effect = EFFECT_CONDITIONAL_RECHARGE,
+        .effect = EFFECT_D2D_RECHARGE_CONDITIONAL,
         .power = 150,
         .type = TYPE_NORMAL,
         .accuracy = 90,
@@ -5488,7 +5488,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_BLAST_BURN] =
     {
-        .effect = EFFECT_CONDITIONAL_RECHARGE,
+        .effect = EFFECT_D2D_RECHARGE_CONDITIONAL,
         .power = 150,
         .type = TYPE_FIRE,
         .accuracy = 90,
@@ -5502,7 +5502,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_HYDRO_CANNON] =
     {
-        .effect = EFFECT_CONDITIONAL_RECHARGE,
+        .effect = EFFECT_D2D_RECHARGE_CONDITIONAL,
         .power = 150,
         .type = TYPE_WATER,
         .accuracy = 90,
@@ -6025,7 +6025,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_FRENZY_PLANT] =
     {
-        .effect = EFFECT_CONDITIONAL_RECHARGE,
+        .effect = EFFECT_D2D_RECHARGE_CONDITIONAL,
         .power = 150,
         .type = TYPE_GRASS,
         .accuracy = 90,
@@ -7376,7 +7376,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_GIGA_IMPACT] =
     {
-        .effect = EFFECT_CONDITIONAL_RECHARGE,
+        .effect = EFFECT_D2D_RECHARGE_CONDITIONAL,
         .power = 150,
         .type = TYPE_NORMAL,
         .accuracy = 90,
@@ -7744,7 +7744,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_ROCK_WRECKER] =
     {
-        .effect = EFFECT_CONDITIONAL_RECHARGE,
+        .effect = EFFECT_D2D_RECHARGE_CONDITIONAL,
         .power = 150,
         .type = TYPE_ROCK,
         .accuracy = 90,
@@ -8079,7 +8079,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_ROAR_OF_TIME] =
     {
-        .effect = EFFECT_CONDITIONAL_RECHARGE,
+        .effect = EFFECT_D2D_RECHARGE_CONDITIONAL,
         .power = 150,
         .type = TYPE_DRAGON,
         .accuracy = 90,

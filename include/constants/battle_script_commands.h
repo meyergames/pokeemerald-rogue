@@ -241,7 +241,9 @@
 #define VARIOUS_STORE_HEALING_WISH                   148
 #define VARIOUS_HIT_SWITCH_TARGET_FAILED             149
 #define VARIOUS_TRY_REVIVAL_BLESSING                 150
-#define VARIOUS_APPLY_TERASTALLIZATION                151
+#define VARIOUS_APPLY_TERASTALLIZATION               151
+// D2D ADDITIONS BELOW
+#define VARIOUS_FORCE_RECHARGE						 152
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0
@@ -253,6 +255,7 @@
 #define DMG_BIG_ROOT               6
 #define DMG_1_2_ATTACKER_HP        7
 #define DMG_RECOIL_FROM_IMMUNE     8 // Used to calculate recoil for the Gen 4 version of Jump Kick
+// D2D ADDITIONS BELOW
 #define DMG_SURVIVE_WITH_1_HP      9
 
 // Cmd_jumpifcantswitch

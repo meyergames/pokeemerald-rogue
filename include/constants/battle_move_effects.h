@@ -435,6 +435,8 @@
 #define EFFECT_TERA_STARSTORM               429
 #define EFFECT_ELECTRO_SHOT                 430
 
-#define NUM_BATTLE_MOVE_EFFECTS             431
+#define EFFECT_D2D_RECHARGE_CONDITIONAL		431
+
+#define NUM_BATTLE_MOVE_EFFECTS             432
 
 #endif  // GUARD_CONSTANTS_BATTLE_MOVE_EFFECTS_H

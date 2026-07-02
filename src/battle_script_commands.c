@@ -9654,6 +9654,13 @@ static void Cmd_various(void)
         }
         return;
     }
+    case VARIOUS_FORCE_RECHARGE:
+    {
+        VARIOUS_ARGS();
+        gBattleMons[gBattlerAttacker].status2 |= STATUS2_RECHARGE;
+        gBattlescriptCurrInstr = cmd->nextInstr;
+        return;
+    }
     case VARIOUS_TRY_SOAK:
     {
         VARIOUS_ARGS(const u8 *failInstr);

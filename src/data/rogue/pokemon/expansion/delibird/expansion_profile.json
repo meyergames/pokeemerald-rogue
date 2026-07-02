@@ -40,6 +40,10 @@
       "Level": 32
     },
     {
+      "Move": "MOVE_DRILL_PECK",
+      "Level": 32
+    },
+    {
       "Move": "MOVE_AIR_SLASH",
       "Level": 39
     },

@@ -11251,3 +11251,21 @@ BattleScript_EffectD2DRechargeConditional::
 	call BattleScript_TryFaintMon_Ret
 	jumpiffainted BS_TARGET, TRUE, BattleScript_MoveEnd
 	goto BattleScript_ForceRecharge
+
+BattleScript_RechargeMoveMissed:
+	attackstring
+	ppreduce
+	pause B_WAIT_TIME_SHORT
+	effectivenesssound
+	resultmessage
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_ForceRecharge:
+	forcerecharge
+	printstring STRINGID_PKMNMUSTRECHARGE
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_TryFaintMon_Ret::
+	tryfaintmon BS_TARGET
+	return
+
