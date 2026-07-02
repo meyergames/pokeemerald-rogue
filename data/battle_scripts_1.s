@@ -4979,7 +4979,7 @@ BattleScript_EffectLockOn::
 	waitanimation
 	printstring STRINGID_PKMNTOOKAIM
 	waitmessage B_WAIT_TIME_LONG
-	goto BattleScript_MoveEnd
+	goto BattleScript_EffectAccuracyUp
 
 BattleScript_EffectSketch::
 	attackcanceler
