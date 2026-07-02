@@ -261,8 +261,8 @@ static const u8 sAuroraBeamDescription[] = _(
     "beam that may lower Attack.");
 
 static const u8 sHyperBeamDescription[] = _(
-    "Powerful, but leaves the\n"
-    "user immobile the next turn.");
+    "Powerful, but the user must\n"
+    "recharge if it fails to KO.");
 
 static const u8 sPeckDescription[] = _(
     "Attacks the foe with a\n"
@@ -1245,12 +1245,12 @@ static const u8 sCrushClawDescription[] = _(
     "claws. May lower Defense.");
 
 static const u8 sBlastBurnDescription[] = _(
-    "Powerful, but leaves the\n"
-    "user immobile the next turn.");
+    "Powerful, but the user must\n"
+    "recharge if it fails to KO.");
 
 static const u8 sHydroCannonDescription[] = _(
-    "Powerful, but leaves the\n"
-    "user immobile the next turn.");
+    "Powerful, but the user must\n"
+    "recharge if it fails to KO.");
 
 static const u8 sMeteorMashDescription[] = _(
     "Fires a meteor-like punch.\n"
@@ -1369,8 +1369,8 @@ static const u8 sDragonClawDescription[] = _(
     "claws.");
 
 static const u8 sFrenzyPlantDescription[] = _(
-    "Powerful, but leaves the\n"
-    "user immobile the next turn.");
+    "Powerful, but the user must\n"
+    "recharge if it fails to KO.");
 
 static const u8 sBulkUpDescription[] = _(
     "Bulks up the body to boost\n"
@@ -1825,8 +1825,8 @@ static const u8 sDoubleHitDescription[] = _(
     "etc. Strikes twice.");
 
 static const u8 sRoarOfTimeDescription[] = _(
-    "Powerful, but leaves the\n"
-    "user immobile the next turn.");
+    "Powerful, but the user must\n"
+    "recharge if it fails to KO.");
 
 static const u8 sSpacialRendDescription[] = _(
     "Tears the foe, and space.\n"
@@ -2866,8 +2866,8 @@ static const u8 sShellSideArmDescription[] = _(
     "special damage. May poison.");
 
 static const u8 sMistyExplosionDescription[] = _(
-    "Hit everything and faint.\n"
-    "Powers up on Misty Terrain.");
+    "Powerful, but user is left\n"
+    "with 1 HP and must recharge.");
 
 static const u8 sGrassyGlideDescription[] = _(
     "Gliding on ground, hits. Goes\n"

@@ -454,6 +454,12 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectPhotonGeyser            @ EFFECT_TERA_STARSTORM
 	.4byte BattleScript_EffectElectroShot             @ EFFECT_ELECTRO_SHOT
 
+@ D2D SCRIPT REFERENCES
+
+	.4byte BattleScript_EffectD2DRechargeConditional  @ EFFECT_D2D_RECHARGE_CONDITIONAL
+
+
+
 BattleScript_EffectGlaiveRush::
 	call BattleScript_EffectHit_Ret
 	jumpifhalfword CMP_COMMON_BITS, gMoveResultFlags, MOVE_RESULT_DOESNT_AFFECT_FOE, BattleScript_TryFaintMon
@@ -11221,3 +11227,27 @@ BattleScript_SurviveWithOneHP_Ret::
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
 	return
+
+BattleScript_EffectD2DRechargeConditional::
+	attackcanceler
+	accuracycheck BattleScript_RechargeMoveMissed, ACC_CURR_MOVE
+	attackstring
+	ppreduce
+	critcalc
+	damagecalc
+	adjustdamage
+	attackanimation
+	waitanimation
+	effectivenesssound
+	hitanimation BS_TARGET
+	waitstate
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	critmessage
+	waitmessage B_WAIT_TIME_LONG
+	resultmessage
+	waitmessage B_WAIT_TIME_LONG
+	seteffectwithchance
+	call BattleScript_TryFaintMon_Ret
+	jumpiffainted BS_TARGET, TRUE, BattleScript_MoveEnd
+	goto BattleScript_ForceRecharge
