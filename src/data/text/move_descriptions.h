@@ -769,8 +769,8 @@ static const u8 sMudSlapDescription[] = _(
     "to reduce its accuracy.");
 
 static const u8 sOctazookaDescription[] = _(
-    "Fires a lump of ink to\n"
-    "damage and cut accuracy.");
+    "Shoots ink to deal damage\n"
+    "and sharply lower accuracy.");
 
 static const u8 sSpikesDescription[] = _(
     "Sets spikes that hurt a \n"
