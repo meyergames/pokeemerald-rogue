@@ -3320,6 +3320,22 @@ static const u8 sMalignantChainDescription[] = _(
     "A corrosive chain attack\n"
     "that may badly poison.");
 
+static const u8 sBeamDescription[] = _(
+    "A simple beam with no\n"
+    "added effect.");
+
+static const u8 sPowerBeamDescription[] = _(
+    "A simple, strong beam\n"
+    "with no added effect.");
+
+static const u8 sScatterblastDescription[] = _(
+    "Clears all hazards. If\n"
+    "successful, damage doubles.");
+
+static const u8 sEnergizeDescription[] = _(
+    "Sharply raises the target's\n"
+    "Speed and awakens them.");
+
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4180,4 +4196,9 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_MALIGNANT_CHAIN - 1] = sMalignantChainDescription,
 
     [MOVE_SWIRLING_BLADE - 1] = sNullDescription,
+
+    [MOVE_D2D_BEAM - 1] = sBeamDescription,
+    [MOVE_D2D_POWER_BEAM - 1] = sPowerBeamDescription,
+    [MOVE_D2D_SCATTERBLAST - 1] = sScatterblastDescription,
+    [MOVE_D2D_ENERGIZE - 1] = sEnergizeDescription,
 };

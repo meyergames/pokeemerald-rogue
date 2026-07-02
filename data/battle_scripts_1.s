@@ -458,6 +458,8 @@ gBattleScriptsForMoveEffects::
 
 	.4byte BattleScript_EffectD2DRechargeConditional  @ EFFECT_D2D_RECHARGE_CONDITIONAL
 	.4byte BattleScript_EffectD2DAccuracyDown2Hit 	  @ EFFECT_D2D_ACCURACY_DOWN_2_HIT
+	.4byte BattleScript_EffectD2DScatterblast	 	  @ EFFECT_D2D_SCATTERBLAST
+	.4byte BattleScript_EffectD2DEnergize		 	  @ EFFECT_D2D_ENERGIZE
 
 
 
@@ -11302,3 +11304,14 @@ BattleScript_D2D_ElementalActivates::
 	waitmessage B_WAIT_TIME_LONG
 	end3
 
+BattleScript_EffectD2DScatterblast::
+	call BattleScript_EffectHit_Ret
+	call BattleScript_TryFaintMon_Ret
+	call BattleScript_RapidSpinAway
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectD2DEnergize::
+	setmoveeffect MOVE_EFFECT_SPD_PLUS_2
+	jumpifsubstituteblocks BattleScript_EffectHit
+	setmoveeffect MOVE_EFFECT_REMOVE_STATUS | MOVE_EFFECT_CERTAIN
+	goto BattleScript_EffectHit
