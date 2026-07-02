@@ -4,12 +4,68 @@
   ],
   "LevelUpMoves": [
     {
+      "Move": "MOVE_POWDER_SNOW",
+      "Level": 1
+    },
+    {
+      "Move": "MOVE_PECK",
+      "Level": 1
+    },
+    {
       "Move": "MOVE_PRESENT",
       "Level": 1
     },
     {
-      "Move": "MOVE_DRILL_PECK",
+      "Move": "MOVE_HELPING_HAND",
+      "Level": 1
+    },
+    {
+      "Move": "MOVE_ICY_WIND",
+      "Level": 19
+    },
+    {
+      "Move": "MOVE_PLUCK",
+      "Level": 22
+    },
+    {
+      "Move": "MOVE_SNOWSCAPE",
       "Level": 25
+    },
+    {
+      "Move": "MOVE_FEATHER_DANCE",
+      "Level": 29
+    },
+    {
+      "Move": "MOVE_ENCORE",
+      "Level": 32
+    },
+    {
+      "Move": "MOVE_AIR_SLASH",
+      "Level": 39
+    },
+    {
+      "Move": "MOVE_TAILWIND",
+      "Level": 42
+    },
+    {
+      "Move": "MOVE_AURORA_VEIL",
+      "Level": 45
+    },
+    {
+      "Move": "MOVE_SKY_DROP",
+      "Level": 49
+    },
+    {
+      "Move": "MOVE_ROOST",
+      "Level": 52
+    },
+    {
+      "Move": "MOVE_BLIZZARD",
+      "Level": 55
+    },
+    {
+      "Move": "MOVE_HURRICANE",
+      "Level": 70
     }
   ],
   "TutorMoves": [

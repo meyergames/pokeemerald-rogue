@@ -47,10 +47,6 @@
       "Move": "MOVE_MIRROR_COAT",
       "Level": 49
     }
-    // {
-    //   "Move": "MOVE_D2D_IMPLOSION",
-    //   "Level": 75
-    // }
   ],
   "TutorMoves": [
     "MOVE_DOUBLE_TEAM",

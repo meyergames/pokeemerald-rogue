@@ -4,8 +4,12 @@
   ],
   "LevelUpMoves": [
     {
-      "Move": "MOVE_OCTAZOOKA",
+      "Move": "MOVE_LOCK_ON",
       "Level": 0
+    },
+    {
+      "Move": "MOVE_SMOKESCREEN",
+      "Level": 1
     },
     {
       "Move": "MOVE_WRAP",
@@ -17,10 +21,6 @@
     },
     {
       "Move": "MOVE_FOCUS_ENERGY",
-      "Level": 1
-    },
-    {
-      "Move": "MOVE_HELPING_HAND",
       "Level": 1
     },
     {
@@ -48,10 +48,6 @@
       "Level": 20
     },
     {
-      "Move": "MOVE_LOCK_ON",
-      "Level": 24
-    },
-    {
       "Move": "MOVE_BULLET_SEED",
       "Level": 30
     },
@@ -68,8 +64,20 @@
       "Level": 48
     },
     {
+      "Move": "MOVE_OCTAZOOKA",
+      "Level": 50
+    },
+    {
       "Move": "MOVE_HYPER_BEAM",
-      "Level": 54
+      "Level": 55
+    },
+    {
+      "Move": "MOVE_COIL",
+      "Level": 70
+    },
+    {
+      "Move": "MOVE_SNIPE_SHOT",
+      "Level": 85
     }
   ],
   "TutorMoves": [
@@ -87,6 +95,7 @@
     "MOVE_FLAMETHROWER",
     "MOVE_FLASH_CANNON",
     "MOVE_FOCUS_ENERGY",
+    "MOVE_FOCUS_BLAST",
     "MOVE_GIGA_IMPACT",
     "MOVE_GUNK_SHOT",
     "MOVE_HELPING_HAND",
@@ -100,6 +109,7 @@
     "MOVE_PROTECT",
     "MOVE_PSYCHIC",
     "MOVE_RAIN_DANCE",
+    "MOVE_REFLECT_TYPE",
     "MOVE_REST",
     "MOVE_ROCK_BLAST",
     "MOVE_ROUND",
@@ -119,7 +129,8 @@
     "MOVE_THUNDER_WAVE",
     "MOVE_WATER_SPOUT",
     "MOVE_WATERFALL",
-    "MOVE_WHIRLPOOL"
+    "MOVE_WHIRLPOOL",
+    "MOVE_ZAP_CANNON"
   ],
   "CompetitiveSets": [
     {
