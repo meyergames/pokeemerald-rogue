@@ -11296,3 +11296,9 @@ BattleScript_D2D_HealerRestoreHP::
 	waitmessage B_WAIT_TIME_LONG
 	end3
 
+BattleScript_D2D_ElementalActivates::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_D2D_ELEMENTALACTIVATES
+	waitmessage B_WAIT_TIME_LONG
+	end3
+

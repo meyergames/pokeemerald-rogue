@@ -461,6 +461,7 @@ static const u8 sText_SpDefense[] = _("Sp. Def");
 static const u8 sText_Accuracy[] = _("accuracy");
 static const u8 sText_Evasiveness[] = _("evasiveness");
 static const u8 sText_D2D_HealerRestoredHP[] = _("{B_DEF_NAME_WITH_PREFIX} regained some HP from its ally's Healer!");
+static const u8 sText_D2D_ElementalActivates[] = _("{B_ATK_NAME_WITH_PREFIX}'s Elemental\nalters its Normal moves!{PAUSE_UNTIL_PRESS}");
 
 const u8 *const gStatNamesTable[NUM_BATTLE_STATS] =
 {
@@ -1552,6 +1553,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_PKMNISANGRY - BATTLESTRINGS_TABLE_START] = sText_PkmnIsAngry,
     [STRINGID_PKMNISCALM - BATTLESTRINGS_TABLE_START] = sText_PkmnIsCalm,
     [STRINGID_D2D_HEALERRESTOREDHP - BATTLESTRINGS_TABLE_START] = sText_D2D_HealerRestoredHP,
+    [STRINGID_D2D_ELEMENTALACTIVATES - BATTLESTRINGS_TABLE_START] = sText_D2D_ElementalActivates,
 };
 
 const u16 gTrainerUsedItemStringIds[] =

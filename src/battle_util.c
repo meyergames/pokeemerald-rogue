@@ -4611,6 +4611,15 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
+        case ABILITY_D2D_ELEMENTAL:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                // PREPARE_TYPE_BUFFER(gBattleTextBuff1, gBattleMons[battler].type1);
+                BattleScriptPushCursorAndCallback(BattleScript_D2D_ElementalActivates); // Show switch-in message
+                effect++;
+            }
+            break;
         case ABILITY_DOWNLOAD:
             if (!gSpecialStatuses[battler].switchInAbilityDone)
             {

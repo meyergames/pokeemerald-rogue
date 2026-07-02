@@ -1032,6 +1032,8 @@ gBattleAnims_General::
 	.4byte General_Swamp                    @ B_ANIM_SWAMP
 	.4byte General_TeraCharge               @ B_ANIM_TERA_CHARGE
 	.4byte General_TeraActivate             @ B_ANIM_TERA_ACTIVATE
+	.4byte General_D2D_HealerHeal           @ B_ANIM_D2D_HEALER_HEAL
+@ D2D TODO: for some reason, the animations below are not registered in battle_anim.h?
 	.4byte General_TrickRoom                @ B_ANIM_TRICK_ROOM
 	.4byte General_WonderRoom               @ B_ANIM_WONDER_ROOM
 	.4byte General_MagicRoom                @ B_ANIM_MAGIC_ROOM
@@ -34602,3 +34604,15 @@ General_DynamaxGrowth:: @ PORTED FROM CFRU
 	createvisualtask AnimTask_DynamaxGrowth, 0x5, 0x1, 0x0
 	waitforvisualfinish
 	end
+
+
+
+
+
+
+@@@ D2D ANIMS
+
+General_D2D_HealerHeal:
+	call PresentHeal
+	end
+
