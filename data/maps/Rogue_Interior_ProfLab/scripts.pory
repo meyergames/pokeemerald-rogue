@@ -163,10 +163,28 @@ script Rogue_Interior_ProfLab_TalkAssistant
         special(BufferMonNickname)
         if(flag(FLAG_SYS_SHOW_POKE_FOLLOWER))
         {
-            msgbox(format("Hi {PLAYER}!\pWould you like to put {STR_VAR_1} back in its Poké Ball?"), MSGBOX_YESNO)
+            msgbox(format("Hi {PLAYER}! Would you like to experiment with some of your new discoveries?"), MSGBOX_YESNO)
             if(var(VAR_RESULT) == YES)
             {
-                clearflag(FLAG_SYS_SHOW_POKE_FOLLOWER)
+                msgbox(format("Would you like a Voltorb?"), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES)
+                {
+                    givemon(SPECIES_VOLTORB, 46)
+                }
+                // msgbox(format("Would you like some rare candies with that?"), MSGBOX_YESNO)
+                // if(var(VAR_RESULT) == YES)
+                // {
+                //     giveitem(ITEM_RARE_CANDY, 99)
+                // }
+                msgbox(format("Have fun!"))
+            }
+            else
+            {
+                msgbox(format("Hi {PLAYER}!\pWould you like to put {STR_VAR_1} back in its Poké Ball?"), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES)
+                {
+                    clearflag(FLAG_SYS_SHOW_POKE_FOLLOWER)
+                }
             }
         }
         else

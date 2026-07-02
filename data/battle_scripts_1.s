@@ -3779,10 +3779,11 @@ BattleScript_EffectExplosion::
 	tryexplosion
 	waitstate
 BattleScript_EffectExplosion_AnimDmgFaintAttacker:
+	setmoveeffect MOVE_EFFECT_RECHARGE | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
+	seteffectwithchance
+	call BattleScript_SurviveWithOneHP_Ret
 	call BattleScript_EffectExplosion_AnimDmgRet
 	moveendall
-	setatkhptozero
-	tryfaintmon BS_ATTACKER
 	end
 
 BattleScript_EffectMindBlown::
@@ -11210,3 +11211,13 @@ BattleScript_EffectSnow::
 	call BattleScript_CheckPrimalWeather
 	setsnow
 	goto BattleScript_MoveWeatherChange
+
+
+
+@ D2D SCRIPTS
+
+BattleScript_SurviveWithOneHP_Ret::
+	dmg_set_hp_to_one
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+	return

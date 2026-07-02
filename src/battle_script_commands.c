@@ -11230,6 +11230,9 @@ static void Cmd_manipulatedamage(void)
     case DMG_RECOIL_FROM_IMMUNE:
         gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerTarget) / 2;
         break;
+    case DMG_SURVIVE_WITH_1_HP:
+        gBattleMoveDamage = GetNonDynamaxHP(gBattlerAttacker) - 1;
+        break;
     }
 
     gBattlescriptCurrInstr = cmd->nextInstr;

@@ -489,8 +489,8 @@ static const u8 sMirrorMoveDescription[] = _(
     "with the same move.");
 
 static const u8 sSelfDestructDescription[] = _(
-    "Inflicts severe damage but\n"
-    "makes the user faint.");
+    "Powerful, but user is left\n"
+    "with 1 HP and must recharge.");
 
 static const u8 sEggBombDescription[] = _(
     "An egg is forcibly hurled at\n"
@@ -621,8 +621,8 @@ static const u8 sCrabhammerDescription[] = _(
     "high critical-hit ratio.");
 
 static const u8 sExplosionDescription[] = _(
-    "Inflicts severe damage but\n"
-    "makes the user faint.");
+    "Powerful, but user is left\n"
+    "with 1 HP and must recharge.");
 
 static const u8 sFurySwipesDescription[] = _(
     "Rakes the foe with sharp\n"
