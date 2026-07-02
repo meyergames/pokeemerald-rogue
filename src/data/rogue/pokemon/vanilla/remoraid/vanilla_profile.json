@@ -8,6 +8,10 @@
       "Level": 1
     },
     {
+      "Move": "MOVE_SMOKESCREEN",
+      "Level": 1
+    },
+    {
       "Move": "MOVE_LOCK_ON",
       "Level": 11
     },
@@ -26,6 +30,10 @@
     {
       "Move": "MOVE_FOCUS_ENERGY",
       "Level": 33
+    },
+    {
+      "Move": "MOVE_HYDRO_PUMP",
+      "Level": 35
     },
     {
       "Move": "MOVE_ICE_BEAM",
