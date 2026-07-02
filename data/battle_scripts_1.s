@@ -457,6 +457,7 @@ gBattleScriptsForMoveEffects::
 @ D2D SCRIPT REFERENCES
 
 	.4byte BattleScript_EffectD2DRechargeConditional  @ EFFECT_D2D_RECHARGE_CONDITIONAL
+	.4byte BattleScript_EffectD2DAccuracyDown2Hit 	  @ EFFECT_D2D_ACCURACY_DOWN_2_HIT
 
 
 
@@ -4985,7 +4986,17 @@ BattleScript_EffectLockOn::
 	waitanimation
 	printstring STRINGID_PKMNTOOKAIM
 	waitmessage B_WAIT_TIME_LONG
-	goto BattleScript_EffectAccuracyUp
+@ D2D NOTE: Below part raises stats after a move has been performed
+	setstatchanger STAT_ACC, 1, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_StatUpEnd
+	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_StatUpDoAnim
+	pause B_WAIT_TIME_SHORT
+	goto BattleScript_StatUpPrintString
+
+
+
+
+
 
 BattleScript_EffectSketch::
 	attackcanceler
@@ -11269,3 +11280,6 @@ BattleScript_TryFaintMon_Ret::
 	tryfaintmon BS_TARGET
 	return
 
+BattleScript_EffectD2DAccuracyDown2Hit::
+	setmoveeffect MOVE_EFFECT_ACC_MINUS_2
+	goto BattleScript_EffectHit

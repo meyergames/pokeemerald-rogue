@@ -805,8 +805,8 @@ static const u8 sBoneRushDescription[] = _(
     "in hand 2 to 5 times.");
 
 static const u8 sLockOnDescription[] = _(
-    "Locks on to the foe to\n"
-    "ensure the next move hits.");
+    "Ensures the next move hits,\n"
+    "then raises accuracy.");
 
 static const u8 sOutrageDescription[] = _(
     "A rampage of 2 to 3 turns\n"
@@ -2710,8 +2710,8 @@ static const u8 sDynamaxCannonDescription[] = _(
     "2x damage to Dynamaxed foes.");
 
 static const u8 sSnipeShotDescription[] = _(
-    "The user ignores effects\n"
-    "that draw in moves.");
+    "High crit chance, ignores\n"
+    "effects that draw in moves.");
 
 static const u8 sJawLockDescription[] = _(
     "Prevents the user and\n"

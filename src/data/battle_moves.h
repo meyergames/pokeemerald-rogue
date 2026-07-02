@@ -3386,7 +3386,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     [MOVE_OCTAZOOKA] =
     {
         // .effect = EFFECT_ACCURACY_DOWN_HIT,
-        .effect = EFFECT_ACCURACY_DOWN_2,
+        .effect = EFFECT_D2D_ACCURACY_DOWN_2_HIT,
         .power = 100,
         .type = TYPE_WATER,
         .accuracy = 50,
