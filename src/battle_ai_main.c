@@ -797,7 +797,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
     if (IS_TARGETING_PARTNER(battlerAtk, battlerDef))
         return score;
 
-    SetTypeBeforeUsingMove(move, battlerAtk, battlerDef);
+    SetTypeBeforeUsingMove(move, battlerAtk);
     GET_MOVE_TYPE(move, moveType);
 
     // check non-user target
@@ -2843,7 +2843,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
     bool32 partnerHasBadAbility = (GetAbilityRating(atkPartnerAbility) < 0);
     u32 predictedMove = aiData->predictedMoves[battlerDef];
 
-    SetTypeBeforeUsingMove(move, battlerAtk, battlerDef);
+    SetTypeBeforeUsingMove(move, battlerAtk);
     GET_MOVE_TYPE(move, moveType);
 
     // check what effect partner is using
@@ -5270,7 +5270,7 @@ static s32 AI_HPAware(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
     u32 effect = gBattleMoves[move].effect;
     u32 moveType = gBattleMoves[move].type;
 
-    SetTypeBeforeUsingMove(move, battlerAtk, battlerDef);
+    SetTypeBeforeUsingMove(move, battlerAtk);
     GET_MOVE_TYPE(move, moveType);
 
     if (IS_TARGETING_PARTNER(battlerAtk, battlerDef))

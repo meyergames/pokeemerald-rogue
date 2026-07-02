@@ -1674,7 +1674,7 @@ static bool32 AccuracyCalcHelper(u16 move)
             JumpIfMoveFailed(7, move);
             return TRUE;
         }
-        if (IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_SANDSTORM) && move == MOVE_HURRICANE)
+        if (IsBattlerWeatherAffected(gBattlerTarget, GetWeather(), B_WEATHER_SANDSTORM) && move == MOVE_HURRICANE)
         {
             // D2D: Give Hurricane 100% accuracy during sandstorms
             JumpIfMoveFailed(7, move);
@@ -5382,7 +5382,7 @@ static bool32 TryKnockOffBattleScript(u32 battlerDef)
             u32 side = GetBattlerSide(battlerDef);
 
             gLastUsedItem = gBattleMons[battlerDef].item;
-            gBattleStruct->lastKnockedOffItem = gBattleMons[battlerDef].item;
+            // gBattleStruct->lastKnockedOffItem = gBattleMons[battlerDef].item;
 
             gBattleMons[battlerDef].item = 0;
             if (gBattleMons[battlerDef].ability != ABILITY_GORILLA_TACTICS)
@@ -9763,26 +9763,26 @@ static void Cmd_various(void)
     }
     case VARIOUS_TRY_SCAVENGE:
     {
-        VARIOUS_ARGS(const u8 *failInstr);
+        // VARIOUS_ARGS(const u8 *failInstr);
 
-        if (gBattleMons[battler].item == ITEM_NONE)
-        {
-            if (gBattleStruct->lastKnockedOffItem != 0)
-            {
-                gLastUsedItem = gBattleStruct->lastKnockedOffItem;
-                gBattleStruct->lastKnockedOffItem = 0;
-                gBattlescriptCurrInstr = cmd->nextInstr;
-                PREPARE_ITEM_BUFFER(gBattleTextBuff1, gBattleMons[battler].item);
-            }
-            else
-            {
-                gBattlescriptCurrInstr = cmd->failInstr;
-            }
-        }
-        else
-        {
-            gBattlescriptCurrInstr = cmd->failInstr;
-        }
+        // if (gBattleMons[battler].item == ITEM_NONE)
+        // {
+        //     if (gBattleStruct->lastKnockedOffItem != 0)
+        //     {
+        //         gLastUsedItem = gBattleStruct->lastKnockedOffItem;
+        //         gBattleStruct->lastKnockedOffItem = 0;
+        //         gBattlescriptCurrInstr = cmd->nextInstr;
+        //         PREPARE_ITEM_BUFFER(gBattleTextBuff1, gBattleMons[battler].item);
+        //     }
+        //     else
+        //     {
+        //         gBattlescriptCurrInstr = cmd->failInstr;
+        //     }
+        // }
+        // else
+        // {
+        //     gBattlescriptCurrInstr = cmd->failInstr;
+        // }
         return;
     }
     case VARIOUS_TRY_FULL_HEAL:
@@ -10691,7 +10691,7 @@ static void Cmd_various(void)
         {
             VARIOUS_ARGS(u32 flags, const u8 *jumpInstr);
             u32 flags = cmd->flags;
-            if (!IsBattlerWeatherAffected(battler, flags))
+            if (!IsBattlerWeatherAffected(battler, GetWeather(), flags))
                 gBattlescriptCurrInstr = cmd->jumpInstr;
             else
                 gBattlescriptCurrInstr = cmd->nextInstr;

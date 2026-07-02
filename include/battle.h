@@ -1115,9 +1115,6 @@ extern u16 gBallToDisplay;
 extern bool8 gLastUsedBallMenuPresent;
 extern u8 gPartyCriticalHits[PARTY_SIZE];
 
-// D2D
-extern u16 lastKnockedOffItem;
-
 static inline u32 GetBattlerPosition(u32 battler)
 {
     return gBattlerPositions[battler];

@@ -298,7 +298,6 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_WELL_BAKED_BODY] = 7,
     [ABILITY_THERMAL_EXCHANGE] = 7,
     [ABILITY_DRAGONIZE] = 8,
-
     [ABILITY_FORECAST_PRIORITY] = 9,
 };
 
@@ -678,7 +677,7 @@ bool32 MovesWithSplitUnusable(u32 attacker, u32 target, u32 split)
             && GetBattleMoveSplit(moves[i]) == split
             && !(unusable & gBitTable[i]))
         {
-            SetTypeBeforeUsingMove(moves[i], attacker, target);
+            SetTypeBeforeUsingMove(moves[i], attacker);
             GET_MOVE_TYPE(moves[i], moveType);
             if (CalcTypeEffectivenessMultiplier(moves[i], moveType, attacker, target, AI_DATA->abilities[target], FALSE) != 0)
                 usable |= gBitTable[i];
@@ -741,7 +740,7 @@ s32 AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u8 *typeEffectivenes
     gBattleStruct->dynamicMoveType = 0;
 
 
-    SetTypeBeforeUsingMove(move, battlerAtk, battlerDef);
+    SetTypeBeforeUsingMove(move, battlerAtk);
     GET_MOVE_TYPE(move, moveType);
 
     effectivenessMultiplier = CalcTypeEffectivenessMultiplier(move, moveType, battlerAtk, battlerDef, aiData->abilities[battlerDef], FALSE);
@@ -1103,7 +1102,7 @@ uq4_12_t AI_GetTypeEffectiveness(u32 move, u32 battlerAtk, u32 battlerDef)
     SetBattlerData(battlerDef);
 
     gBattleStruct->dynamicMoveType = 0;
-    SetTypeBeforeUsingMove(move, battlerAtk, battlerDef);
+    SetTypeBeforeUsingMove(move, battlerAtk);
     GET_MOVE_TYPE(move, moveType);
     typeEffectiveness = CalcTypeEffectivenessMultiplier(move, moveType, battlerAtk, battlerDef, AI_DATA->abilities[battlerDef], FALSE);
 

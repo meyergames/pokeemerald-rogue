@@ -363,7 +363,7 @@ void HandleAction_UseMove(void)
     }
 
     // Set dynamic move type.
-    SetTypeBeforeUsingMove(gChosenMove, gBattlerAttacker, gBattlerTarget);
+    SetTypeBeforeUsingMove(gChosenMove, gBattlerAttacker);
     GET_MOVE_TYPE(gChosenMove, moveType);
 
     // check max move used
@@ -3367,7 +3367,7 @@ bool32 HandleWishPerishSongOnTurnEnd(void)
                 gBattlerAttacker = gWishFutureKnock.futureSightAttacker[battler];
                 gSpecialStatuses[gBattlerTarget].shellBellDmg = IGNORE_SHELL_BELL;
                 gCurrentMove = gWishFutureKnock.futureSightMove[battler];
-                SetTypeBeforeUsingMove(gCurrentMove, battler, gBattlerTarget);
+                SetTypeBeforeUsingMove(gCurrentMove, battler);
                 BattleScriptExecute(BattleScript_MonTookFutureAttack);
 
                 if (gWishFutureKnock.futureSightCounter[battler] == 0
@@ -5221,8 +5221,8 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                     effect++;
                 }
                 // otherwise, try recycling berry
-                else if ((IsBattlerWeatherAffected(battler, B_WEATHER_SUN) || Random() % 2 == 0)
-                    && !IsBattlerWeatherAffected(battler, B_WEATHER_HAIL)
+                else if ((IsBattlerWeatherAffected(battler, GetWeather(), B_WEATHER_SUN) || Random() % 2 == 0)
+                    && !IsBattlerWeatherAffected(battler, GetWeather(), B_WEATHER_HAIL)
                     && gBattleMons[battler].item == ITEM_NONE
                     && gBattleStruct->changedItems[battler] == ITEM_NONE
                     && ItemId_GetPocket(GetUsedHeldItem(battler)) == POCKET_BERRIES)
