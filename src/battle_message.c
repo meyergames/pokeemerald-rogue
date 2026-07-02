@@ -460,6 +460,7 @@ static const u8 sText_SpAttack[] = _("Sp. Atk");
 static const u8 sText_SpDefense[] = _("Sp. Def");
 static const u8 sText_Accuracy[] = _("accuracy");
 static const u8 sText_Evasiveness[] = _("evasiveness");
+static const u8 sText_D2D_HealerRestoredHP[] = _("{B_DEF_NAME_WITH_PREFIX} regained some HP from its ally's Healer!");
 
 const u8 *const gStatNamesTable[NUM_BATTLE_STATS] =
 {
@@ -1550,6 +1551,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_TARGETCOVEREDINSTICKYCANDYSYRUP - BATTLESTRINGS_TABLE_START] = sText_TargetCoveredInStickyCandySyrup,
     [STRINGID_PKMNISANGRY - BATTLESTRINGS_TABLE_START] = sText_PkmnIsAngry,
     [STRINGID_PKMNISCALM - BATTLESTRINGS_TABLE_START] = sText_PkmnIsCalm,
+    [STRINGID_D2D_HEALERRESTOREDHP - BATTLESTRINGS_TABLE_START] = sText_D2D_HealerRestoredHP,
 };
 
 const u16 gTrainerUsedItemStringIds[] =

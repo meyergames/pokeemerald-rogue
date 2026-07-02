@@ -5165,12 +5165,23 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 break;
             case ABILITY_HEALER:
                 gBattleScripting.battler = BATTLE_PARTNER(battler);
-                if (IsBattlerAlive(gBattleScripting.battler)
-                    && gBattleMons[gBattleScripting.battler].status1 & STATUS1_ANY
-                    && (Random() % 100) < 30)
+                if (IsBattlerAlive(gBattleScripting.battler))
                 {
-                    BattleScriptPushCursorAndCallback(BattleScript_HealerActivates);
-                    effect++;
+                    if ( gBattleMons[gBattleScripting.battler].status1 & STATUS1_ANY )
+                    {
+                        BattleScriptPushCursorAndCallback(BattleScript_HealerActivates);
+                        effect++;
+                    }
+                    else if (!BATTLER_MAX_HP(gBattleScripting.battler)
+                            && !(gStatuses3[gBattleScripting.battler] & STATUS3_HEAL_BLOCK))
+                    {
+                        BattleScriptPushCursorAndCallback(BattleScript_D2D_HealerRestoreHP);
+                        gBattleMoveDamage = GetNonDynamaxMaxHP(gBattleScripting.battler) / 16;
+                        if (gBattleMoveDamage == 0)
+                            gBattleMoveDamage = 1;
+                        gBattleMoveDamage *= -1;
+                        effect++;
+                    }
                 }
                 break;
             case ABILITY_SCHOOLING:

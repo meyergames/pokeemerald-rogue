@@ -11283,3 +11283,16 @@ BattleScript_TryFaintMon_Ret::
 BattleScript_EffectD2DAccuracyDown2Hit::
 	setmoveeffect MOVE_EFFECT_ACC_MINUS_2
 	goto BattleScript_EffectHit
+
+BattleScript_D2D_HealerRestoreHP::
+	call BattleScript_AbilityPopUp
+	playanimation BS_SCRIPTING, B_ANIM_D2D_HEALER_HEAL
+	@ printstring STRINGID_D2D_HEALERRESTOREDHP
+	@ waitmessage B_WAIT_TIME_LONG
+	@ orword gHitMarker, HITMARKER_IGNORE_BIDE | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_IGNORE_DISGUISE | HITMARKER_PASSIVE_DAMAGE
+	healthbarupdate BS_SCRIPTING
+	datahpupdate BS_SCRIPTING
+	printstring STRINGID_D2D_HEALERRESTOREDHP
+	waitmessage B_WAIT_TIME_LONG
+	end3
+
