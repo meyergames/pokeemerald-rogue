@@ -460,6 +460,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectD2DAccuracyDown2Hit 	  @ EFFECT_D2D_ACCURACY_DOWN_2_HIT
 	.4byte BattleScript_EffectD2DScatterblast	 	  @ EFFECT_D2D_SCATTERBLAST
 	.4byte BattleScript_EffectD2DEnergize		 	  @ EFFECT_D2D_ENERGIZE
+	.4byte BattleScript_EffectD2DFatalSting			  @ EFFECT_D2D_FATAL_STING
 
 
 
@@ -11338,3 +11339,11 @@ BattleScript_D2D_HybridPowerTryAttack::
 	pause B_WAIT_TIME_SHORT
 	goto BattleScript_StatUpPrintString
 	return
+
+BattleScript_EffectD2DFatalSting::
+	setmoveeffect MOVE_EFFECT_TOXIC
+	call BattleScript_EffectHit_Ret
+	call BattleScript_SurviveWithOneHP_Ret
+	call BattleScript_TryFaintMon_Ret
+	goto BattleScript_MoveEnd
+

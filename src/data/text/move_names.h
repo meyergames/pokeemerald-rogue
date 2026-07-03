@@ -1763,6 +1763,7 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_D2D_POWER_BEAM] = _("Power Beam"),
     [MOVE_D2D_SCATTERBLAST] = _("Scatterblast"),
     [MOVE_D2D_ENERGIZE] = _("Energize"),
+    [MOVE_D2D_FATAL_STING] = _("Fatal Sting"),
     // Max Moves
     [MOVE_MAX_GUARD] = _("M-Guard"),
     [MOVE_MAX_STRIKE] = _("M-Strike"),

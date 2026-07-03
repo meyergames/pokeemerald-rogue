@@ -42,6 +42,10 @@
     {
       "Move": "MOVE_DIG",
       "Level": 40
+    },
+    {
+      "Move": "MOVE_D2D_FATAL_STING",
+      "Level": 50
     }
   ],
   "TutorMoves": [

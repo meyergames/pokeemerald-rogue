@@ -15975,4 +15975,19 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .zMoveEffect = Z_EFFECT_NONE,
         .sheerForceBoost = TRUE,
     },
+
+    [MOVE_D2D_FATAL_STING] =
+    {
+        .effect = EFFECT_D2D_FATAL_STING,
+        .power = 250,
+        .type = TYPE_BUG,
+        .accuracy = 100,
+        .pp = 1,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .parentalBondBanned = TRUE,
+    },
 };

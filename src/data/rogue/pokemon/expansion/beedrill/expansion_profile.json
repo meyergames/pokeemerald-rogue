@@ -37,6 +37,10 @@
       "Level": 29
     },
     {
+      "Move": "MOVE_D2D_FATAL_STING",
+      "Level": 30
+    },
+    {
       "Move": "MOVE_PIN_MISSILE",
       "Level": 32
     },

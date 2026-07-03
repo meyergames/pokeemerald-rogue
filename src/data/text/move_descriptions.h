@@ -3336,6 +3336,10 @@ static const u8 sEnergizeDescription[] = _(
     "Sharply raises the target's\n"
     "Speed and awakens them.");
 
+static const u8 sFatalStingDescription[] = _(
+    "Powerful, but user is left\n"
+    "with 1 HP and must recharge.");
+
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4201,4 +4205,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_POWER_BEAM - 1] = sPowerBeamDescription,
     [MOVE_D2D_SCATTERBLAST - 1] = sScatterblastDescription,
     [MOVE_D2D_ENERGIZE - 1] = sEnergizeDescription,
+    [MOVE_D2D_FATAL_STING - 1] = sFatalStingDescription,
 };

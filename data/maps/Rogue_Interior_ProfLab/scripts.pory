@@ -166,6 +166,11 @@ script Rogue_Interior_ProfLab_TalkAssistant
             msgbox(format("Hi {PLAYER}! Would you like to experiment with some of your new discoveries?"), MSGBOX_YESNO)
             if(var(VAR_RESULT) == YES)
             {
+                msgbox(format("Would you like a Beedrill?"), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES)
+                {
+                    givemon(SPECIES_BEEDRILL, 30)
+                }
                 msgbox(format("Would you like a Medicham?"), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES)
                 {

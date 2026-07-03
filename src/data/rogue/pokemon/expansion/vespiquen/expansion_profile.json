@@ -60,6 +60,10 @@
       "Level": 28
     },
     {
+      "Move": "MOVE_D2D_FATAL_STING",
+      "Level": 30
+    },
+    {
       "Move": "MOVE_POWER_GEM",
       "Level": 32
     },
