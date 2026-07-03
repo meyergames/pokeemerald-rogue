@@ -20,6 +20,11 @@
       "Level": 9
     },
     {
+      "Move": "MOVE_ABSORB",
+      "Level": 10
+    },
+    
+    {
       "Move": "MOVE_SYNTHESIS",
       "Level": 12
     },
@@ -36,6 +41,10 @@
       "Level": 23
     },
     {
+      "Move": "MOVE_MEGA_DRAIN",
+      "Level": 25
+    },
+    {
       "Move": "MOVE_SWEET_SCENT",
       "Level": 28
     },
@@ -48,12 +57,12 @@
       "Level": 34
     },
     {
-      "Move": "MOVE_SAFEGUARD",
-      "Level": 39
+      "Move": "MOVE_GIGA_DRAIN",
+      "Level": 35
     },
     {
-      "Move": "MOVE_GIGA_DRAIN",
-      "Level": 42
+      "Move": "MOVE_SAFEGUARD",
+      "Level": 39
     },
     {
       "Move": "MOVE_SOLAR_BEAM",
