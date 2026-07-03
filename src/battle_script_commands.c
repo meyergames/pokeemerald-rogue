@@ -9024,7 +9024,7 @@ static void Cmd_various(void)
                 statId = (Random() % (NUM_BATTLE_STATS - 1)) + 1;
             } while (!(bits & gBitTable[statId]));
 
-            SET_STATCHANGER(statId, 2, FALSE);
+            SET_STATCHANGER(statId, 3, FALSE);
             gBattlescriptCurrInstr = cmd->nextInstr;
         }
         else
