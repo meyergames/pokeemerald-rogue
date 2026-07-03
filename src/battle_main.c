@@ -5992,16 +5992,17 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
     {
         gBattleStruct->dynamicMoveType = TYPE_DARK | F_DYNAMIC_TYPE_SET;
     }
-    else if (gBattleMoves[move].type == TYPE_NORMAL && attackerAbility == ABILITY_D2D_ELEMENTAL)
-    {
-        gBattleStruct->dynamicMoveType = GetBattlerType(battlerAtk, 0, FALSE) | F_DYNAMIC_TYPE_SET;
-    }
 
     GET_MOVE_TYPE(move, moveType);
     if ((gFieldStatuses & STATUS_FIELD_ION_DELUGE && moveType == TYPE_NORMAL)
         || gStatuses4[battlerAtk] & STATUS4_ELECTRIFIED)
         gBattleStruct->dynamicMoveType = TYPE_ELECTRIC | F_DYNAMIC_TYPE_SET;
 
+    if (moveType == TYPE_NORMAL && attackerAbility == ABILITY_D2D_ELEMENTAL)
+    {
+        gBattleStruct->dynamicMoveType = GetBattlerType(battlerAtk, 0, FALSE) | F_DYNAMIC_TYPE_SET;
+    }
+    
     // Check if a gem should activate.
     GET_MOVE_TYPE(move, moveType);
     if (holdEffect == HOLD_EFFECT_GEMS

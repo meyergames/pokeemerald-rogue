@@ -636,6 +636,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_FORECAST_PRIORITY] = _("Instant Forecast"),
 
     // D2D ABILITIES
+    [ABILITY_D2D_ELEMENTAL] = _("Elemental"),
     [ABILITY_D2D_HYBRID_POWER] = _("Hybrid Power"),
 };
 #else   // 12 characters
