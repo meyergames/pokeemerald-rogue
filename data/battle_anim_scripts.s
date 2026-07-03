@@ -881,7 +881,7 @@ gBattleAnims_Moves::
 
 
 
-	
+
 @@@@ D2D MOVES
 	.4byte Move_D2D_BEAM
 	.4byte Move_D2D_POWER_BEAM
@@ -2758,46 +2758,18 @@ Move_SWITCHEROO:
 
 Move_GIGA_IMPACT:
 	loadspritegfx ANIM_TAG_IMPACT
-	monbg ANIM_DEF_PARTNER
-	setalpha 12, 8
-	createvisualtask AnimTask_IsContest, 2
-	jumprettrue SetGigaImpactContestsBG
-	createvisualtask AnimTask_IsTargetPlayerSide, 2
-	jumpretfalse SetGigaImpactOpponentBG
-	goto SetGigaImpactPlayerBG
-SetGigaImpactOpponentBG:
-	fadetobg BG_GIGA_IMPACT_OPPONENT
-	goto GigaImpactContinuity
-SetGigaImpactPlayerBG:
-	fadetobg BG_GIGA_IMPACT_PLAYER
-	goto GigaImpactContinuity
-SetGigaImpactContestsBG:
-	fadetobg BG_GIGA_IMPACT_CONTEST
-	goto GigaImpactContinuity
-GigaImpactContinuity:
+	createvisualtask AnimTask_SkullBashPosition, 2, 0
 	playsewithpan SE_M_TAKE_DOWN, SOUND_PAN_ATTACKER
-	createsprite gVerticalDipSpriteTemplate, ANIM_ATTACKER, 2, 6, 1, ANIM_ATTACKER
 	waitforvisualfinish
-	delay 11
-	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, 0, 26, 0, 0, 5
-	delay 6
-	createsprite gBasicHitSplatSpriteTemplate, 4, 4, -10, 0, 1, 0
-	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET
-	delay 1
-	createsprite gSlideMonToOffsetSpriteTemplate 2, 5, 1, -16, 0, 0, 4
+	playse SE_BANG
+	call SetImpactBackground
+	createvisualtask AnimTask_ShakeMonInPlace, 2, ANIM_ATTACKER, 2, 0, 40, 1
+	createvisualtask AnimTask_ShakeMonInPlace, 2, ANIM_TARGET, 10, 0, 40, 1
+	createsprite gFlashingHitSplatSpriteTemplate, ANIM_TARGET, 4, 0, 0, ANIM_TARGET, 0
 	waitforvisualfinish
-	createvisualtask AnimTask_ShakeMonInPlace, 2, ANIM_PLAYER_RIGHT, 1, 4, 0, 12, 1
-	waitforvisualfinish
-	delay 2
-	createsprite gSlideMonToOriginalPosSpriteTemplate 2, 3, 0, 0, 5
-	delay 3
-	createsprite gSlideMonToOriginalPosSpriteTemplate 2, 3, 1, 0, 6
-	waitforvisualfinish
-	clearmonbg ANIM_DEF_PARTNER
-	blendoff
+	createvisualtask AnimTask_SkullBashPosition, 2, 1
 	restorebg
 	waitbgfadein
-	waitforvisualfinish
 	end
 
 Move_NASTY_PLOT:
