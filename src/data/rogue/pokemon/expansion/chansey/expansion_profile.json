@@ -80,6 +80,10 @@
       "Level": 48
     },
     {
+      "Move": "MOVE_D2D_FULL_RESTORE",
+      "Level": 50
+    },
+    {
       "Move": "MOVE_HEALING_WISH",
       "Level": 52
     }

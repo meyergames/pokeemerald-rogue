@@ -40,6 +40,10 @@
       "Level": 56
     },
     {
+      "Move": "MOVE_D2D_FULL_RESTORE",
+      "Level": 60
+    },
+    {
       "Move": "MOVE_REST",
       "Level": 63
     },

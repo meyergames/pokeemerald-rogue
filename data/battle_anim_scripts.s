@@ -888,6 +888,7 @@ gBattleAnims_Moves::
 	.4byte Move_D2D_SCATTERBLAST
 	.4byte Move_D2D_ENERGIZE
 	.4byte Move_D2D_FATAL_STING
+	.4byte Move_D2D_FULL_RESTORE
 
 
 
@@ -34787,4 +34788,26 @@ Move_D2D_FATAL_STING:
 	createsprite gBowMonSpriteTemplate, ANIM_ATTACKER, 2, 0x2
 	waitforvisualfinish
 	call UnsetPsychicBg
+	end
+
+Move_D2D_FULL_RESTORE:
+	loadspritegfx ANIM_TAG_RED_HEART
+	loadspritegfx ANIM_TAG_GREEN_SPARKLE
+	loadspritegfx ANIM_TAG_BLUE_STAR
+	loadspritegfx ANIM_TAG_THIN_RING
+	loopsewithpan SE_M_CHARM, SOUND_PAN_ATTACKER, 12, 3
+	createvisualtask AnimTask_HeartsBackground, 5
+	createvisualtask AnimTask_SwayMon, 5, 0, 12, 4096, 4, ANIM_ATTACKER
+	delay 15
+	createsprite gRedHeartProjectileSpriteTemplate, ANIM_TARGET, 3, 20, -8
+	waitforvisualfinish
+	playsewithpan SE_M_ATTRACT, SOUND_PAN_TARGET
+	createsprite gRedHeartBurstSpriteTemplate, ANIM_TARGET, 3, 160, -32
+	createsprite gRedHeartBurstSpriteTemplate, ANIM_TARGET, 3, -256, -40
+	createsprite gRedHeartBurstSpriteTemplate, ANIM_TARGET, 3, 128, -16
+	createsprite gRedHeartBurstSpriteTemplate, ANIM_TARGET, 3, 416, -38
+	createsprite gRedHeartBurstSpriteTemplate, ANIM_TARGET, 3, -128, -22
+	createsprite gRedHeartBurstSpriteTemplate, ANIM_TARGET, 3, -384, -31
+	call HealingEffect2
+	waitforvisualfinish
 	end

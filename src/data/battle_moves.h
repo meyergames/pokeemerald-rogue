@@ -15990,4 +15990,18 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .zMoveEffect = Z_EFFECT_NONE,
         .parentalBondBanned = TRUE,
     },
+
+    [MOVE_D2D_FULL_RESTORE] =
+    {
+        .effect = EFFECT_D2D_FULL_RESTORE,
+        .type = TYPE_FAIRY,
+        .power = 0,
+        .accuracy = 100,
+        .pp = 1,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER | MOVE_TARGET_ALLY,
+        .priority = 1,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
 };

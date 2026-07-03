@@ -461,6 +461,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectD2DScatterblast	 	  @ EFFECT_D2D_SCATTERBLAST
 	.4byte BattleScript_EffectD2DEnergize		 	  @ EFFECT_D2D_ENERGIZE
 	.4byte BattleScript_EffectD2DFatalSting			  @ EFFECT_D2D_FATAL_STING
+	.4byte BattleScript_EffectD2DFullRestore		  @ EFFECT_D2D_FULL_RESTORE
 
 
 
@@ -11347,3 +11348,28 @@ BattleScript_EffectD2DFatalSting::
 	call BattleScript_TryFaintMon_Ret
 	goto BattleScript_MoveEnd
 
+
+BattleScript_EffectD2DFullRestore::
+	attackcanceler
+	attackstring
+	ppreduce
+	tryfullheal BS_TARGET, BattleScript_EffectD2DFullRestore_AlreadyAtFullHp
+	attackanimation
+	waitanimation
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	printstring STRINGID_PKMNREGAINEDHEALTH
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_EffectD2DFullRestore_TryCureStatus:
+	jumpifstatus BS_TARGET, STATUS1_NONE, BattleScript_MoveEnd
+	curestatus BS_TARGET
+	updatestatusicon BS_TARGET
+	printstring STRINGID_PKMNSTATUSNORMAL
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectD2DFullRestore_AlreadyAtFullHp:
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_PKMNHPFULL
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_EffectD2DFullRestore_TryCureStatus

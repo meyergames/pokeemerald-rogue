@@ -2359,6 +2359,11 @@
 	various \battler, VARIOUS_TRY_ACTIVATE_HYBRID_POWER
 	.endm
 
+	.macro tryfullheal battler:req, failInstr:req
+	various \battler, VARIOUS_TRY_FULL_HEAL
+	.4byte \failInstr
+	.endm
+
 @ D2D INSTRUCTIONS END
 
 
