@@ -2534,9 +2534,16 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 break;
             }
             break;
-        case EFFECT_D2D_ENERGIZE:
         case EFFECT_HEAL_PULSE: // and floral healing
             if (!IS_TARGETING_PARTNER(battlerAtk, battlerDef)) // Don't heal enemies
+            {
+                ADJUST_SCORE(-10);
+                break;
+            }
+        case EFFECT_D2D_ENERGIZE:
+            if (!IS_TARGETING_PARTNER(battlerAtk, battlerDef)
+            && GetNoOfHitsToKOBattler(battlerAtk, battlerDef, AI_THINKING_STRUCT->movesetIndex) >= 2)
+            // Don't Energize enemies that would survive the hit
             {
                 ADJUST_SCORE(-10);
                 break;
@@ -3137,6 +3144,13 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                         break; // These moves need to go last
                     RETURN_SCORE_PLUS(1);
                 }
+                break;
+            case EFFECT_D2D_ENERGIZE:
+                // If the enemy would take <25% damage from Energize and has about neutral speed (i.e. "6"),
+                // make Energize an option
+                if (gBattleMons[battlerDef].statStages[STAT_SPEED] <= 7
+                  && GetNoOfHitsToKOBattler(battlerAtk, battlerDef, AI_THINKING_STRUCT->movesetIndex) >= 4)
+                    RETURN_SCORE_PLUS(1);
                 break;
             case EFFECT_HEAL_PULSE:
             case EFFECT_HIT_ENEMY_HEAL_ALLY:
