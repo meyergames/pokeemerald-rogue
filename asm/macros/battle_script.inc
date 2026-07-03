@@ -2355,6 +2355,10 @@
 	manipulatedamage DMG_SURVIVE_WITH_1_HP
 	.endm
 
+	.macro tryactivatehybridpower battler:req
+	various \battler, VARIOUS_TRY_ACTIVATE_HYBRID_POWER
+	.endm
+
 @ D2D INSTRUCTIONS END
 
 

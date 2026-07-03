@@ -9382,6 +9382,36 @@ static void Cmd_various(void)
         }
         break;
     }
+    case VARIOUS_TRY_ACTIVATE_HYBRID_POWER:
+    {
+        VARIOUS_ARGS();
+
+        u16 battlerAbility = GetBattlerAbility(battler);
+        if ( battlerAbility == ABILITY_D2D_HYBRID_POWER )
+        {
+            if ( gBattleMoves[gLastUsedMove].split == SPLIT_PHYSICAL )
+            {
+                gBattlescriptCurrInstr = BattleScript_D2D_HybridPowerTrySpAtk;
+                gLastUsedAbility = battlerAbility;
+                return;
+            }
+            else if ( gBattleMoves[gLastUsedMove].split == SPLIT_SPECIAL )
+            {
+                gBattlescriptCurrInstr = BattleScript_D2D_HybridPowerTryAttack;
+                gLastUsedAbility = battlerAbility;
+                return;
+            }
+            // if ( CompareStat( gBattlerAttacker, statToRaise, MAX_STAT_STAGE, CMP_LESS_THAN ) )
+            // {
+            //     SET_STATCHANGER(statToRaise, 1, FALSE);
+            //     PREPARE_STAT_BUFFER(gBattleTextBuff1, statToRaise);
+            //     BattleScriptPush(cmd->nextInstr);
+            //     gLastUsedAbility = battlerAbility;
+            //     return;
+            // }
+        }
+        break;
+    }
     case VARIOUS_TRY_ACTIVATE_GRIM_NEIGH:   // and as one shadow rider
     {
         VARIOUS_ARGS();

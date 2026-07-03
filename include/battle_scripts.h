@@ -557,6 +557,8 @@ extern const u8 BattleScript_MoveBlockedByDynamax[];
 // d2d scripts
 extern const u8 BattleScript_D2D_HealerRestoreHP[];
 extern const u8 BattleScript_D2D_ElementalActivates[];
+extern const u8 BattleScript_D2D_HybridPowerTrySpAtk[];
+extern const u8 BattleScript_D2D_HybridPowerTryAttack[];
 
 
 #endif // GUARD_BATTLE_SCRIPTS_H

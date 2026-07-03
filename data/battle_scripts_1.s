@@ -3487,6 +3487,9 @@ BattleScript_HitTargetHitAnimation::
 	seteffectwithchance
 BattleScript_TryFaintMon::
 	tryfaintmon BS_TARGET
+BattleScript_TryOnHitEffects::
+	jumpifbattleend BattleScript_MoveEnd
+	call BattleScript_D2D_TryOnHitEffects_Ret
 BattleScript_MoveEnd::
 	moveendall
 	end
@@ -11315,3 +11318,23 @@ BattleScript_EffectD2DEnergize::
 	jumpifsubstituteblocks BattleScript_EffectHit
 	setmoveeffect MOVE_EFFECT_REMOVE_STATUS | MOVE_EFFECT_CERTAIN
 	goto BattleScript_EffectHit
+
+BattleScript_D2D_TryOnHitEffects_Ret::
+	tryactivatehybridpower BS_ATTACKER
+	return
+
+BattleScript_D2D_HybridPowerTrySpAtk::
+	setstatchanger STAT_SPATK, 1, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_StatUpEnd
+	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_StatUpDoAnim
+	pause B_WAIT_TIME_SHORT
+	goto BattleScript_StatUpPrintString
+	return
+
+BattleScript_D2D_HybridPowerTryAttack::
+	setstatchanger STAT_ATK, 1, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_StatUpEnd
+	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_StatUpDoAnim
+	pause B_WAIT_TIME_SHORT
+	goto BattleScript_StatUpPrintString
+	return

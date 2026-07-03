@@ -244,6 +244,7 @@
 #define VARIOUS_APPLY_TERASTALLIZATION               151
 // D2D ADDITIONS BELOW
 #define VARIOUS_FORCE_RECHARGE						 152
+#define VARIOUS_TRY_ACTIVATE_HYBRID_POWER			 153
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0
