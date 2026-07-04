@@ -5521,6 +5521,26 @@ static void Cmd_moveend(void)
             }
             gBattleScripting.moveendState++;
             break;
+        case MOVEEND_D2D_HYBRID_POWER:
+            if (GetBattlerAbility(gBattlerAttacker) == ABILITY_D2D_HYBRID_POWER
+                && gBattleMons[gBattlerAttacker].hp != 0
+                && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                && TARGET_TURN_DAMAGED
+                && gBattleMoves[gCurrentMove].power != 0)
+            {
+                if ( gBattleMoves[gCurrentMove].split == SPLIT_PHYSICAL )
+                {
+                    gBattlescriptCurrInstr = BattleScript_D2D_HybridPowerTrySpAtk;
+                    effect = TRUE;
+                }
+                else if ( gBattleMoves[gCurrentMove].split == SPLIT_SPECIAL )
+                {
+                    gBattlescriptCurrInstr = BattleScript_D2D_HybridPowerTryAttack;
+                    effect = TRUE;
+                }
+            }
+            gBattleScripting.moveendState++;
+            break;
         case MOVEEND_DEFROST: // defrosting check
             if (gBattleMons[gBattlerTarget].status1 & STATUS1_FREEZE
                 && gBattleMons[gBattlerTarget].hp != 0
@@ -9379,36 +9399,6 @@ static void Cmd_various(void)
                 gBattleScripting.abilityPopupOverwrite = gLastUsedAbility = ABILITY_CHILLING_NEIGH;
             gBattlescriptCurrInstr = BattleScript_RaiseStatOnFaintingTarget;
             return;
-        }
-        break;
-    }
-    case VARIOUS_TRY_ACTIVATE_HYBRID_POWER:
-    {
-        VARIOUS_ARGS();
-
-        u16 battlerAbility = GetBattlerAbility(battler);
-        if ( battlerAbility == ABILITY_D2D_HYBRID_POWER )
-        {
-            if ( gBattleMoves[gLastUsedMove].split == SPLIT_PHYSICAL )
-            {
-                gBattlescriptCurrInstr = BattleScript_D2D_HybridPowerTrySpAtk;
-                gLastUsedAbility = battlerAbility;
-                return;
-            }
-            else if ( gBattleMoves[gLastUsedMove].split == SPLIT_SPECIAL )
-            {
-                gBattlescriptCurrInstr = BattleScript_D2D_HybridPowerTryAttack;
-                gLastUsedAbility = battlerAbility;
-                return;
-            }
-            // if ( CompareStat( gBattlerAttacker, statToRaise, MAX_STAT_STAGE, CMP_LESS_THAN ) )
-            // {
-            //     SET_STATCHANGER(statToRaise, 1, FALSE);
-            //     PREPARE_STAT_BUFFER(gBattleTextBuff1, statToRaise);
-            //     BattleScriptPush(cmd->nextInstr);
-            //     gLastUsedAbility = battlerAbility;
-            //     return;
-            // }
         }
         break;
     }

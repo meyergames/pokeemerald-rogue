@@ -2355,10 +2355,6 @@
 	manipulatedamage DMG_SURVIVE_WITH_1_HP
 	.endm
 
-	.macro tryactivatehybridpower battler:req
-	various \battler, VARIOUS_TRY_ACTIVATE_HYBRID_POWER
-	.endm
-
 	.macro tryfullheal battler:req, failInstr:req
 	various \battler, VARIOUS_TRY_FULL_HEAL
 	.4byte \failInstr

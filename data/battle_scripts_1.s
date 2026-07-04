@@ -3489,9 +3489,9 @@ BattleScript_HitTargetHitAnimation::
 	seteffectwithchance
 BattleScript_TryFaintMon::
 	tryfaintmon BS_TARGET
-BattleScript_TryOnHitEffects::
-	jumpifbattleend BattleScript_MoveEnd
-	call BattleScript_D2D_TryOnHitEffects_Ret
+@ BattleScript_TryOnHitEffects::
+	@ jumpifbattleend BattleScript_MoveEnd
+	@ call BattleScript_D2D_TryOnHitEffects_Ret
 BattleScript_MoveEnd::
 	moveendall
 	end
@@ -11321,25 +11321,38 @@ BattleScript_EffectD2DEnergize::
 	setmoveeffect MOVE_EFFECT_REMOVE_STATUS | MOVE_EFFECT_CERTAIN
 	goto BattleScript_EffectHit
 
-BattleScript_D2D_TryOnHitEffects_Ret::
-	tryactivatehybridpower BS_ATTACKER
-	return
-
 BattleScript_D2D_HybridPowerTrySpAtk::
+	jumpifbattleend BattleScript_D2D_Cancel
 	setstatchanger STAT_SPATK, 1, FALSE
-	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_StatUpEnd
-	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_StatUpDoAnim
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_D2D_Cancel
+	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_D2D_PostMoveStatRaiseAnim
 	pause B_WAIT_TIME_SHORT
-	goto BattleScript_StatUpPrintString
-	return
+	@ goto BattleScript_StatUpPrintString
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+	end
 
 BattleScript_D2D_HybridPowerTryAttack::
+	jumpifbattleend BattleScript_D2D_Cancel
 	setstatchanger STAT_ATK, 1, FALSE
-	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_StatUpEnd
-	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_StatUpDoAnim
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_D2D_Cancel
+	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_D2D_PostMoveStatRaiseAnim
 	pause B_WAIT_TIME_SHORT
-	goto BattleScript_StatUpPrintString
-	return
+	@ goto BattleScript_StatUpPrintString
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+	end
+
+BattleScript_D2D_PostMoveStatRaiseAnim::
+	setgraphicalstatchangevalues
+	playanimation BS_ATTACKER, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	pause B_WAIT_TIME_SHORT
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+	end
+
+BattleScript_D2D_Cancel::
+	end
 
 BattleScript_EffectD2DFatalSting::
 	setmoveeffect MOVE_EFFECT_TOXIC
