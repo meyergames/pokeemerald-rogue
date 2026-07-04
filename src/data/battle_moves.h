@@ -16004,4 +16004,34 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .split = SPLIT_STATUS,
         .zMoveEffect = Z_EFFECT_NONE,
     },
+
+    [MOVE_D2D_TOPPLE] =
+    {
+        .power = 40,
+        .accuracy = 100,
+        .effect = EFFECT_D2D_TOPPLE,
+        .type = TYPE_NORMAL,
+        .pp = 30,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .makesContact = TRUE,
+    },
+
+    [MOVE_D2D_MACH_5] =
+    {
+        .effect = EFFECT_D2D_MACH_5,
+        .type = TYPE_FLYING,
+        .power = 40,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .makesContact = TRUE,
+    },
 };

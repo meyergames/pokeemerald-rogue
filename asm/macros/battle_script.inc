@@ -2360,6 +2360,14 @@
 	.4byte \failInstr
 	.endm
 
+	.macro determinemachfivespeed
+	various BS_ATTACKER, VARIOUS_DETERMINE_MACH_FIVE_SPEED
+	.endm
+
+	.macro determinetopplepower
+	various BS_TARGET, VARIOUS_DETERMINE_TOPPLE_POWER
+	.endm
+
 @ D2D INSTRUCTIONS END
 
 

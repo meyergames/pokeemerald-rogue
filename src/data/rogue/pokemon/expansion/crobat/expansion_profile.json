@@ -60,6 +60,10 @@
       "Level": 48
     },
     {
+      "Move": "MOVE_D2D_MACH_5",
+      "Level": 50
+    },
+    {
       "Move": "MOVE_CONFUSE_RAY",
       "Level": 55
     },

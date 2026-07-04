@@ -56,6 +56,10 @@
       "Level": 26
     },
     {
+      "Move": "MOVE_D2D_TOPPLE",
+      "Level": 30
+    },
+    {
       "Move": "MOVE_DISCHARGE",
       "Level": 31
     },

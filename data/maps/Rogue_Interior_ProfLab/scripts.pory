@@ -166,6 +166,16 @@ script Rogue_Interior_ProfLab_TalkAssistant
             msgbox(format("Hi {PLAYER}! Would you like to experiment with some of your new discoveries?"), MSGBOX_YESNO)
             if(var(VAR_RESULT) == YES)
             {
+                msgbox(format("Would you like a Ninjask?"), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES)
+                {
+                    givemon(SPECIES_NINJASK, 50)
+                }
+                msgbox(format("Would you like a Spinda?"), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES)
+                {
+                    givemon(SPECIES_SPINDA, 35)
+                }
                 msgbox(format("Would you like a Luvdisc?"), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES)
                 {

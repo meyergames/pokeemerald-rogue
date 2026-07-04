@@ -10067,6 +10067,30 @@ static void Cmd_various(void)
         }
         break;
     }
+    case VARIOUS_DETERMINE_MACH_FIVE_SPEED:
+    {
+        VARIOUS_ARGS();
+
+        int8_t speedBoosts = gBattleMons[battler].statStages[STAT_SPEED] - 6;
+        if (gBattleMons[battler].status1 & STATUS1_PARALYSIS)
+            speedBoosts -= 2;
+        if (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_TAILWIND)
+            speedBoosts += 2;
+        u32 basePower = 20 + ( ( gSpeciesInfo[gBattleMons[battler].species].baseSpeed * 0.25 ) * ( 1.0 + ( speedBoosts * 0.5 ) ) );
+
+        PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 3, basePower);
+        break;
+    }
+    case VARIOUS_DETERMINE_TOPPLE_POWER:
+    {
+        VARIOUS_ARGS();
+
+        u16 foeBst = gSpeciesInfo[gBattleMons[gBattlerTarget].species].baseHP + gSpeciesInfo[gBattleMons[gBattlerTarget].species].baseAttack + gSpeciesInfo[gBattleMons[gBattlerTarget].species].baseDefense + gSpeciesInfo[gBattleMons[gBattlerTarget].species].baseSpAttack + gSpeciesInfo[gBattleMons[gBattlerTarget].species].baseSpDefense + gSpeciesInfo[gBattleMons[gBattlerTarget].species].baseSpeed;
+
+        u32 basePower = 40 + max( ( foeBst - 400 ) / 2, 0 );
+        PREPARE_BYTE_NUMBER_BUFFER( gBattleTextBuff1, 3, basePower );
+        break;
+    }
     case VARIOUS_TRY_THIRD_TYPE:
     {
         VARIOUS_ARGS(const u8 *failInstr);

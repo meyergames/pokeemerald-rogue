@@ -462,6 +462,8 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectD2DEnergize		 	  @ EFFECT_D2D_ENERGIZE
 	.4byte BattleScript_EffectD2DFatalSting			  @ EFFECT_D2D_FATAL_STING
 	.4byte BattleScript_EffectD2DFullRestore		  @ EFFECT_D2D_FULL_RESTORE
+	.4byte BattleScript_EffectD2DTopple				  @ EFFECT_D2D_TOPPLE
+	.4byte BattleScript_EffectD2DMach5				  @ EFFECT_D2D_MACH_5
 
 
 
@@ -11386,3 +11388,29 @@ BattleScript_EffectD2DFullRestore_AlreadyAtFullHp:
 	printstring STRINGID_PKMNHPFULL
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_EffectD2DFullRestore_TryCureStatus
+
+BattleScript_EffectD2DMach5::
+	jumpifword CMP_COMMON_BITS, gHitMarker, HITMARKER_NO_ATTACKSTRING | HITMARKER_NO_PPDEDUCT, BattleScript_EffectD2DMach5Target
+	attackcanceler
+	attackstring
+	ppreduce
+	determinemachfivespeed
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_D2D_MACH5SPEED
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_EffectD2DMach5Target:
+	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
+	goto BattleScript_HitFromCritCalc
+
+BattleScript_EffectD2DTopple::
+	jumpifword CMP_COMMON_BITS, gHitMarker, HITMARKER_NO_ATTACKSTRING | HITMARKER_NO_PPDEDUCT, BattleScript_EffectD2DToppleTarget
+	attackcanceler
+	attackstring
+	ppreduce
+	determinetopplepower
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_D2D_TOPPLE_POWER
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_EffectD2DToppleTarget:
+	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
+	goto BattleScript_HitFromCritCalc

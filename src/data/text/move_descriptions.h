@@ -3344,6 +3344,14 @@ static const u8 sFullRestoreDescription[] = _(
     "Fully heals and cures the\n"
     "target. Always moves first.");
 
+static const u8 sToppleDescription[] = _(
+    "The stronger the foe, the\n"
+    "more damage is dealt.");
+
+static const u8 sMach5Description[] = _(
+    "Damage increases based on\n"
+    "the user's Speed.");
+
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4211,4 +4219,6 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_ENERGIZE - 1] = sEnergizeDescription,
     [MOVE_D2D_FATAL_STING - 1] = sFatalStingDescription,
     [MOVE_D2D_FULL_RESTORE - 1] = sFullRestoreDescription,
+    [MOVE_D2D_TOPPLE - 1] = sToppleDescription,
+    [MOVE_D2D_MACH_5 - 1] = sMach5Description,
 };

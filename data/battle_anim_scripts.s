@@ -889,6 +889,8 @@ gBattleAnims_Moves::
 	.4byte Move_D2D_ENERGIZE
 	.4byte Move_D2D_FATAL_STING
 	.4byte Move_D2D_FULL_RESTORE
+	.4byte Move_D2D_TOPPLE
+	.4byte Move_D2D_MACH_5
 
 
 
@@ -34810,4 +34812,42 @@ Move_D2D_FULL_RESTORE:
 	createsprite gRedHeartBurstSpriteTemplate, ANIM_TARGET, 3, -384, -31
 	call HealingEffect2
 	waitforvisualfinish
+	end
+
+Move_D2D_TOPPLE:
+	loadspritegfx ANIM_TAG_IMPACT
+	monbg ANIM_TARGET
+	setalpha 12, 8
+	createvisualtask AnimTask_FlailMovement, 2, ANIM_ATTACKER
+	loopsewithpan SE_M_HEADBUTT, SOUND_PAN_ATTACKER, 8, 2
+	waitforvisualfinish
+	createsprite gRandomPosHitSplatSpriteTemplate, ANIM_TARGET, 3, ANIM_TARGET, 3
+	createvisualtask AnimTask_ShakeTargetBasedOnMovePowerOrDmg, 2, FALSE, 1, 30, 1, 0
+	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
+	end
+
+Move_D2D_MACH_5:
+	loadspritegfx ANIM_TAG_SPEED_DUST
+	loadspritegfx ANIM_TAG_IMPACT
+	call SetHighSpeedBg
+	createvisualtask AnimTask_AttackerStretchAndDisappear, 2
+	loopsewithpan SE_M_RAZOR_WIND2, SOUND_PAN_ATTACKER, 8, 3
+	waitforvisualfinish
+	delay 1
+	createvisualtask AnimTask_SetAttackerInvisibleWaitForSignal, 2
+	monbg ANIM_TARGET
+	setalpha 12, 8
+	delay 18
+	loadspritegfx ANIM_TAG_ROUND_SHADOW
+	loadspritegfx ANIM_TAG_WHITE_STREAK
+	loadspritegfx ANIM_TAG_IMPACT
+	monbg ANIM_TARGET
+	call AcrobaticsSlashes
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	visible ANIM_ATTACKER
+	call UnsetSkyBg
 	end

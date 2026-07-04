@@ -462,6 +462,8 @@ static const u8 sText_Accuracy[] = _("accuracy");
 static const u8 sText_Evasiveness[] = _("evasiveness");
 static const u8 sText_D2D_HealerRestoredHP[] = _("{B_DEF_NAME_WITH_PREFIX} regained some HP from its ally's Healer!");
 static const u8 sText_D2D_ElementalActivates[] = _("{B_ATK_NAME_WITH_PREFIX}'s Elemental\nalters its Normal moves!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_D2D_MachFiveSpeed[] = _("{B_ATK_NAME_WITH_PREFIX} reached {B_BUFF1} km/h!");
+static const u8 sText_D2D_TopplePower[] = _("Topple's power raised to {B_BUFF1}!");
 
 const u8 *const gStatNamesTable[NUM_BATTLE_STATS] =
 {
@@ -1554,6 +1556,8 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_PKMNISCALM - BATTLESTRINGS_TABLE_START] = sText_PkmnIsCalm,
     [STRINGID_D2D_HEALERRESTOREDHP - BATTLESTRINGS_TABLE_START] = sText_D2D_HealerRestoredHP,
     [STRINGID_D2D_ELEMENTALACTIVATES - BATTLESTRINGS_TABLE_START] = sText_D2D_ElementalActivates,
+    [STRINGID_D2D_MACH5SPEED - BATTLESTRINGS_TABLE_START] = sText_D2D_MachFiveSpeed,
+    [STRINGID_D2D_TOPPLE_POWER - BATTLESTRINGS_TABLE_START] = sText_D2D_TopplePower,
 };
 
 const u16 gTrainerUsedItemStringIds[] =

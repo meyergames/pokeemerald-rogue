@@ -3923,11 +3923,21 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
 
                 for (i = 0; i < PARTY_SIZE; i++)
                 {
+                    // if ( gCurrentMove == MOVE_BEAT_UP )
+                    // {
                     if (GetMonData(&party[i], MON_DATA_HP)
                     && GetMonData(&party[i], MON_DATA_SPECIES) != SPECIES_NONE
                     && !GetMonData(&party[i], MON_DATA_IS_EGG)
                     && !GetMonData(&party[i], MON_DATA_STATUS))
                         gMultiHitCounter++;
+                    // }
+                    // else if ( gCurrentMove == MOVE_D2D_SWARM )
+                    // {
+                    //     if ( GetMonData(&party[i], MON_DATA_HP)
+                    //     && ( gSpeciesInfo[GetMonData(&party[i], MON_DATA_SPECIES)].type1 == TYPE_BUG
+                    //     || gSpeciesInfo[GetMonData(&party[i], MON_DATA_SPECIES)].type2 == TYPE_BUG ) )
+                    //         gMultiHitCounter++;
+                    // }
                 }
 
                 gBattleStruct->beatUpSlot = 0;
@@ -9217,6 +9227,26 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
     case EFFECT_D2D_SCATTERBLAST:
         if (gSideStatuses[GetBattlerSide(battlerAtk)] & SIDE_STATUS_HAZARDS_ANY)
             basePower*= 2;
+        break;
+    case EFFECT_D2D_TOPPLE:
+        // u32 ownBst = gBattleMons[battlerAtk].hp + gBattleMons[battlerAtk].attack + gBattleMons[battlerAtk].defense
+        // + gBattleMons[battlerAtk].spAttack + gBattleMons[battlerAtk].spDefense + gBattleMons[battlerAtk].speed
+
+        u16 foeBst = gSpeciesInfo[gBattleMons[battlerDef].species].baseHP + gSpeciesInfo[gBattleMons[battlerDef].species].baseAttack + gSpeciesInfo[gBattleMons[battlerDef].species].baseDefense + gSpeciesInfo[gBattleMons[battlerDef].species].baseSpAttack + gSpeciesInfo[gBattleMons[battlerDef].species].baseSpDefense + gSpeciesInfo[gBattleMons[battlerDef].species].baseSpeed;
+
+        basePower = 40 + max( ( foeBst - 400 ) / 2, 0 );
+        PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 3, basePower);
+        break;
+    case EFFECT_D2D_MACH_5:
+        int8_t speedBoosts = gBattleMons[battlerAtk].statStages[STAT_SPEED] - 6;
+        if (gBattleMons[battlerAtk].status1 & STATUS1_PARALYSIS)
+            speedBoosts -= 2;
+        if (gSideStatuses[GetBattlerSide(battlerAtk)] & SIDE_STATUS_TAILWIND)
+            speedBoosts += 2;
+        basePower = 20 + ( ( gSpeciesInfo[gBattleMons[battlerAtk].species].baseSpeed * 0.25 ) + ( speedBoosts * 20 ) );
+        // 80 base speed (Blaziken) = 40 base power
+        // 160 base speed (Ninjask) = 60 base power
+        PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 3, basePower);
         break;
     }
 

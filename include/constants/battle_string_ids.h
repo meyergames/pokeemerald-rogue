@@ -711,8 +711,10 @@
 // D2D STRINGS BELOW
 #define STRINGID_D2D_HEALERRESTOREDHP				  709
 #define STRINGID_D2D_ELEMENTALACTIVATES				  710
+#define STRINGID_D2D_MACH5SPEED						  711
+#define STRINGID_D2D_TOPPLE_POWER					  712
 
-#define BATTLESTRINGS_COUNT                           711
+#define BATTLESTRINGS_COUNT                           713
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
