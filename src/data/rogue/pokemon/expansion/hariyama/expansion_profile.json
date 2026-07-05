@@ -32,6 +32,10 @@
       "Level": 13
     },
     {
+      "Move": "MOVE_D2D_FLEX",
+      "Level": 15
+    },
+    {
       "Move": "MOVE_WHIRLWIND",
       "Level": 16
     },

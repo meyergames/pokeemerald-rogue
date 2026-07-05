@@ -3372,6 +3372,18 @@ static const u8 sShortCircuitDescription[] = _(
     "Super effective against\n"
     "Electric-types.");
 
+static const u8 sDevourDescription[] = _(
+    "Recovers 1/2 of the user's\n"
+    "max HP on knock-out.");
+
+static const u8 sSereneScentDescription[] = _(
+    "Heals all battlers while\n"
+    "reducing their offenses.");
+
+static const u8 sFlexDescription[] = _(
+    "Raises the user's Attack,\n"
+    "lowers foes' Attack.");
+
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4246,4 +4258,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_SCARECROW - 1] = sScarecrowDescription,
     [MOVE_D2D_BLADE_SLASH - 1] = sBladeSlashDescription,
     [MOVE_D2D_SHORT_CIRCUIT - 1] = sShortCircuitDescription,
+    [MOVE_D2D_DEVOUR - 1] = sDevourDescription,
+    [MOVE_D2D_SERENE_SCENT - 1] = sSereneScentDescription,
+    [MOVE_D2D_FLEX - 1] = sFlexDescription,
 };

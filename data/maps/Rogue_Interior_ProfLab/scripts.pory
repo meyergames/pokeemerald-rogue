@@ -166,90 +166,10 @@ script Rogue_Interior_ProfLab_TalkAssistant
             msgbox(format("Hi {PLAYER}! Would you like to experiment with some of your new discoveries?"), MSGBOX_YESNO)
             if(var(VAR_RESULT) == YES)
             {
-                msgbox(format("Would you like an Electivire?"), MSGBOX_YESNO)
+                msgbox(format("Would you like a Machamp?"), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES)
                 {
-                    givemon(SPECIES_ELECTIVIRE, 70)
-                }
-                msgbox(format("Would you like a Blaziken?"), MSGBOX_YESNO)
-                if(var(VAR_RESULT) == YES)
-                {
-                    givemon(SPECIES_BLAZIKEN, 55)
-                }
-                msgbox(format("Would you like a Cacturne?"), MSGBOX_YESNO)
-                if(var(VAR_RESULT) == YES)
-                {
-                    givemon(SPECIES_CACTURNE, 50)
-                }
-                msgbox(format("Would you like a Scizor?"), MSGBOX_YESNO)
-                if(var(VAR_RESULT) == YES)
-                {
-                    givemon(SPECIES_SCIZOR, 50)
-                }
-                msgbox(format("Would you like a Ninjask?"), MSGBOX_YESNO)
-                if(var(VAR_RESULT) == YES)
-                {
-                    givemon(SPECIES_NINJASK, 50)
-                }
-                msgbox(format("Would you like a Spinda?"), MSGBOX_YESNO)
-                if(var(VAR_RESULT) == YES)
-                {
-                    givemon(SPECIES_SPINDA, 35)
-                }
-                msgbox(format("Would you like a Luvdisc?"), MSGBOX_YESNO)
-                if(var(VAR_RESULT) == YES)
-                {
-                    givemon(SPECIES_LUVDISC, 30)
-                }
-                msgbox(format("Would you like a Beedrill?"), MSGBOX_YESNO)
-                if(var(VAR_RESULT) == YES)
-                {
-                    givemon(SPECIES_BEEDRILL, 30)
-                }
-                msgbox(format("Would you like a Medicham?"), MSGBOX_YESNO)
-                if(var(VAR_RESULT) == YES)
-                {
-                    givemon(SPECIES_MEDICHAM, 56)
-                }
-                msgbox(format("Would you like an Ampharos?"), MSGBOX_YESNO)
-                if(var(VAR_RESULT) == YES)
-                {
-                    givemon(SPECIES_AMPHAROS, 56)
-                }
-                msgbox(format("Would you like a Claydol?"), MSGBOX_YESNO)
-                if(var(VAR_RESULT) == YES)
-                {
-                    givemon(SPECIES_CLAYDOL, 56)
-                }
-                msgbox(format("Would you like a Kecleon?"), MSGBOX_YESNO)
-                if(var(VAR_RESULT) == YES)
-                {
-                    givemon(SPECIES_KECLEON, 56)
-                }
-                msgbox(format("Would you like a Porygon?"), MSGBOX_YESNO)
-                if(var(VAR_RESULT) == YES)
-                {
-                    givemon(SPECIES_PORYGON, 56)
-                }
-                msgbox(format("Would you like a Bellossom?"), MSGBOX_YESNO)
-                if(var(VAR_RESULT) == YES)
-                {
-                    givemon(SPECIES_BELLOSSOM, 30)
-                }
-                msgbox(format("Would you like a Delibird?"), MSGBOX_YESNO)
-                if(var(VAR_RESULT) == YES)
-                {
-                    givemon(SPECIES_DELIBIRD, 10)
-                }
-                msgbox(format("Would you like an Octillery?"), MSGBOX_YESNO)
-                if(var(VAR_RESULT) == YES)
-                {
-                    givemon(SPECIES_OCTILLERY, 87)
-                }
-                msgbox(format("Would you like a Voltorb?"), MSGBOX_YESNO)
-                if(var(VAR_RESULT) == YES)
-                {
-                    givemon(SPECIES_VOLTORB, 46)
+                    givemon(SPECIES_MACHAMP, 55)
                 }
                 msgbox(format("Would you like some snacks with that?"), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES)

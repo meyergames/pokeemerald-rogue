@@ -16,7 +16,7 @@
       "Level": 10
     },
     {
-      "Move": "MOVE_BATON_PASS",
+      "Move": "MOVE_D2D_SERENE_SCENT",
       "Level": 20
     },
     {
@@ -28,12 +28,8 @@
       "Level": 40
     },
     {
-      "Move": "MOVE_LEECH_SEED",
-      "Level": 50
-    },
-    {
       "Move": "MOVE_RECOVER",
-      "Level": 60
+      "Level": 50
     },
     {
       "Move": "MOVE_D2D_FULL_RESTORE",
@@ -41,10 +37,6 @@
     },
     {
       "Move": "MOVE_FUTURE_SIGHT",
-      "Level": 70
-    },
-    {
-      "Move": "MOVE_HEALING_WISH",
       "Level": 80
     },
     {
@@ -75,12 +67,14 @@
     "MOVE_GRASS_KNOT",
     "MOVE_GRASSY_GLIDE",
     "MOVE_GRASSY_TERRAIN",
+    "MOVE_HEALING_WISH",
     "MOVE_HELPING_HAND",
     "MOVE_HIDDEN_POWER",
     "MOVE_HYPER_BEAM",
     "MOVE_IMPRISON",
     "MOVE_LEAF_BLADE",
     "MOVE_LEAF_STORM",
+    "MOVE_LEECH_SEED",
     "MOVE_LIGHT_SCREEN",
     "MOVE_MAGIC_ROOM",
     "MOVE_MAGICAL_LEAF",

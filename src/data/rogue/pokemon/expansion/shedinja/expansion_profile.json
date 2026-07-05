@@ -64,12 +64,20 @@
       "Level": 50
     },
     {
+      "Move": "MOVE_SUCKER_PUNCH",
+      "Level": 54
+    },
+    {
       "Move": "MOVE_SPITE",
       "Level": 57
     },
     {
       "Move": "MOVE_PHANTOM_FORCE",
       "Level": 64
+    },
+    {
+      "Move": "MOVE_DESTINY_BOND",
+      "Level": 80
     }
   ],
   "TutorMoves": [

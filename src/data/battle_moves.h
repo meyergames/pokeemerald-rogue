@@ -6553,7 +6553,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 0,
-        .pp = 30,
+        .pp = 15,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_USER | MOVE_TARGET_ALLY,
         .priority = 0,
@@ -16120,5 +16120,49 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .split = SPLIT_PHYSICAL,
         .zMoveEffect = Z_EFFECT_NONE,
         .makesContact = TRUE,
+    },
+
+    [MOVE_D2D_DEVOUR] =
+    {
+        .effect = EFFECT_D2D_DEVOUR,
+        .power = 80,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .makesContact = TRUE,
+    },
+
+    [MOVE_D2D_SERENE_SCENT] =
+    {
+        .effect = EFFECT_D2D_SERENE_SCENT,
+        .power = 0,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .windMove = TRUE,
+    },
+
+    [MOVE_D2D_FLEX] =
+    {
+        .effect = EFFECT_D2D_FLEX,
+        .power = 0,
+        .type = TYPE_FIGHTING,
+        .accuracy = 0,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_NONE,
     },
 };

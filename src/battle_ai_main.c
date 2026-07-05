@@ -3152,6 +3152,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                   && GetNoOfHitsToKOBattler(battlerAtk, battlerDef, AI_THINKING_STRUCT->movesetIndex) >= 4)
                     RETURN_SCORE_PLUS(1);
                 break;
+            case EFFECT_D2D_SERENE_SCENT:
             case EFFECT_HEAL_PULSE:
             case EFFECT_HIT_ENEMY_HEAL_ALLY:
                 if (AI_WhoStrikesFirst(battlerAtk, FOE(battlerAtk), move) == AI_IS_FASTER
@@ -3524,6 +3525,7 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
             ADJUST_SCORE(-2);
         break;
 // stat lowering effects
+    case EFFECT_D2D_FLEX:
     case EFFECT_ATTACK_DOWN:
     case EFFECT_ATTACK_DOWN_2:
         if (!ShouldLowerAttack(battlerAtk, battlerDef, aiData->abilities[battlerDef]))
@@ -3608,6 +3610,30 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
         if (gBattleMons[battlerAtk].statStages[STAT_ACC] < DEFAULT_STAT_STAGE)
             ADJUST_SCORE(1);
         if (gBattleMons[battlerDef].statStages[STAT_EVASION] < 7 || aiData->abilities[battlerAtk] == ABILITY_NO_GUARD)
+            ADJUST_SCORE(-2);
+        break;
+    case EFFECT_D2D_SERENE_SCENT:
+        if (aiData->hpPercents[battlerDef] <= 75)
+            ADJUST_SCORE(-2);
+        if (!ShouldLowerAttack(battlerAtk, battlerDef, aiData->abilities[battlerDef]))
+            ADJUST_SCORE(-2);
+        if (gBattleMons[battlerDef].statStages[STAT_ATK] < DEFAULT_STAT_STAGE)
+            ADJUST_SCORE(-1);
+        else if (aiData->hpPercents[battlerAtk] <= 90)
+            ADJUST_SCORE(-1);
+        if (gBattleMons[battlerDef].statStages[STAT_ATK] > 3 && !AI_RandLessThan(50))
+            ADJUST_SCORE(-2);
+        else if (aiData->hpPercents[battlerDef] < 70)
+            ADJUST_SCORE(-2);
+        if (!ShouldLowerSpAtk(battlerAtk, battlerDef, aiData->abilities[battlerDef]))
+            ADJUST_SCORE(-2);
+        if (gBattleMons[battlerDef].statStages[STAT_SPATK] < DEFAULT_STAT_STAGE)
+            ADJUST_SCORE(-1);
+        else if (aiData->hpPercents[battlerAtk] <= 90)
+            ADJUST_SCORE(-1);
+        if (gBattleMons[battlerDef].statStages[STAT_SPATK] > 3 && !AI_RandLessThan(50))
+            ADJUST_SCORE(-2);
+        else if (aiData->hpPercents[battlerDef] < 70)
             ADJUST_SCORE(-2);
         break;
 	case EFFECT_BIDE:

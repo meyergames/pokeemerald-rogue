@@ -4,6 +4,10 @@
   ],
   "LevelUpMoves": [
     {
+      "Move": "MOVE_SCARY_FACE",
+      "Level": 0
+    },
+    {
       "Move": "MOVE_SCRATCH",
       "Level": 1
     },
@@ -48,7 +52,7 @@
       "Level": 29
     },
     {
-      "Move": "MOVE_SCARY_FACE",
+      "Move": "MOVE_D2D_FLEX",
       "Level": 35
     },
     {

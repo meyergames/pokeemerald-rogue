@@ -896,6 +896,9 @@ gBattleAnims_Moves::
 	.4byte Move_D2D_SCARECROW
 	.4byte Move_D2D_BLADE_SLASH
 	.4byte Move_D2D_SHORT_CIRCUIT
+	.4byte Move_D2D_DEVOUR
+	.4byte Move_D2D_SERENE_SCENT
+	.4byte Move_D2D_FLEX
 
 
 
@@ -35019,4 +35022,61 @@ Move_D2D_SHORT_CIRCUIT:
 	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 2, 1, 0, 7
 	waitforvisualfinish
 	call ElectricityEffect
+	end
+
+Move_D2D_DEVOUR:
+	loadspritegfx ANIM_TAG_FANG_ATTACK
+	fadetobg BG_NEVERENDING_NIGHTMARE
+	waitbgfadein
+	delay 15
+
+	createsprite gFangSpriteTemplate, ANIM_TARGET, 2
+	waitbgfadein
+
+	loadspritegfx ANIM_TAG_GHOSTLY_SPIRIT
+	monbg ANIM_DEF_PARTNER
+	playsewithpan SE_M_NIGHTMARE, SOUND_PAN_TARGET
+	createsprite gCurseGhostSpriteTemplate, ANIM_TARGET, 2
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 2, 0, 14, 1
+	waitforvisualfinish
+	clearmonbg ANIM_DEF_PARTNER
+
+	delay 20
+
+	waitforvisualfinish
+	restorebg
+	waitbgfadein
+	end
+
+Move_D2D_SERENE_SCENT::
+	loadspritegfx ANIM_TAG_PINK_PETAL
+	playsewithpan SE_M_SWEET_SCENT, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 0xa, F_PAL_BG, 0x1, 0x0, 0x8, 0x6E7D
+	createsprite gSweetScentPetalSpriteTemplate, ANIM_ATTACKER, 2, 0x64, 0x0, 0x64
+	delay 0x19
+	setpan 0x0
+	call SweetScentEffect
+	createsprite gSweetScentPetalSpriteTemplate, ANIM_ATTACKER, 2, 0x37, 0x0
+	setpan SOUND_PAN_TARGET
+	createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_DEF_SIDE, 1, 5, 5, 13, RGB(31, 21, 21)
+	call SweetScentEffect
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 0xa, F_PAL_BG, 0x1, 0x8, 0x0, 0x6E7D
+	waitforvisualfinish
+	call PresentHeal
+	end
+
+Move_D2D_FLEX::
+	call GrowthEffect
+	waitforvisualfinish
+	call GrowthEffect
+	waitforvisualfinish
+	delay 4
+	loadspritegfx ANIM_TAG_BREATH
+	createvisualtask AnimTask_GrowAndShrink, 2
+	playsewithpan SE_M_SWAGGER, SOUND_PAN_ATTACKER
+	waitforvisualfinish
+	createsprite gBreathPuffSpriteTemplate, ANIM_ATTACKER, 2
+	loopsewithpan SE_M_SWAGGER, SOUND_PAN_ATTACKER, 4, 2
+	waitforvisualfinish
 	end

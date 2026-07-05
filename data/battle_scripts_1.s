@@ -468,7 +468,10 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectD2DTeach				  @ EFFECT_D2D_TEACH
 	.4byte BattleScript_EffectD2DScarecrow			  @ EFFECT_D2D_SCARECROW
 	.4byte BattleScript_EffectHit 					  @ EFFECT_D2D_BLADE_SLASH
-	.4byte BattleScript_EffectHit_Test				  @ EFFECT_D2D_SHORT_CIRCUIT
+	.4byte BattleScript_EffectHit					  @ EFFECT_D2D_SHORT_CIRCUIT
+	.4byte BattleScript_EffectD2DDevour				  @ EFFECT_D2D_DEVOUR
+	.4byte BattleScript_EffectD2DSereneScent		  @ EFFECT_D2D_SERENE_SCENT
+	.4byte BattleScript_EffectD2DFlex 				  @ EFFECT_D2D_FLEX
 
 @ The game doesn't seem to like having EffectHit as the last item in the list...
 
@@ -11507,3 +11510,99 @@ BattleScript_D2D_DetectEffect::
 	printfromtable gStatUpStringIds
 	waitmessage B_WAIT_TIME_LONG
 	end
+
+BattleScript_EffectD2DDevour::
+@ DEAL DAMAGE
+	call BattleScript_EffectHit_Ret
+	call BattleScript_TryFaintMon_Ret
+	jumpiffainted BS_TARGET, FALSE, BattleScript_MoveEnd
+@ IF TARGET FAINTED: HEAL USER
+	tryhealhalfhealth BattleScript_MoveEnd, BS_ATTACKER
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	printstring STRINGID_PKMNREGAINEDHEALTH
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectD2DSereneScent::
+	attackcanceler
+	attackstring
+	ppreduce
+	jumpifstatus3 BS_ATTACKER, STATUS3_HEAL_BLOCK, BattleScript_MoveUsedHealBlockPrevents @ stops pollen puff
+	jumpifstatus3 BS_TARGET, STATUS3_HEAL_BLOCK, BattleScript_MoveUsedHealBlockPrevents
+	accuracycheck BattleScript_ButItFailed, NO_ACC_CALC_CHECK_LOCK_ON
+	jumpifsubstituteblocks BattleScript_ButItFailed
+	@ HEAL
+	tryhealhalfhealth BattleScript_D2D_EffectSereneScentContinue, BS_TARGET
+	attackanimation
+	waitanimation
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	printstring STRINGID_PKMNREGAINEDHEALTH
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_D2D_EffectSereneScentContinue:
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_TARGET, BIT_ATK | BIT_SPATK, STAT_CHANGE_NEGATIVE | STAT_CHANGE_MULTIPLE_STATS
+	playstatchangeanimation BS_TARGET, BIT_ATK, STAT_CHANGE_NEGATIVE
+	setstatchanger STAT_ATK, 1, TRUE
+	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_EffectMementoTrySpAtk
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_FELL, BattleScript_D2D_EffectSereneScentTrySpAtk
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_D2D_EffectSereneScentTrySpAtk:
+	playstatchangeanimation BS_TARGET, BIT_SPATK, STAT_CHANGE_NEGATIVE
+	setstatchanger STAT_SPATK, 1, TRUE
+	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_MoveEnd
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_FELL, BattleScript_MoveEnd
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+	end
+
+BattleScript_D2D_RaiseStatAnim_Ret::
+	setgraphicalstatchangevalues
+	playanimation BS_ATTACKER, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	pause B_WAIT_TIME_SHORT
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+BattleScript_EffectD2DFlex::
+	setstatchanger STAT_ATK, 1, FALSE
+	attackcanceler
+	attackstring
+	ppreduce
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_EffectD2DFlex_Intimidate
+	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_EffectD2DFlex_StatUpAttackAnim
+	pause B_WAIT_TIME_SHORT
+	goto BattleScript_EffectD2DFlex_StatUpPrintString
+BattleScript_EffectD2DFlex_StatUpAttackAnim::
+	attackanimation
+	waitanimation
+BattleScript_EffectD2DFlex_StatUpDoAnim::
+	setgraphicalstatchangevalues
+	playanimation BS_ATTACKER, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+BattleScript_EffectD2DFlex_StatUpPrintString::
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_EffectD2DFlex_Intimidate::
+	setstatchanger STAT_ATK, 1, TRUE
+	attackcanceler
+	jumpifsubstituteblocks BattleScript_FailedFromAtkString
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	attackstring
+	ppreduce
+	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_StatDownEnd
+	jumpifbyte CMP_LESS_THAN, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_DECREASE, BattleScript_EffectD2DFlex_StatDownDoAnim
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_FELL_EMPTY, BattleScript_EffectD2DFlex_StatDownEnd
+	pause B_WAIT_TIME_SHORT
+	goto BattleScript_EffectD2DFlex_StatDownPrintString
+BattleScript_EffectD2DFlex_StatDownDoAnim::
+	attackanimation
+	waitanimation
+	setgraphicalstatchangevalues
+	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+BattleScript_EffectD2DFlex_StatDownPrintString::
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_EffectD2DFlex_StatDownEnd::
+	goto BattleScript_MoveEnd
