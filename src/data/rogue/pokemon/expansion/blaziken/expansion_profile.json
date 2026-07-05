@@ -57,6 +57,10 @@
       "Level": 42
     },
     {
+      "Move": "MOVE_SKY_UPPERCUT",
+      "Level": 45
+    },
+    {
       "Move": "MOVE_REVERSAL",
       "Level": 49
     },

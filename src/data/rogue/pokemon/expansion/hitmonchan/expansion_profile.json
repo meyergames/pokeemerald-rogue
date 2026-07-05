@@ -78,6 +78,10 @@
     {
       "Move": "MOVE_FOCUS_PUNCH",
       "Level": 44
+    },
+    {
+      "Move": "MOVE_SKY_UPPERCUT",
+      "Level": 45
     }
   ],
   "TutorMoves": [
