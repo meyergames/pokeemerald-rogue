@@ -1767,6 +1767,10 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_D2D_FULL_RESTORE] = _("Full Restore"),
     [MOVE_D2D_TOPPLE] = _("Topple"),
     [MOVE_D2D_MACH_5] = _("Mach 5"),
+    [MOVE_D2D_INK_SPLAT] = _("Ink Splat"),
+    [MOVE_D2D_TEACH] = _("Teach"),
+    [MOVE_D2D_SCARECROW] = _("Scarecrow"),
+    [MOVE_D2D_BLADE_SLASH] = _("Blade Slash"),
     // Max Moves
     [MOVE_MAX_GUARD] = _("M-Guard"),
     [MOVE_MAX_STRIKE] = _("M-Strike"),

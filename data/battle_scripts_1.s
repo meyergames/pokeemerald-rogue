@@ -464,6 +464,12 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectD2DFullRestore		  @ EFFECT_D2D_FULL_RESTORE
 	.4byte BattleScript_EffectD2DTopple				  @ EFFECT_D2D_TOPPLE
 	.4byte BattleScript_EffectD2DMach5				  @ EFFECT_D2D_MACH_5
+	.4byte BattleScript_EffectD2DInkSplat			  @ EFFECT_D2D_INK_SPLAT
+	.4byte BattleScript_EffectD2DTeach				  @ EFFECT_D2D_TEACH
+	.4byte BattleScript_EffectD2DScarecrow			  @ EFFECT_D2D_SCARECROW
+	.4byte BattleScript_EffectHit_Test				  @ EFFECT_D2D_BLADE_SLASH
+
+@ The game doesn't seem to like having EffectHit as the last item in the list...
 
 
 
@@ -11414,3 +11420,78 @@ BattleScript_EffectD2DTopple::
 BattleScript_EffectD2DToppleTarget:
 	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
 	goto BattleScript_HitFromCritCalc
+
+BattleScript_EffectD2DInkSplat:
+	setmoveeffect MOVE_EFFECT_ACC_MINUS_1
+	call BattleScript_EffectHit_Ret
+	jumpifmovehadnoeffect BattleScript_MoveEnd
+	jumpifability BS_TARGET, ABILITY_GUARD_DOG, BattleScript_MoveEnd
+	seteffectwithchance
+	tryfaintmon BS_TARGET
+	moveendto MOVEEND_ATTACKER_VISIBLE
+	moveendfrom MOVEEND_TARGET_VISIBLE
+	jumpifbattleend BattleScript_HitEscapeEnd
+	jumpifbyte CMP_NOT_EQUAL gBattleOutcome 0, BattleScript_HitEscapeEnd
+	jumpifemergencyexited BS_TARGET, BattleScript_HitEscapeEnd
+	goto BattleScript_MoveSwitch
+
+BattleScript_EffectD2DTeach::
+	attackcanceler
+	attackstring
+	ppreduce
+	jumpifsubstituteblocks BattleScript_ButItFailed
+	accuracycheck BattleScript_ButItFailed, NO_ACC_CALC_CHECK_LOCK_ON
+	teachmove BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+	printstring STRINGID_D2D_ALLYLEARNEDMOVE
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_D2D_InspirationTryAtk::
+	jumpifbattleend BattleScript_D2D_Cancel
+	setstatchanger STAT_ATK, 3, FALSE
+	goto BattleScript_D2D_InspirationRaiseStat
+BattleScript_D2D_InspirationTryDef::
+	jumpifbattleend BattleScript_D2D_Cancel
+	setstatchanger STAT_ATK, 3, FALSE
+	goto BattleScript_D2D_InspirationRaiseStat
+BattleScript_D2D_InspirationTrySpAtk::
+	jumpifbattleend BattleScript_D2D_Cancel
+	setstatchanger STAT_ATK, 3, FALSE
+	goto BattleScript_D2D_InspirationRaiseStat
+BattleScript_D2D_InspirationTrySpDef::
+	jumpifbattleend BattleScript_D2D_Cancel
+	setstatchanger STAT_ATK, 3, FALSE
+	goto BattleScript_D2D_InspirationRaiseStat
+BattleScript_D2D_InspirationTrySpeed::
+	jumpifbattleend BattleScript_D2D_Cancel
+	setstatchanger STAT_ATK, 3, FALSE
+	goto BattleScript_D2D_InspirationRaiseStat
+
+BattleScript_D2D_InspirationRaiseStat::
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_D2D_Cancel
+	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_D2D_PostMoveStatRaiseAnim
+	pause B_WAIT_TIME_SHORT
+	@ goto BattleScript_StatUpPrintString
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+	end
+
+BattleScript_EffectD2DScarecrow::
+	attackcanceler
+	attackstring
+	ppreduce
+	jumpifnotfirstturn BattleScript_ButItFailed
+	jumpifroarfails BattleScript_ButItFailed
+	jumpifability BS_TARGET, ABILITY_GUARD_DOG, BattleScript_ButItFailed
+	jumpifability BS_TARGET, ABILITY_SUCTION_CUPS, BattleScript_AbilityPreventsPhasingOut
+	jumpifstatus3 BS_TARGET, STATUS3_ROOTED, BattleScript_PrintMonIsRooted
+	jumpiftargetdynamaxed BattleScript_RoarBlockedByDynamax
+	accuracycheck BattleScript_ButItFailed, NO_ACC_CALC_CHECK_LOCK_ON
+	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
+	jumpifbattletype BATTLE_TYPE_ARENA, BattleScript_ButItFailed
+	forcerandomswitch BattleScript_ButItFailed
+
+BattleScript_EffectHit_Test::
+	goto BattleScript_EffectHit

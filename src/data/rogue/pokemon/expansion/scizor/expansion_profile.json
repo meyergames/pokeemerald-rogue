@@ -5,7 +5,7 @@
   ],
   "LevelUpMoves": [
     {
-      "Move": "MOVE_BULLET_PUNCH",
+      "Move": "MOVE_D2D_BLADE_SLASH",
       "Level": 0
     },
     {
@@ -55,6 +55,10 @@
     {
       "Move": "MOVE_FOCUS_ENERGY",
       "Level": 28
+    },
+    {
+      "Move": "MOVE_BULLET_PUNCH",
+      "Level": 30
     },
     {
       "Move": "MOVE_IRON_DEFENSE",

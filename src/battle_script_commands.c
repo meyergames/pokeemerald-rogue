@@ -10091,6 +10091,30 @@ static void Cmd_various(void)
         PREPARE_BYTE_NUMBER_BUFFER( gBattleTextBuff1, 3, basePower );
         break;
     }
+    case VARIOUS_TEACH_MOVE:
+    {
+        VARIOUS_ARGS(const u8 *failInstr);
+
+        if ((gBattleMoves[gBattleMons[gBattlerAttacker].moves[0]].mimicBanned)
+            || (gBattleMons[gBattlerAttacker].status2 & STATUS2_TRANSFORMED)
+            || gBattleMons[gBattlerAttacker].moves[0] == MOVE_NONE
+            || gBattleMons[gBattlerAttacker].moves[0] == MOVE_UNAVAILABLE
+            || gBattleMons[gBattlerAttacker].moves[0] == gBattleMons[gBattlerTarget].moves[0])
+        {
+            gBattlescriptCurrInstr = cmd->failInstr;
+        }
+        else
+        {
+            gBattleMons[gBattlerTarget].moves[0] = gBattleMons[gBattlerAttacker].moves[0];
+            gBattleMons[gBattlerTarget].pp[0] = 5;
+
+            PREPARE_MOVE_BUFFER(gBattleTextBuff1, gBattleMons[gBattlerTarget].moves[0])
+
+            gDisableStructs[gBattlerTarget].mimickedMoves |= gBitTable[0];
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        }
+        return;
+    }
     case VARIOUS_TRY_THIRD_TYPE:
     {
         VARIOUS_ARGS(const u8 *failInstr);

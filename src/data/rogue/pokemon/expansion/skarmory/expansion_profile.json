@@ -61,6 +61,10 @@
       "Level": 48
     },
     {
+      "Move": "MOVE_D2D_BLADE_SLASH",
+      "Level": 50
+    },
+    {
       "Move": "MOVE_BRAVE_BIRD",
       "Level": 52
     }

@@ -90,6 +90,10 @@
     {
       "Move": "MOVE_X_SCISSOR",
       "Level": 64
+    },
+    {
+      "Move": "MOVE_D2D_BLADE_SLASH",
+      "Level": 65
     }
   ],
   "TutorMoves": [

@@ -2368,6 +2368,12 @@
 	various BS_TARGET, VARIOUS_DETERMINE_TOPPLE_POWER
 	.endm
 
+	.macro teachmove failInstr:req
+	various BS_ATTACKER, VARIOUS_TEACH_MOVE
+	.4byte \failInstr
+	.endm
+
+
 @ D2D INSTRUCTIONS END
 
 

@@ -289,8 +289,8 @@ static const u8 sSeismicTossDescription[] = _(
     "to the user's level.");
 
 static const u8 sStrengthDescription[] = _(
-    "Builds enormous power,\n"
-    "then slams the foe.");
+    "Slams the foe with enormous\n"
+    "power. May raise Attack.");
 
 static const u8 sAbsorbDescription[] = _(
     "An attack that absorbs\n"
@@ -769,8 +769,8 @@ static const u8 sMudSlapDescription[] = _(
     "to reduce its accuracy.");
 
 static const u8 sOctazookaDescription[] = _(
-    "Shoots ink to deal damage\n"
-    "and sharply lower accuracy.");
+    "Has a high crit chance, and\n"
+    "sharply lowers accuracy.");
 
 static const u8 sSpikesDescription[] = _(
     "Sets spikes that hurt a \n"
@@ -3352,6 +3352,22 @@ static const u8 sMach5Description[] = _(
     "Damage increases based on\n"
     "the user's Speed.");
 
+static const u8 sInkSplatDescription[] = _(
+    "Sprays ink to cut accuracy\n"
+    "and switch out the user.");
+
+static const u8 sTeachDescription[] = _(
+    "Replaces the target's first\n"
+    "move with that of the user.");
+
+static const u8 sScarecrowDescription[] = _(
+    "A 1st-turn, 1st-strike move\n"
+    "that forces a switch-out.");
+
+static const u8 sBladeSlashDescription[] = _(
+    "Super effective on Grass-\n"
+    "types. High crit chance.");
+
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4221,4 +4237,8 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_FULL_RESTORE - 1] = sFullRestoreDescription,
     [MOVE_D2D_TOPPLE - 1] = sToppleDescription,
     [MOVE_D2D_MACH_5 - 1] = sMach5Description,
+    [MOVE_D2D_INK_SPLAT - 1] = sInkSplatDescription,
+    [MOVE_D2D_TEACH - 1] = sTeachDescription,
+    [MOVE_D2D_SCARECROW - 1] = sScarecrowDescription,
+    [MOVE_D2D_BLADE_SLASH - 1] = sBladeSlashDescription,
 };

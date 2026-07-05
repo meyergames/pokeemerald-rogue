@@ -73,6 +73,10 @@
       "Level": 47
     },
     {
+      "Move": "MOVE_D2D_TEACH",
+      "Level": 50
+    },
+    {
       "Move": "MOVE_COUNTER",
       "Level": 53
     },

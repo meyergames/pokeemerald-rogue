@@ -3456,7 +3456,7 @@ bool32 PartyHasMoveSplit(u32 battlerId, u32 split)
 {
     struct Pokemon *party = GetBattlerParty(battlerId);
     u32 i, j;
-
+    
     for (i = 0; i < PARTY_SIZE; i++)
     {
         if (GetMonData(&party[i], MON_DATA_HP, NULL) == 0)

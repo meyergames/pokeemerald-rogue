@@ -4,7 +4,7 @@
   ],
   "LevelUpMoves": [
     {
-      "Move": "MOVE_SPIKY_SHIELD",
+      "Move": "MOVE_D2D_SCARECROW",
       "Level": 0
     },
     {
@@ -54,6 +54,10 @@
     {
       "Move": "MOVE_SPIKES",
       "Level": 30
+    },
+    {
+      "Move": "MOVE_SPIKY_SHIELD",
+      "Level": 32
     },
     {
       "Move": "MOVE_SUCKER_PUNCH",

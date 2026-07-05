@@ -4,6 +4,10 @@
   ],
   "LevelUpMoves": [
     {
+      "Move": "MOVE_D2D_TEACH",
+      "Level": 0
+    },
+    {
       "Move": "MOVE_TACKLE",
       "Level": 1
     },

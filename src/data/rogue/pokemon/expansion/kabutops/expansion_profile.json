@@ -64,6 +64,10 @@
       "Level": 56
     },
     {
+      "Move": "MOVE_D2D_BLADE_SLASH",
+      "Level": 60
+    },
+    {
       "Move": "MOVE_METAL_SOUND",
       "Level": 63
     },
