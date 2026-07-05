@@ -11495,3 +11495,14 @@ BattleScript_EffectD2DScarecrow::
 
 BattleScript_EffectHit_Test::
 	goto BattleScript_EffectHit
+
+BattleScript_D2D_DetectEffect::
+	jumpifbattleend BattleScript_D2D_Cancel
+	setstatchanger STAT_SPEED, 1, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_D2D_Cancel
+	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_D2D_PostMoveStatRaiseAnim
+	pause B_WAIT_TIME_SHORT
+	@ goto BattleScript_StatUpPrintString
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+	end

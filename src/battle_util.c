@@ -8695,6 +8695,8 @@ bool32 IsBattlerProtected(u32 battler, u32 move)
         return FALSE;
     else if (gProtectStructs[battler].protected)
         return TRUE;
+    else if (gProtectStructs[battler].detected)
+        return TRUE;
     else if (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_WIDE_GUARD
              && GetBattlerMoveTargetType(gBattlerAttacker, move) & (MOVE_TARGET_BOTH | MOVE_TARGET_FOES_AND_ALLY))
         return TRUE;

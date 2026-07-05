@@ -3326,6 +3326,7 @@ const u8* FaintClearSetData(u32 battler)
     memset(&gDisableStructs[battler], 0, sizeof(struct DisableStruct));
 
     gProtectStructs[battler].protected = FALSE;
+    gProtectStructs[battler].detected = FALSE;
     gProtectStructs[battler].spikyShielded = FALSE;
     gProtectStructs[battler].kingsShielded = FALSE;
     gProtectStructs[battler].banefulBunkered = FALSE;
@@ -5101,6 +5102,7 @@ static void TurnValuesCleanUp(bool8 var0)
         if (var0)
         {
             gProtectStructs[i].protected = FALSE;
+            gProtectStructs[i].detected = FALSE;
             gProtectStructs[i].spikyShielded = FALSE;
             gProtectStructs[i].kingsShielded = FALSE;
             gProtectStructs[i].banefulBunkered = FALSE;

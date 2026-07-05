@@ -797,8 +797,8 @@ static const u8 sIcyWindDescription[] = _(
     "lowers the foe's Speed.");
 
 static const u8 sDetectDescription[] = _(
-    "Evades attack, but may fail\n"
-    "if used in succession.");
+    "Evades attack, and raises\n"
+    "Speed on a successful block.");
 
 static const u8 sBoneRushDescription[] = _(
     "Strikes the foe with a bone\n"
