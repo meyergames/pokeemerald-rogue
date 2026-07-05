@@ -52,12 +52,8 @@
       "Level": 30
     },
     {
-      "Move": "MOVE_IRON_HEAD",
-      "Level": 33
-    },
-    {
-      "Move": "MOVE_GYRO_BALL",
-      "Level": 36
+      "Move": "MOVE_ROCK_THROW",
+      "Level": 35
     },
     {
       "Move": "MOVE_SWORDS_DANCE",
@@ -70,6 +66,10 @@
     {
       "Move": "MOVE_BLIZZARD",
       "Level": 45
+    },
+    {
+      "Move": "MOVE_STONE_EDGE",
+      "Level": 55
     }
   ],
   "TutorMoves": [

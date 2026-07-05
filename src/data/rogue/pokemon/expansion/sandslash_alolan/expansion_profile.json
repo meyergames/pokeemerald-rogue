@@ -4,7 +4,7 @@
   ],
   "LevelUpMoves": [
     {
-      "Move": "MOVE_ICICLE_SPEAR",
+      "Move": "MOVE_D2D_BLADE_SLASH",
       "Level": 0
     },
     {
@@ -13,10 +13,6 @@
     },
     {
       "Move": "MOVE_SLASH",
-      "Level": 1
-    },
-    {
-      "Move": "MOVE_METAL_CLAW",
       "Level": 1
     },
     {
@@ -30,6 +26,7 @@
     "MOVE_AMNESIA",
     "MOVE_AURORA_VEIL",
     "MOVE_AVALANCHE",
+    "MOVE_D2D_BLADE_SLASH",
     "MOVE_BLIZZARD",
     "MOVE_BODY_SLAM",
     "MOVE_BRICK_BREAK",
@@ -81,6 +78,7 @@
     "MOVE_SPIKES",
     "MOVE_STEALTH_ROCK",
     "MOVE_STEEL_BEAM",
+    "MOVE_STONE_EDGE",
     "MOVE_SUBSTITUTE",
     "MOVE_SUPER_FANG",
     "MOVE_SWIFT",

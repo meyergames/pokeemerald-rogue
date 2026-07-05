@@ -5358,6 +5358,10 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 if (moveType == TYPE_ELECTRIC && gBattleMoves[move].target != MOVE_TARGET_ALL_BATTLERS)
                     effect = 2, statId = STAT_SPATK;
                 break;
+            case ABILITY_MAGMA_ARMOR:
+                if (moveType == TYPE_WATER && gBattleMoves[move].target != MOVE_TARGET_ALL_BATTLERS)
+                    effect = 2, statId = STAT_DEF;
+                break;
             case ABILITY_STORM_DRAIN:
                 if (moveType == TYPE_WATER)
                     effect = 2, statId = STAT_SPATK;

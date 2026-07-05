@@ -2326,14 +2326,14 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     [SPECIES_SANDSLASH_ALOLAN] =
     {
         SANDSLASH_MISC_INFO,
-        .baseHP        = 75,
-        .baseAttack    = 100,
-        .baseDefense   = 120,
-        .baseSpeed     = 65,
+        .baseHP        = 90, // +15
+        .baseAttack    = 120, // +20 to account for its extreme weakness to Fire AND Fighting
+        .baseDefense   = 100, // -20
         .baseSpAttack  = 25,
-        .baseSpDefense = 65,
+        .baseSpDefense = 80, // +15
+        .baseSpeed     = 65,
         .types = { TYPE_ICE, TYPE_STEEL },
-        .abilities = { ABILITY_SNOW_CLOAK, ABILITY_NONE, ABILITY_SLUSH_RUSH },
+        .abilities = { ABILITY_SNOW_CLOAK, ABILITY_SHARPNESS, ABILITY_SLUSH_RUSH },
         .bodyColor = BODY_COLOR_BLUE,
         .height = 12,
         .weight = 550,

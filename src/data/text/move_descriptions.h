@@ -798,7 +798,7 @@ static const u8 sIcyWindDescription[] = _(
 
 static const u8 sDetectDescription[] = _(
     "Evades attack, and raises\n"
-    "Speed on a successful block.");
+    "Speed on contact.");
 
 static const u8 sBoneRushDescription[] = _(
     "Strikes the foe with a bone\n"
