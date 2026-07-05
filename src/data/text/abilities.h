@@ -310,6 +310,7 @@ static const u8 sForecastPriorityDescription[] = _("Weather moves go first.");
 // D2D ABILITIES
 static const u8 sElementalDescription[] = _("Normal moves match type.");
 static const u8 sHybridPowerDescription[] = _("Raises unused power.");
+static const u8 sHeadacheDescription[] = _("Raises Special Attack...?");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -638,6 +639,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     // D2D ABILITIES
     [ABILITY_D2D_ELEMENTAL] = _("Elemental"),
     [ABILITY_D2D_HYBRID_POWER] = _("Hybrid Power"),
+    [ABILITY_D2D_HEADACHE] = _("Headache"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -966,6 +968,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     // D2D ABILITIES
     [ABILITY_D2D_ELEMENTAL] = _("Elemental"),
     [ABILITY_D2D_HYBRID_POWER] = _("Hybrid Power"),
+    [ABILITY_D2D_HEADACHE] = _("Headache"),
 };
 #endif
 
@@ -1294,4 +1297,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     // D2D ABILITIES
     [ABILITY_D2D_ELEMENTAL] = sElementalDescription,
     [ABILITY_D2D_HYBRID_POWER] = sHybridPowerDescription,
+    [ABILITY_D2D_HEADACHE] = sHeadacheDescription,
 };

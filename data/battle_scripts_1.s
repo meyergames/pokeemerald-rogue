@@ -11606,3 +11606,19 @@ BattleScript_EffectD2DFlex_StatDownPrintString::
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_EffectD2DFlex_StatDownEnd::
 	goto BattleScript_MoveEnd
+
+BattleScript_D2D_TriggerHeadache::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_D2D_HEADACHEACTIVATES
+	waitmessage B_WAIT_TIME_LONG
+	setstatchanger STAT_SPATK, 1, FALSE
+	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_D2D_HeadacheTryConfuse
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_D2D_HeadacheTryConfuse
+	setgraphicalstatchangevalues
+	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_D2D_HeadacheTryConfuse::
+	setmoveeffect MOVE_EFFECT_CONFUSION
+	seteffectprimary
+	end3

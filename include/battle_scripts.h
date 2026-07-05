@@ -560,6 +560,7 @@ extern const u8 BattleScript_D2D_ElementalActivates[];
 extern const u8 BattleScript_D2D_HybridPowerTrySpAtk[];
 extern const u8 BattleScript_D2D_HybridPowerTryAttack[];
 extern const u8 BattleScript_D2D_DetectEffect[]; // vanilla but needs to be declared here
+extern const u8 BattleScript_D2D_TriggerHeadache[];
 
 
 #endif // GUARD_BATTLE_SCRIPTS_H
