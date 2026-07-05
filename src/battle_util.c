@@ -4634,7 +4634,25 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             if (!gSpecialStatuses[battler].switchInAbilityDone)
             {
                 gSpecialStatuses[battler].switchInAbilityDone = TRUE;
-                BattleScriptPushCursorAndCallback(BattleScript_D2D_TriggerHeadache); // Show switch-in message
+                BattleScriptPushCursorAndCallback(BattleScript_D2D_TriggerHeadache);
+                effect++;
+            }
+            break;
+        case ABILITY_LIGHT_METAL:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                // PREPARE_TYPE_BUFFER(gBattleTextBuff1, gBattleMons[battler].type1);
+                BattleScriptPushCursorAndCallback(BattleScript_D2D_LightMetalActivates);
+                effect++;
+            }
+            break;
+        case ABILITY_HEAVY_METAL:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                // PREPARE_TYPE_BUFFER(gBattleTextBuff1, gBattleMons[battler].type1);
+                BattleScriptPushCursorAndCallback(BattleScript_D2D_HeavyMetalActivates);
                 effect++;
             }
             break;
