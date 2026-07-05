@@ -56,6 +56,10 @@
       "Level": 46
     },
     {
+      "Move": "MOVE_D2D_SHORT_CIRCUIT",
+      "Level": 50
+    },
+    {
       "Move": "MOVE_LIGHT_SCREEN",
       "Level": 52
     },
@@ -64,8 +68,16 @@
       "Level": 58
     },
     {
+      "Move": "MOVE_LOCK_ON",
+      "Level": 60
+    },
+    {
+      "Move": "MOVE_ZAP_CANNON",
+      "Level": 65
+    },
+    {
       "Move": "MOVE_GIGA_IMPACT",
-      "Level": 64
+      "Level": 70
     }
   ],
   "TutorMoves": [

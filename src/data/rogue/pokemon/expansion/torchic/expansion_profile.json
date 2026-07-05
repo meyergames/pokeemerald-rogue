@@ -44,6 +44,10 @@
       "Level": 24
     },
     {
+      "Move": "MOVE_HONE_CLAWS",
+      "Level": 25
+    },
+    {
       "Move": "MOVE_FOCUS_ENERGY",
       "Level": 27
     },

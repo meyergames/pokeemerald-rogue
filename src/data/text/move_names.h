@@ -1771,6 +1771,7 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_D2D_TEACH] = _("Teach"),
     [MOVE_D2D_SCARECROW] = _("Scarecrow"),
     [MOVE_D2D_BLADE_SLASH] = _("Blade Slash"),
+    [MOVE_D2D_SHORT_CIRCUIT] = _("ShortCircuit"),
     // Max Moves
     [MOVE_MAX_GUARD] = _("M-Guard"),
     [MOVE_MAX_STRIKE] = _("M-Strike"),

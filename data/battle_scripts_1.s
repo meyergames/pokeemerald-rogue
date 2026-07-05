@@ -467,7 +467,8 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectD2DInkSplat			  @ EFFECT_D2D_INK_SPLAT
 	.4byte BattleScript_EffectD2DTeach				  @ EFFECT_D2D_TEACH
 	.4byte BattleScript_EffectD2DScarecrow			  @ EFFECT_D2D_SCARECROW
-	.4byte BattleScript_EffectHit_Test				  @ EFFECT_D2D_BLADE_SLASH
+	.4byte BattleScript_EffectHit 					  @ EFFECT_D2D_BLADE_SLASH
+	.4byte BattleScript_EffectHit_Test				  @ EFFECT_D2D_SHORT_CIRCUIT
 
 @ The game doesn't seem to like having EffectHit as the last item in the list...
 

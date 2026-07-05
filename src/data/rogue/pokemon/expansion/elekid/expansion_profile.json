@@ -20,6 +20,10 @@
       "Level": 8
     },
     {
+      "Move": "MOVE_FOLLOW_ME",
+      "Level": 10
+    },
+    {
       "Move": "MOVE_SWIFT",
       "Level": 12
     },

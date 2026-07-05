@@ -10467,6 +10467,8 @@ static inline void MulByTypeEffectiveness(uq4_12_t *modifier, u32 move, u32 move
         mod = UQ_4_12(2.0);
     if (gBattleMoves[move].effect == EFFECT_D2D_BLADE_SLASH && defType == TYPE_GRASS)
         mod = UQ_4_12(2.0);
+    if (gBattleMoves[move].effect == EFFECT_D2D_SHORT_CIRCUIT && defType == TYPE_ELECTRIC)
+        mod = UQ_4_12(2.0);
     if (gBattleMoves[move].effect == EFFECT_SKY_UPPERCUT && defType == TYPE_FLYING)
         mod = UQ_4_12(1.0);
     if (moveType == TYPE_GROUND && defType == TYPE_FLYING && IsBattlerGrounded(battlerDef) && mod == UQ_4_12(0.0))

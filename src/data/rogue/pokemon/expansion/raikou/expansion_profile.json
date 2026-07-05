@@ -72,7 +72,7 @@
       "Level": 72
     },
     {
-      "Move": "MOVE_ZAP_CANNON",
+      "Move": "MOVE_D2D_SHORT_CIRCUIT",
       "Level": 78
     }
   ],
@@ -125,7 +125,8 @@
     "MOVE_TRAILBLAZE",
     "MOVE_VOLT_SWITCH",
     "MOVE_WEATHER_BALL",
-    "MOVE_WILD_CHARGE"
+    "MOVE_WILD_CHARGE",
+    "MOVE_ZAP_CANNON"
   ],
   "CompetitiveSets": [
     {

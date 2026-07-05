@@ -16106,4 +16106,19 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .highCritRatio = TRUE,
         .slicingMove = TRUE,
     },
+
+    [MOVE_D2D_SHORT_CIRCUIT] =
+    {
+        .effect = EFFECT_D2D_SHORT_CIRCUIT,
+        .power = 100,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 90,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .makesContact = TRUE,
+    },
 };

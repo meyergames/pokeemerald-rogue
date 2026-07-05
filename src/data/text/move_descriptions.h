@@ -3368,6 +3368,10 @@ static const u8 sBladeSlashDescription[] = _(
     "Super effective on Grass-\n"
     "types. High crit chance.");
 
+static const u8 sShortCircuitDescription[] = _(
+    "Super effective against\n"
+    "Electric-types.");
+
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4241,4 +4245,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_TEACH - 1] = sTeachDescription,
     [MOVE_D2D_SCARECROW - 1] = sScarecrowDescription,
     [MOVE_D2D_BLADE_SLASH - 1] = sBladeSlashDescription,
+    [MOVE_D2D_SHORT_CIRCUIT - 1] = sShortCircuitDescription,
 };
