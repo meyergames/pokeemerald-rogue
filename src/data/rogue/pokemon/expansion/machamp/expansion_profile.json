@@ -57,6 +57,10 @@
       "Level": 48
     },
     {
+      "Move": "MOVE_COACHING",
+      "Level": 50
+    },
+    {
       "Move": "MOVE_DYNAMIC_PUNCH",
       "Level": 54
     },
