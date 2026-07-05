@@ -73,7 +73,7 @@
       "Level": 47
     },
     {
-      "Move": "MOVE_D2D_TEACH",
+      "Move": "MOVE_COACHING",
       "Level": 50
     },
     {
@@ -83,6 +83,10 @@
     {
       "Move": "MOVE_AXE_KICK",
       "Level": 53
+    },
+    {
+      "Move": "MOVE_D2D_TEACH",
+      "Level": 60
     }
   ],
   "TutorMoves": [
@@ -109,6 +113,7 @@
     "MOVE_GIGA_IMPACT",
     "MOVE_GRASS_KNOT",
     "MOVE_GRAVITY",
+    "MOVE_HEAL_PULSE",
     "MOVE_HELPING_HAND",
     "MOVE_HIDDEN_POWER",
     "MOVE_HYPER_BEAM",
