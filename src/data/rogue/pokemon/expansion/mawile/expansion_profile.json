@@ -53,6 +53,10 @@
       "Level": 32
     },
     {
+      "Move": "MOVE_D2D_DEVOUR",
+      "Level": 35
+    },
+    {
       "Move": "MOVE_IRON_HEAD",
       "Level": 36
     },
@@ -67,6 +71,10 @@
     {
       "Move": "MOVE_PLAY_ROUGH",
       "Level": 48
+    },
+    {
+      "Move": "MOVE_JAW_LOCK",
+      "Level": 60
     }
   ],
   "TutorMoves": [

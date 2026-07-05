@@ -2968,15 +2968,15 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     [SPECIES_MAWILE] =
     {
         MAWILE_MISC_INFO,
-        .baseHP        = 50,
-        .baseAttack    = 85,
+        .baseHP        = 65, // +15
+        .baseAttack    = 100, // +15
         .baseDefense   = 85,
-        .baseSpeed     = 50,
         .baseSpAttack  = 55,
         .baseSpDefense = 55,
+        .baseSpeed     = 65, // +10
         .expYield = 133,
         .itemRare = ITEM_IRON_BALL,
-        .abilities = { ABILITY_HYPER_CUTTER, ABILITY_INTIMIDATE, ABILITY_SHEER_FORCE },
+        .abilities = { ABILITY_HYPER_CUTTER, ABILITY_INTIMIDATE, ABILITY_STRONG_JAW },
         .cryId = CRY_MAWILE,
         .height = 6,
         .weight = 115,
