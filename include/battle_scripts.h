@@ -563,6 +563,7 @@ extern const u8 BattleScript_D2D_DetectEffect[]; // vanilla but needs to be decl
 extern const u8 BattleScript_D2D_TriggerHeadache[];
 extern const u8 BattleScript_D2D_LightMetalActivates[];
 extern const u8 BattleScript_D2D_HeavyMetalActivates[];
+extern const u8 BattleScript_D2D_PollinatorActivates[];
 
 
 #endif // GUARD_BATTLE_SCRIPTS_H

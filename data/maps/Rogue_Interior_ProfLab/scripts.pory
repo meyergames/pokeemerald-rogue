@@ -167,10 +167,10 @@ script Rogue_Interior_ProfLab_TalkAssistant
             if(var(VAR_RESULT) == YES)
             {
                 // Delibird?
-                msgbox(format("Would you like a Psyduck?"), MSGBOX_YESNO)
+                msgbox(format("Would you like a Drifblim?"), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES)
                 {
-                    givemon(SPECIES_PSYDUCK, 50)
+                    givemon(SPECIES_DRIFLOON,10)
                 }
                 msgbox(format("Would you like some snacks with that?"), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES)

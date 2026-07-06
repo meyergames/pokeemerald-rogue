@@ -702,8 +702,7 @@ const struct Item gItems[] =
         .description = sMaxHoneyDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_REVIVE,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,        .battleUsage = EFFECT_ITEM_REVIVE,
         .flingPower = 30,
     },
 
@@ -1848,6 +1847,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_Honey,
+        .holdEffect = HOLD_EFFECT_HONEY,
         .flingPower = 30,
     },
 

@@ -1371,7 +1371,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG },
-        .abilities = { ABILITY_SWARM, ABILITY_NONE, ABILITY_TINTED_LENS },
+        .abilities = { ABILITY_SWARM, ABILITY_TINTED_LENS, ABILITY_D2D_AERODYNAMIC },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Mothim"),
         .cryId = CRY_MOTHIM,
@@ -1422,7 +1422,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG },
-        .abilities = { ABILITY_HONEY_GATHER, ABILITY_NONE, ABILITY_HUSTLE },
+        .abilities = { ABILITY_HONEY_GATHER, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Combee"),
         .cryId = CRY_COMBEE,
@@ -1474,7 +1474,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG },
-        .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_UNNERVE },
+        .abilities = { ABILITY_PRESSURE, ABILITY_HONEY_GATHER, ABILITY_HEALER },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Vespiquen"),
         .cryId = CRY_VESPIQUEN,
@@ -1934,7 +1934,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS },
-        .abilities = { ABILITY_AFTERMATH, ABILITY_UNBURDEN, ABILITY_FLARE_BOOST },
+        .abilities = { ABILITY_D2D_AERODYNAMIC, ABILITY_UNBURDEN, ABILITY_FLARE_BOOST },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Drifloon"),
         .cryId = CRY_DRIFLOON,
@@ -1983,7 +1983,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS },
-        .abilities = { ABILITY_AFTERMATH, ABILITY_UNBURDEN, ABILITY_FLARE_BOOST },
+        .abilities = { ABILITY_D2D_AERODYNAMIC, ABILITY_UNBURDEN, ABILITY_FLARE_BOOST },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Drifblim"),
         .cryId = CRY_DRIFBLIM,
@@ -3490,7 +3490,6 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,                          \
         .growthRate = GROWTH_MEDIUM_FAST,                           \
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS },  \
-        .abilities = { ABILITY_LEVITATE, ABILITY_NONE },            \
         .bodyColor = BODY_COLOR_RED,                                \
         .speciesName = _("Rotom"),                                  \
         .cryId = CRY_ROTOM,                                         \
@@ -3517,6 +3516,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .baseSpAttack  = 95,
         .baseSpDefense = 77,
         .types = { TYPE_ELECTRIC, TYPE_GHOST },
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE },
         .expYield = 154,
         .description = POKEDEX_DESC_STRING(
             "Its body is composed of plasma and loves\n"
@@ -3548,6 +3548,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     {
         ROTOM_MISC_INFO,
         .types = { TYPE_ELECTRIC, TYPE_FIRE },
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE },
         ROTOM_APPLIANCE_INFO(Heat),
         .description = POKEDEX_DESC_STRING(
             "If the convection microwave oven is not\n"
@@ -3570,6 +3571,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     {
         ROTOM_MISC_INFO,
         .types = { TYPE_ELECTRIC, TYPE_WATER },
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE },
         .noFlip = TRUE,
         ROTOM_APPLIANCE_INFO(Wash),
         .description = POKEDEX_DESC_STRING(
@@ -3593,6 +3595,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     {
         ROTOM_MISC_INFO,
         .types = { TYPE_ELECTRIC, TYPE_ICE },
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE },
         ROTOM_APPLIANCE_INFO(Frost),
         .description = POKEDEX_DESC_STRING(
             "In this form, Rotom likes to play freezing\n"
@@ -3615,6 +3618,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     {
         ROTOM_MISC_INFO,
         .types = { TYPE_ELECTRIC, TYPE_FLYING },
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_D2D_AERODYNAMIC },
         ROTOM_APPLIANCE_INFO(Fan),
         .description = POKEDEX_DESC_STRING(
             "The first appliance developed that Rotom\n"

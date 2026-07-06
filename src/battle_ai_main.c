@@ -877,6 +877,10 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 if (moveType == TYPE_GROUND)
                     RETURN_SCORE_MINUS(20);
                 break;
+            case ABILITY_D2D_AERODYNAMIC:
+                if (moveType == TYPE_FLYING)
+                    RETURN_SCORE_MINUS(20);
+                break;
             case ABILITY_FLASH_FIRE:
             case ABILITY_WELL_BAKED_BODY:
             case ABILITY_THERMAL_EXCHANGE:

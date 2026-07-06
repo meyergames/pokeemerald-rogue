@@ -833,8 +833,8 @@ static const u8 sHeartScaleDesc[] = _(
 
 static const u8 sHoneyDesc[] = _(
     "Sweet honey that\n"
-    "attracts wild\n"
-    "Pokémon when used.");
+    "gradually restores\n"
+    "HP of Bug-types.\n");
 
 static const u8 sRareBoneDesc[] = _(
     "A very rare bone.\n"

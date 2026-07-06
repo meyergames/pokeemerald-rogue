@@ -311,6 +311,8 @@ static const u8 sForecastPriorityDescription[] = _("Weather moves go first.");
 static const u8 sElementalDescription[] = _("Normal moves match type.");
 static const u8 sHybridPowerDescription[] = _("Raises unused power.");
 static const u8 sHeadacheDescription[] = _("Raises Special Attack...?");
+static const u8 sPollinatorDescription[] = _("Heals around Grass-types.");
+static const u8 sAerodynamicDescription[] = _("Flying moves raise Speed.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -640,6 +642,8 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_D2D_ELEMENTAL] = _("Elemental"),
     [ABILITY_D2D_HYBRID_POWER] = _("Hybrid Power"),
     [ABILITY_D2D_HEADACHE] = _("Headache"),
+    [ABILITY_D2D_POLLINATOR] = _("Pollinator"),
+    [ABILITY_D2D_AERODYNAMIC] = _("Aerodynamic"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -969,6 +973,8 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_D2D_ELEMENTAL] = _("Elemental"),
     [ABILITY_D2D_HYBRID_POWER] = _("Hybrid Power"),
     [ABILITY_D2D_HEADACHE] = _("Headache"),
+    [ABILITY_D2D_POLLINATOR] = _("Pollinator"),
+    [ABILITY_D2D_AERODYNAMIC] = _("Aerodynamic"),
 };
 #endif
 
@@ -1298,4 +1304,6 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_D2D_ELEMENTAL] = sElementalDescription,
     [ABILITY_D2D_HYBRID_POWER] = sHybridPowerDescription,
     [ABILITY_D2D_HEADACHE] = sHeadacheDescription,
+    [ABILITY_D2D_POLLINATOR] = sPollinatorDescription,
+    [ABILITY_D2D_AERODYNAMIC] = sAerodynamicDescription,
 };

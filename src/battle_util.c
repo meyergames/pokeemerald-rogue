@@ -5238,6 +5238,31 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                     }
                 }
                 break;
+            case ABILITY_D2D_POLLINATOR:
+                if ( !BATTLER_MAX_HP(battler )
+                 && !( gStatuses3[battler] & STATUS3_HEAL_BLOCK ) )
+                {
+                    u8 mtp = 0.0;
+                    for (i = 0; i < gBattlersCount; i++)
+                    {
+                        if ( gBattleMons[i].type1 == TYPE_GRASS
+                                || gBattleMons[i].type2 == TYPE_GRASS
+                                || gBattleMons[i].type3 == TYPE_GRASS )
+                        {
+                            mtp += 1.0;
+                        }
+                    }
+                    if ( mtp >= 1.0 )
+                    {
+                        BattleScriptPushCursorAndCallback(BattleScript_D2D_PollinatorActivates);
+                        gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / ( 12 / mtp );
+                        if (gBattleMoveDamage == 0)
+                            gBattleMoveDamage = 1;
+                        gBattleMoveDamage *= -1;
+                        effect++;
+                    }
+                }
+                break;
             case ABILITY_SCHOOLING:
                 if (gBattleMons[battler].level < 20)
                     break;
@@ -5395,6 +5420,10 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             case ABILITY_SAP_SIPPER:
                 if (moveType == TYPE_GRASS)
                     effect = 2, statId = STAT_ATK;
+                break;
+            case ABILITY_D2D_AERODYNAMIC:
+                if (moveType == TYPE_FLYING)
+                    effect = 2, statId = STAT_SPEED;
                 break;
             case ABILITY_WATER_COMPACTION:
                 if (Rogue_GetRevisionModeActive() && moveType == TYPE_WATER)
@@ -7793,6 +7822,11 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
                     BattleScriptExecute(BattleScript_WhiteHerbEnd2);
                 }
                 break;
+            case HOLD_EFFECT_HONEY:
+                if (IS_BATTLER_OF_TYPE(battler, TYPE_BUG))
+                {
+                    goto LEFTOVERS;
+                }
             case HOLD_EFFECT_BLACK_SLUDGE:
                 if (IS_BATTLER_OF_TYPE(battler, TYPE_POISON))
                 {

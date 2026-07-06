@@ -1404,6 +1404,12 @@ static u32 GetSwitchinRecurringHealing(void)
             if (recurringHealing == 0)
                 recurringHealing = 1;
         }
+        else if (item == ITEM_HONEY && (AI_DATA->switchinCandidate.battleMon.type1 == TYPE_BUG || AI_DATA->switchinCandidate.battleMon.type2 == TYPE_BUG))
+        {
+            recurringHealing = maxHP / 16;
+            if (recurringHealing == 0)
+                recurringHealing = 1;
+        }
     } // Intentionally omitting Shell Bell for its inconsistency
 
     // Abilities
