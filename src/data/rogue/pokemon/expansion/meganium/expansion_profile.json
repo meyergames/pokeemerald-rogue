@@ -5,7 +5,7 @@
   ],
   "LevelUpMoves": [
     {
-      "Move": "MOVE_PETAL_DANCE",
+      "Move": "MOVE_D2D_SERENE_SCENT",
       "Level": 0
     },
     {
@@ -57,6 +57,10 @@
       "Level": 34
     },
     {
+      "Move": "MOVE_PETAL_DANCE",
+      "Level": 35
+    },
+    {
       "Move": "MOVE_LIGHT_SCREEN",
       "Level": 40
     },
@@ -65,16 +69,16 @@
       "Level": 46
     },
     {
-      "Move": "MOVE_D2D_SERENE_SCENT",
-      "Level": 50
+      "Move": "MOVE_SAFEGUARD",
+      "Level": 54
     },
     {
       "Move": "MOVE_GIGA_DRAIN",
       "Level": 55
     },
     {
-      "Move": "MOVE_SAFEGUARD",
-      "Level": 54
+      "Move": "MOVE_HEAL_PULSE",
+      "Level": 60
     },
     {
       "Move": "MOVE_SOLAR_BEAM",
@@ -112,7 +116,6 @@
     "MOVE_GRASS_PLEDGE",
     "MOVE_GRASSY_GLIDE",
     "MOVE_GRASSY_TERRAIN",
-    "MOVE_HEAL_PULSE",
     "MOVE_HELPING_HAND",
     "MOVE_HIDDEN_POWER",
     "MOVE_HYPER_BEAM",
