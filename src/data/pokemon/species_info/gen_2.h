@@ -946,11 +946,11 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
     [SPECIES_ARIADOS] =
     {
         .baseHP        = 70,
-        .baseAttack    = 90,
+        .baseAttack    = 110, // +20
         .baseDefense   = 70,
-        .baseSpeed     = 40,
         .baseSpAttack  = 60,
-        .baseSpDefense = P_UPDATED_STATS >= GEN_7 ? 70 : 60,
+        .baseSpDefense = 80, // +10
+        .baseSpeed     = 60, // +20
         .types = { TYPE_BUG, TYPE_POISON },
         .catchRate = 90,
         .expYield = 140,
@@ -960,7 +960,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG },
-        .abilities = { ABILITY_SWARM, ABILITY_D2D_BUG_CATCHER, ABILITY_SNIPER },
+        .abilities = { ABILITY_D2D_BUG_CATCHER, ABILITY_D2D_BUG_CATCHER, ABILITY_ARENA_TRAP },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Ariados"),
         .cryId = CRY_ARIADOS,

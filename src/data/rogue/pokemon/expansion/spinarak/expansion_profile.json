@@ -48,24 +48,16 @@
       "Level": 33
     },
     {
-      "Move": "MOVE_PSYCHIC",
+      "Move": "MOVE_CROSS_POISON",
       "Level": 36
     },
     {
-      "Move": "MOVE_POISON_JAB",
+      "Move": "MOVE_TOXIC_THREAD",
       "Level": 40
-    },
-    {
-      "Move": "MOVE_CROSS_POISON",
-      "Level": 44
     },
     {
       "Move": "MOVE_STICKY_WEB",
       "Level": 47
-    },
-    {
-      "Move": "MOVE_TOXIC_THREAD",
-      "Level": 51
     }
   ],
   "TutorMoves": [

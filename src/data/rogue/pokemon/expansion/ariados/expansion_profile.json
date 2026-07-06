@@ -4,7 +4,7 @@
   ],
   "LevelUpMoves": [
     {
-      "Move": "MOVE_SWORDS_DANCE",
+      "Move": "MOVE_STICKY_WEB",
       "Level": 0
     },
     {
@@ -40,7 +40,7 @@
       "Level": 12
     },
     {
-      "Move": "MOVE_NIGHT_SHADE",
+      "Move": "MOVE_FURY_SWIPES",
       "Level": 15
     },
     {
@@ -48,12 +48,16 @@
       "Level": 19
     },
     {
-      "Move": "MOVE_FURY_SWIPES",
-      "Level": 23
+      "Move": "MOVE_POISON_FANG",
+      "Level": 25
     },
     {
       "Move": "MOVE_SUCKER_PUNCH",
       "Level": 28
+    },
+    {
+      "Move": "MOVE_D2D_MANDIBLE_JAW",
+      "Level": 30
     },
     {
       "Move": "MOVE_AGILITY",
@@ -64,24 +68,28 @@
       "Level": 35
     },
     {
-      "Move": "MOVE_PSYCHIC",
+      "Move": "MOVE_SUPER_FANG",
       "Level": 41
     },
     {
-      "Move": "MOVE_POISON_JAB",
-      "Level": 46
+      "Move": "MOVE_D2D_DEVOUR",
+      "Level": 45
     },
     {
       "Move": "MOVE_CROSS_POISON",
-      "Level": 50
-    },
-    {
-      "Move": "MOVE_STICKY_WEB",
-      "Level": 54
+      "Level": 46
     },
     {
       "Move": "MOVE_TOXIC_THREAD",
+      "Level": 50
+    },
+    {
+      "Move": "MOVE_ELECTROWEB",
       "Level": 59
+    },
+    {
+      "Move": "MOVE_SWORDS_DANCE",
+      "Level": 65
     }
   ],
   "TutorMoves": [
@@ -111,7 +119,7 @@
     "MOVE_POISON_JAB",
     "MOVE_POUNCE",
     "MOVE_PROTECT",
-    "MOVE_PSYCHIC",
+    "MOVE_PSYCHIC_FANGS",
     "MOVE_RAGE_POWDER",
     "MOVE_REST",
     "MOVE_SCARY_FACE",
@@ -138,13 +146,13 @@
   "CompetitiveSets": [
     {
       "Moves": [
-        "MOVE_STICKY_WEB",
-        "MOVE_TOXIC_SPIKES",
-        "MOVE_MEGAHORN",
-        "MOVE_SUCKER_PUNCH"
+        "MOVE_D2D_MANDIBLE_JAW",
+        "MOVE_CROSS_POISON",
+        "MOVE_SUCKER_PUNCH",
+        "MOVE_ELECTROWEB"
       ],
-      "Ability": "ABILITY_INSOMNIA",
-      "Item": "ITEM_FOCUS_SASH",
+      "Ability": "ABILITY_ARENA_TRAP",
+      "Item": "ITEM_ASSAULT_VEST",
       "Nature": "NATURE_JOLLY",
       "SourceTiers": [
         "GEN6PU",
@@ -153,27 +161,27 @@
     },
     {
       "Moves": [
-        "MOVE_STICKY_WEB",
-        "MOVE_MEGAHORN",
-        "MOVE_TOXIC_SPIKES",
-        "MOVE_SUCKER_PUNCH"
+        "MOVE_D2D_MANDIBLE_JAW",
+        "MOVE_CROSS_POISON",
+        "MOVE_SUCKER_PUNCH",
+        "MOVE_ELECTROWEB"
       ],
-      "Ability": "ABILITY_INSOMNIA",
-      "Item": "ITEM_FOCUS_SASH",
-      "Nature": "NATURE_ADAMANT",
+      "Ability": "ABILITY_ARENA_TRAP",
+      "Item": "ITEM_ASSAULT_VEST",
+      "Nature": "NATURE_JOLLY",
       "SourceTiers": [
         "GEN6PU"
       ]
     },
     {
       "Moves": [
-        "MOVE_STICKY_WEB",
-        "MOVE_TOXIC_SPIKES",
-        "MOVE_MEGAHORN",
-        "MOVE_TOXIC_THREAD"
+        "MOVE_D2D_MANDIBLE_JAW",
+        "MOVE_CROSS_POISON",
+        "MOVE_SUCKER_PUNCH",
+        "MOVE_ELECTROWEB"
       ],
-      "Ability": "ABILITY_SWARM",
-      "Item": "ITEM_FOCUS_SASH",
+      "Ability": "ABILITY_ARENA_TRAP",
+      "Item": "ITEM_ASSAULT_VEST",
       "Nature": "NATURE_JOLLY",
       "SourceTiers": [
         "GEN7PU"
@@ -181,42 +189,42 @@
     },
     {
       "Moves": [
-        "MOVE_STICKY_WEB",
-        "MOVE_TOXIC_SPIKES",
+        "MOVE_D2D_MANDIBLE_JAW",
+        "MOVE_CROSS_POISON",
         "MOVE_SUCKER_PUNCH",
-        "MOVE_TOXIC_THREAD"
+        "MOVE_ELECTROWEB"
       ],
-      "Ability": "ABILITY_SWARM",
-      "Item": "ITEM_FOCUS_SASH",
-      "Nature": "NATURE_ADAMANT",
+      "Ability": "ABILITY_ARENA_TRAP",
+      "Item": "ITEM_ASSAULT_VEST",
+      "Nature": "NATURE_JOLLY",
       "SourceTiers": [
         "GEN7PU"
       ]
     },
     {
       "Moves": [
-        "MOVE_STICKY_WEB",
-        "MOVE_TOXIC_SPIKES",
-        "MOVE_POISON_JAB",
-        "MOVE_SUCKER_PUNCH"
+        "MOVE_D2D_MANDIBLE_JAW",
+        "MOVE_CROSS_POISON",
+        "MOVE_SUCKER_PUNCH",
+        "MOVE_ELECTROWEB"
       ],
-      "Ability": "ABILITY_INSOMNIA",
-      "Item": "ITEM_FOCUS_SASH",
-      "Nature": "NATURE_ADAMANT",
+      "Ability": "ABILITY_ARENA_TRAP",
+      "Item": "ITEM_ASSAULT_VEST",
+      "Nature": "NATURE_JOLLY",
       "SourceTiers": [
         "GEN7ZU"
       ]
     },
     {
       "Moves": [
-        "MOVE_STICKY_WEB",
-        "MOVE_KNOCK_OFF",
-        "MOVE_TOXIC_SPIKES",
-        "MOVE_LEECH_LIFE"
+        "MOVE_D2D_MANDIBLE_JAW",
+        "MOVE_CROSS_POISON",
+        "MOVE_SUCKER_PUNCH",
+        "MOVE_ELECTROWEB"
       ],
-      "Ability": "ABILITY_SNIPER",
-      "Item": "ITEM_FOCUS_SASH",
-      "Nature": "NATURE_ADAMANT",
+      "Ability": "ABILITY_ARENA_TRAP",
+      "Item": "ITEM_ASSAULT_VEST",
+      "Nature": "NATURE_JOLLY",
       "SourceTiers": [
         "GEN9PU"
       ]
