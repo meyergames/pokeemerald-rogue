@@ -52,6 +52,10 @@
       "Level": 45
     },
     {
+      "Move": "MOVE_SHELTER",
+      "Level": 45
+    },
+    {
       "Move": "MOVE_GIGA_DRAIN",
       "Level": 51
     },

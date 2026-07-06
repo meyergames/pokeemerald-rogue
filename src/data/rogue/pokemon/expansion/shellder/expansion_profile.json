@@ -58,6 +58,10 @@
     {
       "Move": "MOVE_HYDRO_PUMP",
       "Level": 48
+    },
+    {
+      "Move": "MOVE_SHELTER",
+      "Level": 60
     }
   ],
   "TutorMoves": [

@@ -44,6 +44,10 @@
       "Level": 24
     },
     {
+      "Move": "MOVE_SHELTER",
+      "Level": 27
+    },
+    {
       "Move": "MOVE_SHELL_SMASH",
       "Level": 27
     },

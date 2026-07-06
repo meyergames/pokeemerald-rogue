@@ -56,6 +56,10 @@
       "Level": 44
     },
     {
+      "Move": "MOVE_SHELTER",
+      "Level": 45
+    },
+    {
       "Move": "MOVE_HEAT_WAVE",
       "Level": 48
     },

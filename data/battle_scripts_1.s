@@ -474,6 +474,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectD2DFlex 				  @ EFFECT_D2D_FLEX
 	.4byte BattleScript_D2D_EffectSpecialDefenseUp3	  @ EFFECT_D2D_SPECIAL_DEFENSE_UP_3
 	.4byte BattleScript_EffectHit_Test				  @ EFFECT_D2D_MANDIBLE_JAW
+	.4byte BattleScript_D2D_EffectShelter			  @ EFFECT_D2D_SHELTER
 
 @ The game doesn't seem to like having EffectHit as the last item in the list...
 
@@ -11667,3 +11668,48 @@ BattleScript_D2D_EffectSpecialDefenseUp3::
 	setstatchanger STAT_SPDEF, 3, FALSE
 	goto BattleScript_EffectStatUp
 
+BattleScript_D2D_EffectShelter:
+	attackcanceler
+	attackstring
+	ppreduce
+	jumpifstat BS_ATTACKER, CMP_LESS_THAN, STAT_DEF, MAX_STAT_STAGE, BattleScript_D2D_EffectWithdraw_TrySpeed
+	jumpifstat BS_ATTACKER, CMP_LESS_THAN, STAT_SPDEF, MAX_STAT_STAGE, BattleScript_D2D_EffectWithdraw_TrySpeed
+	jumpifstat BS_ATTACKER, CMP_EQUAL, STAT_SPEED, MIN_STAT_STAGE, BattleScript_ButItFailed
+BattleScript_D2D_EffectWithdraw_TrySpeed::
+	attackanimation
+	waitanimation
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_ATTACKER, BIT_SPEED | BIT_ATK | BIT_SPATK, STAT_CHANGE_NEGATIVE | STAT_CHANGE_CANT_PREVENT
+	setstatchanger STAT_SPEED, 1, TRUE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR | MOVE_EFFECT_CERTAIN, BattleScript_D2D_EffectWithdraw_TryAtk
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_D2D_EffectWithdraw_TryAtk
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_D2D_EffectWithdraw_TryAtk:
+	setstatchanger STAT_ATK, 1, TRUE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_D2D_EffectWithdraw_TrySpAtk
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_D2D_EffectWithdraw_TrySpAtk
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_D2D_EffectWithdraw_TrySpAtk:
+	setstatchanger STAT_SPATK, 1, TRUE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_D2D_EffectWithdraw_TryDef
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_D2D_EffectWithdraw_TryDef
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_D2D_EffectWithdraw_TryDef:
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_ATTACKER, BIT_DEF | BIT_SPDEF, STAT_CHANGE_BY_TWO
+	setstatchanger STAT_DEF, 2, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_D2D_EffectWithdraw_TrySpDef
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_D2D_EffectWithdraw_TrySpDef
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_D2D_EffectWithdraw_TrySpDef:
+	setstatchanger STAT_SPDEF, 2, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_D2D_EffectWithdraw_MoveEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_D2D_EffectWithdraw_MoveEnd
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_D2D_EffectWithdraw_MoveEnd:
+	goto BattleScript_MoveEnd

@@ -13365,7 +13365,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SHELTER] =
     {
-        .effect = EFFECT_DEFENSE_UP_2,
+        .effect = EFFECT_D2D_SHELTER,
         .power = 0,
         .type = TYPE_STEEL,
         .accuracy = 0,

@@ -50,12 +50,16 @@
       "Level": 30
     },
     {
-      "Move": "MOVE_SHELL_SMASH",
-      "Level": 35
-    },
-    {
       "Move": "MOVE_IRON_DEFENSE",
       "Level": 42
+    },
+    {
+      "Move": "MOVE_SHELTER",
+      "Level": 45
+    },
+    {
+      "Move": "MOVE_SHELL_SMASH",
+      "Level": 45
     },
     {
       "Move": "MOVE_HYDRO_PUMP",

@@ -3026,8 +3026,10 @@ static const u8 sBitterMaliceDescription[] = _(
     "May lower the foe's Attack.");
 
 static const u8 sShelterDescription[] = _(
-    "The user hardens their skin,\n"
-    "sharply raising its Defense.");
+    // "The user hardens their skin,\n"
+    // "sharply raising its Defense.");
+    "Raises defensive stats, but\n"
+    "lowers offensive stats.");
 
 static const u8 sTripleArrowsDescription[] = _(
     "High critical hit ratio.\n"
