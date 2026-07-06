@@ -16165,4 +16165,19 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .split = SPLIT_STATUS,
         .zMoveEffect = Z_EFFECT_NONE,
     },
+
+    [MOVE_D2D_MANDIBLE_JAW] =
+    {
+        .effect = EFFECT_D2D_MANDIBLE_JAW,
+        .power = 80,
+        .type = TYPE_BUG,
+        .accuracy = 100,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .makesContact = TRUE,
+    },
 };

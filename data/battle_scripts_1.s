@@ -472,6 +472,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectD2DDevour				  @ EFFECT_D2D_DEVOUR
 	.4byte BattleScript_EffectD2DSereneScent		  @ EFFECT_D2D_SERENE_SCENT
 	.4byte BattleScript_EffectD2DFlex 				  @ EFFECT_D2D_FLEX
+	.4byte BattleScript_EffectHit_Test				  @ EFFECT_D2D_MANDIBLE_JAW
 
 @ The game doesn't seem to like having EffectHit as the last item in the list...
 

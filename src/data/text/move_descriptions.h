@@ -3384,6 +3384,10 @@ static const u8 sFlexDescription[] = _(
     "Raises the user's Attack,\n"
     "lowers foes' Attack.");
 
+static const u8 sMandibleJawDescription[] = _(
+    "Super effective against\n"
+    "Bug-types.");
+
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4261,4 +4265,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_DEVOUR - 1] = sDevourDescription,
     [MOVE_D2D_SERENE_SCENT - 1] = sSereneScentDescription,
     [MOVE_D2D_FLEX - 1] = sFlexDescription,
+    [MOVE_D2D_MANDIBLE_JAW - 1] = sMandibleJawDescription,
 };
