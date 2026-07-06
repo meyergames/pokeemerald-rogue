@@ -6679,6 +6679,8 @@ u32 IsAbilityPreventingEscape(u32 battler)
         return id;
     if ((id = IsAbilityOnOpposingSide(battler, ABILITY_MAGNET_PULL)) && IS_BATTLER_OF_TYPE(battler, TYPE_STEEL))
         return id;
+    if ((id = IsAbilityOnOpposingSide(battler, ABILITY_D2D_BUG_CATCHER)) && IS_BATTLER_OF_TYPE(battler, TYPE_BUG))
+        return id;
 
     return 0;
 }

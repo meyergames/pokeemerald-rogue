@@ -313,6 +313,7 @@ static const u8 sHybridPowerDescription[] = _("Raises unused power.");
 static const u8 sHeadacheDescription[] = _("Raises Special Attack...?");
 static const u8 sPollinatorDescription[] = _("Heals around Grass-types.");
 static const u8 sAerodynamicDescription[] = _("Flying moves raise Speed.");
+static const u8 sBugCatcherDescription[] = _("Traps Bug-type Pokémon.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -644,6 +645,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_D2D_HEADACHE] = _("Headache"),
     [ABILITY_D2D_POLLINATOR] = _("Pollinator"),
     [ABILITY_D2D_AERODYNAMIC] = _("Aerodynamic"),
+    [ABILITY_D2D_BUG_CATCHER] = _("Bug Catcher"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -975,6 +977,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_D2D_HEADACHE] = _("Headache"),
     [ABILITY_D2D_POLLINATOR] = _("Pollinator"),
     [ABILITY_D2D_AERODYNAMIC] = _("Aerodynamic"),
+    [ABILITY_D2D_BUG_CATCHER] = _("Bug Catcher"),
 };
 #endif
 
@@ -1306,4 +1309,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_D2D_HEADACHE] = sHeadacheDescription,
     [ABILITY_D2D_POLLINATOR] = sPollinatorDescription,
     [ABILITY_D2D_AERODYNAMIC] = sAerodynamicDescription,
+    [ABILITY_D2D_BUG_CATCHER] = sBugCatcherDescription,
 };
