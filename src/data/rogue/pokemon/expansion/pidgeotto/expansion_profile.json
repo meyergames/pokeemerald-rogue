@@ -58,6 +58,10 @@
     {
       "Move": "MOVE_HURRICANE",
       "Level": 62
+    },
+    {
+      "Move": "MOVE_RAZOR_WIND",
+      "Level": 72
     }
   ],
   "TutorMoves": [

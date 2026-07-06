@@ -54,6 +54,10 @@
     {
       "Move": "MOVE_UPROAR",
       "Level": 55
+    },
+    {
+      "Move": "MOVE_RAZOR_WIND",
+      "Level": 72
     }
   ],
   "TutorMoves": [

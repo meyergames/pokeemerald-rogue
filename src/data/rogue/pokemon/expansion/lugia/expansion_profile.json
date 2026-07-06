@@ -48,16 +48,20 @@
       "Level": 63
     },
     {
-      "Move": "MOVE_HYDRO_PUMP",
+      "Move": "MOVE_RAZOR_WIND",
       "Level": 72
     },
     {
-      "Move": "MOVE_FUTURE_SIGHT",
+      "Move": "MOVE_HYDRO_PUMP",
       "Level": 81
     },
     {
-      "Move": "MOVE_SKY_ATTACK",
+      "Move": "MOVE_FUTURE_SIGHT",
       "Level": 90
+    },
+    {
+      "Move": "MOVE_SKY_ATTACK",
+      "Level": 99
     }
   ],
   "TutorMoves": [

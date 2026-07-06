@@ -78,6 +78,10 @@
     {
       "Move": "MOVE_LEAF_BLADE",
       "Level": 57
+    },
+    {
+      "Move": "MOVE_RAZOR_WIND",
+      "Level": 72
     }
   ],
   "TutorMoves": [
