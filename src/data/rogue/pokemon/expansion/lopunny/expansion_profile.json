@@ -61,6 +61,10 @@
       "Level": 40
     },
     {
+      "Move": "MOVE_SKY_UPPERCUT",
+      "Level": 40
+    },
+    {
       "Move": "MOVE_FLATTER",
       "Level": 44
     },

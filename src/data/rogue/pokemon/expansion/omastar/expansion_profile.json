@@ -48,6 +48,10 @@
       "Level": 43
     },
     {
+      "Move": "MOVE_SHELTER",
+      "Level": 45
+    },
+    {
       "Move": "MOVE_ROCK_BLAST",
       "Level": 49
     },

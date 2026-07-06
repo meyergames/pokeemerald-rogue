@@ -5,6 +5,10 @@
   ],
   "LevelUpMoves": [
     {
+      "Move": "MOVE_MEDITATE",
+      "Level": 0
+    },
+    {
       "Move": "MOVE_FIRE_PUNCH",
       "Level": 1
     },

@@ -28,6 +28,10 @@
       "Level": 17
     },
     {
+      "Move": "MOVE_D2D_TOPPLE",
+      "Level": 20
+    },
+    {
       "Move": "MOVE_YAWN",
       "Level": 21
     },

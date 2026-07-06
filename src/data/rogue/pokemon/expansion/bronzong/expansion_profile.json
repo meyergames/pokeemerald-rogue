@@ -12,6 +12,10 @@
       "Level": 1
     },
     {
+      "Move": "MOVE_D2D_BEAM",
+      "Level": 1
+    },
+    {
       "Move": "MOVE_CONFUSION",
       "Level": 1
     },
@@ -50,6 +54,10 @@
     {
       "Move": "MOVE_EXTRASENSORY",
       "Level": 28
+    },
+    {
+      "Move": "MOVE_D2D_POWER_BEAM",
+      "Level": 30
     },
     {
       "Move": "MOVE_HEAVY_SLAM",

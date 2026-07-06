@@ -3379,8 +3379,8 @@ static const u8 sDevourDescription[] = _(
     "max HP on knock-out.");
 
 static const u8 sSereneScentDescription[] = _(
-    "Heals all battlers while\n"
-    "reducing their offenses.");
+    "A pacifying scent heals the\n"
+    "target, lowering offenses.");
 
 static const u8 sFlexDescription[] = _(
     "Raises the user's Attack,\n"

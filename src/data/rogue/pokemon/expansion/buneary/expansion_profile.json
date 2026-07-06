@@ -62,6 +62,10 @@
     {
       "Move": "MOVE_HEALING_WISH",
       "Level": 52
+    },
+    {
+      "Move": "MOVE_SKY_UPPERCUT",
+      "Level": 60
     }
   ],
   "TutorMoves": [

@@ -32,6 +32,10 @@
       "Level": 15
     },
     {
+      "Move": "MOVE_D2D_BEAM",
+      "Level": 15
+    },
+    {
       "Move": "MOVE_AIR_SLASH",
       "Level": 18
     },
@@ -49,6 +53,10 @@
     },
     {
       "Move": "MOVE_ROOST",
+      "Level": 30
+    },
+    {
+      "Move": "MOVE_D2D_POWER_BEAM",
       "Level": 30
     },
     {

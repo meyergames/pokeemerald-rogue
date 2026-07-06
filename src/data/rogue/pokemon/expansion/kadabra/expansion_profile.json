@@ -32,6 +32,10 @@
       "Level": 15
     },
     {
+      "Move": "MOVE_D2D_BEAM",
+      "Level": 16
+    },
+    {
       "Move": "MOVE_PSYCHO_CUT",
       "Level": 20
     },
@@ -42,6 +46,10 @@
     {
       "Move": "MOVE_PSYSHOCK",
       "Level": 30
+    },
+    {
+      "Move": "MOVE_D2D_POWER_BEAM",
+      "Level": 32
     },
     {
       "Move": "MOVE_PSYCHIC",
