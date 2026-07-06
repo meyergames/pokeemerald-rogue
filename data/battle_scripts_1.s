@@ -472,6 +472,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectD2DDevour				  @ EFFECT_D2D_DEVOUR
 	.4byte BattleScript_EffectD2DSereneScent		  @ EFFECT_D2D_SERENE_SCENT
 	.4byte BattleScript_EffectD2DFlex 				  @ EFFECT_D2D_FLEX
+	.4byte BattleScript_D2D_EffectSpecialDefenseUp3	  @ EFFECT_D2D_SPECIAL_DEFENSE_UP_3
 	.4byte BattleScript_EffectHit_Test				  @ EFFECT_D2D_MANDIBLE_JAW
 
 @ The game doesn't seem to like having EffectHit as the last item in the list...
@@ -11661,3 +11662,8 @@ BattleScript_D2D_PollinatorActivates::
 	@ printstring STRINGID_D2D_HEALERRESTOREDHP
 	waitmessage B_WAIT_TIME_SHORT
 	end3
+
+BattleScript_D2D_EffectSpecialDefenseUp3::
+	setstatchanger STAT_SPDEF, 3, FALSE
+	goto BattleScript_EffectStatUp
+
