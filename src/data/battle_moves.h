@@ -16040,11 +16040,11 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_D2D_INK_SPLAT,
         .type = TYPE_POISON,
-        .power = 20,
+        .power = 50,
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_BOTH,
+        .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_SPECIAL,
         .zMoveEffect = Z_EFFECT_NONE,

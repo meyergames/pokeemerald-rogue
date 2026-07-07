@@ -11433,9 +11433,9 @@ BattleScript_EffectD2DToppleTarget:
 	goto BattleScript_HitFromCritCalc
 
 BattleScript_EffectD2DInkSplat:
-	setmoveeffect MOVE_EFFECT_ACC_MINUS_1
+	setmoveeffect MOVE_EFFECT_ACC_MINUS_2
 	call BattleScript_EffectHit_Ret
-	jumpifmovehadnoeffect BattleScript_MoveEnd
+	@ jumpifmovehadnoeffect BattleScript_MoveEnd
 	jumpifability BS_TARGET, ABILITY_GUARD_DOG, BattleScript_MoveEnd
 	seteffectwithchance
 	tryfaintmon BS_TARGET
