@@ -3345,7 +3345,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .baseSpAttack  = 80,
         .baseSpDefense = 85,
         .expYield = 179,
-        .abilities = { ABILITY_PURE_POWER, ABILITY_PURE_POWER, ABILITY_PURE_POWER },
+        .abilities = { ABILITY_MINDS_EYE, ABILITY_MINDS_EYE, ABILITY_MINDS_EYE },
         .cryId = CRY_MEDICHAM_MEGA,
         .description = POKEDEX_DESC_STRING(
             "It uses its amped-up willpower to create\n"
