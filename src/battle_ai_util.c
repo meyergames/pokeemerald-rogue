@@ -1722,6 +1722,29 @@ void ProtectChecks(u32 battlerAtk, u32 battlerDef, u32 move, u32 predictedMove, 
       || gBattleMons[battlerDef].status2 & (STATUS2_CURSED | STATUS2_INFATUATION)
       || gStatuses3[battlerDef] & (STATUS3_PERISH_SONG | STATUS3_LEECHSEED | STATUS3_YAWN))
         ADJUST_SCORE_PTR(2);
+
+    // D2D: Make the AI more likely to use Protect if the player has used Enfire/Enfrost/Enthunder
+    if ( gStatuses4[battlerDef] & STATUS4_D2D_ENFIRE )
+    {
+        if ( AI_GetTypeEffectiveness( MOVE_FLAMETHROWER, battlerDef, battlerAtk ) >= UQ_4_12( 2.0 ) )
+            ADJUST_SCORE_PTR(2);
+        else if ( AI_GetTypeEffectiveness( MOVE_FLAMETHROWER, battlerDef, battlerAtk ) >= UQ_4_12( 1.0 ) )
+            ADJUST_SCORE_PTR(1);
+    }
+    else if ( gStatuses4[battlerDef] & STATUS4_D2D_ENFROST )
+    {
+        if ( AI_GetTypeEffectiveness( MOVE_ICE_BEAM, battlerDef, battlerAtk ) >= UQ_4_12( 2.0 ) )
+            ADJUST_SCORE_PTR(2);
+        else if ( AI_GetTypeEffectiveness( MOVE_ICE_BEAM, battlerDef, battlerAtk ) >= UQ_4_12( 1.0 ) )
+            ADJUST_SCORE_PTR(1);
+    }
+    else if ( gStatuses4[battlerDef] & STATUS4_D2D_ENTHUNDER )
+    {
+        if ( AI_GetTypeEffectiveness( MOVE_THUNDERBOLT, battlerDef, battlerAtk ) >= UQ_4_12( 2.0 ) )
+            ADJUST_SCORE_PTR(2);
+        else if ( AI_GetTypeEffectiveness( MOVE_THUNDERBOLT, battlerDef, battlerAtk ) >= UQ_4_12( 1.0 ) )
+            ADJUST_SCORE_PTR(1);
+    }
 }
 
 // stat stages
