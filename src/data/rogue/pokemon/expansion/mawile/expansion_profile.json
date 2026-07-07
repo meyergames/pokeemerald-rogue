@@ -73,6 +73,10 @@
       "Level": 48
     },
     {
+      "Move": "MOVE_D2D_MANDIBLE_JAW",
+      "Level": 55
+    },
+    {
       "Move": "MOVE_JAW_LOCK",
       "Level": 60
     }
