@@ -80,6 +80,10 @@
       "Level": 30
     },
     {
+      "Move": "MOVE_D2D_ENTHUNDER",
+      "Level": 32
+    },
+    {
       "Move": "MOVE_PIN_MISSILE",
       "Level": 35
     },
@@ -105,7 +109,6 @@
     "MOVE_BATON_PASS",
     "MOVE_BODY_SLAM",
     "MOVE_CALM_MIND",
-    "MOVE_D2D_ENTHUNDER",
     "MOVE_CHARM",
     "MOVE_CURSE",
     "MOVE_DETECT",

@@ -64,6 +64,10 @@
       "Level": 30
     },
     {
+      "Move": "MOVE_D2D_ENFIRE",
+      "Level": 32
+    },
+    {
       "Move": "MOVE_LEECH_LIFE",
       "Level": 36
     },

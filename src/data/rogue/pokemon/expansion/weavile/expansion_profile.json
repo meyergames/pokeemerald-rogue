@@ -48,6 +48,10 @@
       "Level": 24
     },
     {
+      "Move": "MOVE_D2D_ENFROST",
+      "Level": 25
+    },
+    {
       "Move": "MOVE_FURY_SWIPES",
       "Level": 30
     },

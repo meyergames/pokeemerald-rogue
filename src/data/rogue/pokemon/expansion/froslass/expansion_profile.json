@@ -73,6 +73,10 @@
       "Level": 40
     },
     {
+      "Move": "MOVE_D2D_ENFROST",
+      "Level": 42
+    },
+    {
       "Move": "MOVE_WILL_O_WISP",
       "Level": 47
     },

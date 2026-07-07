@@ -57,6 +57,10 @@
       "Level": 49
     },
     {
+      "Move": "MOVE_D2D_ENFROST",
+      "Level": 55
+    },
+    {
       "Move": "MOVE_SHEER_COLD",
       "Level": 56
     }

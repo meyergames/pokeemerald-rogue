@@ -1212,6 +1212,24 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
               && !BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_SPDEF))
                 ADJUST_SCORE(-5);
             break;
+        case EFFECT_D2D_IMBUE_FIRE:
+            if (gStatuses4[battlerAtk] & STATUS4_D2D_ENFIRE)
+                ADJUST_SCORE(-20);
+            else if (!HasMoveWithType(battlerAtk, TYPE_NORMAL) && !HasMoveWithType(battlerAtk, TYPE_FIRE))
+                ADJUST_SCORE(-10);
+            break;
+        case EFFECT_D2D_IMBUE_ICE:
+            if (gStatuses4[battlerAtk] & STATUS4_D2D_ENFROST)
+                ADJUST_SCORE(-20);
+            else if (!HasMoveWithType(battlerAtk, TYPE_NORMAL) && !HasMoveWithType(battlerAtk, TYPE_ICE))
+                ADJUST_SCORE(-10);
+            break;
+        case EFFECT_D2D_IMBUE_ELECTRIC:
+            if (gStatuses4[battlerAtk] & STATUS4_D2D_ENTHUNDER)
+                ADJUST_SCORE(-20);
+            else if (!HasMoveWithType(battlerAtk, TYPE_NORMAL) && !HasMoveWithType(battlerAtk, TYPE_ELECTRIC))
+                ADJUST_SCORE(-10);
+            break;
         case EFFECT_QUIVER_DANCE:
         case EFFECT_GEOMANCY:
             if (gBattleMons[battlerAtk].statStages[STAT_SPATK] >= MAX_STAT_STAGE || !HasMoveWithSplit(battlerAtk, SPLIT_SPECIAL))

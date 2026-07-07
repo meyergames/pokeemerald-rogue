@@ -64,6 +64,18 @@
       "Level": 28
     },
     {
+      "Move": "MOVE_D2D_ENFIRE",
+      "Level": 32
+    },
+    {
+      "Move": "MOVE_D2D_ENFROST",
+      "Level": 32
+    },
+    {
+      "Move": "MOVE_D2D_ENTHUNDER",
+      "Level": 32
+    },
+    {
       "Move": "MOVE_MEGA_PUNCH",
       "Level": 32
     },

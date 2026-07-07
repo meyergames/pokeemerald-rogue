@@ -76,6 +76,10 @@
       "Level": 30
     },
     {
+      "Move": "MOVE_D2D_ENFROST",
+      "Level": 32
+    },
+    {
       "Move": "MOVE_SNOWSCAPE",
       "Level": 35
     },

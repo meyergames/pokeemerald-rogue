@@ -65,6 +65,10 @@
       "Level": 46
     },
     {
+      "Move": "MOVE_D2D_ENFIRE",
+      "Level": 55
+    },
+    {
       "Move": "MOVE_FLAMETHROWER",
       "Level": 55
     },

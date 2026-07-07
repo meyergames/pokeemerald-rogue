@@ -44,6 +44,18 @@
       "Level": 48
     },
     {
+      "Move": "MOVE_D2D_ENFIRE",
+      "Level": 50
+    },
+    {
+      "Move": "MOVE_D2D_ENFROST",
+      "Level": 50
+    },
+    {
+      "Move": "MOVE_D2D_ENTHUNDER",
+      "Level": 50
+    },
+    {
       "Move": "MOVE_ZEN_HEADBUTT",
       "Level": 54
     },

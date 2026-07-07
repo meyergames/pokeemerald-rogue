@@ -16217,7 +16217,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_D2D_ENTHUNDER] =
     {
-        .effect = EFFECT_D2D_IMBUE_THUNDER,
+        .effect = EFFECT_D2D_IMBUE_ELECTRIC,
         .type = TYPE_ELECTRIC,
         .power = 0,
         .accuracy = 100,

@@ -4,6 +4,10 @@
   ],
   "LevelUpMoves": [
     {
+      "Move": "MOVE_D2D_ENTHUNDER",
+      "Level": 1
+    },
+    {
       "Move": "MOVE_LEER",
       "Level": 1
     },
@@ -17,10 +21,6 @@
     },
     {
       "Move": "MOVE_EXTREME_SPEED",
-      "Level": 1
-    },
-    {
-      "Move": "MOVE_D2D_ENTHUNDER",
       "Level": 1
     },
     {
