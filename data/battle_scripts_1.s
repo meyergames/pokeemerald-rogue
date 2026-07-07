@@ -475,6 +475,9 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_D2D_EffectSpecialDefenseUp3	  @ EFFECT_D2D_SPECIAL_DEFENSE_UP_3
 	.4byte BattleScript_EffectHit_Test				  @ EFFECT_D2D_MANDIBLE_JAW
 	.4byte BattleScript_D2D_EffectShelter			  @ EFFECT_D2D_SHELTER
+	.4byte BattleScript_EffectD2DImbue 				  @ EFFECT_D2D_IMBUE_FIRE
+	.4byte BattleScript_EffectD2DImbue 				  @ EFFECT_D2D_IMBUE_ICE
+	.4byte BattleScript_EffectD2DImbue 				  @ EFFECT_D2D_IMBUE_ELECTRIC
 
 @ The game doesn't seem to like having EffectHit as the last item in the list...
 
@@ -11718,4 +11721,15 @@ BattleScript_D2D_EffectWithdraw_TrySpDef:
 	printfromtable gStatUpStringIds
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_D2D_EffectWithdraw_MoveEnd:
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectD2DImbue::
+	attackcanceler
+	attackstring
+	ppreduce
+	setimbuetype BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+	printstring STRINGID_D2D_STATUSIMBUED
+	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd

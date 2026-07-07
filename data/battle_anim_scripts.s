@@ -900,6 +900,9 @@ gBattleAnims_Moves::
 	.4byte Move_D2D_SERENE_SCENT
 	.4byte Move_D2D_FLEX
 	.4byte Move_D2D_MANDIBLE_JAW
+	.4byte Move_D2D_ENFIRE
+	.4byte Move_D2D_ENFROST
+	.4byte Move_D2D_ENTHUNDER
 
 
 
@@ -35088,4 +35091,60 @@ Move_D2D_MANDIBLE_JAW:
 	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 0, 7, 12, 1
 	waitforvisualfinish
 	blendoff
+	end
+
+Move_D2D_ENFIRE:
+	loadspritegfx ANIM_TAG_FOCUS_ENERGY
+	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
+	call EndureEffect
+	delay 8
+	createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_ATTACKER, 2, 2, 0, 11, RGB_WHITE
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 32, 1
+	call EndureEffect
+	delay 8
+	call EndureEffect
+@ FIRE SPIN START
+	loadspritegfx ANIM_TAG_SMALL_EMBER
+	playsewithpan SE_M_SACRED_FIRE2, SOUND_PAN_TARGET
+	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 0, 2, 47, 1
+	call FireSpinEffect
+	call FireSpinEffect
+	call FireSpinEffect
+@ FIRE SPIN END
+	waitforvisualfinish
+	end
+
+Move_D2D_ENFROST:
+	loadspritegfx ANIM_TAG_FOCUS_ENERGY
+	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
+	call EndureEffect
+	delay 8
+	createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_ATTACKER, 2, 2, 0, 11, RGB_WHITE
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 32, 1
+	call EndureEffect
+	delay 8
+	call EndureEffect
+@ ICE CRYSTAL START
+	loadspritegfx ANIM_TAG_ICE_CRYSTALS
+	call IceCrystalEffectShort
+@ ICE CRYSTAL END
+	waitforvisualfinish
+	end
+
+Move_D2D_ENTHUNDER:
+	loadspritegfx ANIM_TAG_FOCUS_ENERGY
+	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
+	call EndureEffect
+	delay 8
+	createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_ATTACKER, 2, 2, 0, 11, RGB_WHITE
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 32, 1
+	call EndureEffect
+	delay 8
+	call EndureEffect
+@ SPARK START
+	loadspritegfx ANIM_TAG_SPARK_2
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 10, 1
+	call ElectricityEffect
+@ SPARK END
+	waitforvisualfinish
 	end

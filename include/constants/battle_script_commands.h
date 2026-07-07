@@ -249,6 +249,7 @@
 #define VARIOUS_DETERMINE_MACH_FIVE_SPEED			 155
 #define VARIOUS_DETERMINE_TOPPLE_POWER				 156
 #define VARIOUS_TEACH_MOVE							 157
+#define VARIOUS_SET_IMBUE_TYPE						 158
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0

@@ -6004,6 +6004,17 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
     {
         gBattleStruct->dynamicMoveType = GetBattlerType(battlerAtk, 0, FALSE) | F_DYNAMIC_TYPE_SET;
     }
+
+    // D2D Imbue Moves
+    if (moveType == TYPE_NORMAL)
+    {
+        if (gStatuses4[battlerAtk] & STATUS4_D2D_ENFIRE)
+            gBattleStruct->dynamicMoveType = TYPE_FIRE | F_DYNAMIC_TYPE_SET;
+        if (gStatuses4[battlerAtk] & STATUS4_D2D_ENFROST)
+            gBattleStruct->dynamicMoveType = TYPE_ICE | F_DYNAMIC_TYPE_SET;
+        if (gStatuses4[battlerAtk] & STATUS4_D2D_ENTHUNDER)
+            gBattleStruct->dynamicMoveType = TYPE_ELECTRIC | F_DYNAMIC_TYPE_SET;
+    }
     
     // Check if a gem should activate.
     GET_MOVE_TYPE(move, moveType);

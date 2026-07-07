@@ -3073,7 +3073,12 @@ u8 DoBattlerEndTurnEffects(void)
             break;
         case ENDTURN_CHARGE:  // charge
             if (gDisableStructs[battler].chargeTimer && --gDisableStructs[battler].chargeTimer == 0)
+            {
                 gStatuses3[battler] &= ~STATUS3_CHARGED_UP;
+                gStatuses4[battler] &= ~STATUS4_D2D_ENFIRE; // we lazy up in here
+                gStatuses4[battler] &= ~STATUS4_D2D_ENFROST; // (piggybacking off of Charge)
+                gStatuses4[battler] &= ~STATUS4_D2D_ENTHUNDER;
+            }
             gBattleStruct->turnEffectsTracker++;
             break;
         case ENDTURN_TAUNT:  // taunt
@@ -10194,6 +10199,15 @@ static inline uq4_12_t GetBurnOrFrostBiteModifier(u32 battlerAtk, u32 move, u32 
     return UQ_4_12(1.0);
 }
 
+static inline uq4_12_t GetD2DImbueModifier(u32 battlerAtk, u32 move)
+{
+    if ((gStatuses4[battlerAtk] & STATUS4_D2D_ENFIRE && (gBattleMoves[move].type == TYPE_FIRE || gBattleMoves[move].type == TYPE_NORMAL))
+        || (gStatuses4[battlerAtk] & STATUS4_D2D_ENFROST && (gBattleMoves[move].type == TYPE_ICE || gBattleMoves[move].type == TYPE_NORMAL))
+        || (gStatuses4[battlerAtk] & STATUS4_D2D_ENTHUNDER && (gBattleMoves[move].type == TYPE_ELECTRIC || gBattleMoves[move].type == TYPE_NORMAL)))
+        return UQ_4_12(2.0);
+    return UQ_4_12(1.0);
+}
+
 static inline uq4_12_t GetCriticalModifier(bool32 isCrit)
 {
     if (isCrit)
@@ -10461,6 +10475,7 @@ static inline s32 DoMoveDamageCalcVars(u32 move, u32 battlerAtk, u32 battlerDef,
     }
     DAMAGE_APPLY_MODIFIER(typeEffectivenessModifier);
     DAMAGE_APPLY_MODIFIER(GetBurnOrFrostBiteModifier(battlerAtk, move, abilityAtk));
+    DAMAGE_APPLY_MODIFIER(GetD2DImbueModifier(battlerAtk, move));
     DAMAGE_APPLY_MODIFIER(GetZMaxMoveAgainstProtectionModifier(battlerDef, move));
     DAMAGE_APPLY_MODIFIER(GetOtherModifiers(move, moveType, battlerAtk, battlerDef, isCrit, typeEffectivenessModifier, updateFlags, abilityAtk, abilityDef, holdEffectAtk, holdEffectDef));
 

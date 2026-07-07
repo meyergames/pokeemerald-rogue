@@ -466,6 +466,7 @@ static const u8 sText_D2D_MachFiveSpeed[] = _("{B_ATK_NAME_WITH_PREFIX} reached 
 static const u8 sText_D2D_TopplePower[] = _("Topple's power raised to {B_BUFF1}!");
 static const u8 sText_D2D_AllyLearnedMove[] = _("{B_DEF_NAME_WITH_PREFIX} learned\n{B_BUFF1}!\p");
 static const u8 sText_D2D_HeadacheActivates[] = _("{B_ATK_NAME_WITH_PREFIX} suffers from a Headache!");
+static const u8 sText_StatusImbued[] =_("{B_ATK_NAME_WITH_PREFIX} became imbued with {B_BUFF3}!");
 
 const u8 *const gStatNamesTable[NUM_BATTLE_STATS] =
 {
@@ -1562,6 +1563,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_D2D_TOPPLE_POWER - BATTLESTRINGS_TABLE_START] = sText_D2D_TopplePower,
     [STRINGID_D2D_ALLYLEARNEDMOVE - BATTLESTRINGS_TABLE_START] = sText_D2D_AllyLearnedMove,
     [STRINGID_D2D_HEADACHEACTIVATES - BATTLESTRINGS_TABLE_START] = sText_D2D_HeadacheActivates,
+    [STRINGID_D2D_STATUSIMBUED - BATTLESTRINGS_TABLE_START] = sText_StatusImbued,
 };
 
 const u16 gTrainerUsedItemStringIds[] =

@@ -1776,6 +1776,9 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_D2D_SERENE_SCENT] = _("Serene Scent"),
     [MOVE_D2D_FLEX] = _("Flex"),
     [MOVE_D2D_MANDIBLE_JAW] = _("Mandible Jaw"),
+    [MOVE_D2D_ENFIRE] = _("Enfire"),
+    [MOVE_D2D_ENFROST] = _("Enfrost"),
+    [MOVE_D2D_ENTHUNDER] = _("Enthunder"),
     // Max Moves
     [MOVE_MAX_GUARD] = _("M-Guard"),
     [MOVE_MAX_STRIKE] = _("M-Strike"),

@@ -2373,6 +2373,11 @@
 	.4byte \failInstr
 	.endm
 
+	.macro setimbuetype failInstr:req
+	various BS_ATTACKER, VARIOUS_SET_IMBUE_TYPE
+	.4byte \failInstr
+	.endm
+
 
 @ D2D INSTRUCTIONS END
 

@@ -920,6 +920,9 @@ static const u32 sStatusFlagsForMoveEffects[NUM_MOVE_EFFECTS] =
     [MOVE_EFFECT_PREVENT_ESCAPE] = STATUS2_ESCAPE_PREVENTION,
     [MOVE_EFFECT_NIGHTMARE]      = STATUS2_NIGHTMARE,
     [MOVE_EFFECT_THRASH]         = STATUS2_LOCK_CONFUSE,
+    // [MOVE_EFFECT_D2D_ENFIRE]    = STATUS4_D2D_ENFIRE,
+    // [MOVE_EFFECT_D2D_ENFROST]    = STATUS4_D2D_ENFROST,
+    // [MOVE_EFFECT_D2D_ENTHUNDER]  = STATUS4_D2D_ENTHUNDER,
 };
 
 static const u8 *const sMoveEffectBS_Ptrs[] =
@@ -9684,6 +9687,44 @@ static void Cmd_various(void)
         }
         return;
     }
+    case VARIOUS_SET_IMBUE_TYPE:
+        VARIOUS_ARGS(const u8 *failInstr);
+        u8 type = gBattleMoves[gCurrentMove].type;
+
+        // first clear all existing imbues
+        if (gStatuses4[gBattlerTarget] & STATUS4_D2D_ENFIRE)
+            gStatuses4[gBattlerTarget] &= ~STATUS4_D2D_ENFIRE;
+        if (gStatuses4[gBattlerTarget] & STATUS4_D2D_ENFROST)
+            gStatuses4[gBattlerTarget] &= ~STATUS4_D2D_ENFROST;
+        if (gStatuses4[gBattlerTarget] & STATUS4_D2D_ENTHUNDER)
+            gStatuses4[gBattlerTarget] &= ~STATUS4_D2D_ENTHUNDER;
+
+        if (type == TYPE_FIRE)
+        {
+            gStatuses4[gBattlerTarget] |= STATUS4_D2D_ENFIRE;
+            gBattlescriptCurrInstr = cmd->nextInstr;
+            gDisableStructs[gBattlerTarget].chargeTimer = 2;
+            PREPARE_TYPE_BUFFER(gBattleTextBuff3, type);
+        }
+        else if (type == TYPE_ICE)
+        {
+            gStatuses4[gBattlerTarget] |= STATUS4_D2D_ENFROST;
+            gBattlescriptCurrInstr = cmd->nextInstr;
+            gDisableStructs[gBattlerTarget].chargeTimer = 2;
+            PREPARE_TYPE_BUFFER(gBattleTextBuff3, type);
+        }
+        else if (type == TYPE_ELECTRIC)
+        {
+            gStatuses4[gBattlerTarget] |= STATUS4_D2D_ENTHUNDER;
+            gBattlescriptCurrInstr = cmd->nextInstr;
+            gDisableStructs[gBattlerTarget].chargeTimer = 2;
+            PREPARE_TYPE_BUFFER(gBattleTextBuff3, type);
+        }
+        else
+        {
+            gBattlescriptCurrInstr = cmd->failInstr;
+        }
+        return;
     case VARIOUS_FORCE_RECHARGE:
     {
         VARIOUS_ARGS();

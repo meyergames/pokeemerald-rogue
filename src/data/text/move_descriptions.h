@@ -3390,6 +3390,18 @@ static const u8 sMandibleJawDescription[] = _(
     "Super effective against\n"
     "Bug-types.");
 
+static const u8 sEnfireDescription[] = _(
+    "Imbues the next Normal move\n"
+    "with the power of Fire.");
+
+static const u8 sEnfrostDescription[] = _(
+    "Imbues Normal moves with\n"
+    "the power of Ice.");
+
+static const u8 sEnthunderDescription[] = _(
+    "Imbues Normal moves with\n"
+    "the power of Electricity.");
+
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4268,4 +4280,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_SERENE_SCENT - 1] = sSereneScentDescription,
     [MOVE_D2D_FLEX - 1] = sFlexDescription,
     [MOVE_D2D_MANDIBLE_JAW - 1] = sMandibleJawDescription,
+    [MOVE_D2D_ENFIRE - 1] = sEnfireDescription,
+    [MOVE_D2D_ENFROST - 1] = sEnfrostDescription,
+    [MOVE_D2D_ENTHUNDER - 1] = sEnthunderDescription,
 };
