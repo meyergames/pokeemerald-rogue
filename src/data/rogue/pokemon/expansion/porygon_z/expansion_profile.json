@@ -36,6 +36,18 @@
       "Level": 24
     },
     {
+      "Move": "MOVE_D2D_ENFIRE",
+      "Level": 25
+    },
+    {
+      "Move": "MOVE_D2D_ENFROST",
+      "Level": 25
+    },
+    {
+      "Move": "MOVE_D2D_ENTHUNDER",
+      "Level": 25
+    },
+    {
       "Move": "MOVE_PSYBEAM",
       "Level": 28
     },
@@ -91,7 +103,7 @@
   "TutorMoves": [
     "MOVE_AGILITY",
     "MOVE_BLIZZARD",
-    "MOVE_CHARGE",
+    "MOVE_D2D_ENTHUNDER",
     "MOVE_CHARGE_BEAM",
     "MOVE_DARK_PULSE",
     "MOVE_DOUBLE_EDGE",

@@ -16,7 +16,7 @@
       "Level": 5
     },
     {
-      "Move": "MOVE_CHARGE",
+      "Move": "MOVE_D2D_ENTHUNDER",
       "Level": 10
     },
     {
@@ -66,7 +66,7 @@
   ],
   "TutorMoves": [
     "MOVE_AGILITY",
-    "MOVE_CHARGE",
+    "MOVE_D2D_ENTHUNDER",
     "MOVE_CHARGE_BEAM",
     "MOVE_CHARM",
     "MOVE_COVET",

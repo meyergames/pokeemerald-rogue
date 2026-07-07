@@ -45,7 +45,7 @@
       "Level": 32
     },
     {
-      "Move": "MOVE_CHARGE",
+      "Move": "MOVE_D2D_ENTHUNDER",
       "Level": 40
     },
     {
@@ -242,7 +242,7 @@
       "Moves": [
         "MOVE_PLASMA_FISTS",
         "MOVE_THUNDER",
-        "MOVE_CHARGE",
+        "MOVE_D2D_ENTHUNDER",
         "MOVE_FAKE_OUT"
       ],
       "Ability": "ABILITY_VOLT_ABSORB",
@@ -255,7 +255,7 @@
     {
       "Moves": [
         "MOVE_PLASMA_FISTS",
-        "MOVE_CHARGE",
+        "MOVE_D2D_ENTHUNDER",
         "MOVE_OUTRAGE",
         "MOVE_FAKE_OUT"
       ],
@@ -466,7 +466,7 @@
       "Moves": [
         "MOVE_FAKE_OUT",
         "MOVE_THUNDERBOLT",
-        "MOVE_CHARGE",
+        "MOVE_D2D_ENTHUNDER",
         "MOVE_FOCUS_BLAST"
       ],
       "Ability": "ABILITY_VOLT_ABSORB",

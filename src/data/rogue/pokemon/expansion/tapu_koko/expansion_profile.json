@@ -32,7 +32,7 @@
       "Level": 25
     },
     {
-      "Move": "MOVE_CHARGE",
+      "Move": "MOVE_D2D_ENTHUNDER",
       "Level": 30
     },
     {
@@ -661,7 +661,7 @@
     },
     {
       "Moves": [
-        "MOVE_CHARGE",
+        "MOVE_D2D_ENTHUNDER",
         "MOVE_WILD_CHARGE",
         "MOVE_DAZZLING_GLEAM",
         "MOVE_QUICK_ATTACK"

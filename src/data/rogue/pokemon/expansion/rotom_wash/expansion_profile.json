@@ -20,7 +20,7 @@
       "Level": 10
     },
     {
-      "Move": "MOVE_CHARGE",
+      "Move": "MOVE_D2D_ENTHUNDER",
       "Level": 15
     },
     {
@@ -57,7 +57,7 @@
     }
   ],
   "TutorMoves": [
-    "MOVE_CHARGE",
+    "MOVE_D2D_ENTHUNDER",
     "MOVE_CHARGE_BEAM",
     "MOVE_CONFUSE_RAY",
     "MOVE_DARK_PULSE",
@@ -480,7 +480,7 @@
         "MOVE_THUNDER",
         "MOVE_HYDRO_PUMP",
         "MOVE_WILL_O_WISP",
-        "MOVE_CHARGE"
+        "MOVE_D2D_ENTHUNDER"
       ],
       "Ability": "ABILITY_LEVITATE",
       "Item": "ITEM_ELECTRIUM_Z",

@@ -32,7 +32,7 @@
       "Level": 25
     },
     {
-      "Move": "MOVE_CHARGE",
+      "Move": "MOVE_D2D_ENTHUNDER",
       "Level": 30
     },
     {
@@ -75,7 +75,7 @@
     "MOVE_AIR_CUTTER",
     "MOVE_BATON_PASS",
     "MOVE_BRAVE_BIRD",
-    "MOVE_CHARGE",
+    "MOVE_D2D_ENTHUNDER",
     "MOVE_CHARGE_BEAM",
     "MOVE_DEFOG",
     "MOVE_DUAL_WINGBEAT",
@@ -265,7 +265,7 @@
         "MOVE_THUNDERBOLT",
         "MOVE_SUBSTITUTE",
         "MOVE_ROOST",
-        "MOVE_CHARGE"
+        "MOVE_D2D_ENTHUNDER"
       ],
       "Ability": "ABILITY_PRESSURE",
       "Item": "ITEM_SITRUS_BERRY",
@@ -1150,7 +1150,7 @@
       "Moves": [
         "MOVE_HURRICANE",
         "MOVE_THUNDER",
-        "MOVE_CHARGE",
+        "MOVE_D2D_ENTHUNDER",
         "MOVE_PROTECT"
       ],
       "Ability": "ABILITY_PRESSURE",

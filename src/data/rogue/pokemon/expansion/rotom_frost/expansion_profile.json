@@ -20,7 +20,11 @@
       "Level": 10
     },
     {
-      "Move": "MOVE_CHARGE",
+      "Move": "MOVE_D2D_ENTHUNDER",
+      "Level": 15
+    },
+    {
+      "Move": "MOVE_D2D_ENFROST",
       "Level": 15
     },
     {
@@ -58,7 +62,7 @@
   ],
   "TutorMoves": [
     "MOVE_BLIZZARD",
-    "MOVE_CHARGE",
+    "MOVE_D2D_ENTHUNDER",
     "MOVE_CHARGE_BEAM",
     "MOVE_CONFUSE_RAY",
     "MOVE_DARK_PULSE",

@@ -20,7 +20,7 @@
       "Level": 11
     },
     {
-      "Move": "MOVE_CHARGE",
+      "Move": "MOVE_D2D_ENTHUNDER",
       "Level": 17
     },
     {
@@ -58,7 +58,7 @@
   ],
   "TutorMoves": [
     "MOVE_ACID_SPRAY",
-    "MOVE_CHARGE",
+    "MOVE_D2D_ENTHUNDER",
     "MOVE_CHARGE_BEAM",
     "MOVE_CHILLING_WATER",
     "MOVE_CONFUSE_RAY",

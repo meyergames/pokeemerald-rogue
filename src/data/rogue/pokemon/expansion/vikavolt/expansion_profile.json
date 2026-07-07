@@ -16,7 +16,7 @@
       "Level": 1
     },
     {
-      "Move": "MOVE_CHARGE",
+      "Move": "MOVE_D2D_ENTHUNDER",
       "Level": 1
     },
     {
@@ -64,7 +64,7 @@
     "MOVE_BUG_BITE",
     "MOVE_BUG_BUZZ",
     "MOVE_BULLDOZE",
-    "MOVE_CHARGE",
+    "MOVE_D2D_ENTHUNDER",
     "MOVE_CHARGE_BEAM",
     "MOVE_CRUNCH",
     "MOVE_DIG",

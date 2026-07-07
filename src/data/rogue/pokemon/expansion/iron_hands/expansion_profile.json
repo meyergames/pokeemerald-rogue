@@ -44,7 +44,7 @@
       "Level": 42
     },
     {
-      "Move": "MOVE_CHARGE",
+      "Move": "MOVE_D2D_ENTHUNDER",
       "Level": 49
     },
     {
@@ -77,7 +77,7 @@
     "MOVE_BODY_SLAM",
     "MOVE_BRICK_BREAK",
     "MOVE_BULLDOZE",
-    "MOVE_CHARGE",
+    "MOVE_D2D_ENTHUNDER",
     "MOVE_CLOSE_COMBAT",
     "MOVE_DOUBLE_EDGE",
     "MOVE_DRAIN_PUNCH",

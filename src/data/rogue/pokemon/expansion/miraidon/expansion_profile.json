@@ -20,7 +20,7 @@
       "Level": 7
     },
     {
-      "Move": "MOVE_CHARGE",
+      "Move": "MOVE_D2D_ENTHUNDER",
       "Level": 14
     },
     {
@@ -73,7 +73,7 @@
     "MOVE_AGILITY",
     "MOVE_BODY_SLAM",
     "MOVE_CALM_MIND",
-    "MOVE_CHARGE",
+    "MOVE_D2D_ENTHUNDER",
     "MOVE_CHARGE_BEAM",
     "MOVE_CONFUSE_RAY",
     "MOVE_CRUNCH",
