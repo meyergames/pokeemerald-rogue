@@ -11338,6 +11338,8 @@ BattleScript_EffectD2DEnergize::
 
 BattleScript_D2D_HybridPowerTrySpAtk::
 	jumpifbattleend BattleScript_D2D_Cancel
+	call BattleScript_AbilityPopUp
+	waitmessage B_WAIT_TIME_SHORT
 	setstatchanger STAT_SPATK, 1, FALSE
 	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_D2D_Cancel
 	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_D2D_PostMoveStatRaiseAnim
@@ -11349,6 +11351,8 @@ BattleScript_D2D_HybridPowerTrySpAtk::
 
 BattleScript_D2D_HybridPowerTryAttack::
 	jumpifbattleend BattleScript_D2D_Cancel
+	call BattleScript_AbilityPopUp
+	waitmessage B_WAIT_TIME_SHORT
 	setstatchanger STAT_ATK, 1, FALSE
 	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_D2D_Cancel
 	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_D2D_PostMoveStatRaiseAnim
