@@ -3359,7 +3359,7 @@ static const u8 sInkSplatDescription[] = _(
     "and switch out the user.");
 
 static const u8 sTeachDescription[] = _(
-    "Replaces the target's first\n"
+    "Replaces an ally's first\n"
     "move with that of the user.");
 
 static const u8 sScarecrowDescription[] = _(
@@ -3391,16 +3391,16 @@ static const u8 sMandibleJawDescription[] = _(
     "Bug-types.");
 
 static const u8 sEnfireDescription[] = _(
-    "Imbues the next Normal move\n"
-    "with the power of Fire.");
+    "Empowers the next Normal\n"
+    "or Fire-type move.");
 
 static const u8 sEnfrostDescription[] = _(
-    "Imbues Normal moves with\n"
-    "the power of Ice.");
+    "Empowers the next Normal\n"
+    "or Ice-type move.");
 
 static const u8 sEnthunderDescription[] = _(
-    "Imbues Normal moves with\n"
-    "the power of Electricity.");
+    "Empowers the next Normal\n"
+    "or Electric-type move.");
 
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
