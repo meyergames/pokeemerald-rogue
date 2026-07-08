@@ -91,6 +91,10 @@
     {
       "Move": "MOVE_D2D_TEACH",
       "Level": 60
+    },
+    {
+      "Move": "MOVE_HEART_SWAP",
+      "Level": 85
     }
   ],
   "TutorMoves": [
