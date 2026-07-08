@@ -15980,7 +15980,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     [MOVE_D2D_FATAL_STING] =
     {
         .effect = EFFECT_D2D_FATAL_STING,
-        .power = 250,
+        .power = 200,
         .type = TYPE_BUG,
         .accuracy = 100,
         .pp = 1,

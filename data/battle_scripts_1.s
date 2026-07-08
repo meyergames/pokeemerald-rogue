@@ -11381,8 +11381,7 @@ BattleScript_EffectD2DFatalSting::
 	call BattleScript_EffectHit_Ret
 	call BattleScript_SurviveWithOneHP_Ret
 	call BattleScript_TryFaintMon_Ret
-	goto BattleScript_MoveEnd
-
+	goto BattleScript_ForceRecharge
 
 BattleScript_EffectD2DFullRestore::
 	attackcanceler
