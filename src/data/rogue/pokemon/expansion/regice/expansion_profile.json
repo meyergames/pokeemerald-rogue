@@ -40,6 +40,10 @@
       "Level": 42
     },
     {
+      "Move": "MOVE_AURORA_VEIL",
+      "Level": 45
+    },
+    {
       "Move": "MOVE_BLIZZARD",
       "Level": 48
     },
