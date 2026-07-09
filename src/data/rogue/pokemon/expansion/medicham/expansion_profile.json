@@ -90,7 +90,19 @@
     },
     {
       "Move": "MOVE_D2D_TEACH",
-      "Level": 60
+      "Level": 65
+    },
+    {
+      "Move": "MOVE_D2D_ENFIRE",
+      "Level": 70
+    },
+    {
+      "Move": "MOVE_D2D_ENFROST",
+      "Level": 70
+    },
+    {
+      "Move": "MOVE_D2D_ENTHUNDER",
+      "Level": 70
     },
     {
       "Move": "MOVE_HEART_SWAP",

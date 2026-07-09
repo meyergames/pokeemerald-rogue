@@ -12,65 +12,85 @@
       "Level": 1
     },
     {
-      "Move": "MOVE_TACKLE",
-      "Level": 3
-    },
-    {
       "Move": "MOVE_ECHOED_VOICE",
-      "Level": 6
+      "Level": 1
     },
     {
       "Move": "MOVE_CONFUSION",
       "Level": 9
     },
     {
-      "Move": "MOVE_REFLECT",
+      "Move": "MOVE_LIGHT_SCREEN",
       "Level": 12
-    },
-    {
-      "Move": "MOVE_DEFOG",
-      "Level": 15
     },
     {
       "Move": "MOVE_D2D_BEAM",
       "Level": 15
     },
     {
+      "Move": "MOVE_SWIFT",
+      "Level": 16
+    },
+    {
       "Move": "MOVE_AIR_SLASH",
-      "Level": 18
+      "Level": 19
     },
     {
-      "Move": "MOVE_EXTRASENSORY",
-      "Level": 21
+      "Move": "MOVE_FUTURE_SIGHT",
+      "Level": 22
     },
     {
-      "Move": "MOVE_TAKE_DOWN",
-      "Level": 24
+      "Move": "MOVE_CALM_MIND",
+      "Level": 25
     },
     {
-      "Move": "MOVE_UPROAR",
-      "Level": 27
-    },
-    {
-      "Move": "MOVE_ROOST",
-      "Level": 30
+      "Move": "MOVE_DISABLE",
+      "Level": 26
     },
     {
       "Move": "MOVE_D2D_POWER_BEAM",
+      "Level": 28
+    },
+    {
+      "Move": "MOVE_UPROAR",
       "Level": 30
     },
     {
-      "Move": "MOVE_MOONBLAST",
-      "Level": 33
+      "Move": "MOVE_EXTRASENSORY",
+      "Level": 32
     },
     {
-      "Move": "MOVE_HYPNOSIS",
+      "Move": "MOVE_ROOST",
+      "Level": 34
+    },
+    {
+      "Move": "MOVE_D2D_TOPPLE",
+      "Level": 35
+    },
+    {
+      "Move": "MOVE_REFLECT",
       "Level": 36
     },
     {
+      "Move": "MOVE_MOONBLAST",
+      "Level": 38
+    },
+    {
+      "Move": "MOVE_MOONLIGHT",
+      "Level": 40
+    },
+    {
+      "Move": "MOVE_SHADOW_BALL",
+      "Level": 42
+    },
+    {
+      "Move": "MOVE_HYPNOSIS",
+      "Level": 44
+    },
+    {
       "Move": "MOVE_DREAM_EATER",
-      "Level": 39
-    }
+      "Level": 45
+    },
   ],
   "TutorMoves": [
     "MOVE_ACROBATICS",

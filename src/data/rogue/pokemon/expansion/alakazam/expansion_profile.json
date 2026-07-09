@@ -5,6 +5,10 @@
   ],
   "LevelUpMoves": [
     {
+      "Move": "MOVE_TELEKINESIS",
+      "Level": 0
+    },
+    {
       "Move": "MOVE_DISABLE",
       "Level": 1
     },
