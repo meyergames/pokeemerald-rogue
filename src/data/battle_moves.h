@@ -780,7 +780,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_ATTACK_DOWN,
         .power = 0,
-        .type = TYPE_NORMAL,
+        .type = TYPE_STELLAR,
         .accuracy = 100,
         .pp = 40,
         .secondaryEffectChance = 0,
@@ -802,7 +802,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         #endif
         .effect = EFFECT_ROAR,
         .power = 0,
-        .type = TYPE_NORMAL,
+        .type = TYPE_STELLAR,
         .pp = 20,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
@@ -821,7 +821,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_SLEEP,
         .power = 0,
-        .type = TYPE_NORMAL,
+        .type = TYPE_STELLAR,
         .accuracy = 55,
         .pp = 15,
         .secondaryEffectChance = 0,
@@ -838,7 +838,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_CONFUSE,
         .power = 0,
-        .type = TYPE_NORMAL,
+        .type = TYPE_STELLAR,
         .accuracy = 55,
         .pp = 20,
         .secondaryEffectChance = 0,
@@ -855,7 +855,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_SONICBOOM,
         .power = 1,
-        .type = TYPE_NORMAL,
+        .type = TYPE_STELLAR,
         .accuracy = 90,
         .pp = 20,
         .secondaryEffectChance = 0,
@@ -1797,7 +1797,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_DEFENSE_DOWN_2,
         .power = 0,
-        .type = TYPE_NORMAL,
+        .type = TYPE_STELLAR,
         .accuracy = 85,
         .pp = 40,
         .secondaryEffectChance = 0,
@@ -3089,7 +3089,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
             .power = 40,
         #endif
         .effect = EFFECT_SNORE,
-        .type = TYPE_NORMAL,
+        .type = TYPE_STELLAR,
         .accuracy = 100,
         .pp = 15,
         .secondaryEffectChance = 30,
@@ -3339,7 +3339,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_BELLY_DRUM,
         .power = 0,
-        .type = TYPE_NORMAL,
+        .type = TYPE_STELLAR,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 0,
@@ -3485,7 +3485,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_PERISH_SONG,
         .power = 0,
-        .type = TYPE_NORMAL,
+        .type = TYPE_STELLAR,
         .accuracy = 0,
         .pp = 5,
         .secondaryEffectChance = 0,
@@ -3869,7 +3869,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_HEAL_BELL,
         .power = 0,
-        .type = TYPE_NORMAL,
+        .type = TYPE_STELLAR,
         .accuracy = 0,
         .pp = 5,
         .secondaryEffectChance = 0,
@@ -4536,7 +4536,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
             .power = 50,
         #endif
         .effect = EFFECT_UPROAR,
-        .type = TYPE_NORMAL,
+        .type = TYPE_STELLAR,
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -5438,7 +5438,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_HIT,
         .power = 90,
-        .type = TYPE_NORMAL,
+        .type = TYPE_STELLAR,
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 0,
@@ -5704,7 +5704,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_SPECIAL_DEFENSE_DOWN_2,
         .power = 0,
-        .type = TYPE_STEEL,
+        .type = TYPE_STELLAR,
         .accuracy = 85,
         .pp = 40,
         .secondaryEffectChance = 0,
@@ -5721,7 +5721,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_SLEEP,
         .power = 0,
-        .type = TYPE_GRASS,
+        .type = TYPE_STELLAR,
         .accuracy = 55,
         .pp = 15,
         .secondaryEffectChance = 0,
@@ -7903,7 +7903,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
             .secondaryEffectChance = 31,
         #endif
         .effect = EFFECT_CONFUSE_HIT,
-        .type = TYPE_FLYING,
+        .type = TYPE_STELLAR,
         .accuracy = 100,
         .pp = 20,
         .target = MOVE_TARGET_SELECTED,
@@ -8710,7 +8710,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_ROUND,
         .power = 60,
-        .type = TYPE_NORMAL,
+        .type = TYPE_STELLAR,
         .accuracy = 100,
         .pp = 15,
         .secondaryEffectChance = 100,
@@ -8726,7 +8726,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_ECHOED_VOICE,
         .power = 40,
-        .type = TYPE_NORMAL,
+        .type = TYPE_STELLAR,
         .accuracy = 100,
         .pp = 15,
         .secondaryEffectChance = 0,
@@ -9566,7 +9566,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_RELIC_SONG,
         .power = 75,
-        .type = TYPE_NORMAL,
+        .type = TYPE_STELLAR,
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 10,
@@ -9939,7 +9939,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_NOBLE_ROAR,
         .power = 0,
-        .type = TYPE_NORMAL,
+        .type = TYPE_STELLAR,
         .accuracy = 100,
         .pp = 30,
         .secondaryEffectChance = 0,
@@ -10234,7 +10234,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_HIT,
         .power = 140,
-        .type = TYPE_NORMAL,
+        .type = TYPE_STELLAR,
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 0,
@@ -16230,5 +16230,35 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .snatchAffected = TRUE,
         .ignoresProtect = TRUE,
         .mirrorMoveBanned = TRUE,
+    },
+
+    [MOVE_D2D_RESONANCE] =
+    {
+        .effect = EFFECT_D2D_RESONANCE,
+        .power = 60,
+        .type = TYPE_STELLAR,
+        .accuracy = 100,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .soundMove = TRUE,
+    },
+
+    [MOVE_D2D_ECHOLOCATION] =
+    {
+        .effect = EFFECT_D2D_ECHOLOCATION,
+        .power = 0,
+        .type = TYPE_STELLAR,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .soundMove = TRUE,
     },
 };

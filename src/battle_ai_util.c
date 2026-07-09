@@ -1516,6 +1516,9 @@ bool32 IsMoveEncouragedToHit(u32 battlerAtk, u32 battlerDef, u32 move)
     if (B_TOXIC_NEVER_MISS >= GEN_6 && gBattleMoves[move].effect == EFFECT_TOXIC && IS_BATTLER_OF_TYPE(battlerAtk, TYPE_POISON))
         return TRUE;
 
+    if (move == MOVE_SUPERSONIC && IS_BATTLER_OF_TYPE(battlerAtk, TYPE_STELLAR))
+        return TRUE;
+
     // discouraged from hitting
     weather = AI_GetWeather(AI_DATA);
     if ((weather & B_WEATHER_SUN)

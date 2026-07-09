@@ -4,7 +4,7 @@
   ],
   "LevelUpMoves": [
     {
-      "Move": "MOVE_FURY_CUTTER",
+      "Move": "MOVE_D2D_RESONANCE",
       "Level": 0
     },
     {
@@ -26,6 +26,10 @@
     {
       "Move": "MOVE_FOCUS_ENERGY",
       "Level": 22
+    },
+    {
+      "Move": "MOVE_FURY_CUTTER",
+      "Level": 25
     },
     {
       "Move": "MOVE_SLASH",

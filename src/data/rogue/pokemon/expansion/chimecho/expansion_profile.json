@@ -57,6 +57,10 @@
       "Level": 42
     },
     {
+      "Move": "MOVE_D2D_RESONANCE",
+      "Level": 45
+    },
+    {
       "Move": "MOVE_HEAL_PULSE",
       "Level": 47
     },

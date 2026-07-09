@@ -1600,6 +1600,7 @@ static bool32 AccuracyCalcHelper(u16 move)
 {
     if ((gStatuses3[gBattlerTarget] & STATUS3_ALWAYS_HITS && gDisableStructs[gBattlerTarget].battlerWithSureHit == gBattlerAttacker)
      || (B_TOXIC_NEVER_MISS >= GEN_6 && gBattleMoves[move].effect == EFFECT_TOXIC && IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_POISON))
+     || (move == MOVE_SUPERSONIC && IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_STELLAR))
      || gStatuses4[gBattlerTarget] & STATUS4_GLAIVE_RUSH)
     {
         JumpIfMoveFailed(7, move);

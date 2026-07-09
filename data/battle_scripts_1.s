@@ -473,11 +473,13 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectD2DSereneScent		  @ EFFECT_D2D_SERENE_SCENT
 	.4byte BattleScript_EffectD2DFlex 				  @ EFFECT_D2D_FLEX
 	.4byte BattleScript_D2D_EffectSpecialDefenseUp3	  @ EFFECT_D2D_SPECIAL_DEFENSE_UP_3
-	.4byte BattleScript_EffectHit_Test				  @ EFFECT_D2D_MANDIBLE_JAW
+	.4byte BattleScript_EffectHit					  @ EFFECT_D2D_MANDIBLE_JAW
 	.4byte BattleScript_D2D_EffectShelter			  @ EFFECT_D2D_SHELTER
 	.4byte BattleScript_EffectD2DImbue 				  @ EFFECT_D2D_IMBUE_FIRE
 	.4byte BattleScript_EffectD2DImbue 				  @ EFFECT_D2D_IMBUE_ICE
 	.4byte BattleScript_EffectD2DImbue 				  @ EFFECT_D2D_IMBUE_ELECTRIC
+	.4byte BattleScript_EffectHit					  @ EFFECT_D2D_RESONANCE
+	.4byte BattleScript_D2D_EffectEcholocation		  @ EFFECT_D2D_ECHOLOCATION
 
 @ The game doesn't seem to like having EffectHit as the last item in the list...
 
@@ -11732,3 +11734,29 @@ BattleScript_EffectD2DImbue::
 	printstring STRINGID_D2D_STATUSIMBUED
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
+
+BattleScript_D2D_EffectEcholocation:
+	attackcanceler
+	attackstring
+	ppreduce
+	jumpifstat BS_ATTACKER, CMP_LESS_THAN, STAT_SPEED, MAX_STAT_STAGE, BattleScript_D2D_EffectEcholocation_DoMoveAnim
+	jumpifstat BS_ATTACKER, CMP_EQUAL, STAT_ACC, MAX_STAT_STAGE, BattleScript_CantRaiseMultipleStats
+BattleScript_D2D_EffectEcholocation_DoMoveAnim::
+	attackanimation
+	waitanimation
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_ATTACKER, BIT_SPEED | BIT_SPDEF, 0
+	setstatchanger STAT_SPEED, 1, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_D2D_EffectEcholocation_TryAcc
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_D2D_EffectEcholocation_TryAcc
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_D2D_EffectEcholocation_TryAcc::
+	setstatchanger STAT_ACC, 1, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_D2D_EffectEcholocation_End
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_D2D_EffectEcholocation_End
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_D2D_EffectEcholocation_End:
+	goto BattleScript_MoveEnd
+	

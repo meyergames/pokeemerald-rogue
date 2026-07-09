@@ -3402,6 +3402,14 @@ static const u8 sEnthunderDescription[] = _(
     "Empowers the next Normal\n"
     "or Electric-type move.");
 
+static const u8 sResonanceDescription[] = _(
+    "Super effective against\n"
+    "Ice and Steel-types.");
+
+static const u8 sEcholocationDescription[] = _(
+    "Raises spatial awareness\n"
+    "(i.e. Speed and Accuracy).");
+
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4283,4 +4291,6 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_ENFIRE - 1] = sEnfireDescription,
     [MOVE_D2D_ENFROST - 1] = sEnfrostDescription,
     [MOVE_D2D_ENTHUNDER - 1] = sEnthunderDescription,
+    [MOVE_D2D_RESONANCE - 1] = sResonanceDescription,
+    [MOVE_D2D_ECHOLOCATION - 1] = sEcholocationDescription,
 };

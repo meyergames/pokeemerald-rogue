@@ -20,6 +20,10 @@
       "Level": 14
     },
     {
+      "Move": "MOVE_ECHOED_VOICE",
+      "Level": 15
+    },
+    {
       "Move": "MOVE_MEAN_LOOK",
       "Level": 19
     },
@@ -42,6 +46,10 @@
     {
       "Move": "MOVE_SHADOW_BALL",
       "Level": 41
+    },
+    {
+      "Move": "MOVE_HYPER_VOICE",
+      "Level": 45
     },
     {
       "Move": "MOVE_PERISH_SONG",

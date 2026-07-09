@@ -903,6 +903,8 @@ gBattleAnims_Moves::
 	.4byte Move_D2D_ENFIRE
 	.4byte Move_D2D_ENFROST
 	.4byte Move_D2D_ENTHUNDER
+	.4byte Move_D2D_RESONANCE
+	.4byte Move_D2D_ECHOLOCATION
 
 
 
@@ -35147,4 +35149,45 @@ Move_D2D_ENTHUNDER:
 	call ElectricityEffect
 @ SPARK END
 	waitforvisualfinish
+	end
+
+Move_D2D_RESONANCE:
+	loadspritegfx ANIM_TAG_METAL_SOUND_WAVES
+	monbg ANIM_DEF_PARTNER
+	splitbgprio_foes ANIM_TARGET
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 2, 0, 8, 1
+	call MetalSoundRings
+	call MetalSoundRings
+	call MetalSoundRings
+	call MetalSoundRings
+	call MetalSoundRings
+	call MetalSoundRings
+	call MetalSoundRings
+	call MetalSoundRings
+	waitforvisualfinish
+	clearmonbg ANIM_DEF_PARTNER
+	delay 0
+	waitforvisualfinish
+	end
+
+Move_D2D_ECHOLOCATION:
+	loadspritegfx ANIM_TAG_THIN_RING
+	monbg ANIM_ATK_PARTNER
+	createvisualtask AnimTask_BlendBattleAnimPalExclude, 5, ANIM_ATTACKER, 0, 0, 16, RGB_BLACK
+	waitforvisualfinish
+	createvisualtask AnimTask_SetAllNonAttackersInvisiblity, 5, TRUE
+	waitforvisualfinish
+	createsprite gThinRingExpandingSpriteTemplate, ANIM_ATTACKER, 40, 0, 0, 0, 0
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, -3, -3, 16, ANIM_ATTACKER, 0
+	createvisualtask SoundTask_PlayDoubleCry, 2, ANIM_ATTACKER, DOUBLE_CRY_GROWL
+	delay 14
+	createsprite gThinRingExpandingSpriteTemplate, ANIM_ATTACKER, 40, 0, 0, 0, 0
+	delay 14
+	createsprite gThinRingExpandingSpriteTemplate, ANIM_ATTACKER, 40, 0, 0, 0, 0
+	waitforvisualfinish
+	createvisualtask AnimTask_SetAllNonAttackersInvisiblity, 5, FALSE
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPalExclude, 5, ANIM_ATTACKER, 0, 16, 0, RGB_BLACK
+	waitforvisualfinish
+	clearmonbg ANIM_ATK_PARTNER
 	end

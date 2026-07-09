@@ -4,6 +4,14 @@
   ],
   "LevelUpMoves": [
     {
+      "Move": "MOVE_SPLASH",
+      "Level": 1
+    },
+    {
+      "Move": "MOVE_D2D_ECHOLOCATION",
+      "Level": 1
+    },
+    {
       "Move": "MOVE_GROWL",
       "Level": 1
     },
@@ -12,11 +20,7 @@
       "Level": 1
     },
     {
-      "Move": "MOVE_SPLASH",
-      "Level": 1
-    },
-    {
-      "Move": "MOVE_ASTONISH",
+      "Move": "MOVE_ECHOED_VOICE",
       "Level": 1
     },
     {
@@ -66,6 +70,10 @@
     {
       "Move": "MOVE_AMNESIA",
       "Level": 44
+    },
+    {
+      "Move": "MOVE_HYPER_VOICE",
+      "Level": 45
     },
     {
       "Move": "MOVE_HYDRO_PUMP",

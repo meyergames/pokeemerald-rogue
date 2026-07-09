@@ -34,6 +34,10 @@
     {
       "Move": "MOVE_UPROAR",
       "Level": 32
+    },
+    {
+      "Move": "MOVE_D2D_RESONANCE",
+      "Level": 35
     }
   ],
   "TutorMoves": [

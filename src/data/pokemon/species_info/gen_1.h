@@ -3032,9 +3032,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
 #if P_FAMILY_JIGGLYPUFF
 #if P_UPDATED_TYPES >= GEN_6
-    #define JIGGLYPUFF_FAMILY_TYPES { TYPE_NORMAL, TYPE_FAIRY}
+    #define JIGGLYPUFF_FAMILY_TYPES { TYPE_STELLAR, TYPE_FAIRY}
 #else
-    #define JIGGLYPUFF_FAMILY_TYPES { TYPE_NORMAL, TYPE_NORMAL}
+    #define JIGGLYPUFF_FAMILY_TYPES { TYPE_STELLAR, TYPE_STELLAR}
 #endif
 
 #if P_GEN_2_CROSS_EVOS
@@ -4821,7 +4821,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseSpeed     = 70,
         .baseSpAttack  = 90,
         .baseSpDefense = 100,
-        .types = { TYPE_WATER, TYPE_WATER },
+        .types = { TYPE_WATER, TYPE_STELLAR },
         .catchRate = 45,
         .expYield = 225,
         .evYield_SpDefense = 3,
