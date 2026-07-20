@@ -3075,9 +3075,9 @@ u8 DoBattlerEndTurnEffects(void)
             if (gDisableStructs[battler].chargeTimer && --gDisableStructs[battler].chargeTimer == 0)
             {
                 gStatuses3[battler] &= ~STATUS3_CHARGED_UP;
-                gStatuses4[battler] &= ~STATUS4_D2D_ENFIRE; // we lazy up in here
-                gStatuses4[battler] &= ~STATUS4_D2D_ENFROST; // (piggybacking off of Charge)
-                gStatuses4[battler] &= ~STATUS4_D2D_ENTHUNDER;
+                // gStatuses4[battler] &= ~STATUS4_D2D_ENFIRE; // we lazy up in here
+                // gStatuses4[battler] &= ~STATUS4_D2D_ENFROST; // (piggybacking off of Charge)
+                // gStatuses4[battler] &= ~STATUS4_D2D_ENTHUNDER;
             }
             gBattleStruct->turnEffectsTracker++;
             break;
@@ -10204,7 +10204,7 @@ static inline uq4_12_t GetD2DImbueModifier(u32 battlerAtk, u32 move)
     if ((gStatuses4[battlerAtk] & STATUS4_D2D_ENFIRE && (gBattleMoves[move].type == TYPE_FIRE || gBattleMoves[move].type == TYPE_NORMAL))
         || (gStatuses4[battlerAtk] & STATUS4_D2D_ENFROST && (gBattleMoves[move].type == TYPE_ICE || gBattleMoves[move].type == TYPE_NORMAL))
         || (gStatuses4[battlerAtk] & STATUS4_D2D_ENTHUNDER && (gBattleMoves[move].type == TYPE_ELECTRIC || gBattleMoves[move].type == TYPE_NORMAL)))
-        return UQ_4_12(2.0);
+        return UQ_4_12(1.5);
     return UQ_4_12(1.0);
 }
 

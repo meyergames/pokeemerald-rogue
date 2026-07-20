@@ -9704,21 +9704,21 @@ static void Cmd_various(void)
         {
             gStatuses4[gBattlerTarget] |= STATUS4_D2D_ENFIRE;
             gBattlescriptCurrInstr = cmd->nextInstr;
-            gDisableStructs[gBattlerTarget].chargeTimer = 2;
+            // gDisableStructs[gBattlerTarget].chargeTimer = 2;
             PREPARE_TYPE_BUFFER(gBattleTextBuff3, type);
         }
         else if (type == TYPE_ICE)
         {
             gStatuses4[gBattlerTarget] |= STATUS4_D2D_ENFROST;
             gBattlescriptCurrInstr = cmd->nextInstr;
-            gDisableStructs[gBattlerTarget].chargeTimer = 2;
+            // gDisableStructs[gBattlerTarget].chargeTimer = 2;
             PREPARE_TYPE_BUFFER(gBattleTextBuff3, type);
         }
         else if (type == TYPE_ELECTRIC)
         {
             gStatuses4[gBattlerTarget] |= STATUS4_D2D_ENTHUNDER;
             gBattlescriptCurrInstr = cmd->nextInstr;
-            gDisableStructs[gBattlerTarget].chargeTimer = 2;
+            // gDisableStructs[gBattlerTarget].chargeTimer = 2;
             PREPARE_TYPE_BUFFER(gBattleTextBuff3, type);
         }
         else

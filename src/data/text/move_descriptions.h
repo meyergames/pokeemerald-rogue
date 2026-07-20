@@ -3391,16 +3391,16 @@ static const u8 sMandibleJawDescription[] = _(
     "Bug-types.");
 
 static const u8 sEnfireDescription[] = _(
-    "Empowers the next Normal\n"
-    "or Fire-type move.");
+    "Imbues Normal-type moves\n"
+    "with the power of Fire.");
 
 static const u8 sEnfrostDescription[] = _(
-    "Empowers the next Normal\n"
-    "or Ice-type move.");
+    "Imbues Normal-type moves\n"
+    "with the power of Ice.");
 
 static const u8 sEnthunderDescription[] = _(
-    "Empowers the next Normal\n"
-    "or Electric-type move.");
+    "Imbues Normal-type moves\n"
+    "with the power of Electr.");
 
 static const u8 sResonanceDescription[] = _(
     "Super effective against\n"
