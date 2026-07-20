@@ -3083,17 +3083,13 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SNORE] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 50,
-        #else
-            .power = 40,
-        #endif
         .effect = EFFECT_SNORE,
         .type = TYPE_STELLAR,
+        .power = 60,
         .accuracy = 100,
         .pp = 15,
         .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
+        .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .split = SPLIT_SPECIAL,
         .zMoveEffect = Z_EFFECT_NONE,
@@ -16267,7 +16263,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     [MOVE_D2D_SPORE_BOMB] =
     {
         .effect = EFFECT_DIRE_CLAW,
-        .power = 85,
+        .power = 90,
         .type = TYPE_GRASS,
         .accuracy = 100,
         .pp = 15,
