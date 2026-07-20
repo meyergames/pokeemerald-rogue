@@ -4,7 +4,7 @@
   ],
   "LevelUpMoves": [
     {
-      "Move": "MOVE_BIND",
+      "Move": "MOVE_SNAP_TRAP",
       "Level": 1
     },
     {
@@ -20,6 +20,10 @@
       "Level": 11
     },
     {
+      "Move": "MOVE_POISON_FANG",
+      "Level": 15
+    },
+    {
       "Move": "MOVE_SWEET_SCENT",
       "Level": 17
     },
@@ -28,7 +32,11 @@
       "Level": 21
     },
     {
-      "Move": "MOVE_D2D_MANDIBLE_JAW",
+      "Move": "MOVE_GRASSY_GLIDE",
+      "Level": 24
+    },
+    {
+      "Move": "MOVE_D2D_CRUNCH",
       "Level": 25
     },
     {
@@ -36,28 +44,24 @@
       "Level": 27
     },
     {
-      "Move": "MOVE_D2D_DEVOUR",
-      "Level": 30
-    },
-    {
       "Move": "MOVE_LEAF_TORNADO",
       "Level": 31
     },
     {
-      "Move": "MOVE_STOCKPILE",
-      "Level": 37
+      "Move": "MOVE_D2D_MANDIBLE_JAW",
+      "Level": 35
     },
     {
-      "Move": "MOVE_SPIT_UP",
-      "Level": 37
-    },
-    {
-      "Move": "MOVE_SWALLOW",
-      "Level": 37
-    },
-    {
-      "Move": "MOVE_CRUNCH",
+      "Move": "MOVE_CROSS_POISON",
       "Level": 41
+    },
+    {
+      "Move": "MOVE_LEAF_BLADE",
+      "Level": 43
+    },
+    {
+      "Move": "MOVE_D2D_DEVOUR",
+      "Level": 45
     },
     {
       "Move": "MOVE_WRING_OUT",
@@ -69,7 +73,7 @@
     },
     {
       "Move": "MOVE_JAW_LOCK",
-      "Level": 60
+      "Level": 55
     }
   ],
   "TutorMoves": [
@@ -93,6 +97,7 @@
     "MOVE_HYPER_BEAM",
     "MOVE_INFESTATION",
     "MOVE_KNOCK_OFF",
+    "MOVE_LEECH_LIFE",
     "MOVE_LEECH_SEED",
     "MOVE_MAGICAL_LEAF",
     "MOVE_NATURAL_GIFT",
@@ -111,27 +116,33 @@
     "MOVE_SLUDGE_BOMB",
     "MOVE_SNORE",
     "MOVE_SOLAR_BEAM",
+    "MOVE_SPIKY_SHIELD",
+    "MOVE_SPIT_UP"
+    "MOVE_STOCKPILE",
     "MOVE_STUN_SPORE",
     "MOVE_SUBSTITUTE",
     "MOVE_SUNNY_DAY",
     "MOVE_SWAGGER",
+    "MOVE_SWALLOW",
     "MOVE_SWORDS_DANCE",
     "MOVE_SYNTHESIS",
     "MOVE_TERA_BLAST",
     "MOVE_THIEF",
     "MOVE_THROAT_CHOP",
+    "MOVE_TOXIC",
+    "MOVE_TOXIC_SPIKES",
     "MOVE_WORRY_SEED"
   ],
   "CompetitiveSets": [
     {
       "Moves": [
-        "MOVE_SLEEP_POWDER",
-        "MOVE_POWER_WHIP",
-        "MOVE_KNOCK_OFF",
-        "MOVE_NATURAL_GIFT"
+        "MOVE_LEAF_BLADE",
+        "MOVE_POISON_FANG",
+        "MOVE_D2D_MANDIBLE_JAW",
+        "MOVE_D2D_DEVOUR"
       ],
-      "Ability": "ABILITY_LEVITATE",
-      "Item": "ITEM_WATMEL_BERRY",
+      "Ability": "ABILITY_STRONG_JAW",
+      "Item": "ITEM_ASSAULT_VEST",
       "Nature": "NATURE_ADAMANT",
       "SourceTiers": [
         "GEN6PU"
@@ -139,13 +150,13 @@
     },
     {
       "Moves": [
-        "MOVE_SWORDS_DANCE",
-        "MOVE_POWER_WHIP",
-        "MOVE_KNOCK_OFF",
-        "MOVE_SLEEP_POWDER"
+        "MOVE_LEAF_BLADE",
+        "MOVE_POISON_FANG",
+        "MOVE_D2D_MANDIBLE_JAW",
+        "MOVE_D2D_DEVOUR"
       ],
-      "Ability": "ABILITY_LEVITATE",
-      "Item": "ITEM_LIFE_ORB",
+      "Ability": "ABILITY_STRONG_JAW",
+      "Item": "ITEM_ASSAULT_VEST",
       "Nature": "NATURE_ADAMANT",
       "SourceTiers": [
         "GEN7PU"
