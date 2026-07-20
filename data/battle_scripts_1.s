@@ -11679,12 +11679,9 @@ BattleScript_D2D_End3::
 	
 BattleScript_D2D_PollinatorActivates::
 	call BattleScript_AbilityPopUp
-	playanimation BS_TARGET, B_ANIM_D2D_HEALER_HEAL
-	@ waitmessage B_WAIT_TIME_LONG
-	@ orword gHitMarker, HITMARKER_IGNORE_BIDE | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_IGNORE_DISGUISE | HITMARKER_PASSIVE_DAMAGE
-	healthbarupdate BS_TARGET
-	datahpupdate BS_TARGET
-	@ printstring STRINGID_D2D_HEALERRESTOREDHP
+	playanimation BS_ATTACKER, B_ANIM_D2D_HEALER_HEAL
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
 	waitmessage B_WAIT_TIME_SHORT
 	end3
 
