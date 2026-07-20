@@ -16125,7 +16125,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     [MOVE_D2D_DEVOUR] =
     {
         .effect = EFFECT_D2D_DEVOUR,
-        .power = 80,
+        .power = 75,
         .type = TYPE_DARK,
         .accuracy = 100,
         .pp = 5,
