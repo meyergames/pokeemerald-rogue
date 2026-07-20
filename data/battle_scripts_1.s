@@ -11336,10 +11336,17 @@ BattleScript_EffectD2DScatterblast::
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectD2DEnergize::
-	setmoveeffect MOVE_EFFECT_SPD_PLUS_2
 	jumpifsubstituteblocks BattleScript_EffectHit
 	setmoveeffect MOVE_EFFECT_REMOVE_STATUS | MOVE_EFFECT_CERTAIN
-	goto BattleScript_EffectHit
+	call BattleScript_EffectHit_Ret
+	jumpiffainted BS_TARGET, TRUE, BattleScript_MoveEnd
+	setstatchanger STAT_SPEED, 2, FALSE
+	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_D2D_Cancel
+	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_D2D_PostMoveTargetStatRaiseAnim
+	pause B_WAIT_TIME_SHORT
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+	end
 
 BattleScript_D2D_HybridPowerTrySpAtk::
 	jumpifbattleend BattleScript_D2D_Cancel
@@ -11370,6 +11377,14 @@ BattleScript_D2D_HybridPowerTryAttack::
 BattleScript_D2D_PostMoveStatRaiseAnim::
 	setgraphicalstatchangevalues
 	playanimation BS_ATTACKER, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	pause B_WAIT_TIME_SHORT
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+	end
+
+BattleScript_D2D_PostMoveTargetStatRaiseAnim::
+	setgraphicalstatchangevalues
+	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
 	pause B_WAIT_TIME_SHORT
 	printfromtable gStatUpStringIds
 	waitmessage B_WAIT_TIME_LONG
