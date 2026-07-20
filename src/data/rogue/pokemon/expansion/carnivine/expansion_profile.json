@@ -36,7 +36,7 @@
       "Level": 24
     },
     {
-      "Move": "MOVE_D2D_CRUNCH",
+      "Move": "MOVE_CRUNCH",
       "Level": 25
     },
     {
@@ -117,7 +117,7 @@
     "MOVE_SNORE",
     "MOVE_SOLAR_BEAM",
     "MOVE_SPIKY_SHIELD",
-    "MOVE_SPIT_UP"
+    "MOVE_SPIT_UP",
     "MOVE_STOCKPILE",
     "MOVE_STUN_SPORE",
     "MOVE_SUBSTITUTE",
