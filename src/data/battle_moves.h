@@ -5436,12 +5436,12 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_HYPER_VOICE] =
     {
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_D2D_HYPER_VOICE,
         .power = 90,
         .type = TYPE_STELLAR,
         .accuracy = 100,
         .pp = 10,
-        .secondaryEffectChance = 0,
+        .secondaryEffectChance = 30,
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .split = SPLIT_SPECIAL,

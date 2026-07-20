@@ -480,6 +480,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectD2DImbue 				  @ EFFECT_D2D_IMBUE_ELECTRIC
 	.4byte BattleScript_EffectHit					  @ EFFECT_D2D_RESONANCE
 	.4byte BattleScript_D2D_EffectEcholocation		  @ EFFECT_D2D_ECHOLOCATION
+	.4byte BattleScript_D2D_EffectHyperVoice		  @ EFFECT_D2D_HYPER_VOICE
 
 @ The game doesn't seem to like having EffectHit as the last item in the list...
 
@@ -11774,4 +11775,7 @@ BattleScript_D2D_EffectEcholocation_TryAcc::
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_D2D_EffectEcholocation_End:
 	goto BattleScript_MoveEnd
-	
+
+BattleScript_D2D_EffectHyperVoice:
+	setmoveeffect MOVE_EFFECT_SP_ATK_MINUS_1 | MOVE_EFFECT_AFFECTS_USER
+	goto BattleScript_EffectHit
