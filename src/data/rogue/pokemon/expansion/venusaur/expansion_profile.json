@@ -70,6 +70,10 @@
       "Level": 51
     },
     {
+      "Move": "MOVE_D2D_SPORE_BOMB",
+      "Level": 54
+    },
+    {
       "Move": "MOVE_SOLAR_BEAM",
       "Level": 58
     }

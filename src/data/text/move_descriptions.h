@@ -3410,6 +3410,10 @@ static const u8 sEcholocationDescription[] = _(
     "Raises spatial awareness\n"
     "(i.e. Speed and Accuracy).");
 
+static const u8 sSporeBombDescription[] = _(
+    "High chance to poison,\n"
+    "paralyze or induce sleep.");
+
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4293,4 +4297,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_ENTHUNDER - 1] = sEnthunderDescription,
     [MOVE_D2D_RESONANCE - 1] = sResonanceDescription,
     [MOVE_D2D_ECHOLOCATION - 1] = sEcholocationDescription,
+    [MOVE_D2D_SPORE_BOMB - 1] = sSporeBombDescription,
 };
