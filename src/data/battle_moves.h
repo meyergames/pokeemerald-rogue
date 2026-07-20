@@ -16180,6 +16180,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .split = SPLIT_PHYSICAL,
         .zMoveEffect = Z_EFFECT_NONE,
         .makesContact = TRUE,
+        .bitingMove = TRUE,
     },
 
     [MOVE_D2D_ENFIRE] =
