@@ -716,8 +716,10 @@
 #define STRINGID_D2D_ALLYLEARNEDMOVE				  713
 #define STRINGID_D2D_HEADACHEACTIVATES				  714
 #define STRINGID_D2D_STATUSIMBUED					  715
+#define STRINGID_D2D_SORETHROAT						  716
+#define STRINGID_D2D_PKMNWOKEUPINUPROAR				  717
 
-#define BATTLESTRINGS_COUNT                           716
+#define BATTLESTRINGS_COUNT                           718
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,

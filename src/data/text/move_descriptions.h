@@ -1025,12 +1025,8 @@ static const u8 sFakeOutDescription[] = _(
     "that causes flinching.");
 
 static const u8 sUproarDescription[] = _(
-#if B_UPROAR_TURNS >= GEN_5
-    "Causes an uproar for 2 to 5\n"
-#else
-    "Causes an uproar for 3\n"
-#endif
-    "turns and prevents sleep.");
+    "Powerful against sleeping\n"
+    "foes, but also wakes them.");
 
 static const u8 sStockpileDescription[] = _(
     "Charges up power for up to\n"
@@ -1233,8 +1229,8 @@ static const u8 sSlackOffDescription[] = _(
     "half the maximum HP.");
 
 static const u8 sHyperVoiceDescription[] = _(
-    "Attacks with damaging sound\n"
-    "waves. May lower own Sp.Atk.");
+    "Non-Sound types cannot use\n"
+    "this move twice in a row.");
 
 static const u8 sPoisonFangDescription[] = _(
     "A sharp-fanged attack.\n"
@@ -2289,8 +2285,8 @@ static const u8 sMoonblastDescription[] = _(
     "the moon. May lower Sp. Atk.");
 
 static const u8 sBoomburstDescription[] = _(
-    "Attacks everything with a\n"
-    "destructive sound wave.");
+    "A destructive sound wave.\n"
+    "Disables user's Sound moves.");
 
 static const u8 sFairyLockDescription[] = _(
     "Locks down the battlefield\n"

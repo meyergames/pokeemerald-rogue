@@ -281,7 +281,7 @@ static const u8 sText_PkmnMoveIsDisabled[] = _("{B_ATK_NAME_WITH_PREFIX}'s {B_CU
 static const u8 sText_PkmnCantUseMoveTorment[] = _("{B_ATK_NAME_WITH_PREFIX} can't use the same\nmove in a row due to the Torment!\p");
 static const u8 sText_PkmnCantUseMoveTaunt[] = _("{B_ATK_NAME_WITH_PREFIX} can't use\n{B_CURRENT_MOVE} after the Taunt!\p");
 static const u8 sText_PkmnCantUseMoveSealed[] = _("{B_ATK_NAME_WITH_PREFIX} can't use the\nsealed {B_CURRENT_MOVE}!\p");
-static const u8 sText_PkmnCantUseMoveThroatChop[] = _("{B_ATK_NAME_WITH_PREFIX} can't use\n{B_CURRENT_MOVE} due to Throat Chop!\p");
+static const u8 sText_PkmnCantUseMoveThroatChop[] = _("{B_ATK_NAME_WITH_PREFIX}'s throat is too sore\nto use {B_CURRENT_MOVE}!\p");
 static const u8 sText_PkmnMadeItRain[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY}\nmade it rain!");
 static const u8 sText_PkmnRaisedSpeed[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY}\nraised its SPEED!");
 static const u8 sText_PkmnProtectedBy[] = _("{B_DEF_NAME_WITH_PREFIX} was protected\nby {B_DEF_ABILITY}!");
@@ -466,7 +466,9 @@ static const u8 sText_D2D_MachFiveSpeed[] = _("{B_ATK_NAME_WITH_PREFIX} reached 
 static const u8 sText_D2D_TopplePower[] = _("Topple's power raised to {B_BUFF1}!");
 static const u8 sText_D2D_AllyLearnedMove[] = _("{B_DEF_NAME_WITH_PREFIX} learned\n{B_BUFF1}!\p");
 static const u8 sText_D2D_HeadacheActivates[] = _("{B_ATK_NAME_WITH_PREFIX} suffers from a Headache!");
-static const u8 sText_StatusImbued[] =_("{B_ATK_NAME_WITH_PREFIX} became imbued with {B_BUFF3}!");
+static const u8 sText_D2D_StatusImbued[] =_("{B_ATK_NAME_WITH_PREFIX} became imbued with {B_BUFF3}!");
+static const u8 sText_D2D_SoreThroat[] = _("{B_ATK_NAME_WITH_PREFIX}'s throat must recover!");
+static const u8 sText_D2D_PkmnWokeUpInUproar[] = _("{B_DEF_NAME_WITH_PREFIX} woke up\nin the UPROAR!");
 
 const u8 *const gStatNamesTable[NUM_BATTLE_STATS] =
 {
@@ -1563,7 +1565,9 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_D2D_TOPPLE_POWER - BATTLESTRINGS_TABLE_START] = sText_D2D_TopplePower,
     [STRINGID_D2D_ALLYLEARNEDMOVE - BATTLESTRINGS_TABLE_START] = sText_D2D_AllyLearnedMove,
     [STRINGID_D2D_HEADACHEACTIVATES - BATTLESTRINGS_TABLE_START] = sText_D2D_HeadacheActivates,
-    [STRINGID_D2D_STATUSIMBUED - BATTLESTRINGS_TABLE_START] = sText_StatusImbued,
+    [STRINGID_D2D_STATUSIMBUED - BATTLESTRINGS_TABLE_START] = sText_D2D_StatusImbued,
+    [STRINGID_D2D_SORETHROAT - BATTLESTRINGS_TABLE_START] = sText_D2D_SoreThroat,
+    [STRINGID_D2D_PKMNWOKEUPINUPROAR - BATTLESTRINGS_TABLE_START] = sText_D2D_PkmnWokeUpInUproar,
 };
 
 const u16 gTrainerUsedItemStringIds[] =

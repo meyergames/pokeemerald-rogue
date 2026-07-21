@@ -4526,17 +4526,13 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_UPROAR] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 90,
-        #else
-            .power = 50,
-        #endif
-        .effect = EFFECT_UPROAR,
+        .effect = EFFECT_D2D_UPROAR,
         .type = TYPE_STELLAR,
+        .power = 70,
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_RANDOM,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
         .priority = 0,
         .split = SPLIT_SPECIAL,
         .zMoveEffect = Z_EFFECT_NONE,
@@ -5437,7 +5433,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .type = TYPE_STELLAR,
         .accuracy = 100,
         .pp = 10,
-        .secondaryEffectChance = 20,
+        .secondaryEffectChance = 100,
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .split = SPLIT_SPECIAL,
@@ -10228,7 +10224,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_BOOMBURST] =
     {
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_D2D_BOOMBURST,
         .power = 140,
         .type = TYPE_STELLAR,
         .accuracy = 100,

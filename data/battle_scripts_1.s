@@ -486,6 +486,8 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_D2D_EffectWhiteout            @ EFFECT_D2D_WHITEOUT
 	.4byte BattleScript_D2D_EffectDustDevil			  @ EFFECT_D2D_DUST_DEVIL
 	@ .4byte BattleScript_D2D_EffectSturdyRoots         @ EFFECT_D2D_STURDY_ROOTS
+	.4byte BattleScript_D2D_EffectBoomburst			  @ EFFECT_D2D_BOOMBURST
+	.4byte BattleScript_D2D_EffectUproar			  @ EFFECT_D2D_UPROAR
 
 @ The game doesn't seem to like having EffectHit as the last item in the list...
 
@@ -11778,10 +11780,6 @@ BattleScript_D2D_EffectEcholocation_TryAcc::
 BattleScript_D2D_EffectEcholocation_End:
 	goto BattleScript_MoveEnd
 
-BattleScript_D2D_EffectHyperVoice:
-	setmoveeffect MOVE_EFFECT_SP_ATK_MINUS_1 | MOVE_EFFECT_AFFECTS_USER
-	goto BattleScript_EffectHit
-
 BattleScript_D2D_EffectSunflare::
 	call BattleScript_CheckPrimalWeather
 	jumpifweatheraffected BS_ATTACKER, B_WEATHER_SUN_PRIMAL, BattleScript_ButItFailed
@@ -11842,3 +11840,35 @@ BattleScript_D2D_EffectDustDevil::
 	
 	setsandstorm
 	goto BattleScript_MoveWeatherChange
+
+BattleScript_D2D_EffectHyperVoice:
+	jumpiftype BS_ATTACKER, TYPE_STELLAR, BattleScript_EffectHit
+	setmoveeffect MOVE_EFFECT_THROAT_CHOP | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
+	call BattleScript_EffectHit_Ret
+	call BattleScript_TryFaintMon_Ret
+	jumpifbattleend BattleScript_MoveEnd
+	printstring STRINGID_D2D_SORETHROAT
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_D2D_EffectBoomburst:
+	setmoveeffect MOVE_EFFECT_THROAT_CHOP | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
+	call BattleScript_EffectHit_Ret
+	call BattleScript_TryFaintMon_Ret
+	jumpifbattleend BattleScript_MoveEnd
+	printstring STRINGID_D2D_SORETHROAT
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_D2D_EffectUproar:
+	call BattleScript_EffectHit_Ret
+	call BattleScript_TryFaintMon_Ret
+	jumpiffainted BS_TARGET, TRUE, BattleScript_MoveEnd
+	jumpifstatus BS_TARGET, STATUS1_SLEEP, BattleScript_D2D_EffectUproar_CureSleep
+	goto BattleScript_MoveEnd
+BattleScript_D2D_EffectUproar_CureSleep:
+	curestatus BS_TARGET
+	updatestatusicon BS_TARGET
+	printstring STRINGID_D2D_PKMNWOKEUPINUPROAR
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
