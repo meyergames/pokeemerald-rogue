@@ -52,6 +52,10 @@
       "Level": 39
     },
     {
+      "Move": "MOVE_D2D_BLADE_SLASH",
+      "Level": 45
+    },
+    {
       "Move": "MOVE_MIST",
       "Level": 46
     },
