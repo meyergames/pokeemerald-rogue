@@ -68,7 +68,7 @@
       "Level": 24
     },
     {
-      "Move": "MOVE_D2D_RESONANCE",
+      "Move": "MOVE_D2D_LULLABY",
       "Level": 25
     },
     {
@@ -80,12 +80,20 @@
       "Level": 32
     },
     {
-      "Move": "MOVE_HYPER_VOICE",
-      "Level": 36
+      "Move": "MOVE_UPROAR",
+      "Level": 35
     },
     {
-      "Move": "MOVE_DOUBLE_EDGE",
-      "Level": 44
+      "Move": "MOVE_D2D_RESONANCE",
+      "Level": 45
+    },
+    {
+      "Move": "MOVE_HYPER_VOICE",
+      "Level": 55
+    },
+    {
+      "Move": "MOVE_BOOMBURST",
+      "Level": 70
     }
   ],
   "TutorMoves": [
@@ -166,5 +174,21 @@
     "MOVE_WILD_CHARGE",
     "MOVE_ZEN_HEADBUTT"
   ],
-  "CompetitiveSets": []
+  "CompetitiveSets": [
+    {
+      "Moves": [
+        "MOVE_UPROAR",
+        "MOVE_HYPER_VOICE",
+        "MOVE_D2D_LULLABY",
+        "MOVE_HELPING_HAND"
+      ],
+      "Ability": "ABILITY_D2D_SINGING_STAR",
+      "Item": "ITEM_FOCUS_SASH",
+      "Nature": "NATURE_TIMID",
+      "SourceTiers": [
+        "GEN6PU",
+        "GEN7PU"
+      ]
+    }
+  ]
 }

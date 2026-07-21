@@ -62,6 +62,10 @@
     {
       "Move": "MOVE_HYDRO_PUMP",
       "Level": 58
+    },
+    {
+      "Move": "MOVE_D2D_LULLABY",
+      "Level": 70
     }
   ],
   "TutorMoves": [

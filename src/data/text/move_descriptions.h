@@ -3426,6 +3426,10 @@ static const u8 sDustDevilDescription[] = _(
     "Damages both foes, then\n"
     "summons a sandstorm.");
 
+static const u8 sLullabyDescription[] = _(
+    "A soothing song lulls all\n"
+    "others into a deep slumber.");
+
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4314,4 +4318,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_DOWNPOUR - 1] = sDownpourDescription,
     [MOVE_D2D_WHITEOUT - 1] = sWhiteoutDescription,
     [MOVE_D2D_DUST_DEVIL - 1] = sDustDevilDescription,
+    [MOVE_D2D_LULLABY - 1] = sLullabyDescription,
 };

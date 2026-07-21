@@ -910,6 +910,7 @@ gBattleAnims_Moves::
 	.4byte Move_D2D_DOWNPOUR
 	.4byte Move_D2D_WHITEOUT
 	.4byte Move_D2D_DUST_DEVIL
+	.4byte Move_D2D_LULLABY
 
 
 
@@ -35333,4 +35334,47 @@ Move_D2D_DUST_DEVIL:
 	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 0, 2816, 96, 0
 	delay 10
 	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 60, 2560, 96, 0
+	end
+
+Move_D2D_LULLABY:
+	loadspritegfx ANIM_TAG_BREATH
+	createvisualtask AnimTask_GrowAndShrink, 2
+	playsewithpan SE_M_SWAGGER, SOUND_PAN_ATTACKER
+	waitforvisualfinish
+	createsprite gBreathPuffSpriteTemplate, ANIM_ATTACKER, 2
+	loopsewithpan SE_M_SWAGGER, SOUND_PAN_ATTACKER, 4, 2
+	waitforvisualfinish
+	loadspritegfx ANIM_TAG_MUSIC_NOTES
+	monbg ANIM_DEF_PARTNER
+	createvisualtask AnimTask_MusicNotesRainbowBlend, 2
+	waitforvisualfinish
+	panse SE_M_SING, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 7, 0, 12
+	delay 5
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 6, 1, 12
+	delay 5
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 1, 2, 12
+	delay 5
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 2, 3, 12
+	delay 5
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 3, 0, 12
+	delay 4
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 2, 1, 12
+	delay 4
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 5, 2, 12
+	delay 4
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 6, 3, 12
+	delay 4
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 2, 0, 12
+	delay 4
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 2, 1, 12
+	delay 4
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 1, 2, 12
+	delay 4
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 5, 3, 12
+	delay 4
+	waitforvisualfinish
+	clearmonbg ANIM_DEF_PARTNER
+	createvisualtask AnimTask_MusicNotesClearRainbowBlend, 2
+	waitforvisualfinish
 	end

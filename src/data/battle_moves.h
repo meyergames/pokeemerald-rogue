@@ -16364,4 +16364,21 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     //     .mirrorMoveBanned = TRUE,
     //     .skyBattleBanned = TRUE,
     // },
+
+    [MOVE_D2D_LULLABY] =
+    {
+        .effect = EFFECT_SLEEP,
+        .power = 0,
+        .type = TYPE_STELLAR,
+        .accuracy = 75,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_SPD_UP_1,
+        .ignoresSubstitute = TRUE,
+        .magicCoatAffected = TRUE,
+        .soundMove = TRUE,
+    },
 };

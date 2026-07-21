@@ -90,6 +90,10 @@
     {
       "Move": "MOVE_PLAY_ROUGH",
       "Level": 5
+    },
+    {
+      "Move": "MOVE_D2D_LULLABY",
+      "Level": 35
     }
   ],
   "TutorMoves": [

@@ -53,6 +53,10 @@
       "Level": 64
     },
     {
+      "Move": "MOVE_D2D_LULLABY",
+      "Level": 70
+    },
+    {
       "Move": "MOVE_ROLE_PLAY",
       "Level": 71
     },
