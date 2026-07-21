@@ -126,13 +126,13 @@
   "CompetitiveSets": [
     {
       "Moves": [
-        "MOVE_HYDRO_PUMP",
+        "MOVE_SURF",
         "MOVE_PSYCHIC",
         "MOVE_ICE_BEAM",
         "MOVE_HIDDEN_POWER"
       ],
-      "Ability": "ABILITY_CLOUD_NINE",
-      "Item": "ITEM_CHOICE_SCARF",
+      "Ability": "ABILITY_D2D_HEADACHE",
+      "Item": "ITEM_PERSIM_BERRY",
       "Nature": "NATURE_TIMID",
       "HiddenPower": "TYPE_FIRE",
       "SourceTiers": [
@@ -146,8 +146,8 @@
         "MOVE_ICE_BEAM",
         "MOVE_TERA_BLAST"
       ],
-      "Ability": "ABILITY_SWIFT_SWIM",
-      "Item": "ITEM_EVIOLITE",
+      "Ability": "ABILITY_D2D_HEADACHE",
+      "Item": "ITEM_PERSIM_BERRY",
       "Nature": "NATURE_MODEST",
       "TeraType": "TYPE_ELECTRIC",
       "SourceTiers": [
@@ -161,8 +161,8 @@
         "MOVE_NASTY_PLOT",
         "MOVE_PSYCHIC"
       ],
-      "Ability": "ABILITY_SWIFT_SWIM",
-      "Item": "ITEM_EVIOLITE",
+      "Ability": "ABILITY_D2D_HEADACHE",
+      "Item": "ITEM_PERSIM_BERRY",
       "Nature": "NATURE_MODEST",
       "SourceTiers": [
         "GEN9LC"

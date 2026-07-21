@@ -4639,6 +4639,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             if (!gSpecialStatuses[battler].switchInAbilityDone)
             {
                 gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                gBattlerTarget = battler;
                 BattleScriptPushCursorAndCallback(BattleScript_D2D_TriggerHeadache);
                 effect++;
             }
