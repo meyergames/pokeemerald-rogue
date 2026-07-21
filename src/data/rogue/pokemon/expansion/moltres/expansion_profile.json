@@ -70,6 +70,10 @@
     {
       "Move": "MOVE_SKY_ATTACK",
       "Level": 70
+    },
+    {
+      "Move": "MOVE_D2D_SUNFLARE",
+      "Level": 70
     }
   ],
   "TutorMoves": [

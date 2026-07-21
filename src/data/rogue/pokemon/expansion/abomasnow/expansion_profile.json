@@ -63,6 +63,10 @@
     {
       "Move": "MOVE_SHEER_COLD",
       "Level": 56
+    },
+    {
+      "Move": "MOVE_D2D_WHITEOUT",
+      "Level": 70
     }
   ],
   "TutorMoves": [

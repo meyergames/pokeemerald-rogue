@@ -91,6 +91,10 @@
     {
       "Move": "MOVE_GIGA_IMPACT",
       "Level": 59
+    },
+    {
+      "Move": "MOVE_D2D_DUST_DEVIL",
+      "Level": 70
     }
   ],
   "TutorMoves": [

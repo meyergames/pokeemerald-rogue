@@ -78,6 +78,10 @@
     {
       "Move": "MOVE_HYDRO_PUMP",
       "Level": 62
+    },
+    {
+      "Move": "MOVE_D2D_DOWNPOUR",
+      "Level": 70
     }
   ],
   "TutorMoves": [

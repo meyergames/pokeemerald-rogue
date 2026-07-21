@@ -48,6 +48,10 @@
       "Level": 63
     },
     {
+      "Move": "MOVE_D2D_SUNFLARE",
+      "Level": 70
+    },
+    {
       "Move": "MOVE_FIRE_BLAST",
       "Level": 72
     },

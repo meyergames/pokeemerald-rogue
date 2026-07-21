@@ -1782,6 +1782,10 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_D2D_RESONANCE] = _("Resonance"),
     [MOVE_D2D_ECHOLOCATION] = _("Echolocation"),
     [MOVE_D2D_SPORE_BOMB] = _("Spore Bomb"),
+    [MOVE_D2D_SUNFLARE] = _("Sunflare"),
+    [MOVE_D2D_DOWNPOUR] = _("Downpour"),
+    [MOVE_D2D_WHITEOUT] = _("Whiteout"),
+    [MOVE_D2D_DUST_DEVIL] = _("Dust Devil"),
     // Max Moves
     [MOVE_MAX_GUARD] = _("M-Guard"),
     [MOVE_MAX_STRIKE] = _("M-Strike"),

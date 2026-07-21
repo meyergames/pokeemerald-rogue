@@ -481,6 +481,11 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectHit					  @ EFFECT_D2D_RESONANCE
 	.4byte BattleScript_D2D_EffectEcholocation		  @ EFFECT_D2D_ECHOLOCATION
 	.4byte BattleScript_D2D_EffectHyperVoice		  @ EFFECT_D2D_HYPER_VOICE
+	.4byte BattleScript_D2D_EffectSunflare            @ EFFECT_D2D_SUNFLARE
+	.4byte BattleScript_D2D_EffectDownpour            @ EFFECT_D2D_DOWNPOUR
+	.4byte BattleScript_D2D_EffectWhiteout            @ EFFECT_D2D_WHITEOUT
+	.4byte BattleScript_D2D_EffectDustDevil			  @ EFFECT_D2D_DUST_DEVIL
+	@ .4byte BattleScript_D2D_EffectSturdyRoots         @ EFFECT_D2D_STURDY_ROOTS
 
 @ The game doesn't seem to like having EffectHit as the last item in the list...
 
@@ -11776,3 +11781,64 @@ BattleScript_D2D_EffectEcholocation_End:
 BattleScript_D2D_EffectHyperVoice:
 	setmoveeffect MOVE_EFFECT_SP_ATK_MINUS_1 | MOVE_EFFECT_AFFECTS_USER
 	goto BattleScript_EffectHit
+
+BattleScript_D2D_EffectSunflare::
+	call BattleScript_CheckPrimalWeather
+	jumpifweatheraffected BS_ATTACKER, B_WEATHER_SUN_PRIMAL, BattleScript_ButItFailed
+	jumpifweatheraffected BS_ATTACKER, B_WEATHER_RAIN_PRIMAL, BattleScript_ButItFailed
+	jumpifweatheraffected BS_ATTACKER, B_WEATHER_STRONG_WINDS, BattleScript_ButItFailed
+
+	call BattleScript_EffectHit_Ret
+	call BattleScript_TryFaintMon_Ret
+	jumpifbattleend BattleScript_MoveEnd
+
+	jumpifweatheraffected BS_ATTACKER, B_WEATHER_SUN, BattleScript_MoveEnd
+	
+	setsunny
+	goto BattleScript_MoveWeatherChange
+
+BattleScript_D2D_EffectDownpour::
+	call BattleScript_CheckPrimalWeather
+	jumpifweatheraffected BS_ATTACKER, B_WEATHER_SUN_PRIMAL, BattleScript_ButItFailed
+	jumpifweatheraffected BS_ATTACKER, B_WEATHER_RAIN_PRIMAL, BattleScript_ButItFailed
+	jumpifweatheraffected BS_ATTACKER, B_WEATHER_STRONG_WINDS, BattleScript_ButItFailed
+
+	call BattleScript_EffectHit_Ret
+	call BattleScript_TryFaintMon_Ret
+	jumpifbattleend BattleScript_MoveEnd
+
+	jumpifweatheraffected BS_ATTACKER, B_WEATHER_RAIN, BattleScript_MoveEnd
+	
+	setrain
+	goto BattleScript_MoveWeatherChange
+
+BattleScript_D2D_EffectWhiteout::
+	call BattleScript_CheckPrimalWeather
+	jumpifweatheraffected BS_ATTACKER, B_WEATHER_SUN_PRIMAL, BattleScript_ButItFailed
+	jumpifweatheraffected BS_ATTACKER, B_WEATHER_RAIN_PRIMAL, BattleScript_ButItFailed
+	jumpifweatheraffected BS_ATTACKER, B_WEATHER_STRONG_WINDS, BattleScript_ButItFailed
+
+	call BattleScript_EffectHit_Ret
+	call BattleScript_TryFaintMon_Ret
+	jumpifbattleend BattleScript_MoveEnd
+
+	jumpifweatheraffected BS_ATTACKER, B_WEATHER_HAIL, BattleScript_MoveEnd
+	jumpifweatheraffected BS_ATTACKER, B_WEATHER_SNOW, BattleScript_MoveEnd
+	
+	setsnow
+	goto BattleScript_MoveWeatherChange
+
+BattleScript_D2D_EffectDustDevil::
+	call BattleScript_CheckPrimalWeather
+	jumpifweatheraffected BS_ATTACKER, B_WEATHER_SUN_PRIMAL, BattleScript_ButItFailed
+	jumpifweatheraffected BS_ATTACKER, B_WEATHER_RAIN_PRIMAL, BattleScript_ButItFailed
+	jumpifweatheraffected BS_ATTACKER, B_WEATHER_STRONG_WINDS, BattleScript_ButItFailed
+
+	call BattleScript_EffectHit_Ret
+	call BattleScript_TryFaintMon_Ret
+	jumpifbattleend BattleScript_MoveEnd
+
+	jumpifweatheraffected BS_ATTACKER, B_WEATHER_SANDSTORM, BattleScript_MoveEnd
+	
+	setsandstorm
+	goto BattleScript_MoveWeatherChange

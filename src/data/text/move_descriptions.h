@@ -3414,6 +3414,22 @@ static const u8 sSporeBombDescription[] = _(
     "High chance to poison,\n"
     "paralyze or induce sleep.");
 
+static const u8 sSunflareDescription[] = _(
+    "Damages both foes, then\n"
+    "summons harsh sunlight.");
+
+static const u8 sDownpourDescription[] = _(
+    "Damages both foes, then\n"
+    "summons rain.");
+
+static const u8 sWhiteoutDescription[] = _(
+    "Damages both foes, then\n"
+    "summons snow.");
+
+static const u8 sDustDevilDescription[] = _(
+    "Damages both foes, then\n"
+    "summons a sandstorm.");
+
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4298,4 +4314,8 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_RESONANCE - 1] = sResonanceDescription,
     [MOVE_D2D_ECHOLOCATION - 1] = sEcholocationDescription,
     [MOVE_D2D_SPORE_BOMB - 1] = sSporeBombDescription,
+    [MOVE_D2D_SUNFLARE - 1] = sSunflareDescription,
+    [MOVE_D2D_DOWNPOUR - 1] = sDownpourDescription,
+    [MOVE_D2D_WHITEOUT - 1] = sWhiteoutDescription,
+    [MOVE_D2D_DUST_DEVIL - 1] = sDustDevilDescription,
 };

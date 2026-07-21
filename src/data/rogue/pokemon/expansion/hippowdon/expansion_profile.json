@@ -74,6 +74,10 @@
     {
       "Move": "MOVE_SLACK_OFF",
       "Level": 62
+    },
+    {
+      "Move": "MOVE_D2D_DUST_DEVIL",
+      "Level": 70
     }
   ],
   "TutorMoves": [

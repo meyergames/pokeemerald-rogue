@@ -72,6 +72,10 @@
       "Level": 64
     },
     {
+      "Move": "MOVE_D2D_WHITEOUT",
+      "Level": 70
+    },
+    {
       "Move": "MOVE_SHEER_COLD",
       "Level": 72
     }

@@ -8855,7 +8855,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_HEAL_PULSE,
         .power = 0,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_FAIRY,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 0,
@@ -16274,4 +16274,98 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .zMoveEffect = Z_EFFECT_NONE,
         .powderMove = TRUE,
     },
+
+    [MOVE_D2D_SUNFLARE] =
+    {
+        .effect = EFFECT_D2D_SUNFLARE,
+        .power = 80,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_RECOVER_HP,
+    },
+
+    [MOVE_D2D_DOWNPOUR] =
+    {
+        .effect = EFFECT_D2D_DOWNPOUR,
+        .power = 80,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_RECOVER_HP,
+        .sheerForceBoost = TRUE,
+        .windMove = TRUE,
+    },
+
+    [MOVE_D2D_WHITEOUT] =
+    {
+        .effect = EFFECT_D2D_WHITEOUT,
+        .power = 80,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_RECOVER_HP,
+        .sheerForceBoost = TRUE,
+        .windMove = TRUE,
+    },
+
+    [MOVE_D2D_DUST_DEVIL] =
+    {
+        .effect = EFFECT_D2D_DUST_DEVIL,
+        .power = 80,
+        .type = TYPE_GROUND,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_RECOVER_HP,
+        .sheerForceBoost = TRUE,
+        .windMove = TRUE, 
+    },
+
+    // [MOVE_D2D_SKYBREAKER] =
+    // {
+    //     .effect = EFFECT_D2D_SKYBREAKER,
+    //     .power = 130,
+    //     .type = TYPE_NORMAL,
+    //     .accuracy = 100,
+    //     .pp = 5,
+    //     .secondaryEffectChance = 100,
+    //     .target = MOVE_TARGET_BOTH,
+    //     .priority = 0,
+    //     .split = SPLIT_SPECIAL,
+    //     .zMoveEffect = Z_EFFECT_NONE,
+    // },
+
+    // [MOVE_D2D_STURDY_ROOTS] =
+    // {
+    //     .effect = EFFECT_D2D_STURDY_ROOTS,
+    //     .power = 0,
+    //     .type = TYPE_GRASS,
+    //     .accuracy = 100,
+    //     .pp = 5,
+    //     .secondaryEffectChance = 100,
+    //     .target = MOVE_TARGET_USER,
+    //     .priority = 0,
+    //     .split = SPLIT_STATUS,
+    //     .zMoveEffect = Z_EFFECT_RESET_STATS,
+    //     .snatchAffected = TRUE,
+    //     .ignoresProtect = TRUE,
+    //     .mirrorMoveBanned = TRUE,
+    //     .skyBattleBanned = TRUE,
+    // },
 };
