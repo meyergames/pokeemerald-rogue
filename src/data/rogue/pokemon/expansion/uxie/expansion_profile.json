@@ -24,6 +24,10 @@
       "Level": 14
     },
     {
+      "Move": "MOVE_D2D_INSPIRATION",
+      "Level": 18
+    },
+    {
       "Move": "MOVE_PSYBEAM",
       "Level": 21
     },

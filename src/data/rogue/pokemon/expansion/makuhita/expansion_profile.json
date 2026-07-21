@@ -44,6 +44,10 @@
       "Level": 25
     },
     {
+      "Move": "MOVE_D2D_PUNCH",
+      "Level": 27
+    },
+    {
       "Move": "MOVE_DETECT",
       "Level": 28
     },
@@ -62,6 +66,18 @@
     {
       "Move": "MOVE_CLOSE_COMBAT",
       "Level": 40
+    },
+    {
+      "Move": "MOVE_D2D_ENFIRE",
+      "Level": 42
+    },
+    {
+      "Move": "MOVE_D2D_ENFROST",
+      "Level": 42
+    },
+    {
+      "Move": "MOVE_D2D_ENTHUNDER",
+      "Level": 42
     },
     {
       "Move": "MOVE_REVERSAL",

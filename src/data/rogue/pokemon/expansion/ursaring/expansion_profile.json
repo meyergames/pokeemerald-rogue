@@ -52,6 +52,10 @@
       "Level": 29
     },
     {
+      "Move": "MOVE_D2D_PUNCH",
+      "Level": 32
+    },
+    {
       "Move": "MOVE_D2D_FLEX",
       "Level": 35
     },
@@ -90,6 +94,7 @@
     "MOVE_DOUBLE_EDGE",
     "MOVE_EARTHQUAKE",
     "MOVE_ENDURE",
+    "MOVE_D2D_ENFROST",
     "MOVE_FACADE",
     "MOVE_FAKE_TEARS",
     "MOVE_FIRE_PUNCH",

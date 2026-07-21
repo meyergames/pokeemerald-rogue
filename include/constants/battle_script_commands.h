@@ -250,6 +250,8 @@
 #define VARIOUS_DETERMINE_TOPPLE_POWER				 156
 #define VARIOUS_TEACH_MOVE							 157
 #define VARIOUS_SET_IMBUE_TYPE						 158
+#define VARIOUS_TRY_KISS							 159
+#define VARIOUS_TRY_INSPIRATION						 160
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0

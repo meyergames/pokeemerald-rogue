@@ -564,6 +564,7 @@ extern const u8 BattleScript_D2D_TriggerHeadache[];
 extern const u8 BattleScript_D2D_LightMetalActivates[];
 extern const u8 BattleScript_D2D_HeavyMetalActivates[];
 extern const u8 BattleScript_D2D_PollinatorActivates[];
+extern const u8 BattleScript_D2D_InspirationStatRaise[];
 
 
 #endif // GUARD_BATTLE_SCRIPTS_H

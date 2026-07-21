@@ -3430,6 +3430,18 @@ static const u8 sLullabyDescription[] = _(
     "A soothing song lulls all\n"
     "others into a deep slumber.");
 
+static const u8 sKissDescription[] = _(
+    "Heals the ally proportional\n"
+    "to the user's level.");
+
+static const u8 sInspirationDescription[] = _(
+    "Takes inspiration from\n"
+    "the foe's highest stat.");
+
+static const u8 sPunchDescription[] = _(
+    "A strong punch with no\n"
+    "added effects.");
+
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4319,4 +4331,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_WHITEOUT - 1] = sWhiteoutDescription,
     [MOVE_D2D_DUST_DEVIL - 1] = sDustDevilDescription,
     [MOVE_D2D_LULLABY - 1] = sLullabyDescription,
+    [MOVE_D2D_KISS - 1] = sKissDescription,
+    [MOVE_D2D_INSPIRATION - 1] = sInspirationDescription,
+    [MOVE_D2D_PUNCH - 1] = sPunchDescription,
 };

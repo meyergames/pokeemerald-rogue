@@ -460,7 +460,7 @@ static const u8 sText_SpAttack[] = _("Sp. Atk");
 static const u8 sText_SpDefense[] = _("Sp. Def");
 static const u8 sText_Accuracy[] = _("accuracy");
 static const u8 sText_Evasiveness[] = _("evasiveness");
-static const u8 sText_D2D_HealerRestoredHP[] = _("{B_DEF_NAME_WITH_PREFIX} regained some HP\nfrom its ally's Healer!");
+static const u8 sText_D2D_HealerRestoredHP[] = _("{B_ATK_NAME_WITH_PREFIX} regained some HP\nfrom its ally's Healer!");
 static const u8 sText_D2D_ElementalActivates[] = _("{B_ATK_NAME_WITH_PREFIX}'s Elemental\nalters its Normal moves!\p");
 static const u8 sText_D2D_MachFiveSpeed[] = _("{B_ATK_NAME_WITH_PREFIX} reached {B_BUFF1} km/h!");
 static const u8 sText_D2D_TopplePower[] = _("Topple's power raised to {B_BUFF1}!");
@@ -469,6 +469,7 @@ static const u8 sText_D2D_HeadacheActivates[] = _("{B_ATK_NAME_WITH_PREFIX} suff
 static const u8 sText_D2D_StatusImbued[] =_("{B_ATK_NAME_WITH_PREFIX} became imbued with {B_BUFF3}!");
 static const u8 sText_D2D_SoreThroat[] = _("{B_ATK_NAME_WITH_PREFIX}'s throat must recover!");
 static const u8 sText_D2D_PkmnWokeUpInUproar[] = _("{B_DEF_NAME_WITH_PREFIX} woke up\nin the UPROAR!");
+static const u8 sText_D2D_InspirationStatRaised[] = _("{B_ATK_NAME_WITH_PREFIX}'s {B_BUFF1}\nsharply rose!");
 
 const u8 *const gStatNamesTable[NUM_BATTLE_STATS] =
 {
@@ -1568,6 +1569,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_D2D_STATUSIMBUED - BATTLESTRINGS_TABLE_START] = sText_D2D_StatusImbued,
     [STRINGID_D2D_SORETHROAT - BATTLESTRINGS_TABLE_START] = sText_D2D_SoreThroat,
     [STRINGID_D2D_PKMNWOKEUPINUPROAR - BATTLESTRINGS_TABLE_START] = sText_D2D_PkmnWokeUpInUproar,
+    [STRINGID_D2D_INSPIRATIONSTATRAISED - BATTLESTRINGS_TABLE_START] = sText_D2D_InspirationStatRaised,
 };
 
 const u16 gTrainerUsedItemStringIds[] =

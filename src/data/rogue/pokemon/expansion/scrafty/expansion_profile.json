@@ -37,12 +37,28 @@
       "Level": 24
     },
     {
+      "Move": "MOVE_D2D_PUNCH",
+      "Level": 25
+    },
+    {
       "Move": "MOVE_SCARY_FACE",
       "Level": 28
     },
     {
       "Move": "MOVE_BRICK_BREAK",
       "Level": 32
+    },
+    {
+      "Move": "MOVE_D2D_ENFIRE",
+      "Level": 33
+    },
+    {
+      "Move": "MOVE_D2D_ENFROST",
+      "Level": 33
+    },
+    {
+      "Move": "MOVE_D2D_ENTHUNDER",
+      "Level": 33
     },
     {
       "Move": "MOVE_SWAGGER",

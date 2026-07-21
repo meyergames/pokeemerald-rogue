@@ -488,6 +488,8 @@ gBattleScriptsForMoveEffects::
 	@ .4byte BattleScript_D2D_EffectSturdyRoots         @ EFFECT_D2D_STURDY_ROOTS
 	.4byte BattleScript_D2D_EffectBoomburst			  @ EFFECT_D2D_BOOMBURST
 	.4byte BattleScript_D2D_EffectUproar			  @ EFFECT_D2D_UPROAR
+	.4byte BattleScript_D2D_EffectKiss				  @ EFFECT_D2D_KISS
+	.4byte BattleScript_D2D_EffectInspiration		  @ EFFECT_D2D_INSPIRATION
 
 @ The game doesn't seem to like having EffectHit as the last item in the list...
 
@@ -11872,3 +11874,39 @@ BattleScript_D2D_EffectUproar_CureSleep:
 	printstring STRINGID_D2D_PKMNWOKEUPINUPROAR
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
+
+BattleScript_D2D_EffectKiss:
+	attackcanceler
+	attackstring
+	ppreduce
+	jumpifstatus3 BS_ATTACKER, STATUS3_HEAL_BLOCK, BattleScript_MoveUsedHealBlockPrevents
+	jumpifstatus3 BS_TARGET, STATUS3_HEAL_BLOCK, BattleScript_MoveUsedHealBlockPrevents
+	accuracycheck BattleScript_ButItFailed, NO_ACC_CALC_CHECK_LOCK_ON
+	jumpifsubstituteblocks BattleScript_ButItFailed
+	trykiss BattleScript_AlreadyAtFullHp
+	attackanimation
+	waitanimation
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	printstring STRINGID_PKMNREGAINEDHEALTH
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_D2D_EffectInspiration:
+	attackcanceler
+	attackstring
+	ppreduce
+	attackanimation
+	waitanimation
+	tryinspiration
+	goto BattleScript_MoveEnd
+
+BattleScript_D2D_InspirationStatRaise::
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_Ret
+	setgraphicalstatchangevalues
+	playanimation BS_ATTACKER, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	waitanimation
+	printstring STRINGID_D2D_INSPIRATIONSTATRAISED
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_Ret:
+	return

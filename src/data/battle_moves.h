@@ -16381,4 +16381,53 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .magicCoatAffected = TRUE,
         .soundMove = TRUE,
     },
+
+    [MOVE_D2D_KISS] =
+    {
+        .effect = EFFECT_D2D_KISS,
+        .power = 0,
+        .type = TYPE_FAIRY,
+        .accuracy = 100,
+        .pp = 30,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_SPD_UP_1,
+        .magicCoatAffected = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .healBlockBanned = TRUE,
+    },
+
+    [MOVE_D2D_INSPIRATION] =
+    {
+        .effect = EFFECT_D2D_INSPIRATION,
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_RESET_STATS,
+        .snatchAffected = TRUE,
+    },
+
+    [MOVE_D2D_PUNCH] =
+    {
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .makesContact = TRUE,
+        .punchingMove = TRUE,
+        .sheerForceBoost = TRUE,
+    },
 };

@@ -25,6 +25,10 @@
       "Level": 1
     },
     {
+      "Move": "MOVE_D2D_PUNCH",
+      "Level": 10
+    },
+    {
       "Move": "MOVE_LOW_SWEEP",
       "Level": 12
     },
@@ -37,8 +41,16 @@
       "Level": 16
     },
     {
+      "Move": "MOVE_D2D_INSPIRATION",
+      "Level": 18
+    },
+    {
       "Move": "MOVE_SCARY_FACE",
       "Level": 20
+    },
+    {
+      "Move": "MOVE_D2D_ENFIRE",
+      "Level": 22
     },
     {
       "Move": "MOVE_VITAL_THROW",
@@ -49,12 +61,20 @@
       "Level": 31
     },
     {
+      "Move": "MOVE_D2D_ENFROST",
+      "Level": 34
+    },
+    {
       "Move": "MOVE_DUAL_CHOP",
       "Level": 36
     },
     {
       "Move": "MOVE_BULK_UP",
       "Level": 42
+    },
+    {
+      "Move": "MOVE_D2D_ENTHUNDER",
+      "Level": 46
     },
     {
       "Move": "MOVE_SEISMIC_TOSS",
@@ -67,6 +87,10 @@
     {
       "Move": "MOVE_DYNAMIC_PUNCH",
       "Level": 54
+    },
+    {
+      "Move": "MOVE_COMET_PUNCH",
+      "Level": 56
     },
     {
       "Move": "MOVE_CROSS_CHOP",

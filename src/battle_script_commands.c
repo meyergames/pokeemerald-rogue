@@ -9750,6 +9750,33 @@ static void Cmd_various(void)
             gBattlescriptCurrInstr = cmd->nextInstr;
         return;
     }
+    case VARIOUS_TRY_KISS:
+    {
+        VARIOUS_ARGS(const u8 *failInstr);
+
+        gBattleMoveDamage = gBattleMons[battler].level * -1;
+
+        if (gBattleMons[battler].hp == gBattleMons[battler].maxHP)
+            gBattlescriptCurrInstr = cmd->failInstr;
+        else
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        return;
+    }
+    case VARIOUS_TRY_INSPIRATION:
+    {
+        VARIOUS_ARGS();
+        i = GetHighestStatId(gBattlerTarget);
+        if (!NoAliveMonsForEitherParty()
+            && CompareStat(gBattlerAttacker, i, MAX_STAT_STAGE, CMP_LESS_THAN))
+        {
+            SET_STATCHANGER(i, 2, FALSE);
+            PREPARE_STAT_BUFFER(gBattleTextBuff1, i);
+            BattleScriptPush(cmd->nextInstr);
+            gBattlescriptCurrInstr = BattleScript_D2D_InspirationStatRaise;
+            return;
+        }
+        break;
+    }
     case VARIOUS_TRY_SOAK:
     {
         VARIOUS_ARGS(const u8 *failInstr);

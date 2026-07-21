@@ -9,6 +9,10 @@
       "Level": 0
     },
     {
+      "Move": "MOVE_D2D_INSPIRATION",
+      "Level": 1
+    },
+    {
       "Move": "MOVE_FIRE_PUNCH",
       "Level": 1
     },
@@ -57,6 +61,10 @@
       "Level": 25
     },
     {
+      "Move": "MOVE_D2D_PUNCH",
+      "Level": 27
+    },
+    {
       "Move": "MOVE_HIGH_JUMP_KICK",
       "Level": 28
     },
@@ -71,6 +79,18 @@
     {
       "Move": "MOVE_POWER_TRICK",
       "Level": 36
+    },
+    {
+      "Move": "MOVE_D2D_ENFIRE",
+      "Level": 42
+    },
+    {
+      "Move": "MOVE_D2D_ENFROST",
+      "Level": 42
+    },
+    {
+      "Move": "MOVE_D2D_ENTHUNDER",
+      "Level": 42
     },
     {
       "Move": "MOVE_RECOVER",
@@ -90,18 +110,6 @@
     },
     {
       "Move": "MOVE_D2D_TEACH",
-      "Level": 65
-    },
-    {
-      "Move": "MOVE_D2D_ENFIRE",
-      "Level": 70
-    },
-    {
-      "Move": "MOVE_D2D_ENFROST",
-      "Level": 70
-    },
-    {
-      "Move": "MOVE_D2D_ENTHUNDER",
       "Level": 70
     },
     {

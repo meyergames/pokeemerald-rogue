@@ -16,11 +16,11 @@
       "Level": 9
     },
     {
-      "Move": "MOVE_ENDURE",
+      "Move": "MOVE_FEINT",
       "Level": 12
     },
     {
-      "Move": "MOVE_FEINT",
+      "Move": "MOVE_D2D_INSPIRATION",
       "Level": 15
     },
     {
@@ -38,6 +38,10 @@
     {
       "Move": "MOVE_ZEN_HEADBUTT",
       "Level": 25
+    },
+    {
+      "Move": "MOVE_D2D_PUNCH",
+      "Level": 27
     },
     {
       "Move": "MOVE_HIGH_JUMP_KICK",

@@ -81,6 +81,10 @@
       "Level": 24
     },
     {
+      "Move": "MOVE_D2D_PUNCH",
+      "Level": 25
+    },
+    {
       "Move": "MOVE_BODY_SLAM",
       "Level": 28
     },

@@ -911,6 +911,9 @@ gBattleAnims_Moves::
 	.4byte Move_D2D_WHITEOUT
 	.4byte Move_D2D_DUST_DEVIL
 	.4byte Move_D2D_LULLABY
+	.4byte Move_D2D_KISS
+	.4byte Move_D2D_INSPIRATION
+	.4byte Move_D2D_PUNCH
 
 
 
@@ -35377,4 +35380,54 @@ Move_D2D_LULLABY:
 	clearmonbg ANIM_DEF_PARTNER
 	createvisualtask AnimTask_MusicNotesClearRainbowBlend, 2
 	waitforvisualfinish
+	end
+
+Move_D2D_KISS:
+	loadspritegfx ANIM_TAG_ORBS
+	loadspritegfx ANIM_TAG_BLUE_STAR
+	loadspritegfx ANIM_TAG_IMPACT
+	loadspritegfx ANIM_TAG_RED_HEART
+	loopsewithpan SE_M_CHARM, SOUND_PAN_ATTACKER, 12, 3
+	createvisualtask AnimTask_SwayMon, 5, 0, 12, 4096, 4, ANIM_ATTACKER
+	delay 15
+	createsprite gRedHeartProjectileSpriteTemplate, ANIM_TARGET, 3, 20, -8
+	waitforvisualfinish
+	playsewithpan SE_M_ATTRACT, SOUND_PAN_TARGET
+	createsprite gRedHeartBurstSpriteTemplate, ANIM_TARGET, 3, 160, -32
+	createsprite gRedHeartBurstSpriteTemplate, ANIM_TARGET, 3, -256, -40
+	createsprite gRedHeartBurstSpriteTemplate, ANIM_TARGET, 3, 128, -16
+	createsprite gRedHeartBurstSpriteTemplate, ANIM_TARGET, 3, 416, -38
+	createsprite gRedHeartBurstSpriteTemplate, ANIM_TARGET, 3, -128, -22
+	createsprite gRedHeartBurstSpriteTemplate, ANIM_TARGET, 3, -384, -31
+	call HealingEffect2
+	waitforvisualfinish
+	end
+
+Move_D2D_INSPIRATION:
+	loadspritegfx ANIM_TAG_SMELLINGSALT_EFFECT
+	createsprite gSmellingSaltExclamationSpriteTemplate, ANIM_TARGET, 2, 1, 8, 3
+	loopsewithpan SE_M_SWAGGER2, +63, 16, 3
+	delay 30
+	createvisualtask AnimTask_MeditateStretchAttacker, 2
+	playsewithpan SE_M_HEADBUTT, SOUND_PAN_ATTACKER
+	delay 16
+	playsewithpan SE_M_TAKE_DOWN, SOUND_PAN_ATTACKER
+	waitforvisualfinish
+	end
+
+Move_D2D_PUNCH:
+	loadspritegfx ANIM_TAG_IMPACT
+	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	delay 2
+	setalpha 12, 8
+	playsewithpan SE_M_MEGA_KICK, SOUND_PAN_TARGET
+	createsprite gMegaPunchKickSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 50
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 0, 7, RGB_WHITE
+	delay 50
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, ANIM_TARGET, 0
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 4, 0, 22, 1
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 0, 0, RGB_WHITE
+	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
+	waitforvisualfinish
+	delay 2
 	end

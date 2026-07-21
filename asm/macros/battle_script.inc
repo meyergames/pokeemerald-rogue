@@ -2378,6 +2378,15 @@
 	.4byte \failInstr
 	.endm
 
+	.macro trykiss failInstr:req
+	various BS_TARGET, VARIOUS_TRY_KISS
+	.4byte \failInstr
+	.endm
+
+	.macro tryinspiration
+	various BS_ATTACKER, VARIOUS_TRY_INSPIRATION
+	.endm
+
 
 @ D2D INSTRUCTIONS END
 
