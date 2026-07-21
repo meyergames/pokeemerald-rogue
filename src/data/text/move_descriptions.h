@@ -545,8 +545,8 @@ static const u8 sAmnesiaDescription[] = _(
     "and sharply raises Sp. Def.");
 
 static const u8 sKinesisDescription[] = _(
-    "Distracts the foe.\n"
-    "May lower accuracy.");
+    "Super effective against\n"
+    "Steel-types.");
 
 static const u8 sSoftBoiledDescription[] = _(
     "Recovers up to half the\n"

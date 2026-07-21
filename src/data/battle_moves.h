@@ -2354,17 +2354,16 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_KINESIS] =
     {
-        .effect = EFFECT_ACCURACY_DOWN,
-        .power = 0,
+        .effect = EFFECT_HIT,
+        .power = 80,
         .type = TYPE_PSYCHIC,
-        .accuracy = 80,
-        .pp = 15,
+        .accuracy = 100,
+        .pp = 10,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMoveEffect = Z_EFFECT_EVSN_UP_1,
-        .magicCoatAffected = B_UPDATED_MOVE_FLAGS >= GEN_5,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
     },
 
     [MOVE_SOFT_BOILED] =

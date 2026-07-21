@@ -5,7 +5,7 @@
   ],
   "LevelUpMoves": [
     {
-      "Move": "MOVE_TELEKINESIS",
+      "Move": "MOVE_KINESIS",
       "Level": 0
     },
     {
@@ -75,6 +75,10 @@
     {
       "Move": "MOVE_CALM_MIND",
       "Level": 50
+    },
+    {
+      "Move": "MOVE_TELEKINESIS",
+      "Level": 70
     }
   ],
   "TutorMoves": [
