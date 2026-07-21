@@ -52,6 +52,10 @@
       "Level": 34
     },
     {
+      "Move": "MOVE_D2D_SERENE_SCENT",
+      "Level": 35
+    },
+    {
       "Move": "MOVE_BABY_DOLL_EYES",
       "Level": 37
     },
@@ -70,6 +74,10 @@
     {
       "Move": "MOVE_SAFEGUARD",
       "Level": 49
+    },
+    {
+      "Move": "MOVE_HEAL_PULSE",
+      "Level": 50
     }
   ],
   "TutorMoves": [
