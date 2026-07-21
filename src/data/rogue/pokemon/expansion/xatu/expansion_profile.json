@@ -56,12 +56,16 @@
       "Level": 48
     },
     {
-      "Move": "MOVE_D2D_TEACH",
+      "Move": "MOVE_MEDITATE",
       "Level": 50
     },
     {
       "Move": "MOVE_FUTURE_SIGHT",
       "Level": 55
+    },
+    {
+      "Move": "MOVE_D2D_TEACH",
+      "Level": 65
     }
   ],
   "TutorMoves": [
