@@ -9777,6 +9777,21 @@ static void Cmd_various(void)
         }
         break;
     }
+    case VARIOUS_TRY_AQUA_RING:
+    {
+        VARIOUS_ARGS(const u8 *failInstr);
+
+        if (gStatuses3[gBattlerTarget] & STATUS3_AQUA_RING)
+        {
+            gBattlescriptCurrInstr = cmd->failInstr;
+        }
+        else
+        {
+            gStatuses3[gBattlerTarget] |= STATUS3_AQUA_RING;
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        }
+        return;
+    }
     case VARIOUS_TRY_SOAK:
     {
         VARIOUS_ARGS(const u8 *failInstr);

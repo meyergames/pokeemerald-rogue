@@ -252,6 +252,7 @@
 #define VARIOUS_SET_IMBUE_TYPE						 158
 #define VARIOUS_TRY_KISS							 159
 #define VARIOUS_TRY_INSPIRATION						 160
+#define VARIOUS_TRY_AQUA_RING						 161
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0

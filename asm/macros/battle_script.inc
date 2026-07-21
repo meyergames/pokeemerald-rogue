@@ -2387,6 +2387,11 @@
 	various BS_ATTACKER, VARIOUS_TRY_INSPIRATION
 	.endm
 
+	.macro tryaquaring failInstr:req
+	various BS_TARGET, VARIOUS_TRY_AQUA_RING
+	.4byte \failInstr
+	.endm
+
 
 @ D2D INSTRUCTIONS END
 
