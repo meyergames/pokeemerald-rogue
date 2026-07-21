@@ -28,6 +28,10 @@
       "Level": 15
     },
     {
+      "Move": "MOVE_D2D_INSPIRATION",
+      "Level": 18
+    },
+    {
       "Move": "MOVE_SLASH",
       "Level": 19
     },

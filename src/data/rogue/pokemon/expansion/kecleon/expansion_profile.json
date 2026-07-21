@@ -24,6 +24,10 @@
       "Level": 16
     },
     {
+      "Move": "MOVE_D2D_INSPIRATION",
+      "Level": 18
+    },
+    {
       "Move": "MOVE_MIMIC",
       "Level": 19
     },

@@ -1,3 +1,4 @@
+
 {
   "Species": [
     "SPECIES_PORYGON"
@@ -93,6 +94,7 @@
     "MOVE_HYPER_BEAM",
     "MOVE_ICE_BEAM",
     "MOVE_ICY_WIND",
+    "MOVE_D2D_INSPIRATION",
     "MOVE_METEOR_BEAM",
     "MOVE_PROTECT",
     "MOVE_PSYBEAM",

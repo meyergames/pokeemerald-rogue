@@ -12,6 +12,10 @@
       "Level": 1
     },
     {
+      "Move": "MOVE_D2D_KISS",
+      "Level": 1
+    },
+    {
       "Move": "MOVE_DOUBLE_EDGE",
       "Level": 1
     },
@@ -53,6 +57,10 @@
     },
     {
       "Move": "MOVE_ANCIENT_POWER",
+      "Level": 1
+    },
+    {
+      "Move": "MOVE_D2D_INSPIRATION",
       "Level": 1
     },
     {

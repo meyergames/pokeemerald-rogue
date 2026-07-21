@@ -8,6 +8,10 @@
       "Level": 1
     },
     {
+      "Move": "MOVE_D2D_KISS",
+      "Level": 1
+    },
+    {
       "Move": "MOVE_GROWL",
       "Level": 1
     },
@@ -26,6 +30,10 @@
     {
       "Move": "MOVE_ANCIENT_POWER",
       "Level": 16
+    },
+    {
+      "Move": "MOVE_D2D_INSPIRATION",
+      "Level": 18
     },
     {
       "Move": "MOVE_YAWN",
