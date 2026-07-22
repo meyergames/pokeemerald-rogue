@@ -3940,9 +3940,12 @@ static const u16 sPrioritisedStatusItems_Paralysis[] =
 
 static const u16 sPrioritisedPpRestoreItems[] =
 {
-    ITEM_LEPPA_BERRY,
-    ITEM_ETHER,
+    // must be reversed for some reason
+    ITEM_MAX_ELIXIR,
+    ITEM_ELIXIR,
     ITEM_MAX_ETHER,
+    ITEM_ETHER,
+    ITEM_LEPPA_BERRY,
 };
 
 static bool8 IsPPRecoveryItem(u16 item)
@@ -4065,34 +4068,55 @@ static void CursorCb_QuickHeal(u8 taskId)
     }
     else // try restore PP if any move misses it
     {
-        u32 mi, ii; // move index, item index
+        u32 mostPpMissing = 0;
+        u32 restoreAmount = 10;
+        u32 i;
 
-        for (mi = 0; mi < MAX_MON_MOVES; mi++)
+        for(i = 0; i < ARRAY_COUNT(sPrioritisedPpRestoreItems); ++i)
         {
-            for(ii = 0; ii < ARRAY_COUNT(sPrioritisedPpRestoreItems); ++ii)
+            if(CheckBagHasItem(sPrioritisedPpRestoreItems[i], 1))
             {
-                if(CheckBagHasItem(sPrioritisedPpRestoreItems[ii], 1))
+                healingItemId = sPrioritisedPpRestoreItems[i];
+                restoreAmount = ItemId_GetHoldEffectParam(healingItemId);
+            }
+        }
+        if (healingItemId != ITEM_NONE)
+        {
+            for (i = 0; i < MAX_MON_MOVES; i++)
+            {
+                u32 currentPp = GetMonData(mon, MON_DATA_PP1 + i);
+                u32 maxPp = CalculatePPWithBonus(GetMonData(mon, MON_DATA_MOVE1 + i), GetMonData(mon, MON_DATA_PP_BONUSES), i);
+                u32 missingPp = maxPp - currentPp;
+                if (missingPp > mostPpMissing)
+                    mostPpMissing = missingPp;
+
+                // if the optimal item is a (Max) Elixir, handle item count separately outside of this loop
+                if (missingPp > 0 && (healingItemId != ITEM_ELIXIR && healingItemId != ITEM_MAX_ELIXIR))
                 {
-                    healingItemId = sPrioritisedPpRestoreItems[ii];
-
-                    u32 currentPp = GetMonData(mon, MON_DATA_PP1 + mi);
-                    u32 maxPp = CalculatePPWithBonus(GetMonData(mon, MON_DATA_MOVE1 + mi), GetMonData(mon, MON_DATA_PP_BONUSES), mi);
-                    u32 missingPp = maxPp - currentPp;
-
-                    u32 restoreAmount = ItemId_GetHoldEffectParam(sPrioritisedPpRestoreItems[ii]);
-
-                    if (missingPp > 0)
+                    if (restoreAmount == 255)
                     {
-                        if (restoreAmount == 255)
-                        {
-                            healingItemCount += 1;
-                        }
-                        else
-                        {
-                            healingItemCount += 1 + ((missingPp - 1) / restoreAmount);
-                        }
+                        healingItemCount += 1;
+                        break;
+                    }
+                    else
+                    {
+                        healingItemCount += 1 + ((missingPp - 1) / restoreAmount);
+                        break;
                     }
                 }
+            }
+        }
+        // special-cases for (Max) Elixirs
+        if (mostPpMissing > 0)
+        {
+            if (healingItemId == ITEM_ELIXIR)
+            {
+                u32 restoreAmount = ItemId_GetHoldEffectParam(ITEM_ELIXIR);
+                healingItemCount += 1 + ((mostPpMissing - 1) / restoreAmount);
+            }
+            else if (healingItemId == ITEM_MAX_ELIXIR)
+            {
+                healingItemCount = 1;
             }
         }
     }
@@ -5563,6 +5587,7 @@ static void UseQuickHealPPRecovery(u8 taskId, TaskFunc task, u32 itemCount, bool
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
     u16 item = gSpecialVar_ItemId;
     
+    u32 remainingItemCount = itemCount;
     u32 restoredAnyPp = FALSE;
     u32 i, j;
 
@@ -5588,9 +5613,13 @@ static void UseQuickHealPPRecovery(u8 taskId, TaskFunc task, u32 itemCount, bool
 
             for (j = 0; j < recoveryItemCountForThisMove; j++)
             {
-                gPartyMenu.data1 = i;
-                TryUseItemOnMove(taskId);
-                restoredAnyPp = TRUE;
+                if (remainingItemCount > 0)
+                {
+                    gPartyMenu.data1 = i;
+                    TryUseItemOnMove(taskId);
+                    restoredAnyPp = TRUE;
+                    remainingItemCount--;
+                }
             }
         }
     }
