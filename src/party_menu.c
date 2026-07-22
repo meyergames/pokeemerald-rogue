@@ -3940,12 +3940,12 @@ static const u16 sPrioritisedStatusItems_Paralysis[] =
 
 static const u16 sPrioritisedPpRestoreItems[] =
 {
-    // must be reversed for some reason
     ITEM_MAX_ELIXIR,
     ITEM_ELIXIR,
     ITEM_MAX_ETHER,
     ITEM_ETHER,
     ITEM_LEPPA_BERRY,
+    // this array had to be reversed, for some reason
 };
 
 static bool8 IsPPRecoveryItem(u16 item)
@@ -4066,7 +4066,7 @@ static void CursorCb_QuickHeal(u8 taskId)
             }
         }
     }
-    else // try restore PP if any move misses it
+    else // try restore PP if at full health without status
     {
         u32 mostPpMissing = 0;
         u32 restoreAmount = 10;
@@ -4096,12 +4096,10 @@ static void CursorCb_QuickHeal(u8 taskId)
                     if (restoreAmount == 255)
                     {
                         healingItemCount += 1;
-                        break;
                     }
                     else
                     {
                         healingItemCount += 1 + ((missingPp - 1) / restoreAmount);
-                        break;
                     }
                 }
             }
@@ -6522,7 +6520,6 @@ static void TryUseItemOnMove(u8 taskId)
                 DisplayPartyMenuMessage(gText_CantBeUsedNot, TRUE);
 
             ScheduleBgCopyTilemapToVram(2);
-            // gTasks[taskId].func = Task_ClosePartyMenuAfterText;
             gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
         }
         else
@@ -6535,7 +6532,6 @@ static void TryUseItemOnMove(u8 taskId)
             GetMedicineItemEffectMessage(item, 0);
             DisplayPartyMenuMessage(gStringVar4, TRUE);
             ScheduleBgCopyTilemapToVram(2);
-            // gTasks[taskId].func = Task_ClosePartyMenuAfterText;
             gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
         }
     }
