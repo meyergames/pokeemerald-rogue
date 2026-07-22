@@ -172,6 +172,11 @@ script Rogue_Interior_ProfLab_TalkAssistant
                 {
                     givemon(SPECIES_ALAKAZAM,75)
                 }
+                msgbox(format("Would you like some LEPPA BERRIES?"), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES)
+                {
+                    giveitem(ITEM_LEPPA_BERRY,99)
+                }
                 msgbox(format("Would you like some snacks with that?"), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES)
                 {
