@@ -3427,11 +3427,11 @@ static const u8 sDustDevilDescription[] = _(
     "summons a sandstorm.");
 
 static const u8 sLullabyDescription[] = _(
-    "A soothing song lulls all\n"
-    "others into a deep slumber.");
+    "A soothing song lulls every-\n"
+    "one into a deep slumber.");
 
 static const u8 sKissDescription[] = _(
-    "Heals the ally proportional\n"
+    "Heals a target proportional\n"
     "to the user's level.");
 
 static const u8 sInspirationDescription[] = _(
