@@ -254,6 +254,7 @@
 #define VARIOUS_TRY_INSPIRATION						 160
 #define VARIOUS_TRY_AQUA_RING						 161
 #define VARIOUS_RECOVER_BASED_ON_RAIN				 162
+#define VARIOUS_CURE_CONFUSION                       163
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0

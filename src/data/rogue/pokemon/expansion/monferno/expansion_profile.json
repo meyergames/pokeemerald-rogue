@@ -32,6 +32,14 @@
       "Level": 19
     },
     {
+      "Move": "MOVE_D2D_LEFT_HOOK",
+      "Level": 25
+    },
+    {
+      "Move": "MOVE_D2D_RIGHT_HOOK",
+      "Level": 25
+    },
+    {
       "Move": "MOVE_FEINT",
       "Level": 26
     },

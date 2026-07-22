@@ -64,6 +64,14 @@
       "Level": 44
     },
     {
+      "Move": "MOVE_D2D_LEFT_HOOK",
+      "Level": 45
+    },
+    {
+      "Move": "MOVE_D2D_RIGHT_HOOK",
+      "Level": 45
+    },
+    {
       "Move": "MOVE_STOMPING_TANTRUM",
       "Level": 48
     },

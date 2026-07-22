@@ -56,6 +56,10 @@
       "Level": 33
     },
     {
+      "Move": "MOVE_D2D_WEAK_SPOT",
+      "Level": 35
+    },
+    {
       "Move": "MOVE_POWER_TRICK",
       "Level": 36
     },

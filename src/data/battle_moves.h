@@ -16429,4 +16429,53 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .punchingMove = TRUE,
         .sheerForceBoost = TRUE,
     },
+
+    [MOVE_D2D_WEAK_SPOT] =
+    {
+        .effect = EFFECT_D2D_WEAK_SPOT,
+        .power = 20,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .makesContact = TRUE,
+        .sheerForceBoost = TRUE,
+    },
+
+    [MOVE_D2D_LEFT_HOOK] =
+    {
+        .effect = EFFECT_CONFUSE_HIT,
+        .power = 40,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 50,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_ATK_UP_1,
+        .punchingMove = TRUE,
+        .makesContact = TRUE,
+        .sheerForceBoost = TRUE,
+    },
+
+    [MOVE_D2D_RIGHT_HOOK] =
+    {
+        .effect = EFFECT_D2D_RIGHT_HOOK,
+        .power = 80,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_BOOST_CRITS,
+        .punchingMove = TRUE,
+        .makesContact = TRUE,
+    },
 };

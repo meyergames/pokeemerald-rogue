@@ -3442,6 +3442,18 @@ static const u8 sPunchDescription[] = _(
     "A strong punch with no\n"
     "added effects.");
 
+static const u8 sWeakSpotDescription[] = _(
+    "Strikes the foe's weak spot,\n"
+    "sharply lowering Defense.");
+
+static const u8 sLeftHookDescription[] = _(
+    "High chance to confuse\n"
+    "the foe.");
+
+static const u8 sRightHookDescription[] = _(
+    "Always crits on confused\n"
+    "foes, but also cures them.");
+
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4334,4 +4346,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_KISS - 1] = sKissDescription,
     [MOVE_D2D_INSPIRATION - 1] = sInspirationDescription,
     [MOVE_D2D_PUNCH - 1] = sPunchDescription,
+    [MOVE_D2D_WEAK_SPOT - 1] = sWeakSpotDescription,
+    [MOVE_D2D_LEFT_HOOK - 1] = sLeftHookDescription,
+    [MOVE_D2D_RIGHT_HOOK - 1] = sRightHookDescription,
 };

@@ -49,6 +49,14 @@
       "Level": 31
     },
     {
+      "Move": "MOVE_D2D_LEFT_HOOK",
+      "Level": 35
+    },
+    {
+      "Move": "MOVE_D2D_RIGHT_HOOK",
+      "Level": 35
+    },
+    {
       "Move": "MOVE_ASSURANCE",
       "Level": 38
     },

@@ -1990,6 +1990,8 @@ s32 CalcCritChanceStageArgs(u32 battlerAtk, u32 battlerDef, u32 move, bool32 rec
     }
     else if (gStatuses3[battlerAtk] & STATUS3_LASER_FOCUS
              || gBattleMoves[move].effect == EFFECT_ALWAYS_CRIT
+             || gBattleMoves[move].effect == EFFECT_D2D_WEAK_SPOT
+             || (gBattleMoves[move].effect == EFFECT_D2D_RIGHT_HOOK && gBattleMons[battlerDef].status2 & STATUS2_CONFUSION)
              || (abilityAtk == ABILITY_MERCILESS && gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY))
     {
         critChance = -2;
@@ -9818,6 +9820,14 @@ static void Cmd_various(void)
         {
             gBattlescriptCurrInstr = cmd->failInstr;
         }
+    }
+    case VARIOUS_CURE_CONFUSION:
+    {
+        VARIOUS_ARGS();
+        gBattleMons[battler].status2 = 0;
+        BtlController_EmitSetMonData(battler, BUFFER_A, REQUEST_STATUS_BATTLE, 0, sizeof(gBattleMons[battler].status1), &gBattleMons[battler].status1);
+        MarkBattlerForControllerExec(battler);
+        break;
     }
     case VARIOUS_TRY_SOAK:
     {

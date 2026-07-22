@@ -1,4 +1,4 @@
-[] leppa berries on quick heal
+[x] leppa berries on quick heal
 [] stat pokeblocks on honey trees
 [] enwater
 [x] light metal passes its boost to the ally

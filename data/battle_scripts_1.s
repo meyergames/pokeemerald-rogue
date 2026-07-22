@@ -490,6 +490,8 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_D2D_EffectUproar			  @ EFFECT_D2D_UPROAR
 	.4byte BattleScript_D2D_EffectKiss				  @ EFFECT_D2D_KISS
 	.4byte BattleScript_D2D_EffectInspiration		  @ EFFECT_D2D_INSPIRATION
+	.4byte BattleScript_D2D_EffectWeakSpot			  @ EFFECT_D2D_WEAK_SPOT
+	.4byte BattleScript_D2D_EffectRightHook			  @ EFFECT_D2D_RIGHT_HOOK
 
 @ The game doesn't seem to like having EffectHit as the last item in the list...
 
@@ -11917,3 +11919,19 @@ BattleScript_EffectMoonlight::
 	ppreduce
 	recoverbasedonrain BattleScript_AlreadyAtFullHp
 	goto BattleScript_PresentHealTarget
+
+BattleScript_D2D_EffectWeakSpot:
+	setmoveeffect MOVE_EFFECT_DEF_MINUS_2
+	goto BattleScript_EffectHit
+
+BattleScript_D2D_EffectRightHook::
+	call BattleScript_EffectHit_Ret
+	call BattleScript_TryFaintMon_Ret
+	jumpiffainted BS_TARGET, TRUE, BattleScript_MoveEnd
+	jumpifstatus BS_TARGET, STATUS2_CONFUSION, BattleScript_HealConfusion
+	goto BattleScript_MoveEnd
+BattleScript_HealConfusion:
+	cureconfusion BS_TARGET
+	printstring STRINGID_PKMNSITEMSNAPPEDOUT
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd

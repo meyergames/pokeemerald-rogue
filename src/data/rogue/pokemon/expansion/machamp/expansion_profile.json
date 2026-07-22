@@ -57,6 +57,14 @@
       "Level": 24
     },
     {
+      "Move": "MOVE_D2D_LEFT_HOOK",
+      "Level": 25
+    },
+    {
+      "Move": "MOVE_D2D_RIGHT_HOOK",
+      "Level": 25
+    },
+    {
       "Move": "MOVE_STRENGTH",
       "Level": 31
     },

@@ -2397,6 +2397,10 @@
 	.4byte \failInstr
 	.endm
 
+	.macro cureconfusion battler:req
+	various \battler, VARIOUS_CURE_CONFUSION
+	.endm
+
 
 @ D2D INSTRUCTIONS END
 
