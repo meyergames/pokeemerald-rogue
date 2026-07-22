@@ -1,0 +1,5 @@
+[] leppa berries on quick heal
+[] stat pokeblocks on honey trees
+[] enwater
+[x] light metal passes its boost to the ally
+[x] moonlight should restore more health in rain, not sun

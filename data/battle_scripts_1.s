@@ -5495,7 +5495,6 @@ BattleScript_EffectSonicboom::
 
 BattleScript_EffectMorningSun::
 BattleScript_EffectSynthesis::
-BattleScript_EffectMoonlight::
 BattleScript_EffectShoreUp::
 	attackcanceler
 	attackstring
@@ -11911,3 +11910,10 @@ BattleScript_D2D_InspirationStatRaise::
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_Ret:
 	return
+
+BattleScript_EffectMoonlight::
+	attackcanceler
+	attackstring
+	ppreduce
+	recoverbasedonrain BattleScript_AlreadyAtFullHp
+	goto BattleScript_PresentHealTarget

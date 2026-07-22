@@ -2392,6 +2392,11 @@
 	.4byte \failInstr
 	.endm
 
+	.macro recoverbasedonrain failInstr:req
+	various BS_ATTACKER, VARIOUS_RECOVER_BASED_ON_RAIN
+	.4byte \failInstr
+	.endm
+
 
 @ D2D INSTRUCTIONS END
 
