@@ -9792,6 +9792,33 @@ static void Cmd_various(void)
         }
         return;
     }
+    case VARIOUS_RECOVER_BASED_ON_RAIN:
+    {
+        VARIOUS_ARGS(const u8 *failInstr);
+
+        gBattlerTarget = gBattlerAttacker;
+        if (gBattleMons[gBattlerAttacker].hp != gBattleMons[gBattlerAttacker].maxHP)
+        {
+            u32 weather = GetAttackerWeather(GetBattlerHoldEffect(gBattlerAttacker, TRUE), GetBattlerAbility(gBattlerAttacker), GetWeather());
+            
+            if (!(weather & B_WEATHER_ANY) || !WEATHER_HAS_EFFECT || GetBattlerHoldEffect(gBattlerAttacker, TRUE) == HOLD_EFFECT_UTILITY_UMBRELLA)
+                gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
+            else if (weather & B_WEATHER_RAIN)
+                gBattleMoveDamage = 20 * GetNonDynamaxMaxHP(gBattlerAttacker) / 30;
+            else // not rainy weather
+                gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 4;
+
+            if (gBattleMoveDamage == 0)
+                gBattleMoveDamage = 1;
+            gBattleMoveDamage *= -1;
+
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        }
+        else
+        {
+            gBattlescriptCurrInstr = cmd->failInstr;
+        }
+    }
     case VARIOUS_TRY_SOAK:
     {
         VARIOUS_ARGS(const u8 *failInstr);
