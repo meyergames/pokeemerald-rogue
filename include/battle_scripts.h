@@ -565,6 +565,9 @@ extern const u8 BattleScript_D2D_LightMetalActivates[];
 extern const u8 BattleScript_D2D_HeavyMetalActivates[];
 extern const u8 BattleScript_D2D_PollinatorActivates[];
 extern const u8 BattleScript_D2D_InspirationStatRaise[];
+extern const u8 BattleScript_D2D_ChargerActivates[];
+extern const u8 BattleScript_D2D_ChargerRestoreHP[];
+extern const u8 BattleScript_D2D_ChargerRaiseStats[];
 
 
 #endif // GUARD_BATTLE_SCRIPTS_H

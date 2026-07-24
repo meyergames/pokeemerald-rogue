@@ -11940,3 +11940,39 @@ BattleScript_HealConfusion:
 BattleScript_D2D_EffectWindmill:
 	setmoveeffect MOVE_EFFECT_CONFUSION | MOVE_EFFECT_AFFECTS_USER
 	goto BattleScript_EffectHit
+
+BattleScript_D2D_ChargerActivates::
+	call BattleScript_AbilityPopUp
+	end3
+
+BattleScript_D2D_ChargerRestoreHP::
+	call BattleScript_AbilityPopUp
+	playanimation BS_SCRIPTING, B_ANIM_D2D_CHARGER
+	healthbarupdate BS_SCRIPTING
+	datahpupdate BS_SCRIPTING
+	printstring STRINGID_D2D_CHARGERRESTOREDHP
+	waitmessage B_WAIT_TIME_LONG
+	end3
+
+BattleScript_D2D_ChargerRaiseStats::
+	call BattleScript_AbilityPopUp
+	playanimation BS_SCRIPTING, B_ANIM_D2D_CHARGER
+	waitmessage B_WAIT_TIME_SHORT
+	jumpifstat BS_SCRIPTING, CMP_LESS_THAN, STAT_ATK, MAX_STAT_STAGE, BattleScript_D2D_ChargerTryAtk
+	jumpifstat BS_SCRIPTING, CMP_EQUAL, STAT_SPATK, MAX_STAT_STAGE, BattleScript_CantRaiseMultipleStats
+BattleScript_D2D_ChargerTryAtk::
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_SCRIPTING, BIT_ATK | BIT_SPATK, 0
+	setstatchanger STAT_ATK, 1, FALSE
+	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_D2D_ChargerTrySpAtk
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_D2D_ChargerTrySpAtk
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_D2D_ChargerTrySpAtk::
+	setstatchanger STAT_SPATK, 1, FALSE
+	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_D2D_EndPassiveEffectScript
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_D2D_EndPassiveEffectScript
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_D2D_EndPassiveEffectScript:
+	end3

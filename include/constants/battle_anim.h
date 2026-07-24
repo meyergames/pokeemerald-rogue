@@ -570,6 +570,7 @@
 #define B_ANIM_TERA_CHARGE              45
 #define B_ANIM_TERA_ACTIVATE            46
 #define B_ANIM_D2D_HEALER_HEAL          47
+#define B_ANIM_D2D_CHARGER 				48
 
 // special animations table (gBattleAnims_Special)
 #define B_ANIM_LVL_UP                   0

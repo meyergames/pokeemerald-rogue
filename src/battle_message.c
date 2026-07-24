@@ -470,6 +470,7 @@ static const u8 sText_D2D_StatusImbued[] =_("{B_ATK_NAME_WITH_PREFIX} became imb
 static const u8 sText_D2D_SoreThroat[] = _("{B_ATK_NAME_WITH_PREFIX}'s throat must recover!");
 static const u8 sText_D2D_PkmnWokeUpInUproar[] = _("{B_DEF_NAME_WITH_PREFIX} woke up\nin the UPROAR!");
 static const u8 sText_D2D_InspirationStatRaised[] = _("{B_ATK_NAME_WITH_PREFIX}'s {B_BUFF1}\nsharply rose!");
+static const u8 sText_D2D_ChargerRestoredHP[] = _("{B_ATK_NAME_WITH_PREFIX} regained some HP\nfrom its ally's Charger!");
 
 const u8 *const gStatNamesTable[NUM_BATTLE_STATS] =
 {
@@ -1570,6 +1571,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_D2D_SORETHROAT - BATTLESTRINGS_TABLE_START] = sText_D2D_SoreThroat,
     [STRINGID_D2D_PKMNWOKEUPINUPROAR - BATTLESTRINGS_TABLE_START] = sText_D2D_PkmnWokeUpInUproar,
     [STRINGID_D2D_INSPIRATIONSTATRAISED - BATTLESTRINGS_TABLE_START] = sText_D2D_InspirationStatRaised,
+    [STRINGID_D2D_CHARGERRESTOREDHP - BATTLESTRINGS_TABLE_START] = sText_D2D_ChargerRestoredHP,
 };
 
 const u16 gTrainerUsedItemStringIds[] =

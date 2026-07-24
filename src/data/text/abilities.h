@@ -315,6 +315,7 @@ static const u8 sPollinatorDescription[] = _("Heals around Grass-types.");
 static const u8 sAerodynamicDescription[] = _("Flying moves raise Speed.");
 static const u8 sBugCatcherDescription[] = _("Traps Bug-type Pokémon.");
 static const u8 sSingingStarDescription[] = _("Sound moves never miss.");
+static const u8 sChargerDescription[] = _("Charges Electric allies.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -648,6 +649,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_D2D_AERODYNAMIC] = _("Aerodynamic"),
     [ABILITY_D2D_BUG_CATCHER] = _("Bug Catcher"),
     [ABILITY_D2D_SINGING_STAR] = _("Singing Star"),
+    [ABILITY_D2D_CHARGER] = _("Charger"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -981,6 +983,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_D2D_AERODYNAMIC] = _("Aerodynamic"),
     [ABILITY_D2D_BUG_CATCHER] = _("Bug Catcher"),
     [ABILITY_D2D_SINGING_STAR] = _("Singing Star"),
+    [ABILITY_D2D_CHARGER] = _("Charger"),
 };
 #endif
 
@@ -1314,4 +1317,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_D2D_AERODYNAMIC] = sAerodynamicDescription,
     [ABILITY_D2D_BUG_CATCHER] = sBugCatcherDescription,
     [ABILITY_D2D_SINGING_STAR] = sSingingStarDescription,
+    [ABILITY_D2D_CHARGER] = sChargerDescription,
 };

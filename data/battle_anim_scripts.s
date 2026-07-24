@@ -1080,6 +1080,7 @@ gBattleAnims_General::
 	.4byte General_TeraCharge               @ B_ANIM_TERA_CHARGE
 	.4byte General_TeraActivate             @ B_ANIM_TERA_ACTIVATE
 	.4byte General_D2D_HealerHeal           @ B_ANIM_D2D_HEALER_HEAL
+	.4byte General_D2D_Charger           	@ B_ANIM_D2D_CHARGER
 @ D2D TODO: for some reason, the animations below are not registered in battle_anim.h?
 	.4byte General_TrickRoom                @ B_ANIM_TRICK_ROOM
 	.4byte General_WonderRoom               @ B_ANIM_WONDER_ROOM
@@ -35547,4 +35548,12 @@ Move_D2D_MEGA_SWIPE:
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	blendoff
+	end
+
+General_D2D_Charger:
+	createvisualtask AnimTask_BlendMonInAndOut, 2, ANIM_ATK_PARTNER, RGB_YELLOW, 12, 1, 1
+	createvisualtask AnimTask_BlendMonInAndOut, 2, ANIM_ATTACKER, RGB_YELLOW, 12, 1, 1
+	loadspritegfx ANIM_TAG_SPARK_2
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 10, 1
+	call ElectricityEffect
 	end

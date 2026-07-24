@@ -5244,6 +5244,29 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                     }
                 }
                 break;
+            case ABILITY_D2D_CHARGER:
+                gBattleScripting.battler = BATTLE_PARTNER(battler);
+                if (IsBattlerAlive(gBattleScripting.battler) && IS_BATTLER_OF_TYPE(gBattleScripting.battler, TYPE_ELECTRIC))
+                {
+                    if (!BATTLER_MAX_HP(gBattleScripting.battler)
+                            && !(gStatuses3[gBattleScripting.battler] & STATUS3_HEAL_BLOCK))
+                    {
+                        BattleScriptPushCursorAndCallback(BattleScript_D2D_ChargerRestoreHP);
+                        gBattleMoveDamage = GetNonDynamaxMaxHP(gBattleScripting.battler) / 12;
+                        if (gBattleMoveDamage == 0)
+                            gBattleMoveDamage = 1;
+                        gBattleMoveDamage *= -1;
+                        effect++;
+                    }
+                    else if (!CompareStat(gBattleScripting.battler, STAT_ATK, MAX_STAT_STAGE, CMP_EQUAL)
+                        || !CompareStat(gBattleScripting.battler, STAT_SPATK, MAX_STAT_STAGE, CMP_EQUAL))
+                    {
+                        gBattlerTarget = gBattleScripting.battler;
+                        BattleScriptPushCursorAndCallback(BattleScript_D2D_ChargerRaiseStats);
+                        effect++;
+                    }
+                }
+                break;
             case ABILITY_D2D_POLLINATOR:
                 if ( !BATTLER_MAX_HP(battler )
                  && !( gStatuses3[battler] & STATUS3_HEAL_BLOCK ) )
