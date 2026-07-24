@@ -1151,10 +1151,10 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         #else
             .pp = 25,
         #endif
-        .effect = EFFECT_RECOIL_25,
-        .power = 80,
+        .effect = EFFECT_HIT,
+        .power = 50,
         .type = TYPE_FIGHTING,
-        .accuracy = 80,
+        .accuracy = 100,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,

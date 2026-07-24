@@ -9324,7 +9324,7 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
         break;
     case EFFECT_D2D_SCATTERBLAST:
         if (gSideStatuses[GetBattlerSide(battlerAtk)] & SIDE_STATUS_HAZARDS_ANY)
-            basePower*= 2;
+            basePower *= 2;
         break;
     case EFFECT_D2D_TOPPLE:
         // u32 ownBst = gBattleMons[battlerAtk].hp + gBattleMons[battlerAtk].attack + gBattleMons[battlerAtk].defense
@@ -9345,6 +9345,12 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
         // 80 base speed (Blaziken) = 40 base power
         // 160 base speed (Ninjask) = 60 base power
         PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 3, basePower);
+        break;
+    case EFFECT_D2D_SUBMISSION:
+        if (gBattleMons[battlerDef].hp < gBattleMons[battlerDef].maxHP)
+        {
+            basePower *= 2;
+        }
         break;
     }
 

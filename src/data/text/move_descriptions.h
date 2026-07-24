@@ -273,8 +273,8 @@ static const u8 sDrillPeckDescription[] = _(
     "the beak acting as a drill.");
 
 static const u8 sSubmissionDescription[] = _(
-    "A reckless body slam that\n"
-    "also hurts the user.");
+    "Deals double damage if the\n"
+    "foe has less than full HP.");
 
 static const u8 sLowKickDescription[] = _(
     "A kick that inflicts more\n"

@@ -493,6 +493,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_D2D_EffectWeakSpot			  @ EFFECT_D2D_WEAK_SPOT
 	.4byte BattleScript_D2D_EffectRightHook			  @ EFFECT_D2D_RIGHT_HOOK
 	.4byte BattleScript_D2D_EffectWindmill			  @ EFFECT_D2D_WINDMILL
+	.4byte BattleScript_EffectHit_Test				  @ EFFECT_D2D_SUBMISSION
 
 @ The game doesn't seem to like having EffectHit as the last item in the list...
 
@@ -11352,6 +11353,7 @@ BattleScript_EffectD2DEnergize::
 	jumpifsubstituteblocks BattleScript_EffectHit
 	setmoveeffect MOVE_EFFECT_REMOVE_STATUS | MOVE_EFFECT_CERTAIN
 	call BattleScript_EffectHit_Ret
+	call BattleScript_TryFaintMon_Ret
 	jumpiffainted BS_TARGET, TRUE, BattleScript_MoveEnd
 	setstatchanger STAT_SPEED, 2, FALSE
 	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_D2D_Cancel
