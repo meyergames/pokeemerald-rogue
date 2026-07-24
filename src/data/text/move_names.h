@@ -1794,6 +1794,7 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_D2D_LEFT_HOOK] = _("Left Hook"),
     [MOVE_D2D_RIGHT_HOOK] = _("Right Hook"),
     [MOVE_D2D_WINDMILL] = _("Windmill"),
+    [MOVE_D2D_MEGA_SWIPE] = _("Mega Swipe"),
     // Max Moves
     [MOVE_MAX_GUARD] = _("M-Guard"),
     [MOVE_MAX_STRIKE] = _("M-Strike"),

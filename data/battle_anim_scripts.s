@@ -918,6 +918,7 @@ gBattleAnims_Moves::
 	.4byte Move_D2D_LEFT_HOOK
 	.4byte Move_D2D_RIGHT_HOOK
 	.4byte Move_D2D_WINDMILL
+	.4byte Move_D2D_MEGA_SWIPE
 
 
 
@@ -35524,4 +35525,26 @@ Move_D2D_WINDMILL:
 	createsprite gBasicHitSplatSpriteTemplate, ANIM_TARGET, 4, 8, -16, ANIM_TARGET, 1
 	createvisualtask AnimTask_ShakeMonInPlace, 2, ANIM_TARGET, 8, 0, 16, 1
 	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET
+	end
+
+Move_D2D_MEGA_SWIPE:
+	loadspritegfx ANIM_TAG_SLASH_2
+	loadspritegfx ANIM_TAG_IMPACT
+	createsprite gFalseSwipeSliceSpriteTemplate, ANIM_TARGET, 2
+	playsewithpan SE_M_VITAL_THROW, SOUND_PAN_TARGET
+	delay 16
+
+	monbg ANIM_TARGET
+	setalpha 12, 8
+	createvisualtask AnimTask_TranslateMonEllipticalRespectSide, 2, ANIM_ATTACKER, 24, 6, 1, 5
+	createvisualtask AnimTask_TraceMonBlended, 2, 0, 4, 7, 3
+	createsprite gFalseSwipePositionedSliceSpriteTemplate, ANIM_TARGET, 2, 80
+	playsewithpan SE_M_RAZOR_WIND2, SOUND_PAN_ATTACKER
+	delay 5
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 0, 3, 10, 1
+	createsprite gComplexPaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG | F_PAL_BATTLERS, 3, 1, RGB_BLACK, 10, RGB_BLACK, 0
+	playsewithpan SE_M_RAZOR_WIND, SOUND_PAN_TARGET
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
 	end

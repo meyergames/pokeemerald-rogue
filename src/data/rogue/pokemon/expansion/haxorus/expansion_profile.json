@@ -64,6 +64,10 @@
       "Level": 41
     },
     {
+      "Move": "MOVE_D2D_MEGA_SWIPE",
+      "Level": 45
+    },
+    {
       "Move": "MOVE_OUTRAGE",
       "Level": 46
     },

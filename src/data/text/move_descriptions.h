@@ -3458,6 +3458,10 @@ static const u8 sWindmillDescription[] = _(
     "Punches away at both foes.\n"
     "May confuse the user.");
 
+static const u8 sMegaSwipeDescription[] = _(
+    "A strong attack that leaves\n"
+    "the foe with at least 1 HP.");
+
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4354,4 +4358,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_LEFT_HOOK - 1] = sLeftHookDescription,
     [MOVE_D2D_RIGHT_HOOK - 1] = sRightHookDescription,
     [MOVE_D2D_WINDMILL - 1] = sWindmillDescription,
+    [MOVE_D2D_MEGA_SWIPE - 1] = sMegaSwipeDescription,
 };
