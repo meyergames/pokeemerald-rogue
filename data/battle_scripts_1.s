@@ -492,6 +492,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_D2D_EffectInspiration		  @ EFFECT_D2D_INSPIRATION
 	.4byte BattleScript_D2D_EffectWeakSpot			  @ EFFECT_D2D_WEAK_SPOT
 	.4byte BattleScript_D2D_EffectRightHook			  @ EFFECT_D2D_RIGHT_HOOK
+	.4byte BattleScript_D2D_EffectWindmill			  @ EFFECT_D2D_WINDMILL
 
 @ The game doesn't seem to like having EffectHit as the last item in the list...
 
@@ -11935,3 +11936,7 @@ BattleScript_HealConfusion:
 	printstring STRINGID_PKMNSITEMSNAPPEDOUT
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
+
+BattleScript_D2D_EffectWindmill:
+	setmoveeffect MOVE_EFFECT_CONFUSION | MOVE_EFFECT_AFFECTS_USER
+	goto BattleScript_EffectHit

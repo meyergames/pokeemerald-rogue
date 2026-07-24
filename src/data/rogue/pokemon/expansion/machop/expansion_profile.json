@@ -84,8 +84,12 @@
       "Level": 44
     },
     {
+      "Move": "MOVE_D2D_WINDMILL",
+      "Level": 45
+    },
+    {
       "Move": "MOVE_D2D_ENTHUNDER",
-      "Level": 34
+      "Level": 46
     },
     {
       "Move": "MOVE_CROSS_CHOP",

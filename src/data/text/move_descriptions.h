@@ -3454,6 +3454,10 @@ static const u8 sRightHookDescription[] = _(
     "Always crits on confused\n"
     "foes, but also cures them.");
 
+static const u8 sWindmillDescription[] = _(
+    "Punches away at both foes.\n"
+    "May confuse the user.");
+
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4349,4 +4353,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_WEAK_SPOT - 1] = sWeakSpotDescription,
     [MOVE_D2D_LEFT_HOOK - 1] = sLeftHookDescription,
     [MOVE_D2D_RIGHT_HOOK - 1] = sRightHookDescription,
+    [MOVE_D2D_WINDMILL - 1] = sWindmillDescription,
 };

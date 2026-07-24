@@ -917,6 +917,7 @@ gBattleAnims_Moves::
 	.4byte Move_D2D_WEAK_SPOT
 	.4byte Move_D2D_LEFT_HOOK
 	.4byte Move_D2D_RIGHT_HOOK
+	.4byte Move_D2D_WINDMILL
 
 
 
@@ -35486,7 +35487,7 @@ Move_D2D_RIGHT_HOOK:
 	setalpha 12, 8
 	call DizzyPunchLunge
 	createsprite gFistFootSpriteTemplate, ANIM_TARGET, 5, 8, -4, 20, 1, 0
-	createsprite gBasicHitSplatSpriteTemplate, ANIM_TARGET, 4, -16, -16, ANIM_TARGET, 1
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_TARGET, 4, 8, -16, ANIM_TARGET, 1
 	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 2, 0, 22, 1
 	createsprite gDizzyPunchDuckSpriteTemplate, ANIM_TARGET, 3, 8, -4, 160, -32
@@ -35498,4 +35499,29 @@ Move_D2D_RIGHT_HOOK:
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	blendoff
+	end
+
+Move_D2D_WINDMILL:
+	loadspritegfx ANIM_TAG_IMPACT
+	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	createvisualtask AnimTask_TranslateMonEllipticalRespectSide, 4, ANIM_ATTACKER, 24, 6, 4, 4
+	createsprite gFistFootSpriteTemplate, ANIM_TARGET, 5, -16, -4, 20, 1, 0
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_TARGET, 4, -16, -16, ANIM_TARGET, 1
+	createvisualtask AnimTask_ShakeMonInPlace, 2, ANIM_TARGET, 4, 0, 7, 1
+	playsewithpan SE_M_COMET_PUNCH, SOUND_PAN_TARGET
+	delay 18
+	createsprite gFistFootSpriteTemplate, ANIM_TARGET, 5, -8, -4, 20, 1, 0
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_TARGET, 4, 8, -16, ANIM_TARGET, 1
+	createvisualtask AnimTask_ShakeMonInPlace, 2, ANIM_TARGET, 4, 0, 7, 1
+	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
+	delay 18
+	createsprite gFistFootSpriteTemplate, ANIM_TARGET, 5, -16, -4, 20, 1, 0
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_TARGET, 4, -16, -16, ANIM_TARGET, 1
+	createvisualtask AnimTask_ShakeMonInPlace, 2, ANIM_TARGET, 4, 0, 7, 1
+	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
+	delay 18
+	createsprite gFistFootSpriteTemplate, ANIM_TARGET, 5, 8, -4, 20, 1, 0
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_TARGET, 4, 8, -16, ANIM_TARGET, 1
+	createvisualtask AnimTask_ShakeMonInPlace, 2, ANIM_TARGET, 8, 0, 16, 1
+	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET
 	end

@@ -16478,4 +16478,20 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .punchingMove = TRUE,
         .makesContact = TRUE,
     },
+
+    [MOVE_D2D_WINDMILL] =
+    {
+        .effect = EFFECT_D2D_WINDMILL,
+        .power = 100,
+        .type = TYPE_FIGHTING,
+        .accuracy = 80,
+        .pp = 10,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_SPD_UP_1,
+        .punchingMove = TRUE,
+        .makesContact = TRUE,
+    },
 };
