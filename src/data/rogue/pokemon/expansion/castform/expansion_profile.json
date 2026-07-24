@@ -27,7 +27,7 @@
       "Level": 10
     },
     {
-      "Move": "MOVE_TRI_ATTACK",
+      "Move": "MOVE_WEATHER_BALL",
       "Level": 15
     },
     {
@@ -43,7 +43,7 @@
       "Level": 22
     },
     {
-      "Move": "MOVE_WEATHER_BALL",
+      "Move": "MOVE_TRI_ATTACK",
       "Level": 25
     },
     {

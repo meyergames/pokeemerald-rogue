@@ -33,7 +33,7 @@
       "Level": 12
     },
     {
-      "Move": "MOVE_D2D_FLEX",
+      "Move": "MOVE_D2D_LEFT_HOOK",
       "Level": 15
     },
     {
@@ -57,11 +57,7 @@
       "Level": 24
     },
     {
-      "Move": "MOVE_D2D_LEFT_HOOK",
-      "Level": 25
-    },
-    {
-      "Move": "MOVE_D2D_RIGHT_HOOK",
+      "Move": "MOVE_D2D_WEAK_SPOT",
       "Level": 25
     },
     {
@@ -73,7 +69,7 @@
       "Level": 34
     },
     {
-      "Move": "MOVE_SUBMISSION",
+      "Move": "MOVE_D2D_RIGHT_HOOK",
       "Level": 35
     },
     {
@@ -85,7 +81,7 @@
       "Level": 42
     },
     {
-      "Move": "MOVE_D2D_WINDMILL",
+      "Move": "MOVE_SUBMISSION",
       "Level": 45
     },
     {
@@ -103,6 +99,10 @@
     {
       "Move": "MOVE_DYNAMIC_PUNCH",
       "Level": 54
+    },
+    {
+      "Move": "MOVE_D2D_WINDMILL",
+      "Level": 55
     },
     {
       "Move": "MOVE_COMET_PUNCH",
