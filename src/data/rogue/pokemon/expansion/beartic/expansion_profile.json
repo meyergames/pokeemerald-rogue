@@ -82,6 +82,10 @@
     {
       "Move": "MOVE_SUPERPOWER",
       "Level": 51
+    },
+    {
+      "Move": "MOVE_D2D_WINDMILL",
+      "Level": 65
     }
   ],
   "TutorMoves": [

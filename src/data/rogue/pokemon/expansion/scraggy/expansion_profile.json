@@ -36,6 +36,10 @@
       "Level": 24
     },
     {
+      "Move": "MOVE_D2D_WEAK_SPOT",
+      "Level": 25
+    },
+    {
       "Move": "MOVE_SCARY_FACE",
       "Level": 28
     },
@@ -63,6 +67,10 @@
       "Move": "MOVE_HEAD_SMASH",
       "Level": 52
     }
+    {
+      "Move": "MOVE_D2D_WINDMILL",
+      "Level": 55
+    },
   ],
   "TutorMoves": [
     "MOVE_ACID_SPRAY",

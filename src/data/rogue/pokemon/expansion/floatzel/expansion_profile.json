@@ -121,6 +121,7 @@
     "MOVE_THIEF",
     "MOVE_WATER_PULSE",
     "MOVE_WATERFALL",
+    "MOVE_D2D_WINDMILL",
     "MOVE_WHIRLPOOL"
   ],
   "CompetitiveSets": [

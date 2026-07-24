@@ -136,7 +136,8 @@
     "MOVE_THROAT_CHOP",
     "MOVE_THUNDER_PUNCH",
     "MOVE_TRAILBLAZE",
-    "MOVE_UPROAR"
+    "MOVE_UPROAR",
+    "MOVE_D2D_WINDMILL"
   ],
   "CompetitiveSets": [
     {

@@ -123,6 +123,7 @@
     "MOVE_UPROAR",
     "MOVE_VENOM_DRENCH",
     "MOVE_VENOSHOCK",
+    "MOVE_D2D_WEAK_SPOT",
     "MOVE_WEATHER_BALL"
   ],
   "CompetitiveSets": [

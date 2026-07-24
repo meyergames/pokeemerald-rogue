@@ -114,6 +114,7 @@
     "MOVE_TRAILBLAZE",
     "MOVE_TRICK",
     "MOVE_TRICK_ROOM",
+    "MOVE_D2D_WEAK_SPOT",
     "MOVE_WILL_O_WISP"
   ],
   "CompetitiveSets": [

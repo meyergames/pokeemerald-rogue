@@ -121,7 +121,8 @@
     "MOVE_THUNDERBOLT",
     "MOVE_TOXIC_SPIKES",
     "MOVE_VENOM_DRENCH",
-    "MOVE_VENOSHOCK"
+    "MOVE_VENOSHOCK",
+    "MOVE_D2D_WINDMILL"
   ],
   "CompetitiveSets": [
     {

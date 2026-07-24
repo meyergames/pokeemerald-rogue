@@ -130,6 +130,7 @@
     "MOVE_TRICK_ROOM",
     "MOVE_U_TURN",
     "MOVE_WATER_PULSE",
+    "MOVE_D2D_WEAK_SPOT",
     "MOVE_ZEN_HEADBUTT"
   ],
   "CompetitiveSets": [

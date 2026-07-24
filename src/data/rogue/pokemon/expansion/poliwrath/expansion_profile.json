@@ -103,7 +103,8 @@
     "MOVE_WATER_PULSE",
     "MOVE_WATERFALL",
     "MOVE_WEATHER_BALL",
-    "MOVE_WHIRLPOOL"
+    "MOVE_WHIRLPOOL",
+    "MOVE_D2D_WINDMILL"
   ],
   "CompetitiveSets": [
     {

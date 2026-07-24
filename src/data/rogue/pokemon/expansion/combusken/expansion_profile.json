@@ -128,7 +128,9 @@
     "MOVE_THUNDER_PUNCH",
     "MOVE_UPROAR",
     "MOVE_VACUUM_WAVE",
-    "MOVE_WILL_O_WISP"
+    "MOVE_D2D_WEAK_SPOT",
+    "MOVE_WILL_O_WISP",
+    "MOVE_D2D_WINDMILL"
   ],
   "CompetitiveSets": [
     {

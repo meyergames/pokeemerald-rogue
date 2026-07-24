@@ -132,6 +132,8 @@
     "MOVE_TOXIC",
     "MOVE_VACUUM_WAVE",
     "MOVE_VENOSHOCK",
+    "MOVE_D2D_WEAK_SPOT",
+    "MOVE_D2D_WINDMILL",
     "MOVE_X_SCISSOR"
   ],
   "CompetitiveSets": [

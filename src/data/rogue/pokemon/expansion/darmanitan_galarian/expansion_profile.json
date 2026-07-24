@@ -60,6 +60,10 @@
       "Level": 50
     },
     {
+      "Move": "MOVE_D2D_WINDMILL",
+      "Level": 55
+    },
+    {
       "Move": "MOVE_SUPERPOWER",
       "Level": 56
     }

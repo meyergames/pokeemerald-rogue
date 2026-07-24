@@ -151,6 +151,7 @@
     "MOVE_THUNDER_FANG",
     "MOVE_THUNDER_WAVE",
     "MOVE_U_TURN",
+    "MOVE_D2D_WINDMILL",
     "MOVE_ZEN_HEADBUTT"
   ],
   "CompetitiveSets": [

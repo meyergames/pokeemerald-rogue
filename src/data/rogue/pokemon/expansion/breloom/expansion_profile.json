@@ -148,6 +148,8 @@
     "MOVE_THUNDER_PUNCH",
     "MOVE_TOXIC",
     "MOVE_VENOSHOCK",
+    "MOVE_D2D_WEAK_SPOT",
+    "MOVE_D2D_WINDMILL",
     "MOVE_ZEN_HEADBUTT"
   ],
   "CompetitiveSets": [

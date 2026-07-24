@@ -68,6 +68,10 @@
       "Level": 52
     },
     {
+      "Move": "MOVE_D2D_WINDMILL",
+      "Level": 55
+    },
+    {
       "Move": "MOVE_GRASSY_TERRAIN",
       "Level": 56
     }

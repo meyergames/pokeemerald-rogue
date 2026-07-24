@@ -74,6 +74,8 @@
     "MOVE_WATER_PLEDGE",
     "MOVE_WATER_PULSE",
     "MOVE_WATERFALL",
+    "MOVE_D2D_WEAK_SPOT",
+    "MOVE_D2D_WINDMILL",
     "MOVE_WORK_UP"
   ],
   "CompetitiveSets": [

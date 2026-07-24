@@ -98,6 +98,10 @@
     {
       "Move": "MOVE_DESTINY_BOND",
       "Level": 54
+    },
+    {
+      "Move": "MOVE_D2D_WINDMILL",
+      "Level": 55
     }
   ],
   "TutorMoves": [

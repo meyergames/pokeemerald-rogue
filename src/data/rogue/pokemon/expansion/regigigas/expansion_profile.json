@@ -72,6 +72,10 @@
       "Level": 72
     },
     {
+      "Move": "MOVE_D2D_WINDMILL",
+      "Level": 75
+    },
+    {
       "Move": "MOVE_CRUSH_GRIP",
       "Level": 78
     }

@@ -115,6 +115,7 @@
     "MOVE_THIEF",
     "MOVE_THUNDER_FANG",
     "MOVE_THUNDER_WAVE",
+    "MOVE_D2D_WINDMILL",
     "MOVE_ZEN_HEADBUTT"
   ],
   "CompetitiveSets": [

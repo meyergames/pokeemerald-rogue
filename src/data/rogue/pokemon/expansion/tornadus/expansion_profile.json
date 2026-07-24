@@ -68,6 +68,10 @@
       "Level": 70
     },
     {
+      "Move": "MOVE_D2D_DOWNPOUR",
+      "Level": 75
+    },
+    {
       "Move": "MOVE_BLEAKWIND_STORM",
       "Level": 77
     }

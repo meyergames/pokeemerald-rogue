@@ -5,7 +5,7 @@
   ],
   "LevelUpMoves": [
     {
-      "Move": "MOVE_POUND",
+      "Move": "MOVE_D2D_PUNCH",
       "Level": 1
     },
     {
@@ -51,7 +51,7 @@
     {
       "Move": "MOVE_HEAVY_SLAM",
       "Level": 40
-    },
+    },    
     {
       "Move": "MOVE_PHANTOM_FORCE",
       "Level": 46
@@ -143,6 +143,7 @@
     "MOVE_THUNDER_PUNCH",
     "MOVE_THUNDERBOLT",
     "MOVE_TRICK",
+    "MOVE_D2D_WINDMILL",
     "MOVE_ZEN_HEADBUTT"
   ],
   "CompetitiveSets": [

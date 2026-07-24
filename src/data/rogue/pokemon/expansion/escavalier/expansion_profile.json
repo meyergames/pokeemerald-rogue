@@ -68,6 +68,10 @@
       "Level": 32
     },
     {
+      "Move": "MOVE_D2D_BLADE_SLASH",
+      "Level": 35
+    },
+    {
       "Move": "MOVE_SWORDS_DANCE",
       "Level": 36
     },
@@ -86,6 +90,10 @@
     {
       "Move": "MOVE_METAL_BURST",
       "Level": 52
+    },
+    {
+      "Move": "MOVE_HORN_LEECH",
+      "Level": 55
     }
   ],
   "TutorMoves": [

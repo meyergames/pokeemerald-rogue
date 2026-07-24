@@ -32,6 +32,10 @@
       "Level": 31
     },
     {
+      "Move": "MOVE_D2D_WINDMILL",
+      "Level": 35
+    },
+    {
       "Move": "MOVE_PROTECT",
       "Level": 37
     },
@@ -138,6 +142,8 @@
     "MOVE_TRICK",
     "MOVE_TRICK_ROOM",
     "MOVE_WATER_PULSE",
+    "MOVE_D2D_WEAK_SPOT",
+    "MOVE_D2D_WINDMILL",
     "MOVE_ZEN_HEADBUTT"
   ],
   "CompetitiveSets": [

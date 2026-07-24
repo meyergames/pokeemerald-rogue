@@ -65,6 +65,10 @@
     },
     {
       "Move": "MOVE_THRASH",
+      "Level": 52
+    },
+    {
+      "Move": "MOVE_D2D_WINDMILL",
       "Level": 55
     }
   ],

@@ -127,6 +127,7 @@
     "MOVE_THUNDERBOLT",
     "MOVE_WATER_PULSE",
     "MOVE_WATERFALL",
+    "MOVE_D2D_WINDMILL",
     "MOVE_WORK_UP"
   ],
   "CompetitiveSets": [

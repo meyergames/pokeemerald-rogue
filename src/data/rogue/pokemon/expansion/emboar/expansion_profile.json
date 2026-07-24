@@ -75,6 +75,10 @@
     {
       "Move": "MOVE_FLARE_BLITZ",
       "Level": 62
+    },
+    {
+      "Move": "MOVE_D2D_WINDMILL",
+      "Level": 65
     }
   ],
   "TutorMoves": [

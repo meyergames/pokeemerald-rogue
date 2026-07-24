@@ -21,6 +21,10 @@
     },
     {
       "Move": "MOVE_QUICK_GUARD",
+      "Level": 12
+    },
+    {
+      "Move": "MOVE_D2D_LEFT_HOOK",
       "Level": 15
     },
     {
@@ -40,10 +44,6 @@
       "Level": 35
     },
     {
-      "Move": "MOVE_D2D_LEFT_HOOK",
-      "Level": 35
-    },
-    {
       "Move": "MOVE_D2D_RIGHT_HOOK",
       "Level": 35
     },
@@ -53,6 +53,10 @@
     },
     {
       "Move": "MOVE_ENDURE",
+      "Level": 45
+    },
+    {
+      "Move": "MOVE_D2D_WEAK_SPOT",
       "Level": 45
     },
     {
@@ -111,6 +115,7 @@
     "MOVE_THROAT_CHOP",
     "MOVE_THUNDER_PUNCH",
     "MOVE_WORK_UP",
+    "MOVE_D2D_WINDMILL",
     "MOVE_ZEN_HEADBUTT"
   ],
   "CompetitiveSets": [

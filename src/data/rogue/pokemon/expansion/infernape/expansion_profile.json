@@ -48,6 +48,10 @@
       "Level": 29
     },
     {
+      "Move": "MOVE_D2D_WEAK_SPOT",
+      "Level": 35
+    },
+    {
       "Move": "MOVE_D2D_ENFIRE",
       "Level": 36
     },
@@ -158,6 +162,7 @@
     "MOVE_UPROAR",
     "MOVE_VACUUM_WAVE",
     "MOVE_WILL_O_WISP",
+    "MOVE_D2D_WINDMILL",
     "MOVE_ZEN_HEADBUTT"
   ],
   "CompetitiveSets": [
