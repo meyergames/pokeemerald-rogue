@@ -3961,6 +3961,37 @@ static bool8 IsPPRecoveryItem(u16 item)
         return FALSE;
 }
 
+static u32 GetPPRecoveryItemsNeeded(u16 item, u32 missingPp, u32 threshold)
+{
+    u32 itemCount = 0;
+    u32 restoreAmount = ItemId_GetHoldEffectParam(item);
+
+    if (missingPp >= min(threshold,1) && (item != ITEM_ELIXIR && item != ITEM_MAX_ELIXIR))
+    {
+        if (restoreAmount == 255)
+        {
+            itemCount += 1;
+        }
+        else
+        {
+            itemCount += 1 + ((missingPp - 1) / restoreAmount);
+        }
+
+        // if the player has Quick Heal Mode set to Conservative AND there is more than 1 item,
+        // reduce itemCount by 1 if the last item's efficiency is <50%
+        if (itemCount > 1 && gSaveBlock2Ptr->optionsQuickHealMode == OPTIONS_QUICK_HEAL_CONSERVATIVE)
+        {
+            u32 overhealAmount = (itemCount * restoreAmount) - missingPp;
+            if (overhealAmount > restoreAmount * 0.5)
+            {
+                itemCount--;
+            }
+        }
+    }
+
+    return itemCount;
+}
+
 static void CursorCb_QuickHeal(u8 taskId)
 {
     u16 healingItemId = ITEM_NONE;
@@ -4000,6 +4031,7 @@ static void CursorCb_QuickHeal(u8 taskId)
         if(healingItemId != ITEM_NONE)
         {
             u32 healAmount = 10;
+            u32 missingHp = maxHp - hp;
             if(healingItemId == ITEM_SITRUS_BERRY)
             {
                 healAmount = maxHp * 0.25;
@@ -4015,8 +4047,18 @@ static void CursorCb_QuickHeal(u8 taskId)
             }
             else
             {
-                u32 missingHp = maxHp - hp;
                 healingItemCount = 1 + ((missingHp - 1) / healAmount);
+            }
+
+            // if the player has Quick Heal Mode set to Conservative AND there is more than 1 item,
+            // reduce healingItemCount by 1 if the last item's heal efficiency is <50%
+            if (healingItemCount > 1 && gSaveBlock2Ptr->optionsQuickHealMode == OPTIONS_QUICK_HEAL_CONSERVATIVE)
+            {
+                u32 overhealAmount = (healingItemCount * healAmount) - missingHp;
+                if (overhealAmount > healAmount * 0.5)
+                {
+                    healingItemCount--;
+                }
             }
         }
     }
@@ -4090,17 +4132,13 @@ static void CursorCb_QuickHeal(u8 taskId)
                 if (missingPp > mostPpMissing)
                     mostPpMissing = missingPp;
 
-                // if the optimal item is a (Max) Elixir, handle item count separately outside of this loop
-                if (missingPp > 0 && (healingItemId != ITEM_ELIXIR && healingItemId != ITEM_MAX_ELIXIR))
+                if (gSaveBlock2Ptr->optionsQuickHealMode == OPTIONS_QUICK_HEAL_CONSERVATIVE)
                 {
-                    if (restoreAmount == 255)
-                    {
-                        healingItemCount += 1;
-                    }
-                    else
-                    {
-                        healingItemCount += 1 + ((missingPp - 1) / restoreAmount);
-                    }
+                    healingItemCount += GetPPRecoveryItemsNeeded(healingItemId, missingPp, maxPp / 2);
+                }
+                if (healingItemCount == 0)
+                {
+                    healingItemCount += GetPPRecoveryItemsNeeded(healingItemId, missingPp, 1);
                 }
             }
         }
@@ -5606,7 +5644,14 @@ static void UseQuickHealPPRecovery(u8 taskId, TaskFunc task, u32 itemCount, bool
             }
             else
             {
-                recoveryItemCountForThisMove = 1 + ((missingPp - 1) / restoreAmount);
+                if (gSaveBlock2Ptr->optionsQuickHealMode == OPTIONS_QUICK_HEAL_CONSERVATIVE)
+                {
+                    recoveryItemCountForThisMove = GetPPRecoveryItemsNeeded(item, missingPp, maxPp / 2);
+                }
+                if (recoveryItemCountForThisMove == 0)
+                {
+                    recoveryItemCountForThisMove = GetPPRecoveryItemsNeeded(item, missingPp, 1);
+                }
             }
 
             for (j = 0; j < recoveryItemCountForThisMove; j++)

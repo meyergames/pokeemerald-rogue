@@ -55,6 +55,7 @@ enum
     MENUITEM_SOUND_CHANNEL_BATTLE_SE,
     MENUITEM_SOUND_LOW_HEALTH,
     MENUITEM_BUTTONMODE,
+    MENUITEM_QUICK_HEAL_MODE,
     MENUITEM_FRAMETYPE,
     MENUITEM_CANCEL,
 };
@@ -122,6 +123,8 @@ static u8 ButtonMode_ProcessInput(u8 menuOffset, u8 selection);
 static void ButtonMode_DrawChoices(u8 menuOffset, u8 selection);
 static u8 FrameType_ProcessInput(u8 menuOffset, u8 selection);
 static void FrameType_DrawChoices(u8 menuOffset, u8 selection);
+static u8 QuickHealMode_ProcessInput(u8 menuOffset, u8 selection);
+static void QuickHealMode_DrawChoices(u8 menuOffset, u8 selection);
 static u8 Empty_ProcessInput(u8 menuOffset, u8 selection);
 static void Empty_DrawChoices(u8 menuOffset, u8 selection);
 
@@ -298,6 +301,12 @@ static const struct MenuEntry sOptionMenuItems[] =
         .processInput = ButtonMode_ProcessInput,
         .drawChoices = ButtonMode_DrawChoices
     },
+    [MENUITEM_QUICK_HEAL_MODE] = 
+    {
+        .itemName = gText_QuickHealMode,
+        .processInput = QuickHealMode_ProcessInput,
+        .drawChoices = QuickHealMode_DrawChoices
+    },
     [MENUITEM_FRAMETYPE] = 
     {
         .itemName = gText_Frame,
@@ -335,6 +344,7 @@ static const struct MenuEntries sOptionMenuEntries[SUBMENUITEM_COUNT] =
             MENUITEM_AUTORUN_TOGGLE,
             MENUITEM_ITEM_PICKUP,
             MENUITEM_BUTTONMODE,
+            MENUITEM_QUICK_HEAL_MODE,
             MENUITEM_CANCEL
         }
     },
@@ -1181,6 +1191,39 @@ static void ButtonMode_DrawChoices(u8 menuOffset, u8 selection)
     DrawChoiceSelection(menuOffset, selection, options, ARRAY_COUNT(options));
 }
 
+static u8 QuickHealMode_ProcessInput(u8 menuOffset, u8 selection)
+{
+    if (JOY_NEW(DPAD_RIGHT))
+    {
+        if (selection < OPTIONS_QUICK_HEAL_COUNT - 1)
+            selection++;
+        else
+            selection = 0;
+
+        sArrowPressed = TRUE;
+    }
+    if (JOY_NEW(DPAD_LEFT))
+    {
+        if (selection != 0)
+            selection--;
+        else
+            selection = OPTIONS_QUICK_HEAL_COUNT - 1;
+
+        sArrowPressed = TRUE;
+    }
+    return selection;
+}
+
+static void QuickHealMode_DrawChoices(u8 menuOffset, u8 selection)
+{
+    u8 const* options[] = 
+    {
+        [OPTIONS_QUICK_HEAL_LIBERAL] = gText_TextQuickHealLiberal,
+        [OPTIONS_QUICK_HEAL_CONSERVATIVE] = gText_TextQuickHealConservative,
+    };
+    DrawChoiceSelection(menuOffset, selection, options, ARRAY_COUNT(options));
+}
+
 static u8 Empty_ProcessInput(u8 menuOffset, u8 selection)
 {
     return 0;
@@ -1290,6 +1333,9 @@ static u8 GetMenuItemValue(u8 menuItem)
     case MENUITEM_BUTTONMODE:
         return gSaveBlock2Ptr->optionsButtonMode;
         
+    case MENUITEM_QUICK_HEAL_MODE:
+        return gSaveBlock2Ptr->optionsQuickHealMode;
+        
     case MENUITEM_FRAMETYPE:
         return gSaveBlock2Ptr->optionsWindowFrameType;
     }
@@ -1390,6 +1436,10 @@ static void SetMenuItemValue(u8 menuItem, u8 value)
         
     case MENUITEM_BUTTONMODE:
         gSaveBlock2Ptr->optionsButtonMode = value;
+        break;
+        
+    case MENUITEM_QUICK_HEAL_MODE:
+        gSaveBlock2Ptr->optionsQuickHealMode = value;
         break;
         
     case MENUITEM_FRAMETYPE:

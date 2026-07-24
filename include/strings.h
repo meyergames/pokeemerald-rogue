@@ -335,6 +335,8 @@ extern const u8 gText_TextNicknameRandom[];
 extern const u8 gText_TextLowHealthOff[];
 extern const u8 gText_TextLowHealth3Beeps[];
 extern const u8 gText_TextLowHealthLooping[];
+extern const u8 gText_TextQuickHealLiberal[];
+extern const u8 gText_TextQuickHealConservative[];
 extern const u8 gText_TimeOfDayVisible[];
 extern const u8 gText_TimeOfDayHidden[];
 extern const u8 gText_SoundMono[];
@@ -372,6 +374,7 @@ extern const u8 gText_SoundLowHealth[];
 extern const u8 gText_Frame[];
 extern const u8 gText_OptionMenuCancel[];
 extern const u8 gText_ButtonMode[];
+extern const u8 gText_QuickHealMode[];
 
 extern const u8 gText_MaleSymbol[];
 extern const u8 gText_FemaleSymbol[];

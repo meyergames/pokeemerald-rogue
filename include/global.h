@@ -566,7 +566,8 @@ struct SaveBlock2
              u32 optionsFadeSpeed:3; // OPTIONS_TEXT_SPEED_[SLOW/MID/FAST]
              u32 optionsOverworldSpeed:3; // OPTIONS_OW_SPEED_[...]
              u32 optionsItemPickupAutomatic:1; // whether to manually pickup items or automatically
-             u32 settingsReserved:18; // unused/reserved bits
+             u32 optionsQuickHealMode:1; // whether quick heal uses items sparingly
+             u32 settingsReserved:17; // unused/reserved bits
     /*0x18*/ struct Pokedex pokedex;
              s8 playerStyles[8];
              u32 playerOutfitUnlockFlags;

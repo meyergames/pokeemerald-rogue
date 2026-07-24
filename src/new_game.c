@@ -106,6 +106,7 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsOverworldSpeed = OPTIONS_OW_SPEED_1X;
     gSaveBlock2Ptr->optionsAutoRunToggle = FALSE;
     gSaveBlock2Ptr->optionsItemPickupAutomatic = FALSE;
+    gSaveBlock2Ptr->optionsQuickHealMode = OPTIONS_QUICK_HEAL_LIBERAL;
     gSaveBlock2Ptr->optionsNicknameMode = OPTIONS_NICKNAME_MODE_ASK;
     gSaveBlock2Ptr->optionsLowHealthBeep = OPTIONS_HEALTH_BEEP_3_BEEPS;
     gSaveBlock2Ptr->timeOfDayVisuals = TRUE;
