@@ -60,6 +60,10 @@
       "Level": 44
     },
     {
+      "Move": "MOVE_SUBMISSION",
+      "Level": 45
+    },
+    {
       "Move": "MOVE_FOCUS_PUNCH",
       "Level": 48
     },

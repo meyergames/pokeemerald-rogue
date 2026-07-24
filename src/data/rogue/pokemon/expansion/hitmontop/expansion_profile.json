@@ -78,6 +78,10 @@
     {
       "Move": "MOVE_ENDEAVOR",
       "Level": 44
+    },
+    {
+      "Move": "MOVE_SUBMISSION",
+      "Level": 55
     }
   ],
   "TutorMoves": [

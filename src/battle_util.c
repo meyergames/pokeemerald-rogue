@@ -9346,12 +9346,6 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
         // 160 base speed (Ninjask) = 60 base power
         PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 3, basePower);
         break;
-    case EFFECT_D2D_SUBMISSION:
-        if (gBattleMons[battlerDef].hp < gBattleMons[battlerDef].maxHP)
-        {
-            basePower *= 2;
-        }
-        break;
     }
 
     // Move-specific base power changes
@@ -9386,6 +9380,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 
         break;
     case EFFECT_BRINE:
         if (gBattleMons[battlerDef].hp <= (gBattleMons[battlerDef].maxHP / 2))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
+        break;
+    case EFFECT_D2D_SUBMISSION:
+        if (gBattleMons[battlerDef].hp < gBattleMons[battlerDef].maxHP)
             modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
         break;
     case EFFECT_BARB_BARRAGE:

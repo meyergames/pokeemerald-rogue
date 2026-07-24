@@ -74,6 +74,10 @@
     {
       "Move": "MOVE_AXE_KICK",
       "Level": 50
+    },
+    {
+      "Move": "MOVE_SUBMISSION",
+      "Level": 55
     }
   ],
   "TutorMoves": [

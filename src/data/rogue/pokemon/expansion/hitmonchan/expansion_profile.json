@@ -106,6 +106,10 @@
     {
       "Move": "MOVE_SKY_UPPERCUT",
       "Level": 45
+    },
+    {
+      "Move": "MOVE_SUBMISSION",
+      "Level": 55
     }
   ],
   "TutorMoves": [

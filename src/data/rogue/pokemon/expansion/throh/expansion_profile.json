@@ -28,6 +28,10 @@
       "Level": 15
     },
     {
+      "Move": "MOVE_SUBMISSION",
+      "Level": 18
+    },
+    {
       "Move": "MOVE_REVENGE",
       "Level": 20
     },

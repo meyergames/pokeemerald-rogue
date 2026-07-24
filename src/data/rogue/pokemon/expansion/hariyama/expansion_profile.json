@@ -64,11 +64,7 @@
       "Level": 34
     },
     {
-      "Move": "MOVE_D2D_LEFT_HOOK",
-      "Level": 35
-    },
-    {
-      "Move": "MOVE_D2D_RIGHT_HOOK",
+      "Move": "MOVE_SUBMISSION",
       "Level": 35
     },
     {
@@ -126,6 +122,7 @@
     "MOVE_IRON_HEAD",
     "MOVE_KNOCK_OFF",
     "MOVE_LASH_OUT",
+    "MOVE_D2D_LEFT_HOOK",
     "MOVE_LOW_KICK",
     "MOVE_LOW_SWEEP",
     "MOVE_METRONOME",
@@ -136,6 +133,7 @@
     "MOVE_RAIN_DANCE",
     "MOVE_REST",
     "MOVE_REVERSAL",
+    "MOVE_D2D_RIGHT_HOOK",
     "MOVE_ROCK_SLIDE",
     "MOVE_ROCK_TOMB",
     "MOVE_SCARY_FACE",

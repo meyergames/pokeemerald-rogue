@@ -65,6 +65,10 @@
       "Level": 43
     },
     {
+      "Move": "MOVE_SUBMISSION",
+      "Level": 45
+    },
+    {
       "Move": "MOVE_HEAD_SMASH",
       "Level": 50
     },

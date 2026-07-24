@@ -72,6 +72,10 @@
       "Level": 34
     },
     {
+      "Move": "MOVE_SUBMISSION",
+      "Level": 35
+    },
+    {
       "Move": "MOVE_BULK_UP",
       "Level": 36
     },

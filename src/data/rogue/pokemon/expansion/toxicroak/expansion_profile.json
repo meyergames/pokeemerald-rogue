@@ -60,6 +60,10 @@
       "Level": 42
     },
     {
+      "Move": "MOVE_SUBMISSION",
+      "Level": 45
+    },
+    {
       "Move": "MOVE_SLUDGE_BOMB",
       "Level": 48
     },

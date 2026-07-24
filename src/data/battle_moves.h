@@ -1151,7 +1151,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         #else
             .pp = 25,
         #endif
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_D2D_SUBMISSION,
         .power = 50,
         .type = TYPE_FIGHTING,
         .accuracy = 100,

@@ -73,6 +73,10 @@
       "Level": 34
     },
     {
+      "Move": "MOVE_SUBMISSION",
+      "Level": 35
+    },
+    {
       "Move": "MOVE_DUAL_CHOP",
       "Level": 36
     },

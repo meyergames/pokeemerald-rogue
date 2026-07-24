@@ -89,6 +89,10 @@
       "Level": 52
     },
     {
+      "Move": "MOVE_SUBMISSION",
+      "Level": 55
+    },
+    {
       "Move": "MOVE_HIGH_JUMP_KICK",
       "Level": 56
     }
