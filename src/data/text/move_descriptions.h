@@ -1993,8 +1993,8 @@ static const u8 sAllySwitchDescription[] = _(
     "with its partner.");
 
 static const u8 sScaldDescription[] = _(
-    "Shoots boiling water at the\n"
-    "foe. May inflict a burn.");
+    "Super effective against Ice-\n"
+    "types. May inflict a burn.");
 
 static const u8 sShellSmashDescription[] = _(
     "Raises offensive stats, but\n"

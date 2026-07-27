@@ -10599,6 +10599,8 @@ static inline void MulByTypeEffectiveness(uq4_12_t *modifier, u32 move, u32 move
         mod = UQ_4_12(2.0);
     if (gBattleMoves[move].effect == EFFECT_D2D_RESONANCE && (defType == TYPE_ICE || defType == TYPE_STEEL))
         mod = UQ_4_12(2.0);
+    if (move == MOVE_SCALD && defType == TYPE_ICE)
+        mod = UQ_4_12(2.0);
     if (move == MOVE_KINESIS && (defType == TYPE_STEEL))
         mod = UQ_4_12(2.0);
     if (moveType == TYPE_GROUND && defType == TYPE_FLYING && IsBattlerGrounded(battlerDef) && mod == UQ_4_12(0.0))
