@@ -16524,4 +16524,19 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .makesContact = TRUE,
         .slicingMove = TRUE,
     },
+
+    [MOVE_D2D_SUBZERO] =
+    {
+        .effect = EFFECT_D2D_FREEZE,
+        .power = 0,
+        .accuracy = 50,
+        .type = TYPE_ICE,
+        .pp = 1,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .magicCoatAffected = TRUE,
+    },
 };

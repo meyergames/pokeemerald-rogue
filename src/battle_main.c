@@ -4824,6 +4824,7 @@ static bool32 IsWeatherAffectedMove(u16 move)
         case MOVE_MOONLIGHT:
         case MOVE_HAIL:
         case MOVE_BLIZZARD:
+        case MOVE_D2D_SUBZERO:
         case MOVE_SNOWSCAPE:
         case MOVE_CHILLY_RECEPTION:
         case MOVE_SANDSTORM:

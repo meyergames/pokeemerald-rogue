@@ -6553,7 +6553,7 @@ static void TryUseItemOnMove(u8 taskId)
         u16 move = MOVE_NONE;
         s16 *moveSlot = &gPartyMenu.data1;
         u16 item = gSpecialVar_ItemId;
-
+        
         if (ExecuteTableBasedItemEffectInternal(mon, item, ptr->slotId, *moveSlot))
         {
             gPartyMenuUseExitCallback = FALSE;

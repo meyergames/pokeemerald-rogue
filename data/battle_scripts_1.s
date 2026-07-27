@@ -493,7 +493,8 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_D2D_EffectWeakSpot			  @ EFFECT_D2D_DEFENSE_DOWN_2_HIT
 	.4byte BattleScript_D2D_EffectRightHook			  @ EFFECT_D2D_RIGHT_HOOK
 	.4byte BattleScript_D2D_EffectWindmill			  @ EFFECT_D2D_WINDMILL
-	.4byte BattleScript_EffectHit_Test				  @ EFFECT_D2D_SUBMISSION
+	.4byte BattleScript_EffectHit					  @ EFFECT_D2D_SUBMISSION
+	.4byte BattleScript_D2D_EffectFreeze			  @ EFFECT_D2D_FREEZE
 
 @ The game doesn't seem to like having EffectHit as the last item in the list...
 
@@ -11981,3 +11982,25 @@ BattleScript_D2D_ChargerTrySpAtk::
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_D2D_EndPassiveEffectScript:
 	end3
+
+BattleScript_D2D_EffectFreeze:
+	attackcanceler
+	attackstring
+	ppreduce
+	jumpifsubstituteblocks BattleScript_ButItFailed
+	jumpiftype BS_TARGET, TYPE_ICE, BattleScript_NotAffected
+	jumpifability BS_TARGET, ABILITY_MAGMA_ARMOR, BattleScript_WaterVeilPrevents
+	jumpifability BS_TARGET, ABILITY_COMATOSE, BattleScript_AbilityProtectsDoesntAffect
+	jumpifability BS_TARGET, ABILITY_PURIFYING_SALT, BattleScript_AbilityProtectsDoesntAffect
+	jumpifflowerveil BattleScript_FlowerVeilProtects
+	jumpifleafguardprotected BS_TARGET, BattleScript_AbilityProtectsDoesntAffect
+	jumpifshieldsdown BS_TARGET, BattleScript_AbilityProtectsDoesntAffect
+	jumpifstatus BS_TARGET, STATUS1_ANY, BattleScript_ButItFailed
+	jumpifterrainaffected BS_TARGET, STATUS_FIELD_MISTY_TERRAIN, BattleScript_MistyTerrainPrevents
+	accuracycheck BattleScript_ButItFailed, ACC_CURR_MOVE
+	jumpifsafeguard BattleScript_SafeguardProtected
+	attackanimation
+	waitanimation
+	setmoveeffect MOVE_EFFECT_FREEZE
+	seteffectprimary
+	goto BattleScript_MoveEnd

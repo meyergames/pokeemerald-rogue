@@ -919,6 +919,7 @@ gBattleAnims_Moves::
 	.4byte Move_D2D_RIGHT_HOOK
 	.4byte Move_D2D_WINDMILL
 	.4byte Move_D2D_MEGA_SWIPE
+	.4byte Move_D2D_SUBZERO
 
 
 
@@ -35556,4 +35557,22 @@ General_D2D_Charger:
 	loadspritegfx ANIM_TAG_SPARK_2
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 10, 1
 	call ElectricityEffect
+	end
+
+Move_D2D_SUBZERO:
+	fadetobg BG_ICE
+	waitbgfadeout
+	playsewithpan SE_M_ICY_WIND, 0
+	waitbgfadein
+	loadspritegfx ANIM_TAG_ICE_CUBE
+	monbg ANIM_DEF_PARTNER
+	splitbgprio ANIM_TARGET
+	setalpha 12, 8
+	createvisualtask AnimTask_FrozenIceCube, 2
+	waitplaysewithpan SE_M_HAIL, SOUND_PAN_TARGET, 17
+	waitforvisualfinish
+	clearmonbg ANIM_DEF_PARTNER
+	blendoff
+	restorebg
+	waitbgfadein
 	end

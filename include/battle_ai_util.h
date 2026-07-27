@@ -140,6 +140,7 @@ bool32 HasSnatchAffectedMove(u32 battler);
 // status checks
 bool32 AI_CanBeBurned(u32 battler, u32 ability);
 bool32 AI_CanGetFrostbite(u32 battler, u32 ability);
+bool32 AI_CanBeFrozen(u32 battler, u32 ability);
 bool32 AI_CanBeConfused(u32 battler, u32 ability);
 bool32 AI_CanSleep(u32 battler, u32 ability);
 bool32 IsBattlerIncapacitated(u32 battler, u32 ability);
@@ -151,6 +152,7 @@ bool32 AI_CanConfuse(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 battler
 bool32 ShouldBurnSelf(u32 battler, u32 ability);
 bool32 AI_CanBurn(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 battlerAtkPartner, u32 move, u32 partnerMove);
 bool32 AI_CanGiveFrostbite(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 battlerAtkPartner, u32 move, u32 partnerMove);
+bool32 AI_CanFreeze(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 battlerAtkPartner, u32 move, u32 partnerMove);
 bool32 AI_CanBeInfatuated(u32 battlerAtk, u32 battlerDef, u32 defAbility);
 bool32 AnyPartyMemberStatused(u32 battlerId, bool32 checkSoundproof);
 u32 ShouldTryToFlinch(u32 battlerAtk, u32 battlerDef, u32 atkAbility, u32 defAbility, u32 move);
@@ -189,6 +191,7 @@ void IncreaseParalyzeScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score)
 void IncreaseSleepScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score);
 void IncreaseConfusionScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score);
 void IncreaseFrostbiteScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score);
+void IncreaseFreezeScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score);
 
 s32 AI_CalcPartyMonDamage(u32 move, u32 battlerAtk, u32 battlerDef, struct BattlePokemon switchinCandidate, bool8 isPartyMonAttacker);
 void IncreaseTidyUpScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score);
