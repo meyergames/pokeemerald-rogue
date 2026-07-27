@@ -9350,6 +9350,13 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
         if (gBattleMons[battlerDef].status2 & STATUS2_CONFUSION)
             basePower *= 2;
         break;
+    case EFFECT_D2D_SHATTER:
+        bool32 lightScreen = gSideStatuses[GetBattlerSide(battlerAtk)] & SIDE_STATUS_LIGHTSCREEN;
+        bool32 reflect = gSideStatuses[GetBattlerSide(battlerAtk)] & SIDE_STATUS_REFLECT;
+        bool32 auroraVeil = gSideStatuses[GetBattlerSide(battlerAtk)] & SIDE_STATUS_AURORA_VEIL;
+        if (reflect || lightScreen || auroraVeil)
+            basePower *= 2;
+        break;
     }
 
     // Move-specific base power changes

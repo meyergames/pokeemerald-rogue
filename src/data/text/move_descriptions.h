@@ -3470,6 +3470,10 @@ static const u8 sSubzeroDescription[] = _(
     "Guaranteed to freeze.\n"
     "Always hits in snow or hail.");
 
+static const u8 sShatterDescription[] = _(
+    "Shatters own screens. On\n"
+    "success, damage doubles.");
+
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4369,4 +4373,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_MEGA_SWIPE - 1] = sMegaSwipeDescription,
     [MOVE_D2D_SUPERNOVA - 1] = sSupernovaDescription,
     [MOVE_D2D_SUBZERO - 1] = sSubzeroDescription,
+    [MOVE_D2D_SHATTER - 1] = sShatterDescription,
 };

@@ -16554,4 +16554,19 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .zMoveEffect = Z_EFFECT_NONE,
         .magicCoatAffected = TRUE,
     },
+
+    [MOVE_D2D_SHATTER] =
+    {
+        .effect = EFFECT_D2D_SHATTER,
+        .power = 75,
+        .accuracy = 90,
+        .type = TYPE_ICE,
+        .pp = 20,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .magicCoatAffected = TRUE,
+    },
 };

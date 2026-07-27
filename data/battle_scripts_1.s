@@ -495,6 +495,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_D2D_EffectWindmill			  @ EFFECT_D2D_WINDMILL
 	.4byte BattleScript_EffectHit					  @ EFFECT_D2D_SUBMISSION
 	.4byte BattleScript_D2D_EffectFreeze			  @ EFFECT_D2D_FREEZE
+	.4byte BattleScript_D2D_EffectShatter			  @ EFFECT_D2D_SHATTER
 
 @ The game doesn't seem to like having EffectHit as the last item in the list...
 
@@ -12003,4 +12004,17 @@ BattleScript_D2D_EffectFreeze:
 	waitanimation
 	setmoveeffect MOVE_EFFECT_FREEZE
 	seteffectprimary
+	goto BattleScript_MoveEnd
+
+BattleScript_D2D_EffectShatter:
+	attackcanceler
+	attackstring
+	ppreduce
+	call BattleScript_EffectHit_Ret
+	call BattleScript_TryFaintMon_Ret
+	tryremoveownscreens BattleScript_D2D_EffectShatterBrokeScreens
+	goto BattleScript_MoveEnd
+BattleScript_D2D_EffectShatterBrokeScreens:
+	printstring STRINGID_THEWALLSHATTERED
+	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd

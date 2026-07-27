@@ -9834,6 +9834,42 @@ static void Cmd_various(void)
         MarkBattlerForControllerExec(battler);
         break;
     }
+    case VARIOUS_TRY_REMOVE_OWN_SCREENS:
+    {
+        VARIOUS_ARGS(const u8 *successInstr);
+
+        // u8 side = GetBattlerSide(gBattlerAttacker) ^ BIT_SIDE;
+        u8 side = GetBattlerSide(gBattlerAttacker);
+        bool32 failed;
+
+        if (B_BRICK_BREAK >= GEN_5)
+            failed = (gMoveResultFlags & MOVE_RESULT_NO_EFFECT);
+        else
+            failed = FALSE;
+
+        if (!failed
+         && (gSideTimers[side].reflectTimer
+          || gSideTimers[side].lightscreenTimer
+          || gSideTimers[side].auroraVeilTimer))
+        {
+            gSideStatuses[side] &= ~SIDE_STATUS_REFLECT;
+            gSideStatuses[side] &= ~SIDE_STATUS_LIGHTSCREEN;
+            gSideStatuses[side] &= ~SIDE_STATUS_AURORA_VEIL;
+            gSideTimers[side].reflectTimer = 0;
+            gSideTimers[side].lightscreenTimer = 0;
+            gSideTimers[side].auroraVeilTimer = 0;
+            gBattleScripting.animTurn = 1;
+            gBattleScripting.animTargetsHit = 1;
+            gBattlescriptCurrInstr = cmd->successInstr;
+        }
+        else
+        {
+            gBattleScripting.animTurn = 0;
+            gBattleScripting.animTargetsHit = 0;
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        }
+        return;
+    }
     case VARIOUS_TRY_SOAK:
     {
         VARIOUS_ARGS(const u8 *failInstr);

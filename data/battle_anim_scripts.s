@@ -921,6 +921,7 @@ gBattleAnims_Moves::
 	.4byte Move_D2D_MEGA_SWIPE
 	.4byte Move_D2D_SUPERNOVA
 	.4byte Move_D2D_SUBZERO
+	.4byte Move_D2D_SHATTER
 
 
 
@@ -1256,6 +1257,7 @@ Move_HEALING_WISH:
 	createsprite gMoonlightSparkleSpriteTemplate, ANIM_ATTACKER, 40, 10, 0
 	delay 20
 	createvisualtask AnimTask_MoonlightEndFade, 2
+	createvisualtask AnimTask_AttackerFadeToInvisible, 0x2, 0x1
 	waitforvisualfinish
 	end
 
@@ -35636,4 +35638,17 @@ Move_D2D_SUBZERO:
 	blendoff
 	restorebg
 	waitbgfadein
+	end
+
+Move_D2D_SHATTER:
+	loadspritegfx ANIM_TAG_ICICLE_SPEAR
+	loadspritegfx ANIM_TAG_ICE_CRYSTALS
+	monbg ANIM_TARGET
+	call BarbBarrageSpikeShoot
+	loopsewithpan SE_M_DIG, SOUND_PAN_ATTACKER, 0x7, 0x3
+	createvisualtask AnimTask_FlailMovement, 2, ANIM_ATTACKER
+	delay 0x14
+	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 7, 0, 32, 1
+	clearmonbg ANIM_TARGET
+	call IceCrystalEffectShort
 	end
