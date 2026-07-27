@@ -9346,6 +9346,10 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
         // 160 base speed (Ninjask) = 60 base power
         PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 3, basePower);
         break;
+    case EFFECT_D2D_RIGHT_HOOK:
+        if (gBattleMons[battlerDef].status2 & STATUS2_CONFUSION)
+            basePower *= 2;
+        break;
     }
 
     // Move-specific base power changes

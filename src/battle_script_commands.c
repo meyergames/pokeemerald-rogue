@@ -1994,8 +1994,7 @@ s32 CalcCritChanceStageArgs(u32 battlerAtk, u32 battlerDef, u32 move, bool32 rec
     }
     else if (gStatuses3[battlerAtk] & STATUS3_LASER_FOCUS
              || gBattleMoves[move].effect == EFFECT_ALWAYS_CRIT
-             || gBattleMoves[move].effect == EFFECT_D2D_WEAK_SPOT
-             || (gBattleMoves[move].effect == EFFECT_D2D_RIGHT_HOOK && gBattleMons[battlerDef].status2 & STATUS2_CONFUSION)
+             || move == MOVE_D2D_WEAK_SPOT
              || (abilityAtk == ABILITY_MERCILESS && gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY))
     {
         critChance = -2;
