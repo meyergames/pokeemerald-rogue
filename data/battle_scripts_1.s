@@ -490,7 +490,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_D2D_EffectUproar			  @ EFFECT_D2D_UPROAR
 	.4byte BattleScript_D2D_EffectKiss				  @ EFFECT_D2D_KISS
 	.4byte BattleScript_D2D_EffectInspiration		  @ EFFECT_D2D_INSPIRATION
-	.4byte BattleScript_D2D_EffectWeakSpot			  @ EFFECT_D2D_WEAK_SPOT
+	.4byte BattleScript_D2D_EffectWeakSpot			  @ EFFECT_D2D_DEFENSE_DOWN_2_HIT
 	.4byte BattleScript_D2D_EffectRightHook			  @ EFFECT_D2D_RIGHT_HOOK
 	.4byte BattleScript_D2D_EffectWindmill			  @ EFFECT_D2D_WINDMILL
 	.4byte BattleScript_EffectHit_Test				  @ EFFECT_D2D_SUBMISSION
