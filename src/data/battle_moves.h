@@ -16446,7 +16446,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_D2D_WEAK_SPOT] =
     {
-        .effect = EFFECT_D2D_WEAK_SPOT,
+        .effect = EFFECT_D2D_DEFENSE_DOWN_2_HIT,
         .power = 20,
         .type = TYPE_FIGHTING,
         .accuracy = 100,

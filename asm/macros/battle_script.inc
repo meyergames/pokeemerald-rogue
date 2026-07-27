@@ -2401,6 +2401,11 @@
 	various \battler, VARIOUS_CURE_CONFUSION
 	.endm
 
+	.macro tryremoveownscreens successInstr:req
+	various BS_ATTACKER, VARIOUS_TRY_REMOVE_OWN_SCREENS
+	.4byte \successInstr
+	.endm
+
 
 @ D2D INSTRUCTIONS END
 
