@@ -9359,6 +9359,12 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
         if (gBattleMons[battlerAtk].species == SPECIES_GRENINJA_ASH)
             basePower = 20;
         break;
+    case MOVE_ROCK_SMASH:
+        if (GetBattlerType(battlerDef, 0, FALSE) == TYPE_ROCK
+        || GetBattlerType(battlerDef, 1, FALSE) == TYPE_ROCK
+        || GetBattlerType(battlerDef, 2, FALSE) == TYPE_ROCK)
+            basePower = 100;
+        break;
     }
 
     if (basePower == 0)

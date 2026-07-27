@@ -1009,8 +1009,8 @@ static const u8 sFutureSightDescription[] = _(
     "strike 2 turns later.");
 
 static const u8 sRockSmashDescription[] = _(
-    "A rock-crushing attack\n"
-    "that may lower Defense.");
+    "Damage doubles against Rock-\n"
+    "types. May lower Defense.");
 
 static const u8 sWhirlpoolDescription[] = _(
     "Traps and hurts the foe in\n"
