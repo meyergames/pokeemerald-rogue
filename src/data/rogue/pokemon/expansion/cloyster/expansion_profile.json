@@ -74,6 +74,10 @@
     {
       "Move": "MOVE_RAZOR_SHELL",
       "Level": 5
+    },
+    {
+      "Move": "MOVE_D2D_SHATTER",
+      "Level": 50
     }
   ],
   "TutorMoves": [

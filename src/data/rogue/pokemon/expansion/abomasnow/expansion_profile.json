@@ -67,6 +67,10 @@
     {
       "Move": "MOVE_D2D_WHITEOUT",
       "Level": 70
+    },
+    {
+      "Move": "MOVE_D2D_SUBZERO",
+      "Level": 85
     }
   ],
   "TutorMoves": [
@@ -114,6 +118,7 @@
     "MOVE_ROCK_TOMB",
     "MOVE_SCARY_FACE",
     "MOVE_SEED_BOMB",
+    "MOVE_D2D_SHATTER",
     "MOVE_SLEEP_TALK",
     "MOVE_SNOWSCAPE",
     "MOVE_SOLAR_BEAM",

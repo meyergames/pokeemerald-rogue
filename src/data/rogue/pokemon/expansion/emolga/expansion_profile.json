@@ -24,6 +24,10 @@
       "Level": 15
     },
     {
+      "Move": "MOVE_D2D_TOPPLE",
+      "Level": 18
+    },
+    {
       "Move": "MOVE_D2D_ENTHUNDER",
       "Level": 20
     },

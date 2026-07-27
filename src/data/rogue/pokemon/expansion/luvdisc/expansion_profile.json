@@ -82,6 +82,10 @@
     {
       "Move": "MOVE_HEAL_PULSE",
       "Level": 50
+    },
+    {
+      "Move": "MOVE_HEALING_WISH",
+      "Level": 55
     }
   ],
   "TutorMoves": [

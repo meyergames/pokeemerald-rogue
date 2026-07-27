@@ -80,6 +80,10 @@
       "Level": 46
     },
     {
+      "Move": "MOVE_D2D_SHATTER",
+      "Level": 50
+    },
+    {
       "Move": "MOVE_SUPERPOWER",
       "Level": 51
     },

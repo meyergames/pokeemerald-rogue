@@ -53,6 +53,10 @@
     },
     {
       "Move": "MOVE_PSYCHIC",
+      "Level": 95
+    },
+    {
+      "Move": "MOVE_D2D_SUPERNOVA",
       "Level": 99
     }
   ],

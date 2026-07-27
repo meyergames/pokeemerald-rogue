@@ -91,6 +91,10 @@
     {
       "Move": "MOVE_BLIZZARD",
       "Level": 68
+    },
+    {
+      "Move": "MOVE_D2D_SUBZERO",
+      "Level": 70
     }
   ],
   "TutorMoves": [
@@ -132,6 +136,7 @@
     "MOVE_REST",
     "MOVE_SCARY_FACE",
     "MOVE_SHADOW_BALL",
+    "MOVE_D2D_SHATTER",
     "MOVE_SLEEP_TALK",
     "MOVE_SNOWSCAPE",
     "MOVE_SPIKES",

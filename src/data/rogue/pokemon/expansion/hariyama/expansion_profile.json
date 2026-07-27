@@ -16,7 +16,7 @@
       "Level": 1
     },
     {
-      "Move": "MOVE_ARM_THRUST",
+      "Move": "MOVE_ROCK_SMASH",
       "Level": 1
     },
     {
@@ -93,6 +93,7 @@
     }
   ],
   "TutorMoves": [
+    "MOVE_ARM_THRUST",
     "MOVE_BODY_PRESS",
     "MOVE_BODY_SLAM",
     "MOVE_BRICK_BREAK",

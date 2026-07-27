@@ -52,6 +52,10 @@
       "Level": 44
     },
     {
+      "Move": "MOVE_D2D_SHATTER",
+      "Level": 50
+    },
+    {
       "Move": "MOVE_EARTHQUAKE",
       "Level": 51
     },

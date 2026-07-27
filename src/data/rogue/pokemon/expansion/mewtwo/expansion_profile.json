@@ -68,6 +68,10 @@
     {
       "Move": "MOVE_FUTURE_SIGHT",
       "Level": 88
+    },
+    {
+      "Move": "MOVE_D2D_SUPERNOVA",
+      "Level": 99
     }
   ],
   "TutorMoves": [

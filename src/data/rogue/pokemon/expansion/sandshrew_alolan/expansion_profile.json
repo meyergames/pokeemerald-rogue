@@ -76,6 +76,10 @@
       "Level": 45
     },
     {
+      "Move": "MOVE_D2D_SHATTER",
+      "Level": 50
+    },
+    {
       "Move": "MOVE_STONE_EDGE",
       "Level": 55
     }

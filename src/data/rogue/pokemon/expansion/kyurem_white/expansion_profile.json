@@ -52,6 +52,10 @@
       "Level": 64
     },
     {
+      "Move": "MOVE_D2D_WHITEOUT",
+      "Level": 70
+    },
+    {
       "Move": "MOVE_OUTRAGE",
       "Level": 72
     },
@@ -60,7 +64,7 @@
       "Level": 80
     },
     {
-      "Move": "MOVE_SHEER_COLD",
+      "Move": "MOVE_D2D_SUBZERO",
       "Level": 88
     }
   ],
