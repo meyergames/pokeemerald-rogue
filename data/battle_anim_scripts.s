@@ -919,6 +919,7 @@ gBattleAnims_Moves::
 	.4byte Move_D2D_RIGHT_HOOK
 	.4byte Move_D2D_WINDMILL
 	.4byte Move_D2D_MEGA_SWIPE
+	.4byte Move_D2D_SUPERNOVA
 	.4byte Move_D2D_SUBZERO
 
 
@@ -35557,6 +35558,66 @@ General_D2D_Charger:
 	loadspritegfx ANIM_TAG_SPARK_2
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 10, 1
 	call ElectricityEffect
+	end
+
+Move_D2D_SUPERNOVA:
+	loadspritegfx ANIM_TAG_IMPACT @hit
+	loadspritegfx ANIM_TAG_BLUE_LIGHT_WALL @reflect
+	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT @charge
+	loadspritegfx ANIM_TAG_THIN_RING @ring
+	loadspritegfx ANIM_TAG_PINK_PETAL @pink
+	loadspritegfx ANIM_TAG_TORN_METAL @brick break shatter
+	createvisualtask AnimTask_BlendBattleAnimPalExclude, 0x5, 0x0, 0x0, 0x0, 0x10, 0x0
+	waitforvisualfinish
+	createvisualtask AnimTask_SetAllNonAttackersInvisiblity, 0x5, 0x1
+	waitforvisualfinish
+	createsprite gShatteredPsychePinkChargeSpriteTemplate, ANIM_ATTACKER, 2, 0x0
+	createsprite gShatteredPsycheRingSpriteTemplate, ANIM_ATTACKER, 40, 0x0, 0x0, 0x0, 0x0
+	playsewithpan SE_M_SUPERSONIC, SOUND_PAN_ATTACKER
+	delay 0xc
+	createsprite gShatteredPsycheRingSpriteTemplate, ANIM_ATTACKER, 40, 0x0, 0x0, 0x0, 0x0
+	delay 0xc
+	createsprite gShatteredPsycheRingSpriteTemplate, ANIM_ATTACKER, 40, 0x0, 0x0, 0x0, 0x0
+	playsewithpan SE_M_SUPERSONIC, SOUND_PAN_ATTACKER
+	delay 0xc
+	createsprite gShatteredPsycheRingSpriteTemplate, ANIM_ATTACKER, 40, 0x0, 0x0, 0x0, 0x0
+	delay 0xc
+	createsprite gShatteredPsycheRingSpriteTemplate, ANIM_ATTACKER, 40, 0x0, 0x0, 0x0, 0x0
+	playsewithpan SE_M_SUPERSONIC, SOUND_PAN_ATTACKER
+	delay 0xc
+	createsprite gShatteredPsycheRingSpriteTemplate, ANIM_ATTACKER, 40, 0x0, 0x0, 0x0, 0x0
+	delay 0xc
+	createsprite gShatteredPsycheRingSpriteTemplate, ANIM_ATTACKER, 40, 0x0, 0x0, 0x0, 0x0
+	playsewithpan SE_M_SUPERSONIC, SOUND_PAN_ATTACKER
+	delay 0xc
+	createsprite gShatteredPsycheRingSpriteTemplate, ANIM_ATTACKER, 40, 0x0, 0x0, 0x0, 0x0
+	delay 0xc
+	createsprite gShatteredPsycheRingSpriteTemplate, ANIM_ATTACKER, 40, 0x0, 0x0, 0x0, 0x0
+	playsewithpan SE_M_SUPERSONIC, SOUND_PAN_ATTACKER
+	delay 0x4
+	fadetobg BG_SHATTERED_PSYCHE
+	delay 0x4
+	createvisualtask AnimTask_BlendBattleAnimPalExclude, 0x5, 0x0, 0x0, 0x10, 0x0, 0x0
+	delay 0x7
+	playsewithpan SE_M_PSYBEAM, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 3, 0, 15, 1
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, -4, -4, 15, ANIM_TARGET, 1
+	waitforvisualfinish
+	loadspritegfx ANIM_TAG_EXPLOSION
+	createsprite gComplexPaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 8, 9, RGB(26, 8, 8), 8, RGB_BLACK, 8
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_PLAYER_LEFT, 8, 0, 40, 1
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_PLAYER_RIGHT, 8, 0, 40, 1
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_OPPONENT_LEFT, 8, 0, 40, 1
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_OPPONENT_RIGHT, 8, 0, 40, 1
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_ATTACKER_FORCE, 8, 0, 40, 1
+	call Explosion1
+	call Explosion1
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 16, 16, RGB_WHITE
+	delay 50
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 3, 16, 0, RGB_WHITE
+	restorebg
+	waitbgfadeout
 	end
 
 Move_D2D_SUBZERO:

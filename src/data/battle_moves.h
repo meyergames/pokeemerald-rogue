@@ -16525,6 +16525,21 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .slicingMove = TRUE,
     },
 
+    [MOVE_D2D_SUPERNOVA] =
+    {
+        .effect = EFFECT_EXPLOSION,
+        .power = 175,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 1,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_RECOVER_HP,
+        .parentalBondBanned = TRUE,
+    },
+
     [MOVE_D2D_SUBZERO] =
     {
         .effect = EFFECT_D2D_FREEZE,

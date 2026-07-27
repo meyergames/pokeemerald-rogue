@@ -3462,6 +3462,10 @@ static const u8 sMegaSwipeDescription[] = _(
     "A strong attack that leaves\n"
     "the foe with at least 1 HP.");
 
+static const u8 sSupernovaDescription[] = _(
+    "Powerful, but user is left\n"
+    "with 1 HP and must recharge.");
+
 static const u8 sSubzeroDescription[] = _(
     "Guaranteed to freeze.\n"
     "Always hits in snow or hail.");
@@ -4363,5 +4367,6 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_RIGHT_HOOK - 1] = sRightHookDescription,
     [MOVE_D2D_WINDMILL - 1] = sWindmillDescription,
     [MOVE_D2D_MEGA_SWIPE - 1] = sMegaSwipeDescription,
+    [MOVE_D2D_SUPERNOVA - 1] = sSupernovaDescription,
     [MOVE_D2D_SUBZERO - 1] = sSubzeroDescription,
 };
