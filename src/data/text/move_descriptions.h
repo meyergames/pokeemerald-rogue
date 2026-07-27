@@ -3451,8 +3451,8 @@ static const u8 sLeftHookDescription[] = _(
     "the foe.");
 
 static const u8 sRightHookDescription[] = _(
-    "Always crits on confused\n"
-    "foes, but also cures them.");
+    "Always hits for double\n"
+    "damage on confused foes.");
 
 static const u8 sWindmillDescription[] = _(
     "Deals damage to both foes,\n"
