@@ -1800,8 +1800,8 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SCREECH] =
     {
-        .effect = EFFECT_DEFENSE_DOWN_2,
-        .power = 0,
+        .effect = EFFECT_D2D_DEFENSE_DOWN_2_HIT,
+        .power = 30,
         .type = TYPE_STELLAR,
         .accuracy = 85,
         .pp = 40,
