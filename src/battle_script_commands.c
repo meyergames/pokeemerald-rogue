@@ -1745,6 +1745,10 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
         if (IS_MOVE_PHYSICAL(move))
             calc = (calc * 80) / 100; // 1.2 hustle loss
         break;
+    case ABILITY_KEEN_EYE:
+        if (moveAcc <= 90)
+            moveAcc += 10; // flat +10 boost (e.g. Hydro Pump becomes 90 acc, Zap Cannon 60, etc)
+        break;
     }
 
     // Target's ability
