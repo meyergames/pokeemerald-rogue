@@ -9823,6 +9823,7 @@ static void Cmd_various(void)
         {
             gBattlescriptCurrInstr = cmd->failInstr;
         }
+        return;
     }
     case VARIOUS_CURE_CONFUSION:
     {
