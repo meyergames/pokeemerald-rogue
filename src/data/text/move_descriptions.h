@@ -153,8 +153,8 @@ static const u8 sTakeDownDescription[] = _(
     "that also hurts the user.");
 
 static const u8 sThrashDescription[] = _(
-    "A rampage of 2 to 3 turns\n"
-    "that confuses the user.");
+    "Deals damage to both foes,\n"
+    "but also confuses the user.");
 
 static const u8 sDoubleEdgeDescription[] = _(
     "A life-risking tackle that\n"
@@ -329,8 +329,8 @@ static const u8 sSleepPowderDescription[] = _(
     "cause the foe to sleep.");
 
 static const u8 sPetalDanceDescription[] = _(
-    "A rampage of 2 to 3 turns\n"
-    "that confuses the user.");
+    "Deals damage to both foes,\n"
+    "but also confuses the user.");
 
 static const u8 sStringShotDescription[] = _(
     "Binds the foe with string\n"
@@ -809,8 +809,8 @@ static const u8 sLockOnDescription[] = _(
     "then raises accuracy.");
 
 static const u8 sOutrageDescription[] = _(
-    "A rampage of 2 to 3 turns\n"
-    "that confuses the user.");
+    "Deals damage to both foes,\n"
+    "but also confuses the user.");
 
 static const u8 sSandstormDescription[] = _(
     "Causes a sandstorm that\n"
@@ -2986,8 +2986,8 @@ static const u8 sMysticalPowerDescription[] = _(
     "raising the user's Sp. Atk.");
 
 static const u8 sRagingFuryDescription[] = _(
-    "A rampage of 2 to 3 turns\n"
-    "that confuses the user.");
+    "Deals damage to both foes,\n"
+    "but also confuses the user.");
 
 static const u8 sWaveCrashDescription[] = _(
     "A slam shrouded in water.\n"
@@ -3455,8 +3455,8 @@ static const u8 sRightHookDescription[] = _(
     "foes, but also cures them.");
 
 static const u8 sWindmillDescription[] = _(
-    "Punches away at both foes.\n"
-    "May confuse the user.");
+    "Deals damage to both foes,\n"
+    "but also confuses the user.");
 
 static const u8 sMegaSwipeDescription[] = _(
     "A strong attack that leaves\n"
