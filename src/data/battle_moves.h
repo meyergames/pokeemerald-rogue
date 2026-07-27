@@ -2125,7 +2125,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_FOES_AND_ALLY,
         .priority = 0,
         .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
+        .zMoveEffect = Z_EFFECT_RECOVER_HP,
         .parentalBondBanned = TRUE,
     },
 
@@ -2732,7 +2732,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_FOES_AND_ALLY,
         .priority = 0,
         .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
+        .zMoveEffect = Z_EFFECT_RECOVER_HP,
         .parentalBondBanned = TRUE,
     },
 
@@ -12693,7 +12693,8 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_FOES_AND_ALLY,
         .priority = 0,
         .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
+        .zMoveEffect = Z_EFFECT_RECOVER_HP,
+        .parentalBondBanned = TRUE,
     },
 
     [MOVE_GRASSY_GLIDE] =
@@ -15992,7 +15993,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
+        .zMoveEffect = Z_EFFECT_RECOVER_HP,
         .parentalBondBanned = TRUE,
     },
 
