@@ -10265,6 +10265,13 @@ static inline uq4_12_t GetGlaiveRushModifier(u32 battlerDef)
     return UQ_4_12(1.0);
 }
 
+static inline uq4_12_t GetFreezeModifier(u32 battlerDef, bool32 isCrit)
+{
+    if ((gBattleMons[battlerDef].status1 & STATUS1_FREEZE) && !isCrit)
+        return UQ_4_12(0.25);
+    return UQ_4_12(1.0);
+}
+
 static inline uq4_12_t GetZMaxMoveAgainstProtectionModifier(u32 battlerDef, u32 move)
 {
     if ((gBattleStruct->zmove.active || IsMaxMove(move)) && IS_BATTLER_PROTECTED(battlerDef))
@@ -10497,6 +10504,7 @@ static inline s32 DoMoveDamageCalcVars(u32 move, u32 battlerAtk, u32 battlerDef,
 
     dmg = CalculateBaseDamage(gBattleMovePower, userFinalAttack, gBattleMons[battlerAtk].level, targetFinalDefense);
     DAMAGE_APPLY_MODIFIER(GetTargetDamageModifier(move, battlerAtk, battlerDef));
+    DAMAGE_APPLY_MODIFIER(GetFreezeModifier(battlerDef, isCrit));
     DAMAGE_APPLY_MODIFIER(GetParentalBondModifier(battlerAtk));
     DAMAGE_APPLY_MODIFIER(GetWeatherDamageModifier(battlerAtk, move, moveType, holdEffectAtk, holdEffectDef, weather));
     DAMAGE_APPLY_MODIFIER(GetCriticalModifier(isCrit));
