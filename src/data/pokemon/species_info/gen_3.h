@@ -357,7 +357,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .baseSpAttack  = 130,
         .baseSpDefense = 80,
         .expYield = 284,
-        .abilities = { ABILITY_SPEED_BOOST, ABILITY_SPEED_BOOST, ABILITY_SPEED_BOOST },
+        .abilities = { ABILITY_D2D_IRON_SHIN, ABILITY_D2D_IRON_SHIN, ABILITY_D2D_IRON_SHIN },
         .cryId = CRY_BLAZIKEN_MEGA,
         .description = POKEDEX_DESC_STRING(
             "As it unleashes a flurry of savage kicks,\n"

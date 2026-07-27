@@ -316,6 +316,7 @@ static const u8 sAerodynamicDescription[] = _("Flying moves raise Speed.");
 static const u8 sBugCatcherDescription[] = _("Traps Bug-type Pokémon.");
 static const u8 sSingingStarDescription[] = _("Sound moves never miss.");
 static const u8 sChargerDescription[] = _("Charges Electric allies.");
+static const u8 sIronShinDescription[] = _("Boosts kicking moves.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -650,6 +651,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_D2D_BUG_CATCHER] = _("Bug Catcher"),
     [ABILITY_D2D_SINGING_STAR] = _("Singing Star"),
     [ABILITY_D2D_CHARGER] = _("Charger"),
+    [ABILITY_D2D_IRON_SHIN] = _("Iron Shin"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -984,6 +986,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_D2D_BUG_CATCHER] = _("Bug Catcher"),
     [ABILITY_D2D_SINGING_STAR] = _("Singing Star"),
     [ABILITY_D2D_CHARGER] = _("Charger"),
+    [ABILITY_D2D_IRON_SHIN] = _("Iron Shin"),
 };
 #endif
 
@@ -1318,4 +1321,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_D2D_BUG_CATCHER] = sBugCatcherDescription,
     [ABILITY_D2D_SINGING_STAR] = sSingingStarDescription,
     [ABILITY_D2D_CHARGER] = sChargerDescription,
+    [ABILITY_D2D_IRON_SHIN] = sIronShinDescription,
 };
