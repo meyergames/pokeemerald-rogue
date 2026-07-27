@@ -3089,10 +3089,13 @@ BattleScript_EffectHealingWish:
 	ppreduce
 	attackanimation
 	waitanimation
-	instanthpdrop BS_ATTACKER
-	setatkhptozero
-	tryfaintmon BS_ATTACKER
+	@ instanthpdrop BS_ATTACKER
+	@ setatkhptozero
+	call BattleScript_SurviveWithOneHP_Ret
 	storehealingwish BS_ATTACKER
+	@ moveendto MOVEEND_ATTACKER_VISIBLE
+	@ moveendfrom MOVEEND_TARGET_VISIBLE
+	goto BattleScript_MoveSwitch
 .if B_HEALING_WISH_SWITCH <= GEN_4
 	openpartyscreen BS_ATTACKER, BattleScript_EffectHealingWishEnd
 	switchoutabilities BS_ATTACKER

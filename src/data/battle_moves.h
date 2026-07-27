@@ -6445,9 +6445,9 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_HEALING_WISH,
         .power = 0,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_FAIRY,
         .accuracy = 0,
-        .pp = 10,
+        .pp = 1,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_USER,
         .priority = 0,
