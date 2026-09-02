@@ -922,6 +922,10 @@ gBattleAnims_Moves::
 	.4byte Move_D2D_SUPERNOVA
 	.4byte Move_D2D_SUBZERO
 	.4byte Move_D2D_SHATTER
+	.4byte Move_D2D_SIPHON
+	.4byte Move_D2D_CHRYSALIS
+	.4byte Move_D2D_TAG
+	.4byte Move_D2D_HEAD_EMPTY
 
 
 
@@ -1084,6 +1088,8 @@ gBattleAnims_General::
 	.4byte General_TeraActivate             @ B_ANIM_TERA_ACTIVATE
 	.4byte General_D2D_HealerHeal           @ B_ANIM_D2D_HEALER_HEAL
 	.4byte General_D2D_Charger           	@ B_ANIM_D2D_CHARGER
+	.4byte General_D2D_Chrysalis           	@ B_ANIM_D2D_CHRYSALIS
+	.4byte General_D2D_ChrysalisBreakout	@ B_ANIM_D2D_CHRYSALIS_BREAKOUT
 @ D2D TODO: for some reason, the animations below are not registered in battle_anim.h?
 	.4byte General_TrickRoom                @ B_ANIM_TRICK_ROOM
 	.4byte General_WonderRoom               @ B_ANIM_WONDER_ROOM
@@ -35651,4 +35657,103 @@ Move_D2D_SHATTER:
 	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 7, 0, 32, 1
 	clearmonbg ANIM_TARGET
 	call IceCrystalEffectShort
+	end
+ShatterShardShoot:
+	delay 0x3
+	createsprite gIcicleCrashSpearTemplate, ANIM_TARGET, 2, 0x0, 0x0, 0x1e, 0xfb00, 0x0, 0x3
+	delay 0x0
+	createsprite gIcicleCrashSpearTemplate, ANIM_TARGET, 2, 0x0, 0x0, 0x1e, 0x0, 0x0500, 0x3
+	delay 0x0
+	createsprite gIcicleCrashSpearTemplate, ANIM_TARGET, 2, 0x0, 0x0, 0x1e, 0x0, 0xfb00, 0x3
+	delay 0x0
+	createsprite gIcicleCrashSpearTemplate, ANIM_TARGET, 2, 0x0, 0x0, 0x1e, 0x0500, 0x0300, 0x3
+	delay 0x0
+	createsprite gIcicleCrashSpearTemplate, ANIM_TARGET, 2, 0x0, 0x0, 0x1e, 0xfb00, 0x0300, 0x3
+	delay 0x0
+	createsprite gIcicleCrashSpearTemplate, ANIM_TARGET, 2, 0x0, 0x0, 0x1e, 0x0500, 0xfd00, 0x3
+	delay 0x0
+	createsprite gIcicleCrashSpearTemplate, ANIM_TARGET, 2, 0x0, 0x0, 0x1e, 0xfb00, 0xfd00, 0x3
+	return
+
+Move_D2D_SIPHON:
+	loadspritegfx ANIM_TAG_SLAM_HIT
+	loadspritegfx ANIM_TAG_IMPACT
+	monbg ANIM_TARGET
+	setalpha 12, 8
+	playsewithpan SE_M_COMET_PUNCH, SOUND_PAN_ATTACKER
+	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, 0, 20, 3, 0, 4
+	delay 1
+	createsprite gSlamHitSpriteTemplate, ANIM_ATTACKER, 2, 0, 0
+	delay 3
+	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, ANIM_TARGET, 1
+	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, 1, -12, 10, 0, 3
+	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, 5
+	delay 3
+	createvisualtask AnimTask_ShakeMonInPlace, 2, ANIM_TARGET, 0, 3, 6, 1
+	waitforvisualfinish
+	delay 5
+	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 2, 1, 0, 6
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
+	end
+
+Move_D2D_CHRYSALIS:
+	call GrowthEffect
+	waitforvisualfinish
+	call GrowthEffect
+	waitforvisualfinish
+	end
+
+General_D2D_Chrysalis:
+	call GrowthEffect
+	waitforvisualfinish
+	call GrowthEffect
+	waitforvisualfinish
+	end
+
+General_D2D_ChrysalisBreakout:
+	loadspritegfx ANIM_TAG_RED_ORB_2
+	loadspritegfx ANIM_TAG_IMPACT
+	playsewithpan SE_M_TAKE_DOWN, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_SpitUpDeformMon, 5
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 8, 2
+	delay 45
+	playsewithpan SE_M_SPIT_UP, SOUND_PAN_ATTACKER
+	delay 5
+	waitforvisualfinish
+	end
+
+Move_D2D_TAG:
+	loadspritegfx ANIM_TAG_ROUND_SHADOW
+	loadspritegfx ANIM_TAG_IMPACT
+	monbg ANIM_TARGET
+	setalpha 12, 8
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_TARGET
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, ANIM_TARGET, 2
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 3, 0, 6, 1
+	delay 12
+	playsewithpan SE_M_FLY, SOUND_PAN_ATTACKER
+	createsprite gFlyBallUpSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, 13, 336
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
+	end
+
+Move_D2D_HEAD_EMPTY:
+	loadspritegfx ANIM_TAG_DUCK
+	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	loadspritegfx ANIM_TAG_IMPACT
+	monbg ANIM_TARGET
+	setalpha 12, 8
+	call DizzyPunchLunge
+	createsprite gFistFootSpriteTemplate, ANIM_TARGET, 5, 0, 0, 20, 1, 0
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_TARGET, 4, 0, 0, ANIM_TARGET, 1
+	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
+	createsprite gRandomPosHitSplatSpriteTemplate, ANIM_TARGET, 3, ANIM_TARGET, 3
+	createvisualtask AnimTask_ShakeTargetBasedOnMovePowerOrDmg, 2, FALSE, 1, 30, 1, 0
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
 	end

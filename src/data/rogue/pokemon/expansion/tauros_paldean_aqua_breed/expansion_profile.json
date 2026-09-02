@@ -58,6 +58,10 @@
     {
       "Move": "MOVE_CLOSE_COMBAT",
       "Level": 60
+    },
+    {
+      "Move": "MOVE_D2D_HEAD_EMPTY",
+      "Level": 70
     }
   ],
   "TutorMoves": [

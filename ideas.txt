@@ -3,3 +3,27 @@
 [] enwater
 [x] light metal passes its boost to the ally
 [x] moonlight should restore more health in rain, not sun
+[] ghost variation of protect that disables the move the opponent had used against them (3 PP)
+[] make Bug super effective against Fairy? (but Ghost already has this now)
+[] some kind of unique trait for bugs? (similar to how Fire resists burn, grass immune to spore...)
+   ^ permanent mental herb? (i.e. hivemind, can't taunt/torment/disable/etc)
+[] grand entrance: first move after switching in deals double damage (or gains +1 prio?)
+[] "As a contrast to sand, Ice types should heal themselves in snow"
+[] give Empoleon Lightning Rod + Discharge..?
+
+
+
+[] Mega-exclusive moves are possible! the base Pokémon learns it, and is unable to use the move if it hasn't mega evolved.
+
+
+
+[] ability for Mega Trapinch: Quicksand, any foes left with <10% HP at the end of the turn are KO'd.
+[] ability: Ever Changing = using a move disables it (detrimental, for a high-BST mon)
+[] ability: Predator = deals +X% damage against the foe with the lowest BST / BST lower than its own
+[x] move: Empty Mind = fighting move that deals more damage the fewer moves the mon knows (60 > 100 > 120 > 140?)
+	(synergizes with Last Resort, or could run it with Protect/Detect) ("Knucklehead?") ("Head Empty")
+[] make Psychic types always immune to confusion
+[] ability: Premonition = enables the "Battle style = Switch" setting, but only for this ability
+[] move: Chrysalis for Bug-types. +2 Def/SpDef on turn 2, skip turn 2, +2 Atk/SpAtk/Spd on turn 3
+[] "AnimTask_ShakeTargetBasedOnMovePowerOrDmg" for Topple, Scatterblast, etc..?
+[] make Ice resist Ground, Steel weak to Electric, Poison weak to Water

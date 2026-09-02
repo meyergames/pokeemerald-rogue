@@ -93,8 +93,12 @@
       "Level": 48
     },
     {
-      "Move": "MOVE_COACHING",
+      "Move": "MOVE_D2D_HEAD_EMPTY",
       "Level": 50
+    },
+    {
+      "Move": "MOVE_COACHING",
+      "Level": 52
     },
     {
       "Move": "MOVE_DYNAMIC_PUNCH",

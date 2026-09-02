@@ -56,6 +56,10 @@
       "Level": 48
     },
     {
+      "Move": "MOVE_D2D_HEAD_EMPTY",
+      "Level": 50
+    },
+    {
       "Move": "MOVE_SUPERPOWER",
       "Level": 54
     },

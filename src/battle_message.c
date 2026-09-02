@@ -471,6 +471,7 @@ static const u8 sText_D2D_SoreThroat[] = _("{B_ATK_NAME_WITH_PREFIX}'s throat mu
 static const u8 sText_D2D_PkmnWokeUpInUproar[] = _("{B_DEF_NAME_WITH_PREFIX} woke up\nin the UPROAR!");
 static const u8 sText_D2D_InspirationStatRaised[] = _("{B_ATK_NAME_WITH_PREFIX}'s {B_BUFF1}\nsharply rose!");
 static const u8 sText_D2D_ChargerRestoredHP[] = _("{B_ATK_NAME_WITH_PREFIX} regained some HP\nfrom its ally's Charger!");
+static const u8 sText_D2D_SiphonPowerRaised[] = _("Siphon's power raised to {B_BUFF1}!\p");
 
 const u8 *const gStatNamesTable[NUM_BATTLE_STATS] =
 {
@@ -1572,6 +1573,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_D2D_PKMNWOKEUPINUPROAR - BATTLESTRINGS_TABLE_START] = sText_D2D_PkmnWokeUpInUproar,
     [STRINGID_D2D_INSPIRATIONSTATRAISED - BATTLESTRINGS_TABLE_START] = sText_D2D_InspirationStatRaised,
     [STRINGID_D2D_CHARGERRESTOREDHP - BATTLESTRINGS_TABLE_START] = sText_D2D_ChargerRestoredHP,
+    [STRINGID_D2D_SIPHONPOWERRAISED - BATTLESTRINGS_TABLE_START] = sText_D2D_SiphonPowerRaised,
 };
 
 const u16 gTrainerUsedItemStringIds[] =

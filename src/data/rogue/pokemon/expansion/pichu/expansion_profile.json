@@ -66,6 +66,7 @@
     "MOVE_SUBSTITUTE",
     "MOVE_SURF",
     "MOVE_SWIFT",
+    "MOVE_D2D_TAG",
     "MOVE_TAKE_DOWN",
     "MOVE_TERA_BLAST",
     "MOVE_THUNDER",

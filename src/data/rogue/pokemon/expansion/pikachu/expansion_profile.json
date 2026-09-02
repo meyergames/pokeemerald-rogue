@@ -85,10 +85,6 @@
       "Level": 40
     },
     {
-      "Move": "MOVE_THUNDER",
-      "Level": 44
-    },
-    {
       "Move": "MOVE_D2D_SHORT_CIRCUIT",
       "Level": 60
     }
@@ -132,6 +128,7 @@
     "MOVE_SUBSTITUTE",
     "MOVE_SURF",
     "MOVE_SWIFT",
+    "MOVE_D2D_TAG",
     "MOVE_TAKE_DOWN",
     "MOVE_TERA_BLAST",
     "MOVE_THIEF",

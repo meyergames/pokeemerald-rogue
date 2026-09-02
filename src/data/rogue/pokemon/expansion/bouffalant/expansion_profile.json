@@ -54,6 +54,10 @@
     {
       "Move": "MOVE_GIGA_IMPACT",
       "Level": 55
+    },
+    {
+      "Move": "MOVE_D2D_HEAD_EMPTY",
+      "Level": 60
     }
   ],
   "TutorMoves": [

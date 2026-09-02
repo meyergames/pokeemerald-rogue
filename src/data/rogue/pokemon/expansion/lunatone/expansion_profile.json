@@ -111,7 +111,7 @@
       "Level": 46
     },
     {
-      "Move": "MOVE_STONE_EDGE",
+      "Move": "MOVE_POWER_GEM",
       "Level": 49
     },
     {
@@ -217,6 +217,7 @@
     "MOVE_STORED_POWER",
     "MOVE_SUBSTITUTE",
     "MOVE_SWIFT",
+    "MOVE_THUNDER",
     "MOVE_TRICK_ROOM",
     "MOVE_WEATHER_BALL",
     "MOVE_ZEN_HEADBUTT"

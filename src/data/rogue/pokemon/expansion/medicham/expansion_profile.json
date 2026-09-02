@@ -117,6 +117,10 @@
       "Level": 55
     },
     {
+      "Move": "MOVE_THRASH",
+      "Level": 62
+    },
+    {
       "Move": "MOVE_D2D_TEACH",
       "Level": 70
     },
@@ -153,6 +157,7 @@
     "MOVE_GIGA_IMPACT",
     "MOVE_GRASS_KNOT",
     "MOVE_GRAVITY",
+    "MOVE_D2D_HEAD_EMPTY",
     "MOVE_HELPING_HAND",
     "MOVE_HIDDEN_POWER",
     "MOVE_HYPER_BEAM",

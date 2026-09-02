@@ -46,6 +46,10 @@
     {
       "Move": "MOVE_PLAY_ROUGH",
       "Level": 38
+    },
+    {
+      "Move": "MOVE_D2D_HEAD_EMPTY",
+      "Level": 40
     }
   ],
   "TutorMoves": [

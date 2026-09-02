@@ -78,6 +78,10 @@
     {
       "Move": "MOVE_PLAY_ROUGH",
       "Level": 46
+    },
+    {
+      "Move": "MOVE_D2D_TAG",
+      "Level": 50
     }
   ],
   "TutorMoves": [

@@ -1965,7 +1965,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             .baseSpeed     = 60,
             .baseSpAttack  = 80,
         #endif
-        .types = { TYPE_BUG, TYPE_FLYING },
+        .types = { TYPE_BUG, TYPE_wATER },
         .catchRate = 75,
         .expYield = 159,
         .evYield_SpAttack = 1,
@@ -1976,7 +1976,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_BUG },
-        .abilities = { ABILITY_INTIMIDATE, ABILITY_UNNERVE, ABILITY_D2D_AERODYNAMIC },
+        .abilities = { ABILITY_INTIMIDATE, ABILITY_LEVITATE, ABILITY_D2D_AERODYNAMIC },
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Masquerain"),
         .cryId = CRY_MASQUERAIN,

@@ -14,6 +14,10 @@
     {
       "Move": "MOVE_FURY_SWIPES",
       "Level": 1
+    },
+    {
+      "Move": "MOVE_D2D_TAG",
+      "Level": 35
     }
   ],
   "TutorMoves": [
@@ -35,6 +39,7 @@
     "MOVE_GIGA_IMPACT",
     "MOVE_GRASS_KNOT",
     "MOVE_GUNK_SHOT",
+    "MOVE_D2D_HEAD_EMPTY",
     "MOVE_HELPING_HAND",
     "MOVE_HIDDEN_POWER",
     "MOVE_HYDRO_PUMP",

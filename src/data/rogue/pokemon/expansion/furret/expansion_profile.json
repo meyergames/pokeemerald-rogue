@@ -62,6 +62,10 @@
     {
       "Move": "MOVE_HYPER_VOICE",
       "Level": 56
+    },
+    {
+      "Move": "MOVE_D2D_TAG",
+      "Level": 60
     }
   ],
   "TutorMoves": [
@@ -112,6 +116,7 @@
     "MOVE_SUPER_FANG",
     "MOVE_SURF",
     "MOVE_SWIFT",
+    "MOVE_D2D_TAG",
     "MOVE_TAKE_DOWN",
     "MOVE_TERA_BLAST",
     "MOVE_THIEF",

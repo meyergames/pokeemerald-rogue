@@ -4,6 +4,10 @@
   ],
   "LevelUpMoves": [
     {
+      "Move": "MOVE_D2D_TAG",
+      "Level": 0
+    },
+    {
       "Move": "MOVE_SCRATCH",
       "Level": 1
     },
@@ -38,6 +42,10 @@
     {
       "Move": "MOVE_SCREECH",
       "Level": 25
+    },
+    {
+      "Move": "MOVE_FAKE_OUT",
+      "Level": 27
     },
     {
       "Move": "MOVE_AGILITY",
@@ -144,8 +152,9 @@
     {
       "Moves": [
         "MOVE_FAKE_OUT",
-        "MOVE_KNOCK_OFF",
-        "MOVE_U_TURN"
+        "MOVE_RETURN",
+        "MOVE_D2D_TAG",
+        "MOVE_KNOCK_OFF"
       ],
       "Ability": "ABILITY_TECHNICIAN",
       "Item": "ITEM_SILK_SCARF",
@@ -158,7 +167,7 @@
       "Moves": [
         "MOVE_FAKE_OUT",
         "MOVE_RETURN",
-        "MOVE_LOW_KICK",
+        "MOVE_D2D_TAG",
         "MOVE_KNOCK_OFF"
       ],
       "Ability": "ABILITY_TECHNICIAN",
@@ -171,8 +180,9 @@
     {
       "Moves": [
         "MOVE_FAKE_OUT",
-        "MOVE_KNOCK_OFF",
-        "MOVE_U_TURN"
+        "MOVE_RETURN",
+        "MOVE_D2D_TAG",
+        "MOVE_KNOCK_OFF"
       ],
       "Ability": "ABILITY_TECHNICIAN",
       "Item": "ITEM_LIFE_ORB",
@@ -184,7 +194,8 @@
     {
       "Moves": [
         "MOVE_FAKE_OUT",
-        "MOVE_LAST_RESORT",
+        "MOVE_RETURN",
+        "MOVE_D2D_TAG",
         "MOVE_KNOCK_OFF"
       ],
       "Ability": "ABILITY_TECHNICIAN",
@@ -197,9 +208,9 @@
     {
       "Moves": [
         "MOVE_FAKE_OUT",
-        "MOVE_GIGA_IMPACT",
-        "MOVE_TAUNT",
-        "MOVE_TICKLE"
+        "MOVE_RETURN",
+        "MOVE_D2D_TAG",
+        "MOVE_KNOCK_OFF"
       ],
       "Ability": "ABILITY_TECHNICIAN",
       "Item": "ITEM_LIFE_ORB",
@@ -211,9 +222,9 @@
     {
       "Moves": [
         "MOVE_FAKE_OUT",
-        "MOVE_KNOCK_OFF",
-        "MOVE_U_TURN",
-        "MOVE_POWER_UP_PUNCH"
+        "MOVE_RETURN",
+        "MOVE_D2D_TAG",
+        "MOVE_KNOCK_OFF"
       ],
       "Ability": "ABILITY_TECHNICIAN",
       "Item": "ITEM_LIFE_ORB",
@@ -226,8 +237,8 @@
       "Moves": [
         "MOVE_FAKE_OUT",
         "MOVE_RETURN",
-        "MOVE_LOW_KICK",
-        "MOVE_U_TURN"
+        "MOVE_D2D_TAG",
+        "MOVE_KNOCK_OFF"
       ],
       "Ability": "ABILITY_TECHNICIAN",
       "Item": "ITEM_LIFE_ORB",
@@ -239,9 +250,9 @@
     {
       "Moves": [
         "MOVE_FAKE_OUT",
-        "MOVE_U_TURN",
-        "MOVE_KNOCK_OFF",
-        "MOVE_RETURN"
+        "MOVE_RETURN",
+        "MOVE_D2D_TAG",
+        "MOVE_KNOCK_OFF"
       ],
       "Ability": "ABILITY_TECHNICIAN",
       "Item": "ITEM_LIFE_ORB",
@@ -253,8 +264,9 @@
     {
       "Moves": [
         "MOVE_FAKE_OUT",
-        "MOVE_TAIL_SLAP",
-        "MOVE_LAST_RESORT"
+        "MOVE_RETURN",
+        "MOVE_D2D_TAG",
+        "MOVE_KNOCK_OFF"
       ],
       "Ability": "ABILITY_TECHNICIAN",
       "Item": "ITEM_LIFE_ORB",
@@ -266,9 +278,9 @@
     {
       "Moves": [
         "MOVE_FAKE_OUT",
-        "MOVE_GIGA_IMPACT",
-        "MOVE_TICKLE",
-        "MOVE_LOW_SWEEP"
+        "MOVE_RETURN",
+        "MOVE_D2D_TAG",
+        "MOVE_KNOCK_OFF"
       ],
       "Ability": "ABILITY_TECHNICIAN",
       "Item": "ITEM_NORMALIUM_Z",
@@ -280,8 +292,9 @@
     {
       "Moves": [
         "MOVE_FAKE_OUT",
-        "MOVE_GIGA_IMPACT",
-        "MOVE_LAST_RESORT"
+        "MOVE_RETURN",
+        "MOVE_D2D_TAG",
+        "MOVE_KNOCK_OFF"
       ],
       "Ability": "ABILITY_TECHNICIAN",
       "Item": "ITEM_NORMALIUM_Z",
@@ -293,9 +306,9 @@
     {
       "Moves": [
         "MOVE_FAKE_OUT",
-        "MOVE_U_TURN",
-        "MOVE_KNOCK_OFF",
-        "MOVE_DOUBLE_HIT"
+        "MOVE_RETURN",
+        "MOVE_D2D_TAG",
+        "MOVE_KNOCK_OFF"
       ],
       "Ability": "ABILITY_TECHNICIAN",
       "Item": "ITEM_SILK_SCARF",
@@ -307,9 +320,9 @@
     {
       "Moves": [
         "MOVE_FAKE_OUT",
-        "MOVE_U_TURN",
-        "MOVE_KNOCK_OFF",
-        "MOVE_TRIPLE_AXEL"
+        "MOVE_RETURN",
+        "MOVE_D2D_TAG",
+        "MOVE_KNOCK_OFF"
       ],
       "Ability": "ABILITY_TECHNICIAN",
       "Item": "ITEM_SILK_SCARF",

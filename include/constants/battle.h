@@ -193,6 +193,8 @@
 #define STATUS4_D2D_ENFIRE              (1 << 7)
 #define STATUS4_D2D_ENFROST             (1 << 8)
 #define STATUS4_D2D_ENTHUNDER           (1 << 9)
+#define STATUS4_D2D_CHRYSALIS           (1 << 10)
+#define STATUS4_D2D_CHRYSALIS_TURN(num) (((num) << 10) & STATUS4_D2D_CHRYSALIS)
 
 #define HITMARKER_WAKE_UP_CLEAR         (1 << 4) // Cleared when waking up. Never set or checked.
 #define HITMARKER_IGNORE_BIDE           (1 << 5)

@@ -62,6 +62,10 @@
     {
       "Move": "MOVE_HAMMER_ARM",
       "Level": 63
+    },
+    {
+      "Move": "MOVE_D2D_HEAD_EMPTY",
+      "Level": 70
     }
   ],
   "TutorMoves": [

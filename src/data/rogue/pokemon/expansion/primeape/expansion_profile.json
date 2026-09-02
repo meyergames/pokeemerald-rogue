@@ -4,7 +4,7 @@
   ],
   "LevelUpMoves": [
     {
-      "Move": "MOVE_D2D_WINDMILL",
+      "Move": "MOVE_D2D_HEAD_EMPTY",
       "Level": 0
     },
     {
@@ -78,6 +78,10 @@
     {
       "Move": "MOVE_STOMPING_TANTRUM",
       "Level": 48
+    },
+    {
+      "Move": "MOVE_D2D_WINDMILL",
+      "Level": 50
     },
     {
       "Move": "MOVE_OUTRAGE",

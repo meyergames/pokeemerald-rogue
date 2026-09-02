@@ -81,6 +81,10 @@
       "Level": 45
     },
     {
+      "Move": "MOVE_D2D_TAG",
+      "Level": 46
+    },
+    {
       "Move": "MOVE_BOUNCE",
       "Level": 48
     },
@@ -95,7 +99,7 @@
     {
       "Move": "MOVE_HIGH_JUMP_KICK",
       "Level": 56
-    }
+    }    
   ],
   "TutorMoves": [
     "MOVE_ACROBATICS",

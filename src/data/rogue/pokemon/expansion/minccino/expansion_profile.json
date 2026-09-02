@@ -62,6 +62,10 @@
     {
       "Move": "MOVE_LAST_RESORT",
       "Level": 48
+    },
+    {
+      "Move": "MOVE_D2D_TAG",
+      "Level": 50
     }
   ],
   "TutorMoves": [

@@ -68,6 +68,10 @@
       "Level": 34
     },
     {
+      "Move": "MOVE_D2D_TAG",
+      "Level": 35
+    },
+    {
       "Move": "MOVE_AGILITY",
       "Level": 37
     },

@@ -63,10 +63,10 @@ static const u8 sShedSkinDescription[] = _("Heals the body by shedding.");
 static const u8 sGutsDescription[] = _("Ups Attack if suffering.");
 static const u8 sMarvelScaleDescription[] = _("Ups Defense if suffering.");
 static const u8 sLiquidOozeDescription[] = _("Draining causes injury.");
-static const u8 sOvergrowDescription[] = _("Ups Grass moves in a pinch.");
-static const u8 sBlazeDescription[] = _("Ups Fire moves in a pinch.");
-static const u8 sTorrentDescription[] = _("Ups Water moves in a pinch.");
-static const u8 sSwarmDescription[] = _("Ups Bug moves in a pinch.");
+static const u8 sOvergrowDescription[] = _("Ups Grass move accuracy.");
+static const u8 sBlazeDescription[] = _("Ups Fire move accuracy.");
+static const u8 sTorrentDescription[] = _("Ups Water move accuracy.");
+static const u8 sSwarmDescription[] = _("Ups Bug move accuracy.");
 static const u8 sRockHeadDescription[] = _("Prevents recoil damage.");
 static const u8 sDroughtDescription[] = _("Summons sunlight in battle.");
 static const u8 sArenaTrapDescription[] = _("Prevents fleeing.");
@@ -317,6 +317,7 @@ static const u8 sBugCatcherDescription[] = _("Traps Bug-type Pokémon.");
 static const u8 sSingingStarDescription[] = _("Sound moves never miss.");
 static const u8 sChargerDescription[] = _("Charges Electric allies.");
 static const u8 sIronShinDescription[] = _("Boosts kicking moves.");
+static const u8 sThirdEyeDescription[] = _("Boosts Psychic-type moves.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -652,6 +653,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_D2D_SINGING_STAR] = _("Singing Star"),
     [ABILITY_D2D_CHARGER] = _("Charger"),
     [ABILITY_D2D_IRON_SHIN] = _("Iron Shin"),
+    [ABILITY_D2D_THIRD_EYE] = _("Third Eye"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -987,6 +989,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_D2D_SINGING_STAR] = _("Singing Star"),
     [ABILITY_D2D_CHARGER] = _("Charger"),
     [ABILITY_D2D_IRON_SHIN] = _("Iron Shin"),
+    [ABILITY_D2D_THIRD_EYE] = _("Third Eye"),
 };
 #endif
 
@@ -1322,4 +1325,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_D2D_SINGING_STAR] = sSingingStarDescription,
     [ABILITY_D2D_CHARGER] = sChargerDescription,
     [ABILITY_D2D_IRON_SHIN] = sIronShinDescription,
+    [ABILITY_D2D_THIRD_EYE] = sThirdEyeDescription,
 };

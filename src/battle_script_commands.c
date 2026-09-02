@@ -1730,6 +1730,53 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
     if (atkAbility == ABILITY_D2D_SINGING_STAR && (gBattleMoves[move].type == TYPE_STELLAR))
         moveAcc = 100;
 
+    u8 moveType;
+    GET_MOVE_TYPE(move, moveType);
+    switch (atkAbility)
+    {
+    case ABILITY_KEEN_EYE:
+        if (moveAcc < 100)
+            moveAcc = min(moveAcc + 10, 100);
+            // flat +10 boost (e.g. Hydro Pump becomes 90 acc, Zap Cannon 60, etc)
+        break;
+    case ABILITY_OVERGROW:
+        if (moveType == TYPE_GRASS && moveAcc > 0)
+        {
+            if (moveAcc >= 90)
+                moveAcc = 100;
+            else
+                moveAcc = 95;
+            break;
+        }
+    case ABILITY_BLAZE:
+        if (moveType == TYPE_FIRE && moveAcc > 0)
+        {
+            if (moveAcc >= 90)
+                moveAcc = 100;
+            else
+                moveAcc = 95;
+            break;
+        }
+    case ABILITY_TORRENT:
+        if (moveType == TYPE_WATER && moveAcc > 0)
+        {
+            if (moveAcc >= 90)
+                moveAcc = 100;
+            else
+                moveAcc = 95;
+            break;
+        }
+    case ABILITY_SWARM:
+        if (moveType == TYPE_BUG && moveAcc > 0)
+        {
+            if (moveAcc >= 90)
+                moveAcc = 100;
+            else
+                moveAcc = 95;
+            break;
+        }
+    }
+
     calc = gAccuracyStageRatios[buff].dividend * moveAcc;
     calc /= gAccuracyStageRatios[buff].divisor;
 
@@ -1745,10 +1792,6 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
     case ABILITY_HUSTLE:
         if (IS_MOVE_PHYSICAL(move))
             calc = (calc * 80) / 100; // 1.2 hustle loss
-        break;
-    case ABILITY_KEEN_EYE:
-        if (moveAcc <= 90)
-            moveAcc += 10; // flat +10 boost (e.g. Hydro Pump becomes 90 acc, Zap Cannon 60, etc)
         break;
     }
 
@@ -9869,6 +9912,34 @@ static void Cmd_various(void)
             gBattlescriptCurrInstr = cmd->nextInstr;
         }
         return;
+    }
+    case VARIOUS_RAISE_SIPHON_KO_COUNT:
+    {
+        VARIOUS_ARGS();
+
+        // u32 koCount = gSaveBlock1Ptr->gameStats[GAME_STAT_D2D_SIPHON_KO_COUNT];
+        // u32 basePower = 40 + (koCount * 5);
+        // PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 3, koCount);
+        break;
+    }
+    case VARIOUS_SET_CHRYSALIS:
+    {
+        // CMD_ARGS();
+
+        // gBattleMons[gBattlerAttacker].status2 |= STATUS2_MULTIPLETURNS;
+        // gLockedMoves[gBattlerAttacker] = gCurrentMove;
+        // gBideDmg[gBattlerAttacker] = 0;
+        // gBattleMons[gBattlerAttacker].status2 |= STATUS2_BIDE_TURN(2);
+
+        // gBattlescriptCurrInstr = cmd->nextInstr;
+
+        VARIOUS_ARGS();
+
+        gBattleMons[gBattlerAttacker].status2 |= STATUS2_MULTIPLETURNS;
+        gLockedMoves[gBattlerAttacker] = gCurrentMove;
+        gStatuses4[gBattlerAttacker] |= STATUS4_D2D_CHRYSALIS_TURN(2);
+
+        gBattlescriptCurrInstr = cmd->nextInstr;
     }
     case VARIOUS_TRY_SOAK:
     {

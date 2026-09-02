@@ -1808,7 +1808,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .split = SPLIT_STATUS,
+        .split = SPLIT_SPECIAL,
         .zMoveEffect = Z_EFFECT_ATK_UP_1,
         .ignoresSubstitute = B_UPDATED_MOVE_FLAGS >= GEN_6,
         .magicCoatAffected = TRUE,
@@ -2276,7 +2276,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     [MOVE_SWIFT] =
     {
         .effect = EFFECT_HIT,
-        .power = 60,
+        .power = 90,
         .type = TYPE_NORMAL,
         .accuracy = 0,
         .pp = 20,
@@ -8625,6 +8625,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .zMoveEffect = Z_EFFECT_NONE,
         .makesContact = TRUE,
         .sheerForceBoost = TRUE,
+        .kickingMove = TRUE,
     },
 
     [MOVE_ACID_SPRAY] =
@@ -16196,7 +16197,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALLY | MOVE_TARGET_USER,
+        .target = MOVE_TARGET_USER,
         .priority = 0,
         .split = SPLIT_STATUS,
         .zMoveEffect = Z_EFFECT_SPD_UP_1,
@@ -16213,7 +16214,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALLY | MOVE_TARGET_USER,
+        .target = MOVE_TARGET_USER,
         .priority = 0,
         .split = SPLIT_STATUS,
         .zMoveEffect = Z_EFFECT_SPD_UP_1,
@@ -16230,7 +16231,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALLY | MOVE_TARGET_USER,
+        .target = MOVE_TARGET_USER,
         .priority = 0,
         .split = SPLIT_STATUS,
         .zMoveEffect = Z_EFFECT_SPD_UP_1,
@@ -16568,5 +16569,67 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .split = SPLIT_PHYSICAL,
         .zMoveEffect = Z_EFFECT_NONE,
         .magicCoatAffected = TRUE,
+    },
+
+    [MOVE_D2D_SIPHON] =
+    {
+        .effect = EFFECT_D2D_SIPHON,
+        .power = 40,
+        .accuracy = 100,
+        .type = TYPE_DARK,
+        .pp = 5,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .makesContact = TRUE,
+    },
+
+    [MOVE_D2D_CHRYSALIS] =
+    {
+        .effect = EFFECT_D2D_CHRYSALIS,
+        .power = 0,
+        .accuracy = 0,
+        .type = TYPE_BUG,
+        .pp = 5,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .sleepTalkBanned = TRUE,
+        .instructBanned = TRUE,
+        .mirrorMoveBanned = TRUE,
+    },
+
+    [MOVE_D2D_TAG] =
+    {
+        .effect = EFFECT_HIT_ESCAPE,
+        .power = 80,
+        .accuracy = 100,
+        .type = TYPE_NORMAL,
+        .pp = 20,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .makesContact = TRUE,
+    },
+
+    [MOVE_D2D_HEAD_EMPTY] =
+    {
+        .effect = EFFECT_D2D_HEAD_EMPTY,
+        .power = 60,
+        .accuracy = 100,
+        .type = TYPE_FIGHTING,
+        .pp = 10,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .makesContact = TRUE,
     },
 };

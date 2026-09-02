@@ -64,6 +64,10 @@
       "Level": 52
     },
     {
+      "Move": "MOVE_D2D_TAG",
+      "Level": 56
+    },
+    {
       "Move": "MOVE_SKY_UPPERCUT",
       "Level": 60
     }

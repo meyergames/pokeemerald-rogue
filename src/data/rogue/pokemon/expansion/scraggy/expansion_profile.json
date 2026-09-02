@@ -56,6 +56,10 @@
       "Level": 40
     },
     {
+      "Move": "MOVE_D2D_HEAD_EMPTY",
+      "Level": 40
+    },
+    {
       "Move": "MOVE_HIGH_JUMP_KICK",
       "Level": 44
     },

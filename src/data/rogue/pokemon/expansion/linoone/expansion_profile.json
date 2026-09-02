@@ -74,6 +74,10 @@
     {
       "Move": "MOVE_DOUBLE_EDGE",
       "Level": 48
+    },
+    {
+      "Move": "MOVE_D2D_TAG",
+      "Level": 55
     }
   ],
   "TutorMoves": [

@@ -4293,7 +4293,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseSpAttack  = 120, // +25
         .baseSpDefense = 85, // +5
         .baseSpeed     = 85,
-        .types = { TYPE_WATER, TYPE_PSYCHIC },
+        .types = { TYPE_WATER, TYPE_WATER },
         .catchRate = 75,
         .expYield = 175,
         .evYield_SpAttack = 2,
@@ -4302,7 +4302,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD },
-        .abilities = { ABILITY_SWIFT_SWIM, ABILITY_NONE, ABILITY_D2D_HEADACHE },
+        .abilities = { ABILITY_SWIFT_SWIM, ABILITY_D2D_THIRD_EYE, ABILITY_D2D_HEADACHE },
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Golduck"),
         .cryId = CRY_GOLDUCK,
@@ -7133,9 +7133,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 
 #if P_UPDATED_ABILITIES >= GEN_7
-#define GENGAR_ABILITIES {ABILITY_CURSED_BODY, ABILITY_NONE}
+#define GENGAR_ABILITIES {ABILITY_CURSED_BODY, ABILITY_D2D_THIRD_EYE}
 #else
-#define GENGAR_ABILITIES {ABILITY_LEVITATE, ABILITY_NONE}
+#define GENGAR_ABILITIES {ABILITY_LEVITATE, ABILITY_D2D_THIRD_EYE}
 #endif
 
 #define GENGAR_MISC_INFO                                            \

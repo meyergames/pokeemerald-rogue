@@ -53,6 +53,10 @@
       "Level": 30
     },
     {
+      "Move": "MOVE_D2D_TAG",
+      "Level": 33
+    },
+    {
       "Move": "MOVE_BATON_PASS",
       "Level": 35
     },

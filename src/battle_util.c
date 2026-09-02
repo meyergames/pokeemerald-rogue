@@ -1193,30 +1193,30 @@ static const uq4_12_t sTypeEffectivenessTable[NUMBER_OF_MON_TYPES][NUMBER_OF_MON
     [TYPE_NORMAL]   = {______, ______, ______, ______, ______, X(0.5), ______, X(0.0), X(0.5), ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______},
     [TYPE_FIGHTING] = {X(2.0), ______, X(0.5), X(0.5), ______, X(2.0), X(0.5), X(0.0), X(2.0), ______, ______, ______, ______, ______, X(0.5), X(2.0), ______, X(2.0), X(0.5), X(2.0)},
     [TYPE_FLYING]   = {______, X(2.0), ______, ______, ______, X(0.5), X(2.0), ______, X(0.5), ______, ______, ______, X(2.0), X(0.5), ______, ______, ______, ______, ______, X(0.5)},
-    [TYPE_POISON]   = {______, ______, ______, X(0.5), X(0.5), X(0.5), ______, X(0.5), X(0.0), ______, ______, ______, X(2.0), ______, ______, ______, ______, ______, X(2.0), ______},
+    [TYPE_POISON]   = {______, ______, ______, X(0.5), X(0.5), X(0.5), ______, X(0.5), X(0.0), ______, ______, X(2.0), X(2.0), ______, ______, ______, ______, ______, X(2.0), ______},
     [TYPE_GROUND]   = {______, ______, X(0.0), X(2.0), ______, X(2.0), X(0.5), ______, X(2.0), ______, X(2.0), ______, X(0.5), X(2.0), ______, ______, ______, ______, ______, X(2.0)},
     [TYPE_ROCK]     = {______, X(0.5), X(2.0), ______, X(0.5), ______, X(2.0), ______, X(0.5), ______, X(2.0), ______, ______, ______, ______, X(2.0), ______, ______, ______, ______},
-    [TYPE_BUG]      = {______, X(0.5), X(0.5), X(0.5), ______, ______, ______, X(0.5), X(0.5), ______, X(0.5), ______, X(2.0), ______, X(2.0), ______, ______, X(2.0), X(0.5), ______},
+    [TYPE_BUG]      = {______, X(0.5), X(0.5), X(0.5), ______, ______, ______, ______, X(0.5), ______, X(0.5), ______, X(2.0), ______, X(2.0), ______, ______, X(2.0), ______, ______},
 #if B_STEEL_RESISTANCES >= GEN_6
-    [TYPE_GHOST]    = {X(0.0), ______, ______, ______, ______, ______, ______, X(2.0), ______, ______, ______, ______, ______, ______, X(2.0), ______, ______, X(0.5), X(2.0), ______},
+    [TYPE_GHOST]    = {X(0.0), ______, ______, ______, ______, ______, X(0.5), X(2.0), ______, ______, ______, ______, ______, ______, X(2.0), ______, ______, X(0.5), X(2.0), ______},
 #else
-    [TYPE_GHOST]    = {X(0.0), ______, ______, ______, ______, ______, ______, X(2.0), X(0.5), ______, ______, ______, ______, ______, X(2.0), ______, ______, X(0.5), X(2.0), ______},
+    [TYPE_GHOST]    = {X(0.0), ______, ______, ______, ______, ______, X(0.5), X(2.0), X(0.5), ______, ______, ______, ______, ______, X(2.0), ______, ______, X(0.5), X(2.0), ______},
 #endif
     [TYPE_STEEL]    = {______, ______, ______, ______, ______, X(2.0), ______, ______, X(0.5), ______, X(0.5), X(0.5), ______, X(0.5), ______, X(2.0), ______, ______, X(2.0), ______},
     [TYPE_MYSTERY]  = {______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______},
     [TYPE_FIRE]     = {______, ______, ______, ______, ______, X(0.5), X(2.0), ______, X(2.0), ______, X(0.5), X(0.5), X(2.0), ______, ______, X(2.0), X(0.5), ______, ______, ______},
     [TYPE_WATER]    = {______, ______, ______, ______, X(2.0), X(2.0), ______, ______, ______, ______, X(2.0), X(0.5), X(0.5), ______, ______, X(0.5), X(0.5), ______, ______, X(0.5)},
     [TYPE_GRASS]    = {______, ______, X(0.5), X(0.5), X(2.0), X(2.0), X(0.5), ______, X(0.5), ______, X(0.5), X(2.0), X(0.5), ______, ______, ______, X(0.5), ______, ______, ______},
-    [TYPE_ELECTRIC] = {______, ______, X(2.0), ______, X(0.0), ______, ______, ______, ______, ______, ______, X(2.0), X(0.5), X(0.5), ______, ______, X(0.5), ______, ______, X(0.5)},
-    [TYPE_PSYCHIC]  = {______, X(2.0), ______, X(2.0), ______, ______, X(0.5), ______, X(0.5), ______, ______, ______, ______, ______, X(0.5), ______, ______, X(0.0), ______, ______},
-    [TYPE_ICE]      = {______, ______, X(2.0), ______, X(2.0), ______, ______, ______, X(0.5), ______, X(0.5), X(0.5), X(2.0), ______, ______, X(0.0), X(2.0), ______, ______, X(2.0)},
+    [TYPE_ELECTRIC] = {______, ______, X(2.0), ______, X(0.0), ______, ______, ______, X(2.0), ______, ______, X(2.0), X(0.5), X(0.5), ______, ______, X(0.5), ______, ______, X(0.5)},
+    [TYPE_PSYCHIC]  = {______, X(2.0), ______, X(2.0), ______, ______, X(0.5), ______, ______, ______, ______, ______, ______, ______, X(0.5), ______, ______, X(0.0), ______, ______},
+    [TYPE_ICE]      = {______, ______, X(2.0), ______, X(2.0), ______, ______, ______, X(0.5), ______, X(0.5), X(0.5), X(2.0), ______, ______, X(0.5), X(2.0), ______, ______, X(2.0)},
     [TYPE_DRAGON]   = {______, ______, ______, ______, ______, ______, ______, ______, X(0.5), ______, ______, ______, ______, ______, ______, ______, X(2.0), ______, X(0.0), ______},
 #if B_STEEL_RESISTANCES >= GEN_6
     [TYPE_DARK]     = {______, X(0.5), ______, ______, ______, ______, ______, X(2.0), ______, ______, ______, ______, ______, ______, X(2.0), ______, ______, X(0.5), X(0.5), X(2.0)},
 #else
     [TYPE_DARK]     = {______, X(0.5), ______, ______, ______, ______, ______, X(2.0), X(0.5), ______, ______, ______, ______, ______, X(2.0), ______, ______, X(0.5), X(0.5), X(2.0)},
 #endif
-    [TYPE_FAIRY]    = {X(0.5), X(2.0), ______, X(0.5), ______, ______, ______, ______, X(0.5), ______, X(0.5), ______, ______, ______, ______, ______, X(2.0), X(2.0), ______, ______},
+    [TYPE_FAIRY]    = {X(0.5), X(2.0), ______, X(0.5), ______, ______, X(0.5), ______, X(0.5), ______, X(0.5), ______, ______, ______, ______, ______, X(2.0), X(2.0), ______, ______},
     [TYPE_STELLAR]  = {______, ______, X(2.0), ______, ______, X(0.5), ______, X(0.5), ______, ______, ______, X(2.0), X(0.5), ______, X(2.0), X(0.5), ______, X(0.5), ______, X(0.5)},
 };
 
@@ -3787,6 +3787,24 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
             }
             gBattleStruct->atkCancellerTracker++;
             break;
+        case CANCELLER_CHRYSALIS: // D2D Chrysalis
+            if (gStatuses4[gBattlerAttacker] & STATUS4_D2D_CHRYSALIS)
+            {
+                gStatuses4[gBattlerAttacker] -= STATUS4_D2D_CHRYSALIS_TURN(1);
+                if (gStatuses4[gBattlerAttacker] & STATUS4_D2D_CHRYSALIS)
+                {
+                    gCurrentMove = MOVE_D2D_CHRYSALIS;
+                    // gBattlescriptCurrInstr = BattleScript_D2D_ChrysalisDisplayMessage;
+                    gBattlescriptCurrInstr = BattleScript_BideStoringEnergy;
+                }
+                else
+                {
+                    gBattlescriptCurrInstr = BattleScript_D2D_ChrysalisBreakOut;
+                }
+                effect = 1;
+            }
+            gBattleStruct->atkCancellerTracker++;
+            break;
         case CANCELLER_THAW: // move thawing
             if (gBattleMons[gBattlerAttacker].status1 & STATUS1_FREEZE)
             {
@@ -5267,31 +5285,31 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                     }
                 }
                 break;
-            case ABILITY_D2D_POLLINATOR:
-                if ( !BATTLER_MAX_HP(battler )
-                 && !( gStatuses3[battler] & STATUS3_HEAL_BLOCK ) )
-                {
-                    u8 mtp = 0.0;
-                    for (i = 0; i < gBattlersCount; i++)
-                    {
-                        if ( gBattleMons[i].type1 == TYPE_GRASS
-                                || gBattleMons[i].type2 == TYPE_GRASS
-                                || gBattleMons[i].type3 == TYPE_GRASS )
-                        {
-                            mtp += 1.0;
-                        }
-                    }
-                    if ( mtp >= 1.0 )
-                    {
-                        BattleScriptPushCursorAndCallback(BattleScript_D2D_PollinatorActivates);
-                        gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / ( 12 / mtp );
-                        if (gBattleMoveDamage == 0)
-                            gBattleMoveDamage = 1;
-                        gBattleMoveDamage *= -1;
-                        effect++;
-                    }
-                }
-                break;
+            // case ABILITY_D2D_POLLINATOR:
+            //     if ( !BATTLER_MAX_HP(battler )
+            //      && !( gStatuses3[battler] & STATUS3_HEAL_BLOCK ) )
+            //     {
+            //         u8 mtp = 0.0;
+            //         for (i = 0; i < gBattlersCount; i++)
+            //         {
+            //             if ( gBattleMons[i].type1 == TYPE_GRASS
+            //                     || gBattleMons[i].type2 == TYPE_GRASS
+            //                     || gBattleMons[i].type3 == TYPE_GRASS )
+            //             {
+            //                 mtp += 1.0;
+            //             }
+            //         }
+            //         if ( mtp >= 1.0 )
+            //         {
+            //             BattleScriptPushCursorAndCallback(BattleScript_D2D_PollinatorActivates);
+            //             gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / ( 12 / mtp );
+            //             if (gBattleMoveDamage == 0)
+            //                 gBattleMoveDamage = 1;
+            //             gBattleMoveDamage *= -1;
+            //             effect++;
+            //         }
+            //     }
+            //     break;
             case ABILITY_SCHOOLING:
                 if (gBattleMons[battler].level < 20)
                     break;
@@ -9357,6 +9375,28 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
         if (reflect || lightScreen || auroraVeil)
             basePower *= 2;
         break;
+    case EFFECT_D2D_SIPHON:
+        // u32 siphonKoCount = gSaveBlock1Ptr->gameStats[GAME_STAT_D2D_SIPHON_KO_COUNT];
+        // basePower = 40 + (siphonKoCount * 5);
+        break;
+    case EFFECT_D2D_HEAD_EMPTY:
+        u16 learnedMoves = 0;
+        for (i = 0; i < MAX_MON_MOVES; i++)
+        {
+            if (gBattleMons[gBattlerAttacker].moves[i] != MOVE_NONE)
+            {
+                learnedMoves += 1;
+            }
+        }
+        if (learnedMoves == 1)
+            basePower = 150;
+        else if (learnedMoves == 2)
+            basePower = 130;
+        else if (learnedMoves == 3)
+            basePower = 100;
+        else
+            basePower = 60;
+        break;
     }
 
     // Move-specific base power changes
@@ -9610,6 +9650,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 
         break;
     case ABILITY_SUPREME_OVERLORD:
         modifier = uq4_12_multiply(modifier, GetSupremeOverlordModifier(battlerAtk));
+        break;
+    case ABILITY_D2D_THIRD_EYE:
+        if (moveType == TYPE_PSYCHIC)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
     }
 

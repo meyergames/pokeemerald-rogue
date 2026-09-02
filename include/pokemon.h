@@ -104,6 +104,7 @@ enum {
     MON_DATA_TERA_TYPE,
     MON_DATA_GIGANTAMAX_FACTOR,
     MON_DATA_TUTOR_MOVE_LVL,
+    MON_DATA_D2D_SIPHON_USES,
 };
 
 struct PokemonSubstruct0
@@ -164,9 +165,10 @@ struct PokemonSubstruct3
 
  /* 0x08 */ u32 isShiny:3;
  /* 0x08 */ u32 genderFlag:3;
- /* 0x08 */ u32 cuteRibbon:3;               // Stores the highest contest rank achieved in the Cute category.
- /* 0x09 */ u32 smartRibbon:3;              // Stores the highest contest rank achieved in the Smart category.
- /* 0x09 */ u32 toughRibbon:3;              // Stores the highest contest rank achieved in the Tough category.
+ /* 0x08 */ u32 cuteRibbon:9;               // D2D: Retconned for Siphon KO count tracking
+ // /* 0x08 */ u32 cuteRibbon:3;               // Stores the highest contest rank achieved in the Cute category.
+ // /* 0x09 */ u32 smartRibbon:3;              // Stores the highest contest rank achieved in the Smart category.
+ // /* 0x09 */ u32 toughRibbon:3;              // Stores the highest contest rank achieved in the Tough category.
  /* 0x09 */ u32 championRibbon:1;           // Given when defeating the Champion. Because both RSE and FRLG use it, later generations don't specify from which region it comes from.
  /* 0x0A */ u32 winningRibbon:1;            // Given at the Battle Tower's Level 50 challenge by winning a set of seven battles that extends the current streak to 56 or more.
  /* 0x0A */ u32 victoryRibbon:1;            // Given at the Battle Tower's Level 100 challenge by winning a set of seven battles that extends the current streak to 56 or more.

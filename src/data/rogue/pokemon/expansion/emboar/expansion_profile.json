@@ -83,6 +83,10 @@
     {
       "Move": "MOVE_D2D_WINDMILL",
       "Level": 65
+    },
+    {
+      "Move": "MOVE_D2D_HEAD_EMPTY",
+      "Level": 70
     }
   ],
   "TutorMoves": [

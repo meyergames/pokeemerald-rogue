@@ -2406,6 +2406,20 @@
 	.4byte \successInstr
 	.endm
 
+	@ .macro jumpiftargetalreadymoved battler:req, jumpInstr:req
+	@ .byte 0x1e
+	@ .byte \battler
+	@ .4byte \jumpInstr
+	@ .endm
+
+	.macro raisesiphonkocount
+	various BS_ATTACKER, VARIOUS_RAISE_SIPHON_KO_COUNT
+	.endm
+
+	.macro setchrysalis
+	various BS_ATTACKER, VARIOUS_SET_CHRYSALIS
+	.endm
+
 
 @ D2D INSTRUCTIONS END
 

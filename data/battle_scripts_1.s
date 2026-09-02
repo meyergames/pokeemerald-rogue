@@ -496,6 +496,9 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectHit					  @ EFFECT_D2D_SUBMISSION
 	.4byte BattleScript_D2D_EffectFreeze			  @ EFFECT_D2D_FREEZE
 	.4byte BattleScript_D2D_EffectShatter			  @ EFFECT_D2D_SHATTER
+	.4byte BattleScript_D2D_EffectSiphon			  @ EFFECT_D2D_SIPHON
+	.4byte BattleScript_D2D_EffectChrysalis			  @ EFFECT_D2D_CHRYSALIS
+	.4byte BattleScript_D2D_EffectHeadEmpty			  @ EFFECT_D2D_HEAD_EMPTY
 
 @ The game doesn't seem to like having EffectHit as the last item in the list...
 
@@ -11965,6 +11968,11 @@ BattleScript_D2D_ChargerRaiseStats::
 	call BattleScript_AbilityPopUp
 	playanimation BS_SCRIPTING, B_ANIM_D2D_CHARGER
 	waitmessage B_WAIT_TIME_SHORT
+	setstatchanger STAT_SPEED, 1, FALSE
+	call BattleScript_EffectStatUpAlpha
+	end3
+
+BattleScript_D2D_ChargerRaiseStats_BACKUP::
 	jumpifstat BS_SCRIPTING, CMP_LESS_THAN, STAT_ATK, MAX_STAT_STAGE, BattleScript_D2D_ChargerTryAtk
 	jumpifstat BS_SCRIPTING, CMP_EQUAL, STAT_SPATK, MAX_STAT_STAGE, BattleScript_CantRaiseMultipleStats
 BattleScript_D2D_ChargerTryAtk::
@@ -12006,6 +12014,48 @@ BattleScript_D2D_EffectFreeze:
 	seteffectprimary
 	goto BattleScript_MoveEnd
 
+
+BattleScript_D2D_EffectSubzero::
+	attackcanceler
+	attackstring
+	ppreduce
+	jumpifsubstituteblocks BattleScript_ButItFailed
+	jumpiftype BS_TARGET, TYPE_ICE, BattleScript_NotAffected
+	jumpifability BS_TARGET, ABILITY_MAGMA_ARMOR, BattleScript_WaterVeilPrevents
+	jumpifability BS_TARGET, ABILITY_COMATOSE, BattleScript_AbilityProtectsDoesntAffect
+	jumpifability BS_TARGET, ABILITY_PURIFYING_SALT, BattleScript_AbilityProtectsDoesntAffect
+	jumpifflowerveil BattleScript_FlowerVeilProtects
+	jumpifleafguardprotected BS_TARGET, BattleScript_AbilityProtectsDoesntAffect
+	jumpifshieldsdown BS_TARGET, BattleScript_AbilityProtectsDoesntAffect
+	jumpifstatus BS_TARGET, STATUS1_ANY, BattleScript_ButItFailed
+	jumpifterrainaffected BS_TARGET, STATUS_FIELD_MISTY_TERRAIN, BattleScript_MistyTerrainPrevents
+	accuracycheck BattleScript_ButItFailed, ACC_CURR_MOVE
+	jumpifsafeguard BattleScript_SafeguardProtected
+	attackanimation
+	waitanimation
+	setmoveeffect MOVE_EFFECT_FREEZE
+	seteffectprimary
+	@ goto BattleScript_MoveEnd
+	jumpifstat BS_TARGET, CMP_LESS_THAN, STAT_DEF, MAX_STAT_STAGE, BattleScript_D2D_EffectSubzero_TryDef
+	jumpifstat BS_TARGET, CMP_LESS_THAN, STAT_SPDEF, MAX_STAT_STAGE, BattleScript_D2D_EffectSubzero_TrySpDef
+	end
+BattleScript_D2D_EffectSubzero_TryDef:
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_TARGET, BIT_DEF | BIT_SPDEF, STAT_CHANGE_BY_TWO
+	setstatchanger STAT_DEF, 2, FALSE
+	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_D2D_EffectSubzero_TrySpDef
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_D2D_EffectSubzero_TrySpDef
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_D2D_EffectSubzero_TrySpDef:
+	setstatchanger STAT_SPDEF, 2, FALSE
+	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_D2D_EffectSubzero_MoveEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_D2D_EffectSubzero_MoveEnd
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_D2D_EffectSubzero_MoveEnd:
+	goto BattleScript_MoveEnd
+
 BattleScript_D2D_EffectShatter:
 	attackcanceler
 	attackstring
@@ -12018,3 +12068,70 @@ BattleScript_D2D_EffectShatterBrokeScreens:
 	printstring STRINGID_THEWALLSHATTERED
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
+
+BattleScript_D2D_EffectTag:
+	call BattleScript_EffectHit_Ret
+	jumpifmovehadnoeffect BattleScript_MoveEnd
+	@ jumpiftargetalreadymoved BattleScript_MoveEnd
+	jumpifability BS_TARGET, ABILITY_GUARD_DOG, BattleScript_MoveEnd
+	seteffectwithchance
+	tryfaintmon BS_TARGET
+	moveendto MOVEEND_ATTACKER_VISIBLE
+	moveendfrom MOVEEND_TARGET_VISIBLE
+	jumpifbattleend BattleScript_HitEscapeEnd
+	jumpifbyte CMP_NOT_EQUAL gBattleOutcome 0, BattleScript_HitEscapeEnd
+	jumpifemergencyexited BS_TARGET, BattleScript_HitEscapeEnd
+	goto BattleScript_MoveSwitch
+
+BattleScript_D2D_EffectSiphon:
+	call BattleScript_EffectHit_Ret
+	call BattleScript_TryFaintMon_Ret
+	jumpiffainted BS_TARGET, TRUE, BattleScript_D2D_EffectSiphon_RaiseKoCount
+	goto BattleScript_MoveEnd
+BattleScript_D2D_EffectSiphon_RaiseKoCount:
+	playanimation BS_ATTACKER, B_ANIM_D2D_CHARGER
+	raisesiphonkocount
+	printstring STRINGID_D2D_SIPHONPOWERRAISED
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_D2D_EffectChrysalis:
+	attackcanceler
+	attackstring
+	ppreduce
+	attackanimation
+	waitanimation
+	orword gHitMarker, HITMARKER_CHARGING
+	setstatchanger STAT_DEF, 2, FALSE
+	call BattleScript_EffectStatUpAlpha
+	setstatchanger STAT_SPDEF, 2, FALSE
+	call BattleScript_EffectStatUpAlpha
+	setchrysalis
+	goto BattleScript_MoveEnd
+
+BattleScript_D2D_ChrysalisDisplayMessage:
+	playanimation BS_ATTACKER, B_ANIM_D2D_CHRYSALIS
+	printstring STRINGID_PKMNSTORINGENERGY
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_D2D_ChrysalisBreakOut::
+	playanimation BS_TARGET, B_ANIM_D2D_CHRYSALIS_BREAKOUT
+	setstatchanger STAT_ATK, 2, FALSE
+	call BattleScript_EffectStatUpAlpha
+	setstatchanger STAT_SPATK, 2, FALSE
+	call BattleScript_EffectStatUpAlpha
+	setstatchanger STAT_SPEED, 2, FALSE
+	call BattleScript_EffectStatUpAlpha
+	goto BattleScript_MoveEnd
+
+BattleScript_D2D_EffectHeadEmpty:
+	jumpifword CMP_COMMON_BITS, gHitMarker, HITMARKER_NO_ATTACKSTRING | HITMARKER_NO_PPDEDUCT, BattleScript_D2D_EffectHeadEmptyTarget
+	attackcanceler
+	attackstring
+	ppreduce
+	pause B_WAIT_TIME_SHORT
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_D2D_EffectHeadEmptyTarget:
+	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
+	goto BattleScript_HitFromCritCalc

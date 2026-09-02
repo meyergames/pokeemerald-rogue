@@ -64,6 +64,10 @@
       "Level": 47
     },
     {
+      "Move": "MOVE_D2D_TAG",
+      "Level": 50
+    },
+    {
       "Move": "MOVE_ACROBATICS",
       "Level": 52
     },
@@ -116,6 +120,7 @@
     "MOVE_GIGA_IMPACT",
     "MOVE_GRASS_KNOT",
     "MOVE_GUNK_SHOT",
+    "MOVE_D2D_HEAD_EMPTY",
     "MOVE_HEAT_WAVE",
     "MOVE_HELPING_HAND",
     "MOVE_HIDDEN_POWER",

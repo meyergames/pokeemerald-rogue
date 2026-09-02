@@ -52,6 +52,10 @@
       "Level": 50
     },
     {
+      "Move": "MOVE_D2D_HEAD_EMPTY",
+      "Level": 50
+    },
+    {
       "Move": "MOVE_DOUBLE_EDGE",
       "Level": 55
     },
@@ -75,6 +79,7 @@
     "MOVE_ENDURE",
     "MOVE_FACADE",
     "MOVE_GIGA_IMPACT",
+    "MOVE_D2D_HEAD_EMPTY",
     "MOVE_HIDDEN_POWER",
     "MOVE_HIGH_HORSEPOWER",
     "MOVE_HYPER_BEAM",

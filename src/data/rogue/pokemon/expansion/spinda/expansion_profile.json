@@ -28,6 +28,10 @@
       "Level": 19
     },
     {
+      "Move": "MOVE_FLAIL",
+      "Level": 20
+    },
+    {
       "Move": "MOVE_DIZZY_PUNCH",
       "Level": 23
     },
@@ -56,11 +60,15 @@
       "Level": 41
     },
     {
+      "Move": "MOVE_D2D_TAG",
+      "Level": 45
+    },
+    {
       "Move": "MOVE_DOUBLE_EDGE",
       "Level": 46
     },
     {
-      "Move": "MOVE_FLAIL",
+      "Move": "MOVE_D2D_HEAD_EMPTY",
       "Level": 50
     },
     {

@@ -57,8 +57,8 @@ static const u8 sGuillotineDescription[] = _(
     "that may cause fainting.");
 
 static const u8 sRazorWindDescription[] = _(
-    "A 2-turn move that strikes\n"
-    "the foe on the 2nd turn.");
+    "Whips up a storm that hits\n"
+    "both foes after one turn.");
 
 static const u8 sSwordsDanceDescription[] = _(
     "A fighting dance that\n"
@@ -1009,7 +1009,7 @@ static const u8 sFutureSightDescription[] = _(
     "strike 2 turns later.");
 
 static const u8 sRockSmashDescription[] = _(
-    "Damage doubles against Rock-\n"
+    "Damage doubles against Rock\n"
     "types. May lower Defense.");
 
 static const u8 sWhirlpoolDescription[] = _(
@@ -3387,16 +3387,16 @@ static const u8 sMandibleJawDescription[] = _(
     "Bug-types.");
 
 static const u8 sEnfireDescription[] = _(
-    "Imbues Normal-type moves\n"
-    "with the power of Fire.");
+    "Empowers Normal and\n"
+    "Fire-type moves.");
 
 static const u8 sEnfrostDescription[] = _(
-    "Imbues Normal-type moves\n"
-    "with the power of Ice.");
+    "Empowers Normal and\n"
+    "Ice-type moves.");
 
 static const u8 sEnthunderDescription[] = _(
-    "Imbues Normal-type moves\n"
-    "with the power of Electr.");
+    "Empowers Normal and\n"
+    "Electr-type moves.");
 
 static const u8 sResonanceDescription[] = _(
     "Super effective against\n"
@@ -3473,6 +3473,22 @@ static const u8 sSubzeroDescription[] = _(
 static const u8 sShatterDescription[] = _(
     "Shatters own screens. On\n"
     "success, damage doubles.");
+
+static const u8 sSiphonDescription[] = _(
+    "Permanently gains power if\n"
+    "it KOs a trainer's Pokémon.");
+
+static const u8 sChrysalisDescription[] = _(
+    "Sharply raises defenses, and\n"
+    "offenses after 2 turns.");
+
+static const u8 sTagDescription[] = _(
+    "Does damage then switches\n"
+    "out the user.");
+
+static const u8 sHeadEmptyDescription[] = _(
+    "Deals more damage the less\n"
+    "moves the user knows.");
 
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
@@ -4374,4 +4390,8 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_SUPERNOVA - 1] = sSupernovaDescription,
     [MOVE_D2D_SUBZERO - 1] = sSubzeroDescription,
     [MOVE_D2D_SHATTER - 1] = sShatterDescription,
+    [MOVE_D2D_SIPHON - 1] = sSiphonDescription,
+    [MOVE_D2D_CHRYSALIS - 1] = sChrysalisDescription,
+    [MOVE_D2D_TAG - 1] = sTagDescription,
+    [MOVE_D2D_HEAD_EMPTY - 1] = sHeadEmptyDescription,
 };

@@ -491,7 +491,6 @@ extern const u8 BattleScript_ShellTrapSetUp[];
 extern const u8 BattleScript_StealthRockActivates[];
 extern const u8 BattleScript_CouldntFullyProtect[];
 extern const u8 BattleScript_MoveEffectStockpileWoreOff[];
-extern const u8 BattleScript_StealthRockActivates[];
 extern const u8 BattleScript_SpikesActivates[];
 extern const u8 BattleScript_BerserkGeneRet[];
 extern const u8 BattleScript_TargetFormChangeWithStringNoPopup[];
@@ -559,15 +558,16 @@ extern const u8 BattleScript_D2D_HealerRestoreHP[];
 extern const u8 BattleScript_D2D_ElementalActivates[];
 extern const u8 BattleScript_D2D_HybridPowerTrySpAtk[];
 extern const u8 BattleScript_D2D_HybridPowerTryAttack[];
-extern const u8 BattleScript_D2D_DetectEffect[]; // vanilla but needs to be declared here
+extern const u8 BattleScript_D2D_DetectEffect[]; // vanilla but still needs to be declared here
 extern const u8 BattleScript_D2D_TriggerHeadache[];
 extern const u8 BattleScript_D2D_LightMetalActivates[];
 extern const u8 BattleScript_D2D_HeavyMetalActivates[];
-extern const u8 BattleScript_D2D_PollinatorActivates[];
 extern const u8 BattleScript_D2D_InspirationStatRaise[];
 extern const u8 BattleScript_D2D_ChargerActivates[];
 extern const u8 BattleScript_D2D_ChargerRestoreHP[];
 extern const u8 BattleScript_D2D_ChargerRaiseStats[];
+extern const u8 BattleScript_D2D_ChrysalisDisplayMessage[];
+extern const u8 BattleScript_D2D_ChrysalisBreakOut[];
 
 
 #endif // GUARD_BATTLE_SCRIPTS_H

@@ -1798,6 +1798,10 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_D2D_SUPERNOVA] = _("Supernova"),
     [MOVE_D2D_SUBZERO] = _("Subzero"),
     [MOVE_D2D_SHATTER] = _("Shatter"),
+    [MOVE_D2D_SIPHON] = _("Siphon"),
+    [MOVE_D2D_CHRYSALIS] = _("Chrysalis"),
+    [MOVE_D2D_TAG] = _("Tag"),
+    [MOVE_D2D_HEAD_EMPTY] = _("Head Empty"),
     // Max Moves
     [MOVE_MAX_GUARD] = _("M-Guard"),
     [MOVE_MAX_STRIKE] = _("M-Strike"),

@@ -48,6 +48,10 @@
       "Level": 29
     },
     {
+      "Move": "MOVE_D2D_HEAD_EMPTY",
+      "Level": 30
+    },
+    {
       "Move": "MOVE_CRUNCH",
       "Level": 34
     },
