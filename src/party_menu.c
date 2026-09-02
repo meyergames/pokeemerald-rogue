@@ -4133,12 +4133,23 @@ static void CursorCb_QuickHeal(u8 taskId)
                     mostPpMissing = missingPp;
 
                 if (gSaveBlock2Ptr->optionsQuickHealMode == OPTIONS_QUICK_HEAL_CONSERVATIVE)
-                {
                     healingItemCount += GetPPRecoveryItemsNeeded(healingItemId, missingPp, maxPp / 2);
-                }
                 if (healingItemCount == 0)
-                {
                     healingItemCount += GetPPRecoveryItemsNeeded(healingItemId, missingPp, 1);
+
+                // if the optimal item is a (Max) Elixir, handle item count separately outside of this loop
+                if (missingPp > 0 && (healingItemId != ITEM_ELIXIR && healingItemId != ITEM_MAX_ELIXIR))
+                {
+                    if (restoreAmount == 255)
+                    {
+                        healingItemCount += 1;
+                        break;
+                    }
+                    else
+                    {
+                        healingItemCount += 1 + ((missingPp - 1) / restoreAmount);
+                        break;
+                    }
                 }
             }
         }
@@ -5652,6 +5663,7 @@ static void UseQuickHealPPRecovery(u8 taskId, TaskFunc task, u32 itemCount, bool
                 {
                     recoveryItemCountForThisMove = GetPPRecoveryItemsNeeded(item, missingPp, 1);
                 }
+                recoveryItemCountForThisMove = 1 + ((missingPp - 1) / restoreAmount);
             }
 
             for (j = 0; j < recoveryItemCountForThisMove; j++)
@@ -6295,7 +6307,7 @@ void ItemUseCB_MaxMushroom(u8 taskId, TaskFunc task)
 #undef tOldFunc
 
 static void Task_DisplayHPRestoredMessage(u8 taskId)
-{	
+{   
     GetMonNickname(&gPlayerParty[gPartyMenu.slotId], gStringVar1);
     StringExpandPlaceholders(gStringVar4, gText_PkmnHPRestoredByVar2);
     DisplayPartyMenuMessage(gStringVar4, FALSE);
