@@ -7651,7 +7651,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,                                      \
         .growthRate = GROWTH_MEDIUM_FAST,                                       \
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },                  \
-        .abilities = { ABILITY_SOUNDPROOF, ABILITY_STATIC, ABILITY_AFTERMATH }, \
+        .abilities = { ABILITY_SOUNDPROOF, ABILITY_STATIC, ABILITY_GALVANIZE }, \
         .bodyColor = BODY_COLOR_RED
 
 #define VOLTORB_MISC_INFO                                   \
@@ -7678,7 +7678,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
 #define ELECTRODE_MISC_INFO                                     \
         .baseHP        = 60,                                    \
-        .baseAttack    = 50,                                    \
+        .baseAttack    = 80,                                    \
         .baseDefense   = 70,                                    \
         .baseSpAttack  = 80,                                    \
         .baseSpDefense = 80,                                    \
