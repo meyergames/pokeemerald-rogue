@@ -5822,12 +5822,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     {
         CASTFORM_MISC_INFO,
         .types = { TYPE_FIRE, TYPE_FIRE },
-        .baseHP        = 70,
-        .baseAttack    = 70,
-        .baseDefense   = 70,
-        .baseSpeed     = 70,
-        .baseSpAttack  = 70,
+        .baseHP        = 60,
+        .baseAttack    = 60,
+        .baseDefense   = 60,
+        .baseSpAttack  = 105,
         .baseSpDefense = 70,
+        .baseSpeed     = 95,
         .bodyColor = BODY_COLOR_RED,
         .description = POKEDEX_DESC_STRING(
             "Castform takes this form on bright days.\n"
@@ -5850,12 +5850,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     {
         CASTFORM_MISC_INFO,
         .types = { TYPE_WATER, TYPE_WATER },
-        .baseHP        = 70,
-        .baseAttack    = 70,
-        .baseDefense   = 70,
-        .baseSpeed     = 70,
-        .baseSpAttack  = 70,
+        .baseHP        = 60,
+        .baseAttack    = 60,
+        .baseDefense   = 60,
+        .baseSpAttack  = 105,
         .baseSpDefense = 70,
+        .baseSpeed     = 95,
         .bodyColor = BODY_COLOR_BLUE,
         .description = POKEDEX_DESC_STRING(
             "This is Castform's form while it's raining.\n"
@@ -5878,12 +5878,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     {
         CASTFORM_MISC_INFO,
         .types = { TYPE_ICE, TYPE_ICE },
-        .baseHP        = 70,
-        .baseAttack    = 70,
-        .baseDefense   = 70,
-        .baseSpeed     = 70,
-        .baseSpAttack  = 70,
+        .baseHP        = 60,
+        .baseAttack    = 60,
+        .baseDefense   = 60,
+        .baseSpAttack  = 105,
         .baseSpDefense = 70,
+        .baseSpeed     = 95,
         .bodyColor = BODY_COLOR_WHITE,
         .description = POKEDEX_DESC_STRING(
             "This is Castform's form in a hailstorm.\n"
