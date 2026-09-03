@@ -2356,11 +2356,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     [SPECIES_SHEDINJA] =
     {
         .baseHP        = 1,
-        .baseAttack    = 90,
-        .baseDefense   = 45,
-        .baseSpeed     = 40,
-        .baseSpAttack  = 30,
-        .baseSpDefense = 30,
+        .baseAttack    = 90, // +0
+        .baseDefense   = 1,
+        .baseSpAttack  = 75, // +45 <-- BST 256
+        .baseSpDefense = 1,
+        .baseSpeed     = 87, // +47
         .types = { TYPE_BUG, TYPE_GHOST },
         .catchRate = 45,
         .expYield = 83,
