@@ -1956,16 +1956,16 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     {
         .baseHP        = 70,
         .baseAttack    = 60,
-        .baseDefense   = 62,
-        .baseSpDefense = 82,
+        .baseDefense   = 55, // -7
+        .baseSpDefense = 100,
         #if P_UPDATED_STATS >= GEN_7
-            .baseSpeed     = 80,
-            .baseSpAttack  = 100,
+            .baseSpeed     = 90, // +10
+            .baseSpAttack  = 110, // +10
         #else
             .baseSpeed     = 60,
             .baseSpAttack  = 80,
         #endif
-        .types = { TYPE_BUG, TYPE_wATER },
+        .types = { TYPE_BUG, TYPE_WATER },
         .catchRate = 75,
         .expYield = 159,
         .evYield_SpAttack = 1,

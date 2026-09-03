@@ -8,7 +8,7 @@
       "Level": 1
     },
     {
-      "Move": "MOVE_WATER_GUN",
+      "Move": "MOVE_BUBBLE",
       "Level": 1
     },
     {
@@ -24,6 +24,10 @@
       "Level": 1
     },
     {
+      "Move": "MOVE_BUBBLE_BEAM",
+      "Level": 15
+    },
+    {
       "Move": "MOVE_GUST",
       "Level": 17
     },
@@ -36,6 +40,10 @@
       "Level": 22
     },
     {
+      "Move": "MOVE_WATER_PULSE",
+      "Level": 23
+    },
+    {
       "Move": "MOVE_STUN_SPORE",
       "Level": 26
     },
@@ -46,6 +54,10 @@
     {
       "Move": "MOVE_GIGA_DRAIN",
       "Level": 38
+    },
+    {
+      "Move": "MOVE_MUDDY_WATER",
+      "Level": 40
     },
     {
       "Move": "MOVE_BUG_BUZZ",
