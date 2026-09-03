@@ -1030,11 +1030,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     {
         BEEDRILL_MISC_INFO,
         .baseHP        = 65,
-        .baseAttack    = BEEDRILL_ATTACK,
+        .baseAttack    = 115, // replaces 'BEEDRILL_ATTACK'
         .baseDefense   = 40,
-        .baseSpAttack  = 45,
-        .baseSpDefense = 80,
-        .baseSpeed     = 75,
+        .baseSpAttack  = 40,
+        .baseSpDefense = 95,
+        .baseSpeed     = 95,
         .expYield = 178,
         .abilities = { ABILITY_D2D_POLLINATOR, ABILITY_SNIPER, ABILITY_TECHNICIAN },
         .cryId = CRY_BEEDRILL,
@@ -1066,11 +1066,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     {
         BEEDRILL_MISC_INFO,
         .baseHP        = 65,
-        .baseAttack    = BEEDRILL_ATTACK + 60,
+        .baseAttack    = 175, // replaces 'BEEDRILL_ATTACK + 60'
         .baseDefense   = 40,
-        .baseSpeed     = 145,
-        .baseSpAttack  = 15,
-        .baseSpDefense = 80,
+        .baseSpAttack  = 40,
+        .baseSpDefense = 95,
+        .baseSpeed     = 135,
         .expYield = 223,
         .abilities = { ABILITY_ADAPTABILITY, ABILITY_ADAPTABILITY, ABILITY_ADAPTABILITY },
         .cryId = CRY_BEEDRILL_MEGA,

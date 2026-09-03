@@ -59,6 +59,18 @@
     {
       "Move": "MOVE_FELL_STINGER",
       "Level": 44
+    },
+    {
+      "Move": "MOVE_DRILL_RUN",
+      "Level": 50
+    },
+    {
+      "Move": "MOVE_LEECH_LIFE",
+      "Level": 59
+    },
+    {
+      "Move": "MOVE_MEGAHORN",
+      "Level": 65
     }
   ],
   "TutorMoves": [
@@ -72,6 +84,7 @@
     "MOVE_DEFOG",
     "MOVE_DOUBLE_TEAM",
     "MOVE_DRILL_RUN",
+    "MOVE_DRILL_PECK",
     "MOVE_ELECTROWEB",
     "MOVE_ENDEAVOR",
     "MOVE_FACADE",
@@ -84,6 +97,7 @@
     "MOVE_INFESTATION",
     "MOVE_KNOCK_OFF",
     "MOVE_LASER_FOCUS",
+    "MOVE_LEECH_LIFE",
     "MOVE_PAYBACK",
     "MOVE_POISON_JAB",
     "MOVE_PROTECT",
