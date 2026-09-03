@@ -5794,12 +5794,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     {
         CASTFORM_MISC_INFO,
         .types = { TYPE_NORMAL, TYPE_NORMAL },
-        .baseHP        = 70,
-        .baseAttack    = 70,
-        .baseDefense   = 70,
-        .baseSpeed     = 70,
-        .baseSpAttack  = 70,
+        .baseHP        = 60,
+        .baseAttack    = 60,
+        .baseDefense   = 60,
+        .baseSpAttack  = 105,
         .baseSpDefense = 70,
+        .baseSpeed     = 95,
         .bodyColor = BODY_COLOR_GRAY,
         .description = POKEDEX_DESC_STRING(
             "It alters its form depending on the\n"
