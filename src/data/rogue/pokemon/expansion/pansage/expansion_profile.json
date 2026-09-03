@@ -70,6 +70,10 @@
     {
       "Move": "MOVE_CRUNCH",
       "Level": 43
+    },
+    {
+      "Move": "MOVE_D2D_TOPPLE",
+      "Level": 45
     }
   ],
   "TutorMoves": [
@@ -88,7 +92,6 @@
     "MOVE_FOCUS_PUNCH",
     "MOVE_FRUSTRATION",
     "MOVE_GASTRO_ACID",
-    "MOVE_GIGA_DRAIN",
     "MOVE_GRASS_KNOT",
     "MOVE_GRASS_PLEDGE",
     "MOVE_GRASS_WHISTLE",
