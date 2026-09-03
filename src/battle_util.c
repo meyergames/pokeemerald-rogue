@@ -9655,6 +9655,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 
         if (moveType == TYPE_PSYCHIC)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
+    case ABILITY_D2D_TECTONIC:
+        if (moveType == TYPE_GROUND)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;
     }
 
     // field abilities

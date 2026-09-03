@@ -56,6 +56,10 @@
       "Level": 44
     },
     {
+      "Move": "MOVE_DRAGON_PULSE",
+      "Level": 50
+    },
+    {
       "Move": "MOVE_UPROAR",
       "Level": 52
     },
@@ -70,6 +74,10 @@
     {
       "Move": "MOVE_DRAGON_RUSH",
       "Level": 60
+    },
+    {
+      "Move": "MOVE_QUIVER_DANCE",
+      "Level": 65
     },
     {
       "Move": "MOVE_BOOMBURST",

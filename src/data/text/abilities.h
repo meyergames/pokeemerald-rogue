@@ -318,6 +318,7 @@ static const u8 sSingingStarDescription[] = _("Sound moves never miss.");
 static const u8 sChargerDescription[] = _("Charges Electric allies.");
 static const u8 sIronShinDescription[] = _("Boosts kicking moves.");
 static const u8 sThirdEyeDescription[] = _("Boosts Psychic-type moves.");
+static const u8 sTectonicDescription[] = _("Boosts Ground-type moves.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -654,6 +655,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_D2D_CHARGER] = _("Charger"),
     [ABILITY_D2D_IRON_SHIN] = _("Iron Shin"),
     [ABILITY_D2D_THIRD_EYE] = _("Third Eye"),
+    [ABILITY_D2D_TECTONIC] = _("Tectonic"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -990,6 +992,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_D2D_CHARGER] = _("Charger"),
     [ABILITY_D2D_IRON_SHIN] = _("Iron Shin"),
     [ABILITY_D2D_THIRD_EYE] = _("Third Eye"),
+    [ABILITY_D2D_TECTONIC] = _("Tectonic"),
 };
 #endif
 
@@ -1326,4 +1329,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_D2D_CHARGER] = sChargerDescription,
     [ABILITY_D2D_IRON_SHIN] = sIronShinDescription,
     [ABILITY_D2D_THIRD_EYE] = sThirdEyeDescription,
+    [ABILITY_D2D_TECTONIC] = sTectonicDescription,
 };

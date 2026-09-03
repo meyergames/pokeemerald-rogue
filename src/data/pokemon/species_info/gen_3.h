@@ -4567,7 +4567,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .baseSpeed     = 10,
         .baseSpAttack  = 45,
         .baseSpDefense = 45,
-        .types = { TYPE_GROUND, TYPE_GROUND },
+        .types = { TYPE_BUG, TYPE_GROUND },
         .catchRate = 255,
         .expYield = 58,
         .evYield_Attack = 1,
@@ -4614,13 +4614,13 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 
     [SPECIES_VIBRAVA] =
     {
-        .baseHP        = 50,
-        .baseAttack    = 70,
+        .baseHP        = 60, // +10
+        .baseAttack    = 80, // +10
         .baseDefense   = 50,
+        .baseSpAttack  = 90, // +40
+        .baseSpDefense = 55, // +5
         .baseSpeed     = 70,
-        .baseSpAttack  = 50,
-        .baseSpDefense = 50,
-        .types = { TYPE_GROUND, TYPE_DRAGON },
+        .types = { TYPE_BUG, TYPE_GROUND },
         .catchRate = 120,
         .expYield = 119,
         .evYield_Attack = 1,
@@ -4667,13 +4667,13 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 
     [SPECIES_FLYGON] =
     {
-        .baseHP        = 80,
-        .baseAttack    = 100,
-        .baseDefense   = 80,
+        .baseHP        = 90, // +10
+        .baseAttack    = 110, // +10
+        .baseDefense   = 85, // +5
+        .baseSpAttack  = 130, // +50
+        .baseSpDefense = 85, // +5
         .baseSpeed     = 100,
-        .baseSpAttack  = 80,
-        .baseSpDefense = 80,
-        .types = { TYPE_GROUND, TYPE_DRAGON },
+        .types = { TYPE_BUG, TYPE_DRAGON },
         .catchRate = 45,
         .expYield = 234,
         .evYield_Attack = 1,
@@ -4687,7 +4687,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         #else
             .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG },
         #endif
-        .abilities = { ABILITY_LEVITATE, ABILITY_LEVITATE, ABILITY_LEVITATE },
+        .abilities = { ABILITY_LEVITATE, ABILITY_LEVITATE, ABILITY_D2D_TECTONIC },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Flygon"),
         .cryId = CRY_FLYGON,
