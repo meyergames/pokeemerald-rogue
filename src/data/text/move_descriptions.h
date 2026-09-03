@@ -3490,6 +3490,10 @@ static const u8 sHeadEmptyDescription[] = _(
     "Deals more damage the less\n"
     "moves the user knows.");
 
+static const u8 sConcentrateDescription[] = _(
+    "Sharply raises the user's\n"
+    "accuracy.");
+
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4394,4 +4398,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_CHRYSALIS - 1] = sChrysalisDescription,
     [MOVE_D2D_TAG - 1] = sTagDescription,
     [MOVE_D2D_HEAD_EMPTY - 1] = sHeadEmptyDescription,
+    [MOVE_D2D_CONCENTRATE - 1] = sConcentrateDescription,
 };

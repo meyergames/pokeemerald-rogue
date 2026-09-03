@@ -16632,4 +16632,21 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .zMoveEffect = Z_EFFECT_NONE,
         .makesContact = TRUE,
     },
+
+    [MOVE_D2D_CONCENTRATE] =
+    {
+        .effect = EFFECT_ACCURACY_UP_2,
+        .power = 0,
+        .accuracy = 0,
+        .type = TYPE_PSYCHIC,
+        .pp = 10,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+    },
 };

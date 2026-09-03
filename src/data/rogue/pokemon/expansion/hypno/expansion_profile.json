@@ -4,7 +4,11 @@
   ],
   "LevelUpMoves": [
     {
-      "Move": "MOVE_POUND",
+      "Move": "MOVE_D2D_CONCENTRATE",
+      "Level": 0
+    },
+    {
+      "Move": "MOVE_D2D_BEAM",
       "Level": 1
     },
     {
@@ -16,19 +20,15 @@
       "Level": 1
     },
     {
+      "Move": "MOVE_YAWN",
+      "Level": 1
+    },
+    {
       "Move": "MOVE_HYPNOSIS",
       "Level": 1
     },
     {
-      "Move": "MOVE_SWITCHEROO",
-      "Level": 1
-    },
-    {
-      "Move": "MOVE_HEADBUTT",
-      "Level": 13
-    },
-    {
-      "Move": "MOVE_POISON_GAS",
+      "Move": "MOVE_PSYCH_UP",
       "Level": 17
     },
     {
@@ -36,11 +36,19 @@
       "Level": 21
     },
     {
-      "Move": "MOVE_PSYCH_UP",
+      "Move": "MOVE_WILL_O_WISP",
+      "Level": 23
+    },
+    {
+      "Move": "MOVE_D2D_POWER_BEAM",
       "Level": 25
     },
     {
-      "Move": "MOVE_ZEN_HEADBUTT",
+      "Move": "MOVE_LIGHT_SCREEN",
+      "Level": 29
+    },
+    {
+      "Move": "MOVE_CALM_MIND",
       "Level": 32
     },
     {
@@ -48,7 +56,7 @@
       "Level": 37
     },
     {
-      "Move": "MOVE_PSYCHIC",
+      "Move": "MOVE_EXTRASENSORY",
       "Level": 42
     },
     {
@@ -56,12 +64,24 @@
       "Level": 47
     },
     {
+      "Move": "MOVE_DREAM_EATER",
+      "Level": 50
+    },
+    {
       "Move": "MOVE_PSYSHOCK",
       "Level": 51
     },
     {
-      "Move": "MOVE_FUTURE_SIGHT",
-      "Level": 56
+      "Move": "MOVE_PSYCHIC",
+      "Level": 55
+    },
+    {
+      "Move": "MOVE_REFLECT",
+      "Level": 59
+    },
+    {
+      "Move": "MOVE_KINESIS",
+      "Level": 65
     }
   ],
   "TutorMoves": [

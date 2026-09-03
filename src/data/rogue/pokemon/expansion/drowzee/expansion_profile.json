@@ -1,14 +1,15 @@
+
 {
   "Species": [
     "SPECIES_DROWZEE"
   ],
   "LevelUpMoves": [
     {
-      "Move": "MOVE_POUND",
+      "Move": "MOVE_D2D_BEAM",
       "Level": 1
     },
     {
-      "Move": "MOVE_HYPNOSIS",
+      "Move": "MOVE_YAWN",
       "Level": 1
     },
     {
@@ -24,7 +25,7 @@
       "Level": 13
     },
     {
-      "Move": "MOVE_POISON_GAS",
+      "Move": "MOVE_PSYCH_UP",
       "Level": 17
     },
     {
@@ -32,32 +33,48 @@
       "Level": 21
     },
     {
-      "Move": "MOVE_PSYCH_UP",
+      "Move": "MOVE_WILL_O_WISP",
+      "Level": 21
+    },
+    {
+      "Move": "MOVE_D2D_POWER_BEAM",
       "Level": 25
     },
     {
-      "Move": "MOVE_ZEN_HEADBUTT",
+      "Move": "MOVE_LIGHT_SCREEN",
       "Level": 29
     },
     {
-      "Move": "MOVE_SWAGGER",
-      "Level": 33
+      "Move": "MOVE_CALM_MIND",
+      "Level": 32
     },
     {
-      "Move": "MOVE_PSYCHIC",
+      "Move": "MOVE_SWAGGER",
       "Level": 37
     },
     {
       "Move": "MOVE_NASTY_PLOT",
-      "Level": 41
+      "Level": 37
     },
     {
-      "Move": "MOVE_PSYSHOCK",
+      "Move": "MOVE_ENCORE",
+      "Level": 40
+    },
+    {
+      "Move": "MOVE_EXTRASENSORY",
+      "Level": 42
+    },
+    {
+      "Move": "MOVE_PSYCHIC",
       "Level": 45
     },
     {
-      "Move": "MOVE_FUTURE_SIGHT",
+      "Move": "MOVE_REFLECT",
       "Level": 49
+    },
+    {
+      "Move": "MOVE_KINESIS",
+      "Level": 55
     }
   ],
   "TutorMoves": [
@@ -70,6 +87,7 @@
     "MOVE_DOUBLE_EDGE",
     "MOVE_DRAIN_PUNCH",
     "MOVE_DRAINING_KISS",
+    "MOVE_DREAM_EATER",
     "MOVE_ENCORE",
     "MOVE_ENDEAVOR",
     "MOVE_ENDURE",
