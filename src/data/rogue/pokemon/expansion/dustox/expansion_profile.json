@@ -37,6 +37,10 @@
     },
     {
       "Move": "MOVE_WHIRLWIND",
+      "Level": 29
+    },
+    {
+      "Move": "MOVE_SLUDGE_BOMB",
       "Level": 30
     },
     {
@@ -54,6 +58,10 @@
     {
       "Move": "MOVE_QUIVER_DANCE",
       "Level": 40
+    },
+    {
+      "Move": "MOVE_HURRICANE",
+      "Level": 45
     }
   ],
   "TutorMoves": [
@@ -78,6 +86,7 @@
     "MOVE_LIGHT_SCREEN",
     "MOVE_PROTECT",
     "MOVE_PSYCHIC",
+    "MOVE_REFLECT",
     "MOVE_REST",
     "MOVE_RETURN",
     "MOVE_ROOST",
