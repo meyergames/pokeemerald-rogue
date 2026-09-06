@@ -16113,9 +16113,9 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .slicingMove = TRUE,
     },
 
-    [MOVE_D2D_SHORT_CIRCUIT] =
+    [MOVE_D2D_CIRCUIT_BREAK] =
     {
-        .effect = EFFECT_D2D_SHORT_CIRCUIT,
+        .effect = EFFECT_D2D_CIRCUIT_BREAK,
         .power = 100,
         .type = TYPE_ELECTRIC,
         .accuracy = 90,

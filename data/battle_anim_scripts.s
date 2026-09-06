@@ -895,7 +895,7 @@ gBattleAnims_Moves::
 	.4byte Move_D2D_TEACH
 	.4byte Move_D2D_SCARECROW
 	.4byte Move_D2D_BLADE_SLASH
-	.4byte Move_D2D_SHORT_CIRCUIT
+	.4byte Move_D2D_CIRCUIT_BREAK
 	.4byte Move_D2D_DEVOUR
 	.4byte Move_D2D_SERENE_SCENT
 	.4byte Move_D2D_FLEX
@@ -34977,7 +34977,7 @@ Move_D2D_BLADE_SLASH:
 	blendoff
 	end
 
-Move_D2D_SHORT_CIRCUIT:
+Move_D2D_CIRCUIT_BREAK:
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_SPARK_2
 	delay 0

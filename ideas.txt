@@ -27,3 +27,6 @@
 [] move: Chrysalis for Bug-types. +2 Def/SpDef on turn 2, skip turn 2, +2 Atk/SpAtk/Spd on turn 3
 [] "AnimTask_ShakeTargetBasedOnMovePowerOrDmg" for Topple, Scatterblast, etc..?
 [] make Ice resist Ground, Steel weak to Electric, Poison weak to Water
+
+
+[] Trample / Stampede / Hind Kick (Fighting moves for horse-like mons)

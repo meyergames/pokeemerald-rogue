@@ -67,10 +67,6 @@
     {
       "Move": "MOVE_ELECTRIC_TERRAIN",
       "Level": 60
-    },
-    {
-      "Move": "MOVE_D2D_SHORT_CIRCUIT",
-      "Level": 70
     }
   ],
   "TutorMoves": [

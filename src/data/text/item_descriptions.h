@@ -3014,6 +3014,8 @@ static const u8 sJabocaBerryDesc[] = _(
     "If hit by a physical\n"
     "move, it will hurt\n"
     "the attacker a bit.");
+    // "move, it will hurt\n"
+    // "the attacker a bit.");
 
 static const u8 sRowapBerryDesc[] = _(
     "If hit by a special\n"

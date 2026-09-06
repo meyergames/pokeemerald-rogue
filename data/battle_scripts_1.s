@@ -468,7 +468,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectD2DTeach				  @ EFFECT_D2D_TEACH
 	.4byte BattleScript_EffectD2DScarecrow			  @ EFFECT_D2D_SCARECROW
 	.4byte BattleScript_EffectHit 					  @ EFFECT_D2D_BLADE_SLASH
-	.4byte BattleScript_EffectHit					  @ EFFECT_D2D_SHORT_CIRCUIT
+	.4byte BattleScript_EffectHit					  @ EFFECT_D2D_CIRCUIT_BREAK
 	.4byte BattleScript_EffectD2DDevour				  @ EFFECT_D2D_DEVOUR
 	.4byte BattleScript_EffectD2DSereneScent		  @ EFFECT_D2D_SERENE_SCENT
 	.4byte BattleScript_EffectD2DFlex 				  @ EFFECT_D2D_FLEX
