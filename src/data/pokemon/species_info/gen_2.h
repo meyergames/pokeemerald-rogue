@@ -845,12 +845,12 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 
     [SPECIES_LEDIAN] =
     {
-        .baseHP        = 55,
-        .baseAttack    = 35,
+        .baseHP        = 65, // +10
+        .baseAttack    = 105, // +70
         .baseDefense   = 50,
-        .baseSpeed     = 85,
-        .baseSpAttack  = 55,
+        .baseSpAttack  = 35, // -20
         .baseSpDefense = 110,
+        .baseSpeed     = 85,
         .types = { TYPE_BUG, TYPE_FLYING },
         .catchRate = 90,
         .expYield = 137,
@@ -860,7 +860,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG },
-        .abilities = { ABILITY_SWARM, ABILITY_D2D_POLLINATOR, ABILITY_IRON_FIST },
+        .abilities = { ABILITY_RATTLED, ABILITY_IRON_FIST, ABILITY_TECHNICIAN },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Ledian"),
         .cryId = CRY_LEDIAN,
