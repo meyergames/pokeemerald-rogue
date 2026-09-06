@@ -35761,6 +35761,7 @@ Move_D2D_HEAD_EMPTY:
 	end
 
 Move_D2D_LASER_BEAM:
+	loadspritegfx ANIM_TAG_ORBS
 	goto SolarBeamUnleash
 
 Move_D2D_MONEY_SHOT:
