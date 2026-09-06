@@ -3494,6 +3494,10 @@ static const u8 sLaserBeamDescription[] = _(
     "Guaranteed to burn the foe.\n"
     "It ignores stat changes.");
 
+static const u8 sMoneyShotDescription[] = _(
+    "Deals damage based on how\n"
+    "much money the trainer has.");
+
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4399,4 +4403,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_TAG - 1] = sTagDescription,
     [MOVE_D2D_HEAD_EMPTY - 1] = sHeadEmptyDescription,
     [MOVE_D2D_LASER_BEAM - 1] = sLaserBeamDescription,
+    [MOVE_D2D_MONEY_SHOT - 1] = sMoneyShotDescription,
 };

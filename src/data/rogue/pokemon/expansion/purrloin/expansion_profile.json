@@ -50,6 +50,10 @@
     {
       "Move": "MOVE_PLAY_ROUGH",
       "Level": 40
+    },
+    {
+      "Move": "MOVE_D2D_MONEY_SHOT",
+      "Level": 50
     }
   ],
   "TutorMoves": [

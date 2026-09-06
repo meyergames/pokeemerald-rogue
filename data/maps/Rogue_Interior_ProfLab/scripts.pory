@@ -167,23 +167,23 @@ script Rogue_Interior_ProfLab_TalkAssistant
             if(var(VAR_RESULT) == YES)
             {
                 // Delibird?
-                msgbox(format("Would you like an UNOWN?"), MSGBOX_YESNO)
+                msgbox(format("Would you like a PERSIAN?"), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES)
                 {
-                    givemon(SPECIES_UNOWN, 50)
+                    givemon(SPECIES_PERSIAN, 63)
                 }
-                msgbox(format("Would you like some MIRTI BERRIES?"), MSGBOX_YESNO)
-                if(var(VAR_RESULT) == YES)
-                {
-                    giveitem(ITEM_ROWAP_BERRY, 99)
-                }
-                msgbox(format("Would you like some snacks with that?"), MSGBOX_YESNO)
-                if(var(VAR_RESULT) == YES)
-                {
-                    giveitem(ITEM_RARE_CANDY, 99)
-                    giveitem(ITEM_ABILITY_PATCH, 99)
-                    giveitem(ITEM_ABILITY_CAPSULE, 99)
-                }
+                // msgbox(format("Would you like some MIRTI BERRIES?"), MSGBOX_YESNO)
+                // if(var(VAR_RESULT) == YES)
+                // {
+                //     giveitem(ITEM_ROWAP_BERRY, 99)
+                // }
+                // msgbox(format("Would you like some snacks with that?"), MSGBOX_YESNO)
+                // if(var(VAR_RESULT) == YES)
+                // {
+                //     giveitem(ITEM_RARE_CANDY, 99)
+                //     giveitem(ITEM_ABILITY_PATCH, 99)
+                //     giveitem(ITEM_ABILITY_CAPSULE, 99)
+                // }
                 msgbox(format("Have fun!"))
             }
             else

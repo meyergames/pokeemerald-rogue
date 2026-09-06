@@ -4,7 +4,7 @@
   ],
   "LevelUpMoves": [
     {
-      "Move": "MOVE_POWER_GEM",
+      "Move": "MOVE_D2D_MONEY_SHOT",
       "Level": 0
     },
     {
@@ -44,6 +44,10 @@
       "Level": 24
     },
     {
+      "Move": "MOVE_POWER_GEM",
+      "Level": 25
+    },
+    {
       "Move": "MOVE_FURY_SWIPES",
       "Level": 31
     },
@@ -66,6 +70,10 @@
     {
       "Move": "MOVE_PLAY_ROUGH",
       "Level": 54
+    },
+    {
+      "Move": "MOVE_HAPPY_HOUR",
+      "Level": 65
     }
   ],
   "TutorMoves": [

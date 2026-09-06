@@ -16014,10 +16014,10 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_D2D_TOPPLE] =
     {
-        .power = 40,
-        .accuracy = 100,
         .effect = EFFECT_D2D_TOPPLE,
         .type = TYPE_NORMAL,
+        .power = 0,
+        .accuracy = 100,
         .pp = 30,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
@@ -16031,7 +16031,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_D2D_MACH_5,
         .type = TYPE_FLYING,
-        .power = 40,
+        .power = 0,
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 0,
@@ -16648,19 +16648,18 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .zMoveEffect = Z_EFFECT_NONE,
         .sheerForceBoost = TRUE,
     },
+
+    [MOVE_D2D_MONEY_SHOT] =
     {
-        .effect = EFFECT_ACCURACY_UP_2,
+        .effect = EFFECT_D2D_MONEY_SHOT,
+        .type = TYPE_NORMAL,
         .power = 0,
-        .accuracy = 0,
-        .type = TYPE_PSYCHIC,
-        .pp = 10,
+        .accuracy = 100,
+        .pp = 20,
         .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_USER,
+        .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
-        .snatchAffected = TRUE,
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
     },
 };

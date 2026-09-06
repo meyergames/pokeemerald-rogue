@@ -2428,6 +2428,10 @@
 	various BS_ATTACKER, VARIOUS_SET_CHRYSALIS
 	.endm
 
+	.macro determinemoneyshotpower
+	various BS_ATTACKER, VARIOUS_DETERMINE_MONEY_SHOT_POWER
+	.endm
+
 
 @ D2D INSTRUCTIONS END
 

@@ -722,8 +722,9 @@
 #define STRINGID_D2D_INSPIRATIONSTATRAISED			  719
 #define STRINGID_D2D_CHARGERRESTOREDHP				  720
 #define STRINGID_D2D_SIPHONPOWERRAISED				  721
+#define STRINGID_D2D_MONEYSHOTPOWER				      722
 
-#define BATTLESTRINGS_COUNT                           722
+#define BATTLESTRINGS_COUNT                           723
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,

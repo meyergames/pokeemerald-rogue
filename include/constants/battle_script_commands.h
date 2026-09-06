@@ -259,6 +259,7 @@
 #define VARIOUS_TRY_REMOVE_OWN_SCREENS               165
 #define VARIOUS_RAISE_SIPHON_KO_COUNT				 166
 #define VARIOUS_SET_CHRYSALIS						 167
+#define VARIOUS_DETERMINE_MONEY_SHOT_POWER			 168
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0

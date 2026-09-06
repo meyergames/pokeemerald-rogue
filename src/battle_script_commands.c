@@ -72,6 +72,9 @@
 #include "rogue_script.h"
 #include "rogue_settings.h"
 
+// D2D-related includes
+#include "rogue_trainers.h"
+
 // Helper for accessing command arguments and advancing gBattlescriptCurrInstr.
 //
 // For example accuracycheck is defined as:
@@ -10385,6 +10388,40 @@ static void Cmd_various(void)
         u16 foeBst = gSpeciesInfo[gBattleMons[gBattlerTarget].species].baseHP + gSpeciesInfo[gBattleMons[gBattlerTarget].species].baseAttack + gSpeciesInfo[gBattleMons[gBattlerTarget].species].baseDefense + gSpeciesInfo[gBattleMons[gBattlerTarget].species].baseSpAttack + gSpeciesInfo[gBattleMons[gBattlerTarget].species].baseSpDefense + gSpeciesInfo[gBattleMons[gBattlerTarget].species].baseSpeed;
 
         u32 basePower = 40 + max( ( foeBst - 400 ) / 2, 0 );
+        PREPARE_BYTE_NUMBER_BUFFER( gBattleTextBuff1, 3, basePower );
+        break;
+    }
+    case VARIOUS_DETERMINE_MONEY_SHOT_POWER:
+    {
+        VARIOUS_ARGS();
+
+        u32 basePower;
+        u32 i = 0;
+
+        if (GetBattlerSide(battler) == B_SIDE_OPPONENT)
+        {
+            struct Trainer trainer;
+            Rogue_ModifyTrainer(gTrainerBattleOpponent_A, &trainer);
+            for (; gTrainerMoneyTable[i].classId != 0xFF; i++)
+            {
+                if (gTrainerMoneyTable[i].classId == trainer.trainerClass)
+                    break;
+            }
+            basePower = 20 + (gTrainerMoneyTable[i].value * 2);
+        }
+        else if (GetBattlerSide(battler) == B_SIDE_PLAYER)
+        {
+            u32 money = GetMoney(&gSaveBlock1Ptr->money);
+            if (money <= 100000)
+            {
+                basePower = 20 + (money * 0.0008);
+            }
+            else
+            {
+                basePower = 100 + (money * 0.0001);
+            }
+        }
+
         PREPARE_BYTE_NUMBER_BUFFER( gBattleTextBuff1, 3, basePower );
         break;
     }

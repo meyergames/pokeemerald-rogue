@@ -54,6 +54,10 @@
 #include "rogue_safari.h"
 #include "rogue_quest.h"
 
+// D2D-related includes
+#include "money.h"
+#include "rogue_trainers.h"
+
 /*
 NOTE: The data and functions in this file up until (but not including) sSoundMovesTable
 are actually part of battle_main.c. They needed to be moved to this file in order to
@@ -9555,6 +9559,33 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
             basePower = 100;
         else
             basePower = 60;
+        break;
+    case EFFECT_D2D_MONEY_SHOT:
+        if (GetBattlerSide(battlerAtk) == B_SIDE_OPPONENT)
+        {
+            struct Trainer trainer;
+            u32 i = 0;
+            Rogue_ModifyTrainer(gTrainerBattleOpponent_A, &trainer);
+            for (; gTrainerMoneyTable[i].classId != 0xFF; i++)
+            {
+                if (gTrainerMoneyTable[i].classId == trainer.trainerClass)
+                    break;
+            }
+
+            basePower = 20 + (gTrainerMoneyTable[i].value * 2);
+        }
+        else if (GetBattlerSide(battlerAtk) == B_SIDE_PLAYER)
+        {
+            u32 money = GetMoney(&gSaveBlock1Ptr->money);
+            if (money <= 100000)
+            {
+                basePower = 20 + (money * 0.0008);
+            }
+            else
+            {
+                basePower = 100 + (money * 0.0001);
+            }
+        }
         break;
     }
 

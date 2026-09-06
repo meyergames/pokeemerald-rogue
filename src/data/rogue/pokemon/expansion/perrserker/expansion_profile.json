@@ -4,7 +4,7 @@
   ],
   "LevelUpMoves": [
     {
-      "Move": "MOVE_IRON_HEAD",
+      "Move": "MOVE_D2D_MONEY_SHOT",
       "Level": 0
     },
     {
@@ -46,6 +46,10 @@
     {
       "Move": "MOVE_SWAGGER",
       "Level": 24
+    },
+    {
+      "Move": "MOVE_IRON_HEAD",
+      "Level": 25
     },
     {
       "Move": "MOVE_FURY_SWIPES",

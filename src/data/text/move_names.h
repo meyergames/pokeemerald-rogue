@@ -1803,6 +1803,7 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_D2D_TAG] = _("Tag"),
     [MOVE_D2D_HEAD_EMPTY] = _("Head Empty"),
     [MOVE_D2D_LASER_BEAM] = _("Laser Beam"),
+    [MOVE_D2D_MONEY_SHOT] = _("Money Shot"),
     // Max Moves
     [MOVE_MAX_GUARD] = _("M-Guard"),
     [MOVE_MAX_STRIKE] = _("M-Strike"),

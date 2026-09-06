@@ -499,6 +499,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_D2D_EffectSiphon			  @ EFFECT_D2D_SIPHON
 	.4byte BattleScript_D2D_EffectChrysalis			  @ EFFECT_D2D_CHRYSALIS
 	.4byte BattleScript_D2D_EffectHeadEmpty			  @ EFFECT_D2D_HEAD_EMPTY
+	.4byte BattleScript_D2D_EffectMoneyShot 		  @ EFFECT_D2D_MONEY_SHOT
 
 @ The game doesn't seem to like having EffectHit as the last item in the list...
 
@@ -12236,5 +12237,18 @@ BattleScript_D2D_EffectHeadEmpty:
 	pause B_WAIT_TIME_SHORT
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_D2D_EffectHeadEmptyTarget:
+	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
+	goto BattleScript_HitFromCritCalc
+
+BattleScript_D2D_EffectMoneyShot::
+	jumpifword CMP_COMMON_BITS, gHitMarker, HITMARKER_NO_ATTACKSTRING | HITMARKER_NO_PPDEDUCT, BattleScript_D2D_EffectMoneyShot_Target
+	attackcanceler
+	attackstring
+	ppreduce
+	determinemoneyshotpower
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_D2D_MONEYSHOTPOWER
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_D2D_EffectMoneyShot_Target:
 	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
 	goto BattleScript_HitFromCritCalc
