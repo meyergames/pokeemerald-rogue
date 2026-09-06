@@ -53,19 +53,19 @@
     },
     {
       "Move": "MOVE_CRUNCH",
-      "Level": 56
+      "Level": 52
     },
     {
       "Move": "MOVE_DISCHARGE",
-      "Level": 64
+      "Level": 54
     },
     {
-      "Move": "MOVE_SWAGGER",
-      "Level": 72
+      "Move": "MOVE_D2D_CIRCUIT_BREAK",
+      "Level": 63
     },
     {
       "Move": "MOVE_WILD_CHARGE",
-      "Level": 80
+      "Level": 72
     }
   ],
   "TutorMoves": [
@@ -103,6 +103,7 @@
     "MOVE_SUNNY_DAY",
     "MOVE_SUPERCELL_SLAM",
     "MOVE_SUPERPOWER",
+    "MOVE_SWAGGER",
     "MOVE_SWIFT",
     "MOVE_TAKE_DOWN",
     "MOVE_TERA_BLAST",
