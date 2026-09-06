@@ -194,5 +194,26 @@
         "GEN7PU"
       ]
     }
-  ]
+  ],
+  "PerSpecies": {
+    "SPECIES_JIGGLYPUFF": {
+      "BaseStats": {
+        "HP": 115,
+        "Attack": 45,
+        "Defense": 20,
+        "Speed": 20,
+        "SpAttack": 45,
+        "SpDefense": 25
+      },
+      "Types": [
+        "TYPE_NORMAL",
+        "TYPE_FAIRY"
+      ],
+      "Abilities": [
+        "ABILITY_CUTE_CHARM",
+        "ABILITY_COMPETITIVE",
+        "ABILITY_FRIEND_GUARD"
+      ]
+    }
+  }
 }

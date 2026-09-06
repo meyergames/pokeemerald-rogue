@@ -1,5 +1,6 @@
 #include <string>
 #include <fstream>
+#include <filesystem>
 #include <array>
 #include <iostream>
 #include <vector>
@@ -98,9 +99,52 @@ static bool IsEvoListSpeciesValid(u16 species)
 #endif
 }
 
+static bool WriteFileIfChanged(std::string const& filePath, std::string const& newContent)
+{
+	std::string currentFileContent;
+
+	struct stat sb;
+	if (stat(filePath.c_str(), &sb) == 0)
+	{
+		std::ifstream file;
+		file.open(filePath, std::ios::in);
+
+		if (file.is_open())
+		{
+			file.seekg(0, std::ios::end);
+			size_t length = file.tellg();
+
+			currentFileContent.resize(length);
+			file.seekg(0, std::ios::beg);
+			file.read(&currentFileContent[0], length);
+		}
+
+		file.close();
+	}
+
+	if (currentFileContent.compare(newContent) != 0)
+	{
+		std::cout << "Updated '" << filePath << "'.\n";
+
+		std::ofstream file;
+		file.open(filePath, std::ios::out);
+		file << newContent;
+		file.close();
+		return true;
+	}
+	else
+	{
+		std::cout << "No changes detected for '" << filePath << "'.\n";
+		return false;
+	}
+}
+
+static void PrintRevisionStatsFor(int gen, u32 checkFlags);
+
 int main(int argc, char* argv[])
 {
-	std::string const c_OutputPath = argv[1];
+	std::string const c_OutputHeaderPath = argv[1];
+	std::string const c_OutputJsonPath = argc >= 3 ? argv[2] : "";
 
 	std::stringstream output;
 
@@ -341,38 +385,159 @@ int main(int argc, char* argv[])
 #endif
 	}
 
-	std::string inputStr;
-	std::string outputStr = output.str();
+	WriteFileIfChanged(c_OutputHeaderPath, output.str());
 
-	struct stat sb;
-	if (stat(c_OutputPath.c_str(), &sb) == 0)
+	// Output all stats into json file, so we can re-export
+	if (!c_OutputJsonPath.empty())
 	{
-		std::ifstream file;
-		file.open(c_OutputPath, std::ios::in);
+		output = std::stringstream();
 
-		file.seekg(0, std::ios::end);
-		size_t length = file.tellg();
+		output << "{\n";
 
-		inputStr.resize(length);
-		file.seekg(0, std::ios::beg);
-		file.read(&inputStr[0], length);
+		for (int mode = 0; mode < 2; ++mode)
+		{
+			output << "\t\"" << (mode ? "revised" : "base") << "\":\n";
+			output << "\t[\n";
 
-		file.close();
+			for (int s = SPECIES_NONE; s < NUM_SPECIES; ++s)
+			{
+				struct RoguePokemonBaseStats stats;
+				Rogue_GetPokemonBaseStatsFor(s, &stats, mode);
+
+				//output << "\t\t" << s << ":\n";
+				output << "\t\t{\n";
+
+				output << "\t\t\t\"baseHP\":" << (int)stats.baseHP << ",\n";
+				output << "\t\t\t\"baseAttack\":" << (int)stats.baseAttack << ",\n";
+				output << "\t\t\t\"baseDefense\":" << (int)stats.baseDefense << ",\n";
+				output << "\t\t\t\"baseSpeed\":" << (int)stats.baseSpeed << ",\n";
+				output << "\t\t\t\"baseSpAttack\":" << (int)stats.baseSpAttack << ",\n";
+				output << "\t\t\t\"baseSpDefense\":" << (int)stats.baseSpDefense << ",\n";
+				output << "\t\t\t\"types\": [" << (int)stats.types[0] << ", " << (int)stats.types[1] << "],\n";
+				output << "\t\t\t\"abilities\": [";
+				
+				for (int a = 0; a < NUM_ABILITY_SLOTS; ++a)
+				{
+					output << (a == 0 ? "" : ", ") << (int)stats.abilities[a];
+				}
+				
+				output << "]\n";
+
+				output << (s + 1 == NUM_SPECIES ? "\t\t}\n" : "\t\t},\n");
+			}
+
+			output << (mode ? "\t]\n" : "\t],\n");
+		}
+
+		output << "}\n";
+
+		WriteFileIfChanged(c_OutputJsonPath, output.str());
 	}
 
-	if (inputStr.compare(outputStr) != 0)
+	// Print stats for revised mode
+	std::cout << "===Revised Stats===\n";
+	PrintRevisionStatsFor(0, REVISION_FLAG_ALL);
+	PrintRevisionStatsFor(0, REVISION_FLAG_PROFILE_DATA);
+	PrintRevisionStatsFor(0, REVISION_FLAG_ANY_MOVES);
+	for (int i = 1; i <= POKEDEX_MAX_GEN; ++i)
 	{
-		std::cout << "Updated '" << c_OutputPath << "'.\n";
-
-		std::ofstream file;
-		file.open(c_OutputPath, std::ios::out);
-		file << outputStr;
-		file.close();
-	}
-	else
-	{
-		std::cout << "No changes detected for '" << c_OutputPath << "'.\n";
+		PrintRevisionStatsFor(i, REVISION_FLAG_ALL);
 	}
 
 	return 0;
+}
+
+static void PrintRevisionStatsFor(int gen, u32 checkFlags)
+{
+	std::vector<bool> isEvoLineRevised;
+	std::vector<u16> eggSpeciesList;
+	std::set<u16> alreadyAddedSpecies;
+
+	isEvoLineRevised.resize(NUM_SPECIES, false);
+
+	int totalValidSpecies = 0;
+	int totalRevisedSpecies = 0;
+
+	for (int species = SPECIES_NONE; species < NUM_SPECIES; ++species)
+	{
+		if (gen != 0 && SpeciesToGen(species) != gen)
+			continue;
+
+#ifdef ROGUE_EXPANSION
+		if (gRogueSpeciesInfo[species].baseHP != 0)
+#else
+		if (!(species >= SPECIES_OLD_UNOWN_B && species <= SPECIES_OLD_UNOWN_Z) && gRogueSpeciesInfo[species].baseHP != 0)
+#endif
+		{
+			++totalValidSpecies;
+
+			u16 eggSpecies = eggLookup[species];
+
+			if (alreadyAddedSpecies.find(eggSpecies) == alreadyAddedSpecies.end())
+			{
+				eggSpeciesList.push_back(eggSpecies);
+				alreadyAddedSpecies.insert(eggSpecies);
+			}
+
+			if (Rogue_HasSpeciesBeenRevised(species, checkFlags))
+			{
+				isEvoLineRevised[eggSpecies] = true;
+				++totalRevisedSpecies;
+			}
+		}
+	}
+
+	int totalValidEvoLines = 0;
+	int totalRevisedEvoLines = 0;
+
+	for (u16 species : eggSpeciesList)
+	{
+#ifdef ROGUE_EXPANSION
+		if (gRogueSpeciesInfo[species].baseHP != 0)
+#else
+		if (!(species >= SPECIES_OLD_UNOWN_B && species <= SPECIES_OLD_UNOWN_Z) && gRogueSpeciesInfo[species].baseHP != 0)
+#endif
+		{
+			++totalValidEvoLines;
+
+			if (isEvoLineRevised[species])
+			{
+				++totalRevisedEvoLines;
+			}
+		}
+	}
+
+	int totalValidMoves = 0;
+	int totalRevisedMoves = 0;
+
+	for (int move = MOVE_NONE + 1; move < MOVES_COUNT; ++move)
+	{
+		++totalValidMoves;
+
+		if (Rogue_HasMoveBeenRevised(move))
+		{
+			++totalRevisedMoves;
+		}
+	}
+
+	if (gen == 0 && checkFlags == REVISION_FLAG_ALL)
+	{
+		std::cout << "Moves: " << totalRevisedMoves << " / " << totalValidMoves << " (" << ((totalRevisedMoves * 100) / totalValidMoves) << "%)\n";
+	}
+
+	if(gen == 0)
+	{
+		if(checkFlags == REVISION_FLAG_ALL)
+			std::cout << "[Total]      ";
+		else if(checkFlags == REVISION_FLAG_PROFILE_DATA)
+			std::cout << "   [Profile] ";
+		else if(checkFlags == REVISION_FLAG_ANY_MOVES)
+			std::cout << "   [Moves]   ";
+	}
+	else
+		std::cout << "[Gen " << gen <<  "]      ";
+
+	std::cout << "Species: " << totalRevisedSpecies << " / " << totalValidSpecies << " (" << ((totalRevisedSpecies * 100) / totalValidSpecies) << "%)   ";
+	std::cout << "Evo Lines: " << totalRevisedEvoLines << " / " << totalValidEvoLines << " (" << ((totalRevisedEvoLines * 100) / totalValidEvoLines) << "%)\n";
+
 }

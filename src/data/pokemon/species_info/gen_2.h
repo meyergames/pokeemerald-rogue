@@ -4805,12 +4805,12 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #if P_FAMILY_DELIBIRD
     [SPECIES_DELIBIRD] =
     {
-        .baseHP        = 60,
-        .baseAttack    = 55,
+        .baseHP        = 90,
+        .baseAttack    = 50,
         .baseDefense   = 60,
-        .baseSpAttack  = 65,
-        .baseSpDefense = 60,
-        .baseSpeed     = 90,
+        .baseSpAttack  = 90,
+        .baseSpDefense = 70,
+        .baseSpeed     = 90, // total: 450
         .types = { TYPE_ICE, TYPE_FLYING },
         .catchRate = 45,
         .expYield = 116,
