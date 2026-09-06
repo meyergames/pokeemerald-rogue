@@ -1564,6 +1564,41 @@ static bool32 IsBelchPreventingMove(u32 battler, u32 move)
     return !(gBattleStruct->ateBerry[battler & BIT_SIDE] & gBitTable[gBattlerPartyIndexes[battler]]);
 }
 
+static bool32 InvalidInfinityMove(u32 battler, u32 move)
+{
+    u8 powerCap = 10 + (gBattleMons[battler].level * 2);
+    // lvl 15 --> 40
+    // lvl 25 --> 60
+    // lvl 35 --> 80
+    // lvl 45 --> 100
+    // lvl 55 --> 120
+    // lvl 65 --> 140
+    // lvl 75 --> 160
+    // lvl 85 --> 180
+    // lvl 95 --> 200
+    if (gBattleMons[battler].level == 100)
+    {
+        powerCap = 255;
+    }
+
+    // u8 isWrongLetter = TRUE;
+    // u16 species = gBattleMons[battler].species;
+    // if (species >= SPECIES_UNOWN && species <= SPECIES_UNOWN_Z)
+    // {
+    //     char letter = 'A' + (species - SPECIES_UNOWN);
+    //     DebugPrintf("Letter: %s", letter);
+    //     DebugPrintf("Move name: %s", gMoveNames[move]);
+    //     if (gMoveNames[move][0] == letter)
+    //     {
+    //         isWrongLetter = FALSE;
+    //     }
+    // }
+
+    // return isWrongLetter || (gBattleMoves[move].effect == EFFECT_PLACEHOLDER || gBattleMoves[move].metronomeBanned)
+    return (gBattleMoves[move].effect == EFFECT_PLACEHOLDER || gBattleMoves[move].metronomeBanned)
+    || (gBattleMoves[move].split != SPLIT_STATUS && gBattleMoves[move].power > powerCap);
+}
+
 // Dynamax bypasses all selection prevention except Taunt and Assault Vest.
 #define DYNAMAX_BYPASS_CHECK    !gBattleStruct->dynamax.playerSelect && !IsDynamaxed(gBattlerAttacker)
 
@@ -5099,6 +5134,34 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
+        case ABILITY_D2D_INFINITY:
+            int i;
+            for (i = 0; i < MAX_MON_MOVES; i++)
+            {
+                #if B_METRONOME_MOVES >= GEN_9
+                    u32 moveCount = MOVES_COUNT_GEN9;
+                #elif B_METRONOME_MOVES >= GEN_8
+                    u32 moveCount = MOVES_COUNT_GEN8;
+                #elif B_METRONOME_MOVES >= GEN_7
+                    u32 moveCount = MOVES_COUNT_GEN7;
+                #elif B_METRONOME_MOVES >= GEN_6
+                    u32 moveCount = MOVES_COUNT_GEN6;
+                #elif B_METRONOME_MOVES >= GEN_5
+                    u32 moveCount = MOVES_COUNT_GEN5;
+                #elif B_METRONOME_MOVES >= GEN_4
+                    u32 moveCount = MOVES_COUNT_GEN4;
+                #elif B_METRONOME_MOVES >= GEN_3
+                    u32 moveCount = MOVES_COUNT_GEN3;
+                #elif B_METRONOME_MOVES >= GEN_2
+                    u32 moveCount = MOVES_COUNT_GEN2;
+                #else
+                    u32 moveCount = MOVES_COUNT_GEN1;
+                #endif
+                
+                gBattleMons[battler].moves[i] = RandomInfinityMove(RNG_METRONOME, 1, moveCount - 1, battler, InvalidInfinityMove);
+                gBattleMons[battler].pp[i] = 1;
+            }
+            break;
         }
         break;
     case ABILITYEFFECT_ENDTURN: // 1
@@ -5353,6 +5416,34 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                     gBattleStruct->usedHeldItems[battler][GetBattlerSide(battler)] = ITEM_NONE;
                     BattleScriptPushCursorAndCallback(BattleScript_CudChewActivates);
                     effect++;
+                }
+                break;
+            case ABILITY_D2D_INFINITY:
+                int i;
+                for (i = 0; i < MAX_MON_MOVES; i++)
+                {
+                    #if B_METRONOME_MOVES >= GEN_9
+                        u32 moveCount = MOVES_COUNT_GEN9;
+                    #elif B_METRONOME_MOVES >= GEN_8
+                        u32 moveCount = MOVES_COUNT_GEN8;
+                    #elif B_METRONOME_MOVES >= GEN_7
+                        u32 moveCount = MOVES_COUNT_GEN7;
+                    #elif B_METRONOME_MOVES >= GEN_6
+                        u32 moveCount = MOVES_COUNT_GEN6;
+                    #elif B_METRONOME_MOVES >= GEN_5
+                        u32 moveCount = MOVES_COUNT_GEN5;
+                    #elif B_METRONOME_MOVES >= GEN_4
+                        u32 moveCount = MOVES_COUNT_GEN4;
+                    #elif B_METRONOME_MOVES >= GEN_3
+                        u32 moveCount = MOVES_COUNT_GEN3;
+                    #elif B_METRONOME_MOVES >= GEN_2
+                        u32 moveCount = MOVES_COUNT_GEN2;
+                    #else
+                        u32 moveCount = MOVES_COUNT_GEN1;
+                    #endif
+
+                    gBattleMons[battler].moves[i] = RandomInfinityMove(RNG_METRONOME, 1, moveCount - 1, battler, InvalidInfinityMove);
+                    gBattleMons[battler].pp[i] = 1;
                 }
                 break;
             }

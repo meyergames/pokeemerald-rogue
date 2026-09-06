@@ -24,10 +24,6 @@
       "Level": 12
     },
     {
-      "Move": "MOVE_GLARE",
-      "Level": 12
-    },
-    {
       "Move": "MOVE_ACID",
       "Level": 15
     },
@@ -44,15 +40,15 @@
       "Level": 23
     },
     {
+      "Move": "MOVE_GLARE",
+      "Level": 27
+    },
+    {
       "Move": "MOVE_ACID_SPRAY",
       "Level": 25
     },
     {
-      "Move": "MOVE_MEAN_LOOK",
-      "Level": 27
-    },
-    {
-      "Move": "MOVE_D2D_CRUNCH",
+      "Move": "MOVE_CRUNCH",
       "Level": 30
     },
     {
@@ -66,6 +62,10 @@
     {
       "Move": "MOVE_D2D_DEVOUR",
       "Level": 40
+    },
+    {
+      "Move": "MOVE_MEAN_LOOK",
+      "Level": 42
     },
     {
       "Move": "MOVE_GASTRO_ACID",

@@ -2685,12 +2685,12 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 
 #if P_FAMILY_UNOWN
 #define UNOWN_MISC_INFO(letter)                                         \
-        .baseHP        = 48,                                            \
+        .baseHP        = 72,                                            \
         .baseAttack    = 72,                                            \
-        .baseDefense   = 48,                                            \
-        .baseSpeed     = 48,                                            \
+        .baseDefense   = 72,                                            \
+        .baseSpeed     = 72,                                            \
         .baseSpAttack  = 72,                                            \
-        .baseSpDefense = 48,                                            \
+        .baseSpDefense = 72,                                            \
         .types = { TYPE_PSYCHIC, TYPE_PSYCHIC },                        \
         .catchRate = 225,                                               \
         .expYield = 118,                                                \
@@ -2701,7 +2701,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = STANDARD_FRIENDSHIP,                              \
         .growthRate = GROWTH_MEDIUM_FAST,                               \
         .eggGroups = { EGG_GROUP_NO_EGGS_DISCOVERED, EGG_GROUP_NO_EGGS_DISCOVERED },\
-        .abilities = { ABILITY_LEVITATE, ABILITY_NONE },                \
+        .abilities = { ABILITY_D2D_INFINITY, ABILITY_NONE },            \
         .bodyColor = BODY_COLOR_BLACK,                                  \
         .speciesName = _("Unown"),                                      \
         .cryId = CRY_UNOWN,                                             \
