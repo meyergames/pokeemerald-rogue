@@ -10981,6 +10981,14 @@ uq4_12_t CalcTypeEffectivenessMultiplier(u32 move, u32 moveType, u32 battlerAtk,
         modifier = CalcTypeEffectivenessMultiplierInternal(move, moveType, battlerAtk, battlerDef, recordAbilities, modifier, defAbility);
         if (gBattleMoves[move].effect == EFFECT_TWO_TYPED_MOVE)
             modifier = CalcTypeEffectivenessMultiplierInternal(move, gBattleMoves[move].argument, battlerAtk, battlerDef, recordAbilities, modifier, defAbility);
+
+        // d2d imbue checks
+        if ((gStatuses4[battlerAtk] & STATUS4_D2D_ENFIRE) && moveType != TYPE_NORMAL && moveType != TYPE_FIRE)
+            modifier = CalcTypeEffectivenessMultiplierInternal(move, TYPE_FIRE, battlerAtk, battlerDef, recordAbilities, modifier, defAbility);
+        else if ((gStatuses4[battlerAtk] & STATUS4_D2D_ENFROST) && moveType != TYPE_NORMAL && moveType != TYPE_ICE)
+            modifier = CalcTypeEffectivenessMultiplierInternal(move, TYPE_ICE, battlerAtk, battlerDef, recordAbilities, modifier, defAbility);
+        else if ((gStatuses4[battlerAtk] & STATUS4_D2D_ENTHUNDER) && moveType != TYPE_NORMAL && moveType != TYPE_ELECTRIC)
+            modifier = CalcTypeEffectivenessMultiplierInternal(move, TYPE_ELECTRIC, battlerAtk, battlerDef, recordAbilities, modifier, defAbility);
     }
 
     if (recordAbilities)
