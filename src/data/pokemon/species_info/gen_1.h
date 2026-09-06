@@ -4080,11 +4080,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     {
         PERSIAN_MISC_INFO,
         .baseHP        = 65,
-        .baseAttack    = 70,
+        .baseAttack    = 90, // +20
         .baseDefense   = 60,
-        .baseSpeed     = 115,
-        .baseSpAttack  = 65,
+        .baseSpAttack  = 80, // +15
         .baseSpDefense = 65,
+        .baseSpeed     = 115,
         .types = { TYPE_NORMAL, TYPE_NORMAL },
         .abilities = { ABILITY_LIMBER, ABILITY_TECHNICIAN, ABILITY_UNNERVE },
         .bodyColor = BODY_COLOR_YELLOW,
