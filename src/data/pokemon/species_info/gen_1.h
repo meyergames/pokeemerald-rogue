@@ -1575,12 +1575,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #if P_FAMILY_EKANS
     [SPECIES_EKANS] =
     {
-        .baseHP        = 35,
-        .baseAttack    = 60,
-        .baseDefense   = 44,
-        .baseSpeed     = 55,
-        .baseSpAttack  = 40,
-        .baseSpDefense = 54,
+        .baseHP        = 40,
+        .baseAttack    = 80, // +20
+        .baseDefense   = 35, // -9
+        .baseSpAttack  = 55, // +15
+        .baseSpDefense = 55, // +1
+        .baseSpeed     = 60, // +5      total: 288 -> 325
         .types = { TYPE_POISON, TYPE_POISON },
         .catchRate = 255,
         .expYield = 58,
@@ -1590,7 +1590,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_DRAGON },
-        .abilities = { ABILITY_INTIMIDATE, ABILITY_SHED_SKIN, ABILITY_UNNERVE },
+        .abilities = { ABILITY_INTIMIDATE, ABILITY_SHED_SKIN, ABILITY_POISON_TOUCH },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Ekans"),
         .cryId = CRY_EKANS,
@@ -1619,18 +1619,24 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Ekans, 2),
         .footprint = gMonFootprint_Ekans,
         LEARNSETS(Ekans),
-        .evolutions = EVOLUTION({EVO_LEVEL, 22, SPECIES_ARBOK}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 27, SPECIES_ARBOK}),
     },
 
     [SPECIES_ARBOK] =
     {
-        .baseHP        = 60,
-        .baseAttack    = P_UPDATED_STATS >= GEN_7 ? 95 : 85,
-        .baseDefense   = 69,
-        .baseSpAttack  = 65,
-        .baseSpDefense = 79,
-        .baseSpeed     = 80,
-        .types = { TYPE_POISON, TYPE_POISON },
+        .baseHP           = 70,
+        .baseAttack       = 115, // +20
+        .baseDefense      = 55, // -4
+        .baseSpAttack     = 85, // +20
+        .baseSpDefense    = 85, // +6
+        .baseSpeed        = 80, // total: 448 -> 490
+        // .baseHP        = 60,
+        // .baseAttack    = P_UPDATED_STATS >= GEN_7 ? 95 : 85,
+        // .baseDefense   = 69,
+        // .baseSpAttack  = 65,
+        // .baseSpDefense = 79,
+        // .baseSpeed     = 80,
+        .types = { TYPE_POISON, TYPE_DARK },
         .catchRate = 90,
         .expYield = 157,
         .evYield_Attack = 2,
@@ -1639,7 +1645,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_DRAGON },
-        .abilities = { ABILITY_INTIMIDATE, ABILITY_SHED_SKIN, ABILITY_UNNERVE },
+        .abilities = { ABILITY_INTIMIDATE, ABILITY_SHED_SKIN, ABILITY_MERCILESS },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Arbok"),
         .cryId = CRY_ARBOK,

@@ -4,15 +4,11 @@
   ],
   "LevelUpMoves": [
     {
-      "Move": "MOVE_CRUNCH",
+      "Move": "MOVE_POISON_FANG",
       "Level": 0
     },
     {
       "Move": "MOVE_WRAP",
-      "Level": 1
-    },
-    {
-      "Move": "MOVE_POISON_STING",
       "Level": 1
     },
     {
@@ -24,72 +20,85 @@
       "Level": 1
     },
     {
-      "Move": "MOVE_THUNDER_FANG",
-      "Level": 1
-    },
-    {
-      "Move": "MOVE_ICE_FANG",
-      "Level": 1
-    },
-    {
-      "Move": "MOVE_FIRE_FANG",
-      "Level": 1
+      "Move": "MOVE_SCARY_FACE",
+      "Level": 12
     },
     {
       "Move": "MOVE_GLARE",
       "Level": 12
     },
     {
-      "Move": "MOVE_SCREECH",
+      "Move": "MOVE_ACID",
+      "Level": 15
+    },
+    {
+      "Move": "MOVE_DISABLE",
       "Level": 17
     },
     {
-      "Move": "MOVE_ACID",
+      "Move": "MOVE_HYPER_FANG",
       "Level": 20
     },
     {
-      "Move": "MOVE_STOCKPILE",
-      "Level": 27
-    },
-    {
-      "Move": "MOVE_SPIT_UP",
-      "Level": 27
-    },
-    {
-      "Move": "MOVE_SWALLOW",
-      "Level": 27
+      "Move": "MOVE_BUG_BITE",
+      "Level": 23
     },
     {
       "Move": "MOVE_ACID_SPRAY",
+      "Level": 25
+    },
+    {
+      "Move": "MOVE_MEAN_LOOK",
+      "Level": 27
+    },
+    {
+      "Move": "MOVE_D2D_CRUNCH",
+      "Level": 30
+    },
+    {
+      "Move": "MOVE_TOXIC",
       "Level": 32
     },
     {
       "Move": "MOVE_SLUDGE_BOMB",
-      "Level": 39
+      "Level": 35
+    },
+    {
+      "Move": "MOVE_D2D_DEVOUR",
+      "Level": 40
     },
     {
       "Move": "MOVE_GASTRO_ACID",
       "Level": 44
     },
     {
-      "Move": "MOVE_BELCH",
-      "Level": 48
+      "Move": "MOVE_VENOSHOCK",
+      "Level": 45
     },
     {
-      "Move": "MOVE_HAZE",
-      "Level": 51
+      "Move": "MOVE_MUD_BOMB",
+      "Level": 50
+    },
+    {
+      "Move": "MOVE_BELCH",
+      "Level": 55
     },
     {
       "Move": "MOVE_COIL",
       "Level": 56
     },
     {
+      "Move": "MOVE_JAW_LOCK",
+      "Level": 60
+    },
+    {
       "Move": "MOVE_GUNK_SHOT",
-      "Level": 63
+      "Level": 65
     }
   ],
   "TutorMoves": [
     "MOVE_ACID_SPRAY",
+    "MOVE_AGILITY",
     "MOVE_AQUA_TAIL",
     "MOVE_BODY_SLAM",
     "MOVE_BREAKING_SWIPE",
@@ -138,6 +147,7 @@
     "MOVE_SUBSTITUTE",
     "MOVE_SUCKER_PUNCH",
     "MOVE_SUNNY_DAY",
+    "MOVE_SUPER_FANG",
     "MOVE_SWITCHEROO",
     "MOVE_TAKE_DOWN",
     "MOVE_TERA_BLAST",
@@ -147,6 +157,7 @@
     "MOVE_TOXIC",
     "MOVE_TOXIC_SPIKES",
     "MOVE_TRAILBLAZE",
+    "MOVE_VENOM_DRENCH",
     "MOVE_VENOSHOCK"
   ],
   "CompetitiveSets": [
