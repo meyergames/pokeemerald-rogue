@@ -160,7 +160,7 @@
       "Moves": [
         "MOVE_HYPNOSIS",
         "MOVE_DREAM_EATER",
-        "MOVE_D2D_CONCENTRATE",
+        "MOVE_MIND_READER",
         "MOVE_ENCORE"
       ],
       "Ability": "ABILITY_PRANKSTER",
@@ -174,7 +174,7 @@
       "Moves": [
         "MOVE_HYPNOSIS",
         "MOVE_DREAM_EATER",
-        "MOVE_D2D_CONCENTRATE",
+        "MOVE_MIND_READER",
         "MOVE_ENCORE"
       ],
       "Ability": "ABILITY_PRANKSTER",
@@ -188,7 +188,7 @@
       "Moves": [
         "MOVE_HYPNOSIS",
         "MOVE_DREAM_EATER",
-        "MOVE_D2D_CONCENTRATE",
+        "MOVE_MIND_READER",
         "MOVE_ENCORE"
       ],
       "Ability": "ABILITY_PRANKSTER",
@@ -202,7 +202,7 @@
       "Moves": [
         "MOVE_HYPNOSIS",
         "MOVE_DREAM_EATER",
-        "MOVE_D2D_CONCENTRATE",
+        "MOVE_MIND_READER",
         "MOVE_ENCORE"
       ],
       "Ability": "ABILITY_PRANKSTER",
@@ -216,7 +216,7 @@
       "Moves": [
         "MOVE_HYPNOSIS",
         "MOVE_DREAM_EATER",
-        "MOVE_D2D_CONCENTRATE",
+        "MOVE_MIND_READER",
         "MOVE_ENCORE"
       ],
       "Ability": "ABILITY_PRANKSTER",
