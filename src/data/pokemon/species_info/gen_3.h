@@ -4567,7 +4567,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .baseSpeed     = 10,
         .baseSpAttack  = 45,
         .baseSpDefense = 45,
-        .types = { TYPE_BUG, TYPE_GROUND },
+        .types = { TYPE_GROUND, TYPE_GROUND },
         .catchRate = 255,
         .expYield = 58,
         .evYield_Attack = 1,
@@ -4662,7 +4662,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         ICON(Vibrava, 1),
         .footprint = gMonFootprint_Vibrava,
         LEARNSETS(Vibrava),
-        .evolutions = EVOLUTION({EVO_LEVEL, 45, SPECIES_FLYGON}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 50, SPECIES_FLYGON}),
     },
 
     [SPECIES_FLYGON] =
@@ -5068,7 +5068,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     [SPECIES_LUNATONE] =
     {
         .baseHP        = P_UPDATED_STATS >= GEN_7 ? 90 : 70,
-        .baseAttack    = 75, // +20
+        .baseAttack    = 80, // +25
         .baseDefense   = 60, // -5
         .baseSpAttack  = 95,
         .baseSpDefense = 105, // +20
@@ -5122,7 +5122,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .baseHP        = P_UPDATED_STATS >= GEN_7 ? 90 : 70,
         .baseAttack    = 95,
         .baseDefense   = 60, // -5
-        .baseSpAttack  = 75, // +20
+        .baseSpAttack  = 80, // +25
         .baseSpDefense = 105, // +20
         .baseSpeed     = 70,
         .types = { TYPE_ROCK, TYPE_PSYCHIC },
