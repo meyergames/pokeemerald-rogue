@@ -68,6 +68,10 @@
       "Level": 35
     },
     {
+      "Move": "MOVE_SILK_TRAP",
+      "Level": 40
+    },
+    {
       "Move": "MOVE_SUPER_FANG",
       "Level": 41
     },
