@@ -16633,7 +16633,21 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .makesContact = TRUE,
     },
 
-    [MOVE_D2D_CONCENTRATE] =
+    [MOVE_D2D_LASER_BEAM] =
+    {
+        .effect = EFFECT_BURN_HIT,
+        .type = TYPE_FIRE,
+        .power = 200,
+        .ignoresTargetDefenseEvasionStages = TRUE,
+        .accuracy = 30,
+        .pp = 5,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .sheerForceBoost = TRUE,
+    },
     {
         .effect = EFFECT_ACCURACY_UP_2,
         .power = 0,

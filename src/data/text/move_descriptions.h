@@ -2437,7 +2437,7 @@ static const u8 sSpiritShackleDescription[] = _(
     "no longer escape.");
 
 static const u8 sDarkestLariatDescription[] = _(
-    "Swings the arms to strike\n"
+    "Swings the arms to strike.\n"
     "It ignores stat changes.");
 
 static const u8 sSparklingAriaDescription[] = _(
@@ -3490,9 +3490,9 @@ static const u8 sHeadEmptyDescription[] = _(
     "Deals more damage the less\n"
     "moves the user knows.");
 
-static const u8 sConcentrateDescription[] = _(
-    "Sharply raises the user's\n"
-    "accuracy.");
+static const u8 sLaserBeamDescription[] = _(
+    "Guaranteed to burn the foe.\n"
+    "It ignores stat changes.");
 
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
@@ -4398,5 +4398,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_CHRYSALIS - 1] = sChrysalisDescription,
     [MOVE_D2D_TAG - 1] = sTagDescription,
     [MOVE_D2D_HEAD_EMPTY - 1] = sHeadEmptyDescription,
-    [MOVE_D2D_CONCENTRATE - 1] = sConcentrateDescription,
+    [MOVE_D2D_LASER_BEAM - 1] = sLaserBeamDescription,
 };

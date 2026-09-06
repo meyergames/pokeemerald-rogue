@@ -82,6 +82,22 @@
     {
       "Move": "MOVE_EXPLOSION",
       "Level": 55
+    },
+    {
+      "Move": "MOVE_LOCK_ON",
+      "Level": 63
+    },
+    {
+      "Move": "MOVE_D2D_LASER_BEAM",
+      "Level": 63
+    },
+    {
+      "Move": "MOVE_D2D_DUST_DEVIL",
+      "Level": 70
+    },
+    {
+      "Move": "MOVE_D2D_SUPERNOVA",
+      "Level": 85
     }
   ],
   "TutorMoves": [

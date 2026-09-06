@@ -926,7 +926,7 @@ gBattleAnims_Moves::
 	.4byte Move_D2D_CHRYSALIS
 	.4byte Move_D2D_TAG
 	.4byte Move_D2D_HEAD_EMPTY
-	.4byte Move_D2D_CONCENTRATE
+	.4byte Move_D2D_LASER_BEAM
 
 
 
@@ -35759,8 +35759,9 @@ Move_D2D_HEAD_EMPTY:
 	blendoff
 	end
 
-Move_D2D_CONCENTRATE:
-	loadspritegfx ANIM_TAG_THIN_RING
+Move_D2D_LASER_BEAM:
+	goto SolarBeamUnleash
+
 	monbg ANIM_ATK_PARTNER
 	createvisualtask AnimTask_BlendBattleAnimPalExclude, 5, ANIM_ATTACKER, 0, 0, 16, RGB_BLACK
 	waitforvisualfinish

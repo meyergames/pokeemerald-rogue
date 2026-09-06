@@ -78,6 +78,10 @@
     {
       "Move": "MOVE_EXPLOSION",
       "Level": 78
+    },
+    {
+      "Move": "MOVE_D2D_LASER_BEAM",
+      "Level": 85
     }
   ],
   "TutorMoves": [

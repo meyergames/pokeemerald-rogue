@@ -64,8 +64,12 @@
       "Level": 84
     },
     {
-      "Move": "MOVE_SELF_DESTRUCT",
+      "Move": "MOVE_D2D_LASER_BEAM",
       "Level": 91
+    },
+    {
+      "Move": "MOVE_SELF_DESTRUCT",
+      "Level": 98
     }
   ],
   "TutorMoves": [
