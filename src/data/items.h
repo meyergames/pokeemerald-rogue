@@ -7843,22 +7843,32 @@ const struct Item gItems[] =
 
     [ITEM_JABOCA_BERRY] =
     {
-        .name = _("Jaboca Berry"),
+        .name = _("Swichin Berry"),
         .price = 20,
-        .holdEffect = HOLD_EFFECT_JABOCA_BERRY,
+        .holdEffect = HOLD_EFFECT_RESIST_BERRY,
+        .holdEffectParam = TYPE_MYSTERY,
         .description = sJabocaBerryDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 10,
+        // .name = _("Jaboca Berry"),
+        // .price = 20,
+        // .holdEffect = HOLD_EFFECT_JABOCA_BERRY,
+        // .description = sJabocaBerryDesc,
+        // .pocket = POCKET_BERRIES,
+        // .type = ITEM_USE_BAG_MENU,
+        // .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        // .flingPower = 10,
     },
 
     [ITEM_ROWAP_BERRY] =
     {
-        .name = _("Rowap Berry"),
+        .name = _("Mirti Berry"),
         .price = 20,
-        .holdEffect = HOLD_EFFECT_ROWAP_BERRY,
-        .description = sRowapBerryDesc,
+        // .holdEffect = HOLD_EFFECT_ROWAP_BERRY,
+        .holdEffect = HOLD_EFFECT_ENIGMA_BERRY,
+        .description = sEnigmaBerryDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,

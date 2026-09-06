@@ -2996,9 +2996,9 @@ static const u8 sStarfBerryDesc[] = _(
     "stat in a pinch.");
 
 static const u8 sEnigmaBerryDesc[] = _(
-    "A hold item that\n"
-    "heals from super\n"
-    "effective moves.");
+    "Restores lots of HP\n"
+    "after taking super-\n"
+    "effective damage.");
 
 static const u8 sMicleBerryDesc[] = _(
     "When held, it ups\n"
@@ -3011,9 +3011,10 @@ static const u8 sCustapBerryDesc[] = _(
     "first just once.");
 
 static const u8 sJabocaBerryDesc[] = _(
-    "If hit by a physical\n"
-    "move, it will hurt\n"
-    "the attacker a bit.");
+    "Halves the damage\n"
+    "of one non-super\n"
+    "effective attack.");
+    // "If hit by a physical\n"
     // "move, it will hurt\n"
     // "the attacker a bit.");
 

@@ -7063,7 +7063,7 @@ static u8 TrySetEnigmaBerry(u32 battler)
      && (B_HEAL_BLOCKING < GEN_5 || !(gStatuses3[battler] & STATUS3_HEAL_BLOCK)))
     {
         gBattleScripting.battler = battler;
-        gBattleMoveDamage = (gBattleMons[battler].maxHP * 25 / 100) * -1;
+        gBattleMoveDamage = (gBattleMons[battler].maxHP * 50 / 100) * -1;
         if (GetBattlerAbility(battler) == ABILITY_RIPEN)
             gBattleMoveDamage *= 2;
 
@@ -10481,6 +10481,12 @@ static inline uq4_12_t GetDefenderItemsModifier(u32 moveType, u32 battlerDef, uq
         if (UnnerveOn(battlerDef, itemDef))
             return UQ_4_12(1.0);
         if (moveType == holdEffectDefParam && (moveType == TYPE_NORMAL || typeEffectivenessModifier >= UQ_4_12(2.0)))
+        {
+            if (updateFlags)
+                gSpecialStatuses[battlerDef].berryReduced = TRUE;
+            return (abilityDef == ABILITY_RIPEN) ? UQ_4_12(0.25) : UQ_4_12(0.5);
+        }
+        if (holdEffectDefParam == TYPE_MYSTERY && typeEffectivenessModifier <= UQ_4_12(1.0))
         {
             if (updateFlags)
                 gSpecialStatuses[battlerDef].berryReduced = TRUE;

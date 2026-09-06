@@ -172,10 +172,10 @@ script Rogue_Interior_ProfLab_TalkAssistant
                 {
                     givemon(SPECIES_HYPNO, 50)
                 }
-                msgbox(format("Would you like a SWELLOW?"), MSGBOX_YESNO)
+                msgbox(format("Would you like some MIRTI BERRIES?"), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES)
                 {
-                    givemon(SPECIES_SWELLOW, 72)
+                    giveitem(ITEM_ROWAP_BERRY, 99)
                 }
                 msgbox(format("Would you like some snacks with that?"), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES)
