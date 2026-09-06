@@ -84,9 +84,9 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     [MOVE_MEGA_PUNCH] =
     {
         .effect = EFFECT_HIT,
-        .power = 80,
+        .power = 100,
         .type = TYPE_NORMAL,
-        .accuracy = 85,
+        .accuracy = 90,
         .pp = 20,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
