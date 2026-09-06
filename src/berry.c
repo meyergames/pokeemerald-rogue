@@ -1300,7 +1300,7 @@ const struct Berry gBerries[] =
 
     [ITEM_JABOCA_BERRY - FIRST_BERRY_INDEX] =
     {
-        .name = _("Jaboca"),
+        .name = _("Swichin"),
         .firmness = BERRY_FIRMNESS_SOFT,
         .size = 33,
         .maxYield = 5,
@@ -1318,7 +1318,7 @@ const struct Berry gBerries[] =
 
     [ITEM_ROWAP_BERRY - FIRST_BERRY_INDEX] =
     {
-        .name = _("Rowap"),
+        .name = _("Mirti"),
         .firmness = BERRY_FIRMNESS_VERY_SOFT,
         .size = 52,
         .maxYield = 5,
