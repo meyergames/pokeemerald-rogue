@@ -170,7 +170,7 @@ script Rogue_Interior_ProfLab_TalkAssistant
                 msgbox(format("Would you like a HYPNO?"), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES)
                 {
-                    givemon(SPECIES_HYPNO, 38)
+                    givemon(SPECIES_HYPNO, 50)
                 }
                 msgbox(format("Would you like a SWELLOW?"), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES)
