@@ -290,12 +290,12 @@
     {
       "Moves": [
         "MOVE_EARTH_POWER",
+        "MOVE_BUG_BUZZ",
         "MOVE_PROTECT",
-        "MOVE_GIGA_DRAIN",
-        "MOVE_FLAMETHROWER"
+        "MOVE_QUIVER_DANCE"
       ],
-      "Ability": "ABILITY_LEVITATE",
-      "Item": "ITEM_HABAN_BERRY",
+      "Ability": "ABILITY_D2D_TECTONIC",
+      "Item": "ITEM_LEFTOVERS",
       "Nature": "NATURE_TIMID",
       "SourceTiers": [
         "GEN7BATTLESPOTDOUBLES"
