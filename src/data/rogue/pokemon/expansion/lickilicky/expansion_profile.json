@@ -53,6 +53,7 @@
     }
   ],
   "TutorMoves": [
+    "MOVE_ACID_ARMOR",
     "MOVE_AMNESIA",
     "MOVE_ATTRACT",
     "MOVE_BLIZZARD",
@@ -112,7 +113,9 @@
     "MOVE_THUNDER",
     "MOVE_THUNDER_PUNCH",
     "MOVE_THUNDERBOLT",
+    "MOVE_TOXIC",
     "MOVE_WHIRLPOOL",
+    "MOVE_WIDE_GUARD",
     "MOVE_WISH",
     "MOVE_WORK_UP",
     "MOVE_ZEN_HEADBUTT"
