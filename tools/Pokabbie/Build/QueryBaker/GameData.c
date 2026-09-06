@@ -16,6 +16,8 @@ const union AnimCmd sAnim_GeneralFrame0[] =
 #include "data/pokemon/base_stats.h"
 #include "data/graphics/pokemon.h"
 #endif
+#include "data/battle_moves.h"
+#include "data/battle_moves_revised.h"
 #include "data/rogue_pokedex.h"
 
 #ifdef ROGUE_EXPANSION
@@ -28,6 +30,11 @@ const union AnimCmd sAnim_GeneralFrame0[] =
 
 #include "rogue_baked.c"
 
+bool32 IsSpeciesEnabled(u16 species)
+{
+    return gRogueSpeciesInfo[species].baseHP > 0 || species == SPECIES_EGG;
+}
+
 u16 SanitizeSpeciesId(u16 species)
 {
     if (species > NUM_SPECIES || !IsSpeciesEnabled(species))
@@ -36,16 +43,18 @@ u16 SanitizeSpeciesId(u16 species)
         return species;
 }
 
-bool32 IsSpeciesEnabled(u16 species)
-{
-    return gSpeciesInfo[species].baseHP > 0 || species == SPECIES_EGG;
-}
+#ifdef ROGUE_EXPANSION
+
+const u8  BattleScript_EffectDiamondStorm[] = { 0 };
+const u8  BattleScript_EffectClangingScales[] = { 0 };
+const u8  BattleScript_EffectMakeItRain[] = { 0 };
+const u8  BattleScript_EffectClangorousSoulblaze[] = { 0 };
 
 const u16* GetSpeciesFormTable(u16 species)
 {
-    const u16* formTable = gSpeciesInfo[SanitizeSpeciesId(species)].formSpeciesIdTable;
+    const u16* formTable = gRogueSpeciesInfo[SanitizeSpeciesId(species)].formSpeciesIdTable;
     if (formTable == NULL)
-        return gSpeciesInfo[SPECIES_NONE].formSpeciesIdTable;
+        return gRogueSpeciesInfo[SPECIES_NONE].formSpeciesIdTable;
     return formTable;
 }
 
@@ -56,3 +65,4 @@ u16 GetFormSpeciesId(u16 speciesId, u8 formId)
     else
         return speciesId;
 }
+#endif
