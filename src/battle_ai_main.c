@@ -3425,6 +3425,13 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
             ADJUST_SCORE(-20); // Force switch if all your attacking moves are physical and you have Natural Cure.
     }
 
+    // avoid contact moves if Hind Kick is the predicted move
+    if (predictedMove == MOVE_D2D_HIND_KICK
+        && AI_MoveMakesContact(aiData->abilities[battlerAtk], aiData->holdEffects[battlerAtk], move))
+    {
+        ADJUST_SCORE(-10);
+    }
+
     // move effect checks
     switch (moveEffect)
     {
