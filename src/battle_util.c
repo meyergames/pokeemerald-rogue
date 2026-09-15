@@ -5428,31 +5428,48 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                     }
                 }
                 break;
-            // case ABILITY_D2D_POLLINATOR:
-            //     if ( !BATTLER_MAX_HP(battler )
-            //      && !( gStatuses3[battler] & STATUS3_HEAL_BLOCK ) )
-            //     {
-            //         u8 mtp = 0.0;
-            //         for (i = 0; i < gBattlersCount; i++)
-            //         {
-            //             if ( gBattleMons[i].type1 == TYPE_GRASS
-            //                     || gBattleMons[i].type2 == TYPE_GRASS
-            //                     || gBattleMons[i].type3 == TYPE_GRASS )
-            //             {
-            //                 mtp += 1.0;
-            //             }
-            //         }
-            //         if ( mtp >= 1.0 )
-            //         {
-            //             BattleScriptPushCursorAndCallback(BattleScript_D2D_PollinatorActivates);
-            //             gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / ( 12 / mtp );
-            //             if (gBattleMoveDamage == 0)
-            //                 gBattleMoveDamage = 1;
-            //             gBattleMoveDamage *= -1;
-            //             effect++;
-            //         }
-            //     }
-            //     break;
+            case ABILITY_D2D_POLLINATOR:
+                if ( !BATTLER_MAX_HP(battler )
+                 && !( gStatuses3[battler] & STATUS3_HEAL_BLOCK ) )
+                {
+                    u8 mtp = 0.0;
+                    for (i = 0; i < gBattlersCount; i++)
+                    {
+                        if ( gBattleMons[i].type1 == TYPE_GRASS
+                                || gBattleMons[i].type2 == TYPE_GRASS
+                                || gBattleMons[i].type3 == TYPE_GRASS )
+                        {
+                            mtp += 1.0;
+                        }
+                    }
+                    if ( mtp >= 1.0 )
+                    {
+                        BattleScriptPushCursorAndCallback(BattleScript_D2D_PollinatorActivates);
+                        gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / ( 12 / mtp );
+                        if (gBattleMoveDamage == 0)
+                            gBattleMoveDamage = 1;
+                        gBattleMoveDamage *= -1;
+                        effect++;
+                    }
+                }
+                break;
+            case ABILITY_D2D_PACIFY:
+                u8 isAnyStatChanged = FALSE;
+                u8 otherBattler;
+                for (otherBattler = 0; otherBattler < gBattlersCount; otherBattler++)
+                {
+                    if (!isAnyStatChanged
+                        && (CountPositiveStatStages(otherBattler) != 0 || CountNegativeStatStages(otherBattler) != 0))
+                    {
+                        isAnyStatChanged = TRUE;
+                    }
+                }
+                if (isAnyStatChanged)
+                {
+                    BattleScriptPushCursorAndCallback(BattleScript_D2D_PacifyActivates);
+                }
+                effect++;
+                break;
             case ABILITY_SCHOOLING:
                 if (gBattleMons[battler].level < 20)
                     break;
