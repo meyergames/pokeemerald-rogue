@@ -12254,6 +12254,13 @@ BattleScript_D2D_EffectMoneyShot::
 BattleScript_D2D_EffectMoneyShot_Target:
 	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
 	goto BattleScript_HitFromCritCalc
+
+BattleScript_D2D_PacifyActivates::
+	call BattleScript_AbilityPopUp
+	normalisebuffs
+	printstring STRINGID_STATCHANGESGONE
+	waitmessage B_WAIT_TIME_LONG
+	end3
 BattleScript_D2D_EffectHindKick:
 	attackcanceler
 	hindkickcheck BattleScript_FailedFromAtkString
