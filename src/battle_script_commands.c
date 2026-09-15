@@ -10450,7 +10450,7 @@ static void Cmd_various(void)
 
         u16 foeBst = gSpeciesInfo[gBattleMons[gBattlerTarget].species].baseHP + gSpeciesInfo[gBattleMons[gBattlerTarget].species].baseAttack + gSpeciesInfo[gBattleMons[gBattlerTarget].species].baseDefense + gSpeciesInfo[gBattleMons[gBattlerTarget].species].baseSpAttack + gSpeciesInfo[gBattleMons[gBattlerTarget].species].baseSpDefense + gSpeciesInfo[gBattleMons[gBattlerTarget].species].baseSpeed;
 
-        u32 basePower = 40 + max( ( foeBst - 400 ) / 2.5, 0 );
+        u32 basePower = 40 + min( max( ( foeBst - 400 ) / 2, 0 ), 140 );
         PREPARE_BYTE_NUMBER_BUFFER( gBattleTextBuff1, 3, basePower );
         break;
     }
