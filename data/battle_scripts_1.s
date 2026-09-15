@@ -500,6 +500,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_D2D_EffectChrysalis			  @ EFFECT_D2D_CHRYSALIS
 	.4byte BattleScript_D2D_EffectHeadEmpty			  @ EFFECT_D2D_HEAD_EMPTY
 	.4byte BattleScript_D2D_EffectMoneyShot 		  @ EFFECT_D2D_MONEY_SHOT
+	.4byte BattleScript_D2D_EffectHindKick			  @ EFFECT_D2D_HIND_KICK
 
 @ The game doesn't seem to like having EffectHit as the last item in the list...
 
@@ -12252,3 +12253,8 @@ BattleScript_D2D_EffectMoneyShot::
 BattleScript_D2D_EffectMoneyShot_Target:
 	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
 	goto BattleScript_HitFromCritCalc
+BattleScript_D2D_EffectHindKick:
+	attackcanceler
+	hindkickcheck BattleScript_FailedFromAtkString
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	goto BattleScript_HitFromAtkString

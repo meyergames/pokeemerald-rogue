@@ -74,6 +74,10 @@
     {
       "Move": "MOVE_PSYCHIC",
       "Level": 50
+    },
+    {
+      "Move": "MOVE_D2D_HIND_KICK",
+      "Level": 57
     }
   ],
   "TutorMoves": [

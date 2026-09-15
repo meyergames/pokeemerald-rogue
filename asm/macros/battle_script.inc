@@ -2432,6 +2432,10 @@
 	various BS_ATTACKER, VARIOUS_DETERMINE_MONEY_SHOT_POWER
 	.endm
 
+	.macro hindkickcheck failInstr:req
+	various BS_ATTACKER, VARIOUS_HIND_KICK_CHECK
+	.4byte \failInstr
+	.endm
 
 @ D2D INSTRUCTIONS END
 

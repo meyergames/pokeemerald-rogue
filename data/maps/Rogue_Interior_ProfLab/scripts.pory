@@ -167,16 +167,31 @@ script Rogue_Interior_ProfLab_TalkAssistant
             if(var(VAR_RESULT) == YES)
             {
                 // Delibird?
-                msgbox(format("Would you like a PERSIAN?"), MSGBOX_YESNO)
+                msgbox(format("Would you like a TAUROS?"), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES)
                 {
-                    givemon(SPECIES_PERSIAN, 63)
+                    givemon(SPECIES_TAUROS, 63)
                 }
-                // msgbox(format("Would you like some MIRTI BERRIES?"), MSGBOX_YESNO)
-                // if(var(VAR_RESULT) == YES)
-                // {
-                //     giveitem(ITEM_ROWAP_BERRY, 99)
-                // }
+                msgbox(format("Would you like some ability gems?"), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES)
+                {
+                    // giveitem(ITEM_NORMAL_GEM, 1)
+                    // giveitem(ITEM_BUG_GEM, 1)
+                    // giveitem(ITEM_DARK_GEM, 1)
+                    // giveitem(ITEM_POISON_GEM, 1)
+                    // giveitem(ITEM_PSYCHIC_GEM, 1)
+                    // giveitem(ITEM_WATER_GEM, 1)
+                    // giveitem(ITEM_FIRE_GEM, 1)
+                    // giveitem(ITEM_GROUND_GEM, 1)
+                    // giveitem(ITEM_ROCK_GEM, 1)
+                    // giveitem(ITEM_DRAGON_GEM, 1)
+                    // giveitem(ITEM_STEEL_GEM, 1)
+                    // giveitem(ITEM_GHOST_GEM, 1)
+                    // giveitem(ITEM_FAIRY_GEM, 1)
+                    // giveitem(ITEM_ICE_GEM, 1)
+                    // giveitem(ITEM_FLYING_GEM, 1)
+                    giveitem(ITEM_FIGHTING_GEM, 1)
+                }
                 // msgbox(format("Would you like some snacks with that?"), MSGBOX_YESNO)
                 // if(var(VAR_RESULT) == YES)
                 // {

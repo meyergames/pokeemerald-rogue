@@ -3498,6 +3498,10 @@ static const u8 sMoneyShotDescription[] = _(
     "Deals damage based on how\n"
     "much money the trainer has.");
 
+static const u8 sHindKickDescription[] = _(
+    "Strikes hard and first, if\n"
+    "foe plans to make contact.");
+
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4404,4 +4408,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_HEAD_EMPTY - 1] = sHeadEmptyDescription,
     [MOVE_D2D_LASER_BEAM - 1] = sLaserBeamDescription,
     [MOVE_D2D_MONEY_SHOT - 1] = sMoneyShotDescription,
+    [MOVE_D2D_HIND_KICK - 1] = sHindKickDescription,
 };

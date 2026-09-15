@@ -928,6 +928,7 @@ gBattleAnims_Moves::
 	.4byte Move_D2D_HEAD_EMPTY
 	.4byte Move_D2D_LASER_BEAM
 	.4byte Move_D2D_MONEY_SHOT
+	.4byte Move_D2D_HIND_KICK
 
 
 
@@ -24048,6 +24049,14 @@ Move_JUMP_KICK:
 	blendoff
 	end
 
+Move_D2D_HIND_KICK:
+	loadspritegfx ANIM_TAG_BREATH
+	createvisualtask AnimTask_GrowAndShrink, 2
+	playsewithpan SE_M_SWAGGER, SOUND_PAN_ATTACKER
+	waitforvisualfinish
+	createsprite gBreathPuffSpriteTemplate, ANIM_ATTACKER, 2
+	loopsewithpan SE_M_SWAGGER, SOUND_PAN_ATTACKER, 4, 2
+	waitforvisualfinish
 Move_HIGH_JUMP_KICK:
 	loadspritegfx ANIM_TAG_HANDS_AND_FEET
 	loadspritegfx ANIM_TAG_IMPACT

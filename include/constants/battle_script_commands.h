@@ -260,6 +260,7 @@
 #define VARIOUS_RAISE_SIPHON_KO_COUNT				 166
 #define VARIOUS_SET_CHRYSALIS						 167
 #define VARIOUS_DETERMINE_MONEY_SHOT_POWER			 168
+#define VARIOUS_HIND_KICK_CHECK						 171
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0

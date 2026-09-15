@@ -9667,6 +9667,23 @@ static void Cmd_various(void)
             gBattlescriptCurrInstr = cmd->nextInstr;
         return;
     }
+    case VARIOUS_HIND_KICK_CHECK:
+    {
+        VARIOUS_ARGS(const u8 *failInstr);
+        u8 chosenMove = gBattleMons[gBattlerTarget].moves[gBattleStruct->chosenMovePositions[gBattlerTarget]];
+        
+        if (gProtectStructs[gBattlerTarget].obstructed)
+            gBattlescriptCurrInstr = cmd->failInstr;
+        else if (GetBattlerTurnOrderNum(gBattlerAttacker) > GetBattlerTurnOrderNum(gBattlerTarget))
+            gBattlescriptCurrInstr = cmd->failInstr;
+        else if (IS_MOVE_STATUS(chosenMove))
+            gBattlescriptCurrInstr = cmd->failInstr;
+        else if (!IsMoveMakingContact(chosenMove, gBattlerAttacker))
+            gBattlescriptCurrInstr = cmd->failInstr;
+        else
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        return;
+    }
     case VARIOUS_SET_SIMPLE_BEAM:
     {
         VARIOUS_ARGS(const u8 *failInstr);

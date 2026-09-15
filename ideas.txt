@@ -29,4 +29,10 @@
 [] make Ice resist Ground, Steel weak to Electric, Poison weak to Water
 
 
-[] Trample / Stampede / Hind Kick (Fighting moves for horse-like mons)
+[x] Trample / Stampede / Hind Kick (Fighting moves for horse-like mons)
+
+
+
+"imo both of the mega-twos are actually kind of underwhelming uses of mega evolution since their abilities are not very useful
+mega-y is weaker than regular mewtwo + any offensive item, although you get a little speed
+mega-x is held back a lot by having like. zen headbutt + drain punch/ low kick as its best STABs"
