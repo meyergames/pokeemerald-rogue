@@ -4864,6 +4864,13 @@ s8 GetMovePriority(u32 battler, u16 move)
 
     priority = gBattleMoves[move].priority;
 
+    // D2D check for X Prankster (ability gem)
+    u32 holdEffect;
+    if (gBattleMons[battler].item == ITEM_ENIGMA_BERRY_E_READER)
+        holdEffect = gEnigmaBerries[battler].holdEffect;
+    else
+        holdEffect = ItemId_GetHoldEffect(gBattleMons[battler].item);
+
 	// if battler is dynamaxed, set move prio to 0
 	if (IsDynamaxed(battler))
 		priority = 0;
@@ -4885,6 +4892,13 @@ s8 GetMovePriority(u32 battler, u16 move)
         priority++;
     }
     else if (ability == ABILITY_PRANKSTER && IS_MOVE_STATUS(move))
+    {
+        gProtectStructs[battler].pranksterElevated = 1;
+        priority++;
+    }
+    else if (holdEffect == HOLD_EFFECT_GEMS
+            && GetBattlerHoldEffectParam(battler) == ABILITY_PRANKSTER
+            && IS_MOVE_STATUS(move))
     {
         gProtectStructs[battler].pranksterElevated = 1;
         priority++;
@@ -6045,12 +6059,26 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
     }
     
     // Check if a gem should activate.
+    // GET_MOVE_TYPE(move, moveType);
+    // if (holdEffect == HOLD_EFFECT_GEMS
+    //     && moveType == ItemId_GetSecondaryId(gBattleMons[battlerAtk].item))
+    // {
+    //     gSpecialStatuses[battlerAtk].gemParam = GetBattlerHoldEffectParam(battlerAtk);
+    //     gSpecialStatuses[battlerAtk].gemBoost = TRUE;
+    // }
     GET_MOVE_TYPE(move, moveType);
-    if (holdEffect == HOLD_EFFECT_GEMS
-        && moveType == ItemId_GetSecondaryId(gBattleMons[battlerAtk].item))
+    if (holdEffect == HOLD_EFFECT_GEMS)
     {
-        gSpecialStatuses[battlerAtk].gemParam = GetBattlerHoldEffectParam(battlerAtk);
-        gSpecialStatuses[battlerAtk].gemBoost = TRUE;
+        u32 holdEffectParam = GetBattlerHoldEffectParam(battlerAtk);
+        switch (holdEffectParam)
+        {
+            case 255: // <- Elemental (ability id too high for holdEffectParam field)
+            {
+                if (moveType == TYPE_NORMAL)
+                    gBattleStruct->dynamicMoveType = GetBattlerType(battlerAtk, 0, FALSE) | F_DYNAMIC_TYPE_SET;
+                break;
+            }
+        }
     }
 }
 

@@ -1598,6 +1598,7 @@ extern const u8 gPlaceholder_Gym_PreBattleOpenning[];
 extern const u8 gPlaceholder_Gym_PreBattleTaunt[];
 extern const u8 gPlaceholder_Gym_PostBattleTaunt[];
 extern const u8 gPlaceholder_Gym_PostBattleCloser[];
+// extern const u8 gPlaceholder_Gym_OfferAbilityGem[];
 
 extern const u8 gPlaceholder_Trainer_PreBattleOpenning[];
 extern const u8 gPlaceholder_Trainer_PreBattleTaunt[];
@@ -9338,6 +9339,25 @@ void Rogue_OpenMartQuery(u16 difficulty, u16 itemCategory, u16* minSalePrice)
     RogueMiscQuery_EditElement(QUERY_FUNC_EXCLUDE, ITEM_LUMIOSE_GALETTE);
     RogueMiscQuery_EditElement(QUERY_FUNC_EXCLUDE, ITEM_SHALOUR_SABLE);
     RogueMiscQuery_EditElement(QUERY_FUNC_EXCLUDE, ITEM_BIG_MALASADA);
+
+    RogueMiscQuery_EditElement(QUERY_FUNC_EXCLUDE, ITEM_NORMAL_GEM);
+    RogueMiscQuery_EditElement(QUERY_FUNC_EXCLUDE, ITEM_FIGHTING_GEM);
+    RogueMiscQuery_EditElement(QUERY_FUNC_EXCLUDE, ITEM_GRASS_GEM);
+    RogueMiscQuery_EditElement(QUERY_FUNC_EXCLUDE, ITEM_FIRE_GEM);
+    RogueMiscQuery_EditElement(QUERY_FUNC_EXCLUDE, ITEM_WATER_GEM);
+    RogueMiscQuery_EditElement(QUERY_FUNC_EXCLUDE, ITEM_ICE_GEM);
+    RogueMiscQuery_EditElement(QUERY_FUNC_EXCLUDE, ITEM_ELECTRIC_GEM);
+    RogueMiscQuery_EditElement(QUERY_FUNC_EXCLUDE, ITEM_FLYING_GEM);
+    RogueMiscQuery_EditElement(QUERY_FUNC_EXCLUDE, ITEM_GROUND_GEM);
+    RogueMiscQuery_EditElement(QUERY_FUNC_EXCLUDE, ITEM_ROCK_GEM);
+    RogueMiscQuery_EditElement(QUERY_FUNC_EXCLUDE, ITEM_STEEL_GEM);
+    RogueMiscQuery_EditElement(QUERY_FUNC_EXCLUDE, ITEM_PSYCHIC_GEM);
+    RogueMiscQuery_EditElement(QUERY_FUNC_EXCLUDE, ITEM_GHOST_GEM);
+    RogueMiscQuery_EditElement(QUERY_FUNC_EXCLUDE, ITEM_DARK_GEM);
+    RogueMiscQuery_EditElement(QUERY_FUNC_EXCLUDE, ITEM_BUG_GEM);
+    RogueMiscQuery_EditElement(QUERY_FUNC_EXCLUDE, ITEM_POISON_GEM);
+    RogueMiscQuery_EditElement(QUERY_FUNC_EXCLUDE, ITEM_DRAGON_GEM);
+    RogueMiscQuery_EditElement(QUERY_FUNC_EXCLUDE, ITEM_FAIRY_GEM);
 #endif
 
     // Remove quests unlocks

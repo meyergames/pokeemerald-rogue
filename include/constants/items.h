@@ -444,24 +444,24 @@
 #define ITEM_DIANCITE 349
 
 // Gems
-#define ITEM_NORMAL_GEM 350
-#define ITEM_FIRE_GEM 351
-#define ITEM_WATER_GEM 352
-#define ITEM_ELECTRIC_GEM 353
-#define ITEM_GRASS_GEM 354
-#define ITEM_ICE_GEM 355
-#define ITEM_FIGHTING_GEM 356
-#define ITEM_POISON_GEM 357
-#define ITEM_GROUND_GEM 358
-#define ITEM_FLYING_GEM 359
-#define ITEM_PSYCHIC_GEM 360
-#define ITEM_BUG_GEM 361
-#define ITEM_ROCK_GEM 362
-#define ITEM_GHOST_GEM 363
-#define ITEM_DRAGON_GEM 364
-#define ITEM_DARK_GEM 365
-#define ITEM_STEEL_GEM 366
-#define ITEM_FAIRY_GEM 367
+#define ITEM_NORMAL_GEM 350 		// Elemental
+#define ITEM_FIRE_GEM 351 			// Drought
+#define ITEM_WATER_GEM 352 			// Drizzle
+#define ITEM_ELECTRIC_GEM 353 	// Lightning Rod
+#define ITEM_GRASS_GEM 354 		// Grassy Surge
+#define ITEM_ICE_GEM 355 			// Snow Warning
+#define ITEM_FIGHTING_GEM 356 		// Hybrid Power
+#define ITEM_POISON_GEM 357 	// Poison Touch <-- not working
+#define ITEM_GROUND_GEM 358 		// Sand Stream
+#define ITEM_FLYING_GEM 359 	// Speed Boost <-- not working
+#define ITEM_PSYCHIC_GEM 360 		// Telepathy
+#define ITEM_BUG_GEM 361 			// Technician <-- this could be something better
+#define ITEM_ROCK_GEM 362  		// Rock Head <-- not working
+#define ITEM_GHOST_GEM 363 			// Prankster
+#define ITEM_DRAGON_GEM 364 		// Multiscale <-- could be Moxie / Beast Boost?
+#define ITEM_DARK_GEM 365 			// Intimidate
+#define ITEM_STEEL_GEM 366 			// Battle Armor
+#define ITEM_FAIRY_GEM 367 			// Serene Grace <-- could be Magic Guard? both are fun...
 
 // Z-Crystals
 #define ITEM_NORMALIUM_Z 368

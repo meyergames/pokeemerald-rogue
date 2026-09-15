@@ -358,7 +358,7 @@
 
 
 // D2D ABILITIES
-#define ABILITY_D2D_ELEMENTAL 		322
+#define ABILITY_D2D_ELEMENTAL 		322 // if this id needs to change in the future, also edit the id in items.h
 #define ABILITY_D2D_HYBRID_POWER 	323
 #define ABILITY_D2D_HEADACHE	 	324
 #define ABILITY_D2D_POLLINATOR		325

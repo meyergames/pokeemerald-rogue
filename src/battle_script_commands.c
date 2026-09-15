@@ -2047,6 +2047,11 @@ s32 CalcCritChanceStageArgs(u32 battlerAtk, u32 battlerDef, u32 move, bool32 rec
     {
         critChance = -1;
     }
+    else if ((holdEffectAtk == HOLD_EFFECT_GEMS)
+             && (GetBattlerHoldEffectParam(battlerDef) == ABILITY_BATTLE_ARMOR))
+    {
+        critChance = -1;
+    }
     else if (gStatuses3[battlerAtk] & STATUS3_LASER_FOCUS
              || gBattleMoves[move].effect == EFFECT_ALWAYS_CRIT
              || move == MOVE_D2D_WEAK_SPOT
@@ -5609,7 +5614,9 @@ static void Cmd_moveend(void)
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_D2D_HYBRID_POWER:
-            if (GetBattlerAbility(gBattlerAttacker) == ABILITY_D2D_HYBRID_POWER
+            if ((GetBattlerAbility(gBattlerAttacker) == ABILITY_D2D_HYBRID_POWER
+                    || (GetBattlerHoldEffect(gBattlerAttacker, TRUE) == HOLD_EFFECT_GEMS
+                        && GetBattlerHoldEffectParam(gBattlerAttacker) == 254)) // <-- X Hybrid Power (gem)
                 && gBattleMons[gBattlerAttacker].hp != 0
                 && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                 && TARGET_TURN_DAMAGED
@@ -10464,6 +10471,17 @@ static void Cmd_various(void)
             gDisableStructs[gBattlerTarget].mimickedMoves |= gBitTable[0];
             gBattlescriptCurrInstr = cmd->nextInstr;
         }
+        return;
+    }
+    case VARIOUS_JUMP_IF_ITEM:
+    {
+        VARIOUS_ARGS(u16 item, const u8 *jumpInstr);
+
+        if (gBattleMons[battler].item == cmd->item)
+            gBattlescriptCurrInstr = cmd->jumpInstr;
+        else
+            gBattlescriptCurrInstr = cmd->nextInstr;
+
         return;
     }
     case VARIOUS_TRY_THIRD_TYPE:

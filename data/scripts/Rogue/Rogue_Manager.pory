@@ -1417,6 +1417,47 @@ script Rogue_Battle_Rival
     special(Rogue_PlayRivalTrainerEncounterBGM)
     msgbox(gPlaceholder_Trainer_PostBattleCloser)
 
+    // if (!flag(FLAG_ROGUE_D2D_GEM_AWARDED))
+    // {
+    msgbox(format("Oh, right...\nHere, have an ability gem!"), MSGBOX_DEFAULT)
+    random(15) // last case + 1
+    switch (var(VAR_RESULT))
+    {
+        case 0:
+            giveitem(ITEM_NORMAL_GEM)
+        case 1:
+            giveitem(ITEM_FIRE_GEM)
+        case 2:
+            giveitem(ITEM_WATER_GEM)
+        case 3:
+            giveitem(ITEM_GROUND_GEM)
+        case 4:
+            giveitem(ITEM_DARK_GEM)
+        case 5:
+            giveitem(ITEM_BUG_GEM)
+        case 6:
+            giveitem(ITEM_ROCK_GEM)
+        case 7:
+            giveitem(ITEM_PSYCHIC_GEM)
+        case 8:
+            giveitem(ITEM_DRAGON_GEM)
+        case 9:
+            giveitem(ITEM_STEEL_GEM)
+        case 10:
+            giveitem(ITEM_GHOST_GEM)
+        case 11:
+            giveitem(ITEM_FAIRY_GEM)
+        case 12:
+            giveitem(ITEM_ICE_GEM)
+        case 13:
+            giveitem(ITEM_FLYING_GEM)
+        case 14:
+            giveitem(ITEM_FIGHTING_GEM)
+    }
+    // }
+    // setflag(FLAG_ROGUE_D2D_GEM_AWARDED)
+    // randomabilitygem()
+
     playse(SE_EXIT)
     removeobject(VAR_LAST_TALKED)
     setflag(FLAG_ROGUE_RIVAL_DISABLED)

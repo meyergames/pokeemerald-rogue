@@ -7983,6 +7983,90 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
                     effect = ITEM_EFFECT_OTHER;
                 }
                 break;
+            case HOLD_EFFECT_GEMS:
+                u32 holdEffectParam = GetBattlerHoldEffectParam(battler);
+                switch (holdEffectParam)
+                {
+                    case ABILITY_INTIMIDATE:
+                    {
+                        SET_STATCHANGER(STAT_ATK, 1, TRUE);
+                        BattleScriptPushCursorAndCallback(BattleScript_IntimidateActivates);
+                        effect = ITEM_STATS_CHANGE;
+                        break;
+                    }
+                    case 255: // <- Elemental (ability id too high for holdEffectParam field)
+                    {
+                        BattleScriptPushCursorAndCallback(BattleScript_D2D_ElementalActivates);
+                        effect = ITEM_EFFECT_OTHER;
+                        break;
+                    }
+                    case ABILITY_DROUGHT:
+                    {
+                        if (TryChangeBattleWeather(battler, ENUM_WEATHER_SUN, TRUE))
+                        {
+                            BattleScriptPushCursorAndCallback(BattleScript_DroughtActivates);
+                            effect = ITEM_EFFECT_OTHER;
+                        }
+                        else if (gBattleWeather & B_WEATHER_PRIMAL_ANY && WEATHER_HAS_EFFECT && !gSpecialStatuses[battler].switchInAbilityDone)
+                        {
+                            gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                            BattleScriptPushCursorAndCallback(BattleScript_BlockedByPrimalWeatherEnd3);
+                            effect = ITEM_EFFECT_OTHER;
+                        }
+                        break;
+                    }
+                    case ABILITY_DRIZZLE:
+                    {
+                        if (TryChangeBattleWeather(battler, ENUM_WEATHER_RAIN, TRUE))
+                        {
+                            BattleScriptPushCursorAndCallback(BattleScript_DrizzleActivates);
+                            effect = ITEM_EFFECT_OTHER;
+                        }
+                        else if (gBattleWeather & B_WEATHER_PRIMAL_ANY && WEATHER_HAS_EFFECT && !gSpecialStatuses[battler].switchInAbilityDone)
+                        {
+                            gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                            BattleScriptPushCursorAndCallback(BattleScript_BlockedByPrimalWeatherEnd3);
+                            effect = ITEM_EFFECT_OTHER;
+                        }
+                        break;
+                    }
+                    case ABILITY_SAND_STREAM:
+                    {
+                        if (TryChangeBattleWeather(battler, ENUM_WEATHER_SANDSTORM, TRUE))
+                        {
+                            BattleScriptPushCursorAndCallback(BattleScript_SandstreamActivates);
+                            effect = ITEM_EFFECT_OTHER;
+                        }
+                        else if (gBattleWeather & B_WEATHER_PRIMAL_ANY && WEATHER_HAS_EFFECT && !gSpecialStatuses[battler].switchInAbilityDone)
+                        {
+                            gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                            BattleScriptPushCursorAndCallback(BattleScript_BlockedByPrimalWeatherEnd3);
+                            effect = ITEM_EFFECT_OTHER;
+                        }
+                        break;
+                    }
+                    case ABILITY_SNOW_WARNING:
+                    {
+                        if (B_SNOW_WARNING >= GEN_9 && TryChangeBattleWeather(battler, ENUM_WEATHER_SNOW, TRUE))
+                        {
+                            BattleScriptPushCursorAndCallback(BattleScript_SnowWarningActivatesSnow);
+                            effect++;
+                        }
+                        else if (B_SNOW_WARNING < GEN_9 && TryChangeBattleWeather(battler, ENUM_WEATHER_HAIL, TRUE))
+                        {
+                            BattleScriptPushCursorAndCallback(BattleScript_SnowWarningActivatesHail);
+                            effect++;
+                        }
+                        else if (gBattleWeather & B_WEATHER_PRIMAL_ANY && WEATHER_HAS_EFFECT && !gSpecialStatuses[battler].switchInAbilityDone)
+                        {
+                            gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                            BattleScriptPushCursorAndCallback(BattleScript_BlockedByPrimalWeatherEnd3);
+                            effect++;
+                        }
+                        break;
+                    }
+                }
+                break;
             }
             if (effect != 0)
             {
@@ -8264,6 +8348,18 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
                     effect = ITEM_EFFECT_OTHER;
                 }
                 break;
+            case HOLD_EFFECT_GEMS:
+                if (GetBattlerHoldEffectParam(battler) == ABILITY_SPEED_BOOST)
+                {
+                    if (CompareStat(battler, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN) && gDisableStructs[battler].isFirstTurn != 2)
+                    {
+                        SET_STATCHANGER(STAT_SPEED, 1, FALSE);
+                        BattleScriptPushCursorAndCallback(BattleScript_SpeedBoostActivates);
+                        gBattleScripting.battler = battler;
+                        effect = ITEM_STATUS_CHANGE;
+                    }
+                    break;
+                }
             }
 
             if (effect != 0)
@@ -8587,6 +8683,30 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
                     effect = ITEM_EFFECT_OTHER;
                 }
                 break;
+            case HOLD_EFFECT_GEMS:
+                u32 holdEffectParam = GetBattlerHoldEffectParam(battler);
+                switch (holdEffectParam)
+                {
+                    case ABILITY_POISON_TOUCH:
+                    {
+                        if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                         && gBattleMons[gBattlerTarget].hp != 0
+                         && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+                         && CanBePoisoned(gBattlerAttacker, gBattlerTarget)
+                         && IsMoveMakingContact(gCurrentMove, gBattlerAttacker)
+                         && TARGET_TURN_DAMAGED // Need to actually hit the target
+                         && (Random() % 3) == 0)
+                        {
+                            gBattleScripting.moveEffect = MOVE_EFFECT_POISON;
+                            PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+                            BattleScriptPushCursor();
+                            gBattlescriptCurrInstr = BattleScript_AbilityStatusEffect;
+                            gHitMarker |= HITMARKER_STATUS_ABILITY_EFFECT;
+                            effect = ITEM_STATUS_CHANGE;
+                        }
+                        break;
+                    }
+                }
             }
         }
         break;
@@ -9357,9 +9477,9 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
         }
         break;
     case EFFECT_ACROBATICS:
-        if (gBattleMons[battlerAtk].item == ITEM_NONE
+        if (gBattleMons[battlerAtk].item == ITEM_NONE)
             // Edge case, because removal of items happens after damage calculation.
-            || (gSpecialStatuses[battlerAtk].gemBoost && GetBattlerHoldEffect(battlerAtk, FALSE) == HOLD_EFFECT_GEMS))
+            // || (gSpecialStatuses[battlerAtk].gemBoost && GetBattlerHoldEffect(battlerAtk, FALSE) == HOLD_EFFECT_GEMS))
             basePower *= 2;
         break;
     case EFFECT_LOW_KICK:
@@ -9993,6 +10113,18 @@ static inline u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 
         if (gBattleMoves[move].punchingMove)
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.1));
         break;
+    case HOLD_EFFECT_GEMS:
+        u32 holdEffectParam = GetBattlerHoldEffectParam(battlerAtk);
+        switch (holdEffectParam)
+        {
+            case ABILITY_TECHNICIAN:
+            {
+                if (basePower <= 60)
+                   modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+                break;
+            }
+        }
+        break;
     }
 
     // Terastallization boosts weak, non-priority, non-multi hit moves after modifiers to 60 BP.
@@ -10211,6 +10343,18 @@ static inline u32 CalcAttackStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 m
     case HOLD_EFFECT_CHOICE_SPECS:
         if (IS_MOVE_SPECIAL(move) && !IsDynamaxed(battlerAtk))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+        break;
+    case HOLD_EFFECT_GEMS:
+        u32 holdEffectParam = GetBattlerHoldEffectParam(battlerAtk);
+        switch (holdEffectParam)
+        {
+            case ABILITY_GUTS:
+            {
+                if (gBattleMons[battlerAtk].status1 & STATUS1_ANY && IS_MOVE_PHYSICAL(move))
+                    modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+                break;
+            }
+        }
         break;
     }
 
@@ -10664,6 +10808,17 @@ static inline uq4_12_t GetAttackerItemsModifier(u32 battlerAtk, uq4_12_t typeEff
     case HOLD_EFFECT_LIFE_ORB:
         return UQ_4_12(1.3);
         break;
+    case HOLD_EFFECT_GEMS:
+        u32 holdEffectParam = GetBattlerHoldEffectParam(battlerAtk);
+        switch (holdEffectParam)
+        {
+            case ABILITY_SNIPER:
+            {
+                if (gIsCriticalHit)
+                    return UQ_4_12(1.5);
+                break;
+            }
+        }
     }
     return UQ_4_12(1.0);
 }
@@ -10689,6 +10844,24 @@ static inline uq4_12_t GetDefenderItemsModifier(u32 moveType, u32 battlerDef, uq
             if (updateFlags)
                 gSpecialStatuses[battlerDef].berryReduced = TRUE;
             return (abilityDef == ABILITY_RIPEN) ? UQ_4_12(0.25) : UQ_4_12(0.5);
+        }
+        break;
+    case HOLD_EFFECT_GEMS:
+        u32 holdEffectParam = GetBattlerHoldEffectParam(battlerDef);
+        switch (holdEffectParam)
+        {
+            case ABILITY_MULTISCALE:
+            {
+                if (BATTLER_MAX_HP(battlerDef))
+                    return UQ_4_12(0.5);
+                break;
+            }
+            case ABILITY_SOLID_ROCK:
+            {
+                if (typeEffectivenessModifier >= UQ_4_12(2.0))
+                    return UQ_4_12(0.75);
+                break;
+            }
         }
         break;
     }
@@ -10993,6 +11166,33 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(u32 move, u32 mov
             gLastLandedMoves[battlerDef] = 0;
             gBattleCommunication[MISS_TYPE] = B_MSG_AVOIDED_DMG;
             RecordAbilityBattle(battlerDef, gBattleMons[battlerDef].ability);
+        }
+    }
+
+    // D2D: X Telepathy check
+    u32 itemId, holdEffect;
+    struct Pokemon *mon;
+    if (GetBattlerSide(battlerDef) == B_SIDE_PLAYER)
+    {
+        mon = &gPlayerParty[gBattlerPartyIndexes[battlerDef]];
+
+        itemId = GetMonData(mon, MON_DATA_HELD_ITEM);
+        if (itemId == ITEM_ENIGMA_BERRY_E_READER)
+            holdEffect = gEnigmaBerries[battlerAtk].holdEffect;
+        else
+            holdEffect = ItemId_GetHoldEffect(itemId);
+
+        if (holdEffect == HOLD_EFFECT_GEMS)
+        {
+            u32 holdEffectParam = GetBattlerHoldEffectParam(battlerDef);
+            switch (holdEffectParam)
+            {
+                case ABILITY_TELEPATHY:
+                {
+                    modifier = UQ_4_12(0.0);
+                    break;
+                }
+            }
         }
     }
 
@@ -12326,6 +12526,19 @@ u32 CalcSecondaryEffectChance(u32 battler, u8 secondaryEffectChance, u16 moveEff
         secondaryEffectChance *= 2;
     if (hasRainbow && moveEffect != EFFECT_SECRET_POWER)
         secondaryEffectChance *= 2;
+
+    // D2D: check for Serene Grace effect from Fairy Ability Gem
+    u8 holdEffect = 0;
+    if (gBattleMons[battler].item == ITEM_ENIGMA_BERRY_E_READER)
+        holdEffect = gEnigmaBerries[battler].holdEffect;
+    else
+        holdEffect = ItemId_GetHoldEffect(gBattleMons[battler].item);
+    if (holdEffect == HOLD_EFFECT_GEMS)
+    {
+        u32 holdEffectParam = GetBattlerHoldEffectParam(battler);
+        if (holdEffectParam == ABILITY_SERENE_GRACE)
+            secondaryEffectChance *= 2;
+    }
 
     // Charm applies a multiplier to the chance i.e. 5% chance X 1.75
     {

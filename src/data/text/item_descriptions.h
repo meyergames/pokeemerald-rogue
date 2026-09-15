@@ -1783,24 +1783,24 @@ static const u8 sDianciteDesc[] = _(
 
 // Gems
 static const u8 sNormalGemDesc[] = _(
-    "Increases the\n"
-    "power of Normal\n"
-    "Type moves.");
+    "Normal-type\n"
+    "moves gain the\n"
+    "holder's type.");
 
 static const u8 sFireGemDesc[] = _(
-    "Increases the\n"
-    "power of Fire\n"
-    "Type moves.");
+    "Summons harsh\n"
+    "sunlight upon\n"
+    "switching in.");
 
 static const u8 sWaterGemDesc[] = _(
-    "Increases the\n"
-    "power of Water\n"
-    "Type moves.");
+    "Summons rain\n"
+    "upon switching\n"
+    "in.");
 
 static const u8 sElectricGemDesc[] = _(
-    "Increases the\n"
-    "power of Electric\n"
-    "Type moves.");
+    "Draws Electric\n"
+    "moves to raise\n"
+    "Special Attack.");
 
 static const u8 sGrassGemDesc[] = _(
     "Increases the\n"
@@ -1808,69 +1808,69 @@ static const u8 sGrassGemDesc[] = _(
     "Type moves.");
 
 static const u8 sIceGemDesc[] = _(
-    "Increases the\n"
-    "power of Ice\n"
-    "Type moves.");
+    "Summons a snow-\n"
+    "storm upon\n"
+    "switching in.");
 
 static const u8 sFightingGemDesc[] = _(
-    "Increases the\n"
-    "power of Fighting\n"
-    "Type moves.");
+    "Upon attacking, the\n"
+    "unused offensive\n"
+    "stat is raised.");
 
 static const u8 sPoisonGemDesc[] = _(
-    "Increases the\n"
-    "power of Poison\n"
-    "Type moves.");
+    "Gives each hit\n"
+    "a chance to\n"
+    "poison the foe.");
 
 static const u8 sGroundGemDesc[] = _(
-    "Increases the\n"
-    "power of Ground\n"
-    "Type moves.");
+    "Summons a sand-\n"
+    "storm upon\n"
+    "switching in.");
 
 static const u8 sFlyingGemDesc[] = _(
-    "Increases the\n"
-    "power of Flying\n"
-    "Type moves.");
+    "Causes the holder's\n"
+    "critical hits to\n"
+    "deal more damage.");
 
 static const u8 sPsychicGemDesc[] = _(
-    "Increases the\n"
-    "power of Psychic\n"
-    "Type moves.");
+    "Prevents damage\n"
+    "from allies'\n"
+    "attacks.");
 
 static const u8 sBugGemDesc[] = _(
     "Increases the\n"
-    "power of Bug\n"
-    "Type moves.");
+    "power of weaker\n"
+    "moves.");
 
 static const u8 sRockGemDesc[] = _(
-    "Increases the\n"
-    "power of Rock\n"
-    "Type moves.");
+    "Reduces all\n"
+    "super-effective\n"
+    "damage taken.");
 
 static const u8 sGhostGemDesc[] = _(
-    "Increases the\n"
-    "power of Ghost\n"
-    "Type moves.");
+    "Gives priority\n"
+    "to the holder's\n"
+    "status moves.");
 
 static const u8 sDragonGemDesc[] = _(
-    "Increases the\n"
-    "power of Dragon\n"
-    "Type moves.");
+    "Halves damage\n"
+    "when the holder\n"
+    "is at full HP.");
 
 static const u8 sDarkGemDesc[] = _(
-    "Increases the\n"
-    "power of Dark\n"
-    "Type moves.");
+    "Lowers the foe's\n"
+    "Attack upon\n"
+    "switching in.");
 
 static const u8 sSteelGemDesc[] = _(
-    "Increases the\n"
-    "power of Steel\n"
-    "Type moves.");
+    "Protects the\n"
+    "holder against\n"
+    "critical hits.");
 
 static const u8 sFairyGemDesc[] = _(
-    "Increases the\n"
-    "power of Fairy\n"
-    "Type moves.");
+    "Secondary move\n"
+    "effects trigger\n"
+    "more often.");
 
 // Z-Crystals
 static const u8 sNormaliumZDesc[] = _(

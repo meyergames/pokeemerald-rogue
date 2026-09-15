@@ -2432,6 +2432,11 @@
 	various BS_ATTACKER, VARIOUS_DETERMINE_MONEY_SHOT_POWER
 	.endm
 
+	.macro jumpifitem battler:req, item:req, jumpInstr:req
+	various \battler, VARIOUS_JUMP_IF_ITEM
+	.byte \item
+	.4byte \jumpInstr
+	.endm
 	.macro hindkickcheck failInstr:req
 	various BS_ATTACKER, VARIOUS_HIND_KICK_CHECK
 	.4byte \failInstr

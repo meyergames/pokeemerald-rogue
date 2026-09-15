@@ -20,6 +20,29 @@
     #define TYPE_BOOST_PARAM 10
 #endif
 
+// D2D gem functionality override constants
+#define ABILITY_DRIZZLE 2
+#define ABILITY_SPEED_BOOST 3
+#define ABILITY_BATTLE_ARMOR 4
+#define ABILITY_INTIMIDATE 22
+#define ABILITY_LIGHTNING_ROD 31
+#define ABILITY_SERENE_GRACE 32
+#define ABILITY_SAND_STREAM 45
+#define ABILITY_ROCK_HEAD 69
+#define ABILITY_DROUGHT 70
+#define ABILITY_SNIPER 97
+#define ABILITY_TECHNICIAN 101
+#define ABILITY_SUPER_LUCK 105
+#define ABILITY_SOLID_ROCK 116
+#define ABILITY_SNOW_WARNING 117
+#define ABILITY_MULTISCALE 136
+#define ABILITY_HARVEST 139
+#define ABILITY_TELEPATHY 140
+#define ABILITY_POISON_TOUCH 143
+#define ABILITY_PRANKSTER 158
+#define ABILITY_D2D_HYBRID_POWER 254
+#define ABILITY_D2D_ELEMENTAL 255
+
 const struct Item gItems[] =
 {
     [ITEM_NONE] =
@@ -4848,10 +4871,10 @@ const struct Item gItems[] =
 
     [ITEM_NORMAL_GEM] =
     {
-        .name = _("Normal Gem"),
-        .price = 4000,
+        .name = _("X Elemental"),
+        .price = 40000,
         .holdEffect = HOLD_EFFECT_GEMS,
-        .holdEffectParam = GEM_BOOST_PARAM,
+        .holdEffectParam = ABILITY_D2D_ELEMENTAL,
         .description = sNormalGemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -4861,10 +4884,10 @@ const struct Item gItems[] =
 
     [ITEM_FIRE_GEM] =
     {
-        .name = _("Fire Gem"),
-        .price = 4000,
+        .name = _("X Drought"),
+        .price = 40000,
         .holdEffect = HOLD_EFFECT_GEMS,
-        .holdEffectParam = GEM_BOOST_PARAM,
+        .holdEffectParam = ABILITY_DROUGHT,
         .description = sFireGemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -4874,10 +4897,10 @@ const struct Item gItems[] =
 
     [ITEM_WATER_GEM] =
     {
-        .name = _("Water Gem"),
-        .price = 4000,
+        .name = _("X Drizzle"),
+        .price = 40000,
         .holdEffect = HOLD_EFFECT_GEMS,
-        .holdEffectParam = GEM_BOOST_PARAM,
+        .holdEffectParam = ABILITY_DRIZZLE,
         .description = sWaterGemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -4887,10 +4910,10 @@ const struct Item gItems[] =
 
     [ITEM_ELECTRIC_GEM] =
     {
-        .name = _("Electric Gem"),
+        .name = _("X LightngRod"),
         .price = 4000,
         .holdEffect = HOLD_EFFECT_GEMS,
-        .holdEffectParam = GEM_BOOST_PARAM,
+        .holdEffectParam = ABILITY_LIGHTNING_ROD,
         .description = sElectricGemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -4900,10 +4923,10 @@ const struct Item gItems[] =
 
     [ITEM_GRASS_GEM] =
     {
-        .name = _("Grass Gem"),
-        .price = 4000,
+        .name = _("X Harvest"),
+        .price = 40000,
         .holdEffect = HOLD_EFFECT_GEMS,
-        .holdEffectParam = GEM_BOOST_PARAM,
+        .holdEffectParam = ABILITY_HARVEST,
         .description = sGrassGemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -4913,10 +4936,10 @@ const struct Item gItems[] =
 
     [ITEM_ICE_GEM] =
     {
-        .name = _("Ice Gem"),
-        .price = 4000,
+        .name = _("X SnoWarning"),
+        .price = 40000,
         .holdEffect = HOLD_EFFECT_GEMS,
-        .holdEffectParam = GEM_BOOST_PARAM,
+        .holdEffectParam = ABILITY_SNOW_WARNING,
         .description = sIceGemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -4926,10 +4949,10 @@ const struct Item gItems[] =
 
     [ITEM_FIGHTING_GEM] =
     {
-        .name = _("Fighting Gem"),
-        .price = 4000,
+        .name = _("X Hybrid Pwr"),
+        .price = 40000,
         .holdEffect = HOLD_EFFECT_GEMS,
-        .holdEffectParam = GEM_BOOST_PARAM,
+        .holdEffectParam = ABILITY_D2D_HYBRID_POWER,
         .description = sFightingGemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -4939,10 +4962,10 @@ const struct Item gItems[] =
 
     [ITEM_POISON_GEM] =
     {
-        .name = _("Poison Gem"),
-        .price = 4000,
+        .name = _("X Psn Touch"),
+        .price = 40000,
         .holdEffect = HOLD_EFFECT_GEMS,
-        .holdEffectParam = GEM_BOOST_PARAM,
+        .holdEffectParam = ABILITY_POISON_TOUCH,
         .description = sPoisonGemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -4952,10 +4975,10 @@ const struct Item gItems[] =
 
     [ITEM_GROUND_GEM] =
     {
-        .name = _("Ground Gem"),
-        .price = 4000,
+        .name = _("X SandStream"),
+        .price = 40000,
         .holdEffect = HOLD_EFFECT_GEMS,
-        .holdEffectParam = GEM_BOOST_PARAM,
+        .holdEffectParam = ABILITY_SAND_STREAM,
         .description = sGroundGemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -4965,10 +4988,10 @@ const struct Item gItems[] =
 
     [ITEM_FLYING_GEM] =
     {
-        .name = _("Flying Gem"),
-        .price = 4000,
+        .name = _("X Sniper"),
+        .price = 40000,
         .holdEffect = HOLD_EFFECT_GEMS,
-        .holdEffectParam = GEM_BOOST_PARAM,
+        .holdEffectParam = ABILITY_SNIPER,
         .description = sFlyingGemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -4978,10 +5001,10 @@ const struct Item gItems[] =
 
     [ITEM_PSYCHIC_GEM] =
     {
-        .name = _("Psychic Gem"),
-        .price = 4000,
+        .name = _("X Telepathy"),
+        .price = 40000,
         .holdEffect = HOLD_EFFECT_GEMS,
-        .holdEffectParam = GEM_BOOST_PARAM,
+        .holdEffectParam = ABILITY_TELEPATHY,
         .description = sPsychicGemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -4991,10 +5014,10 @@ const struct Item gItems[] =
 
     [ITEM_BUG_GEM] =
     {
-        .name = _("Bug Gem"),
-        .price = 4000,
+        .name = _("X Technician"),
+        .price = 40000,
         .holdEffect = HOLD_EFFECT_GEMS,
-        .holdEffectParam = GEM_BOOST_PARAM,
+        .holdEffectParam = ABILITY_TECHNICIAN,
         .description = sBugGemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -5004,10 +5027,10 @@ const struct Item gItems[] =
 
     [ITEM_ROCK_GEM] =
     {
-        .name = _("Rock Gem"),
-        .price = 4000,
+        .name = _("X Rock Head"),
+        .price = 40000,
         .holdEffect = HOLD_EFFECT_GEMS,
-        .holdEffectParam = GEM_BOOST_PARAM,
+        .holdEffectParam = ABILITY_ROCK_HEAD,
         .description = sRockGemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -5017,10 +5040,10 @@ const struct Item gItems[] =
 
     [ITEM_GHOST_GEM] =
     {
-        .name = _("Ghost Gem"),
-        .price = 4000,
+        .name = _("X Prankster"),
+        .price = 40000,
         .holdEffect = HOLD_EFFECT_GEMS,
-        .holdEffectParam = GEM_BOOST_PARAM,
+        .holdEffectParam = ABILITY_PRANKSTER,
         .description = sGhostGemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -5030,10 +5053,10 @@ const struct Item gItems[] =
 
     [ITEM_DRAGON_GEM] =
     {
-        .name = _("Dragon Gem"),
-        .price = 4000,
+        .name = _("X Multiscale"),
+        .price = 40000,
         .holdEffect = HOLD_EFFECT_GEMS,
-        .holdEffectParam = GEM_BOOST_PARAM,
+        .holdEffectParam = ABILITY_MULTISCALE,
         .description = sDragonGemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -5043,10 +5066,10 @@ const struct Item gItems[] =
 
     [ITEM_DARK_GEM] =
     {
-        .name = _("Dark Gem"),
-        .price = 4000,
+        .name = _("X Intimidate"),
+        .price = 40000,
         .holdEffect = HOLD_EFFECT_GEMS,
-        .holdEffectParam = GEM_BOOST_PARAM,
+        .holdEffectParam = ABILITY_INTIMIDATE,
         .description = sDarkGemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -5056,10 +5079,10 @@ const struct Item gItems[] =
 
     [ITEM_STEEL_GEM] =
     {
-        .name = _("Steel Gem"),
-        .price = 4000,
+        .name = _("X BattlArmor"),
+        .price = 40000,
         .holdEffect = HOLD_EFFECT_GEMS,
-        .holdEffectParam = GEM_BOOST_PARAM,
+        .holdEffectParam = ABILITY_BATTLE_ARMOR,
         .description = sSteelGemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -5069,10 +5092,10 @@ const struct Item gItems[] =
 
     [ITEM_FAIRY_GEM] =
     {
-        .name = _("Fairy Gem"),
-        .price = 4000,
+        .name = _("X SerenGrace"),
+        .price = 40000,
         .holdEffect = HOLD_EFFECT_GEMS,
-        .holdEffectParam = GEM_BOOST_PARAM,
+        .holdEffectParam = ABILITY_SERENE_GRACE,
         .description = sFairyGemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
