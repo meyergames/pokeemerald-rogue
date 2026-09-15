@@ -9673,7 +9673,7 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
 
         u16 foeBst = gSpeciesInfo[gBattleMons[battlerDef].species].baseHP + gSpeciesInfo[gBattleMons[battlerDef].species].baseAttack + gSpeciesInfo[gBattleMons[battlerDef].species].baseDefense + gSpeciesInfo[gBattleMons[battlerDef].species].baseSpAttack + gSpeciesInfo[gBattleMons[battlerDef].species].baseSpDefense + gSpeciesInfo[gBattleMons[battlerDef].species].baseSpeed;
 
-        basePower = 40 + max( ( foeBst - 400 ) / 2, 0 );
+        basePower = 40 + max( ( foeBst - 400 ) / 2.5, 0 );
         PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 3, basePower);
         break;
     case EFFECT_D2D_MACH_5:
