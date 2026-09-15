@@ -324,6 +324,7 @@ static const u8 sThirdEyeDescription[] = _("Boosts Psychic-type moves.");
 static const u8 sTectonicDescription[] = _("Boosts Ground-type moves.");
 static const u8 sInfinityDescription[] = _("Random moves every turn.");
 static const u8 sPacifyDescription[] = _("Nobody's stats can change.");
+static const u8 sOffBeatDescription[] = _("Trick Room on entry.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -664,6 +665,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_D2D_TECTONIC] = _("Tectonic"),
     [ABILITY_D2D_INFINITY] = _("Infinity"),
     [ABILITY_D2D_PACIFY] = _("Pacifist"),
+    [ABILITY_D2D_OFF_BEAT] = _("Off-Beat"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -1004,6 +1006,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_D2D_TECTONIC] = _("Tectonic"),
     [ABILITY_D2D_INFINITY] = _("Infinity"),
     [ABILITY_D2D_PACIFY] = _("Pacifist"),
+    [ABILITY_D2D_OFF_BEAT] = _("Off-Beat"),
 };
 #endif
 
@@ -1345,4 +1348,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_D2D_TECTONIC] = sTectonicDescription,
     [ABILITY_D2D_INFINITY] = sInfinityDescription,
     [ABILITY_D2D_PACIFY] = sPacifyDescription,
+    [ABILITY_D2D_OFF_BEAT] = sOffBeatDescription,
 };

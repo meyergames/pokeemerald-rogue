@@ -2437,10 +2437,16 @@
 	.byte \item
 	.4byte \jumpInstr
 	.endm
+
+	.macro settrickroom
+	various BS_ATTACKER, VARIOUS_SET_TRICK_ROOM
+	.endm
+
 	.macro hindkickcheck failInstr:req
 	various BS_ATTACKER, VARIOUS_HIND_KICK_CHECK
 	.4byte \failInstr
 	.endm
+
 
 @ D2D INSTRUCTIONS END
 

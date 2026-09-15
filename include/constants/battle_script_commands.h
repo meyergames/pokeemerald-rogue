@@ -261,6 +261,7 @@
 #define VARIOUS_SET_CHRYSALIS						 167
 #define VARIOUS_DETERMINE_MONEY_SHOT_POWER			 168
 #define VARIOUS_JUMP_IF_ITEM 						 169
+#define VARIOUS_SET_TRICK_ROOM 						 170
 #define VARIOUS_HIND_KICK_CHECK						 171
 
 // Cmd_manipulatedamage

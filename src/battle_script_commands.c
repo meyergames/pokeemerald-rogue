@@ -1870,6 +1870,23 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
     return calc;
 }
 
+// move here (from above 'Cmd_setroom') for VARIOUS_SET_TRICK_ROOM access
+static void HandleRoomMove(u32 statusFlag, u8 *timer, u8 stringId)
+{
+    if (gFieldStatuses & statusFlag)
+    {
+        gFieldStatuses &= ~statusFlag;
+        *timer = 0;
+        gBattleCommunication[MULTISTRING_CHOOSER] = stringId + 1;
+    }
+    else
+    {
+        gFieldStatuses |= statusFlag;
+        *timer = 5;
+        gBattleCommunication[MULTISTRING_CHOOSER] = stringId;
+    }
+}
+
 static void Cmd_accuracycheck(void)
 {
     CMD_ARGS(const u8 *failInstr, u16 move);
@@ -10019,6 +10036,28 @@ static void Cmd_various(void)
 
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
+    case VARIOUS_SET_TRICK_ROOM:
+    {
+        CMD_ARGS(u16 moveEffect);
+
+        HandleRoomMove(STATUS_FIELD_TRICK_ROOM, &gFieldTimers.trickRoomTimer, 0);
+        // switch (cmd->moveEffect)
+        // {
+        //     case EFFECT_TRICK_ROOM:
+        //         HandleRoomMove(STATUS_FIELD_TRICK_ROOM, &gFieldTimers.trickRoomTimer, 0);
+        //         break;
+        //     case EFFECT_WONDER_ROOM:
+        //         HandleRoomMove(STATUS_FIELD_WONDER_ROOM, &gFieldTimers.wonderRoomTimer, 2);
+        //         break;
+        //     case EFFECT_MAGIC_ROOM:
+        //         HandleRoomMove(STATUS_FIELD_MAGIC_ROOM, &gFieldTimers.magicRoomTimer, 4);
+        //         break;
+        //     default:
+        //         gBattleCommunication[MULTISTRING_CHOOSER] = 6;
+        //         break;
+        // }
+        gBattlescriptCurrInstr = cmd->nextInstr;
+    }
     case VARIOUS_TRY_SOAK:
     {
         VARIOUS_ARGS(const u8 *failInstr);
@@ -14802,22 +14841,6 @@ static void Cmd_setdamagetohealthdifference(void)
     {
         gBattleMoveDamage = GetNonDynamaxHP(gBattlerTarget) - gBattleMons[gBattlerAttacker].hp;
         gBattlescriptCurrInstr = cmd->nextInstr;
-    }
-}
-
-static void HandleRoomMove(u32 statusFlag, u8 *timer, u8 stringId)
-{
-    if (gFieldStatuses & statusFlag)
-    {
-        gFieldStatuses &= ~statusFlag;
-        *timer = 0;
-        gBattleCommunication[MULTISTRING_CHOOSER] = stringId + 1;
-    }
-    else
-    {
-        gFieldStatuses |= statusFlag;
-        *timer = 5;
-        gBattleCommunication[MULTISTRING_CHOOSER] = stringId;
     }
 }
 

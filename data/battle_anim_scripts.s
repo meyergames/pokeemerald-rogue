@@ -1093,6 +1093,7 @@ gBattleAnims_General::
 	.4byte General_D2D_Charger           	@ B_ANIM_D2D_CHARGER
 	.4byte General_D2D_Chrysalis           	@ B_ANIM_D2D_CHRYSALIS
 	.4byte General_D2D_ChrysalisBreakout	@ B_ANIM_D2D_CHRYSALIS_BREAKOUT
+	.4byte Move_TRICK_ROOM                	@ B_ANIM_D2D_TRICK_ROOM
 @ D2D TODO: for some reason, the animations below are not registered in battle_anim.h?
 	.4byte General_TrickRoom                @ B_ANIM_TRICK_ROOM
 	.4byte General_WonderRoom               @ B_ANIM_WONDER_ROOM

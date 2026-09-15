@@ -4461,12 +4461,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 
     [SPECIES_GRUMPIG] =
     {
-        .baseHP        = 80,
+        .baseHP        = 100, // +20
         .baseAttack    = 45,
         .baseDefense   = 65,
-        .baseSpeed     = 80,
         .baseSpAttack  = 90,
         .baseSpDefense = 110,
+        .baseSpeed     = 60, // -20 (for Trick Room)
         .types = { TYPE_PSYCHIC, TYPE_PSYCHIC },
         .catchRate = 60,
         .expYield = 165,
@@ -4476,7 +4476,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },
-        .abilities = { ABILITY_THICK_FAT, ABILITY_OWN_TEMPO, ABILITY_GLUTTONY },
+        .abilities = { ABILITY_D2D_OFF_BEAT, ABILITY_D2D_OFF_BEAT, ABILITY_D2D_OFF_BEAT },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Grumpig"),
         .cryId = CRY_GRUMPIG,

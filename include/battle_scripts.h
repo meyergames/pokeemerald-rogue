@@ -570,6 +570,7 @@ extern const u8 BattleScript_D2D_ChargerRaiseStats[];
 extern const u8 BattleScript_D2D_ChrysalisDisplayMessage[];
 extern const u8 BattleScript_D2D_ChrysalisBreakOut[];
 extern const u8 BattleScript_D2D_PacifyActivates[];
+extern const u8 BattleScript_D2D_OffBeatActivates[];
 
 
 #endif // GUARD_BATTLE_SCRIPTS_H

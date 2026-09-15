@@ -573,6 +573,7 @@
 #define B_ANIM_D2D_CHARGER 				48
 #define B_ANIM_D2D_CHRYSALIS 			49
 #define B_ANIM_D2D_CHRYSALIS_BREAKOUT	50
+#define B_ANIM_D2D_TRICK_ROOM			51
 
 // special animations table (gBattleAnims_Special)
 #define B_ANIM_LVL_UP                   0

@@ -3334,6 +3334,7 @@ BattleScript_EffectTrickRoom:
 	attackstring
 	ppreduce
 	setroom
+BattleScript_D2D_EffectTrickRoom_PlayAnim:
 	attackanimation
 	waitanimation
 	printfromtable gRoomsStringIds
@@ -12261,6 +12262,25 @@ BattleScript_D2D_PacifyActivates::
 	printstring STRINGID_STATCHANGESGONE
 	waitmessage B_WAIT_TIME_LONG
 	end3
+
+BattleScript_D2D_OffBeatActivates::
+	call BattleScript_AbilityPopUp
+	playanimation BS_ATTACKER, B_ANIM_D2D_TRICK_ROOM 
+	settrickroom
+	printfromtable gRoomsStringIds
+	waitmessage B_WAIT_TIME_LONG
+	savetarget
+	setbyte gBattlerTarget, 0
+BattleScript_D2D_OffBeat_RoomServiceLoop:
+	copybyte sBATTLER, gBattlerTarget
+	tryroomservice BS_TARGET, BattleScript_D2D_OffBeat_RoomServiceLoop_NextBattler
+	removeitem BS_TARGET
+BattleScript_D2D_OffBeat_RoomServiceLoop_NextBattler:
+	addbyte gBattlerTarget, 0x1
+	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_D2D_OffBeat_RoomServiceLoop
+	restoretarget
+	end3
+
 BattleScript_D2D_EffectHindKick:
 	attackcanceler
 	hindkickcheck BattleScript_FailedFromAtkString
