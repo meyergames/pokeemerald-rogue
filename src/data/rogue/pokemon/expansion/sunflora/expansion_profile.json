@@ -4,11 +4,23 @@
   ],
   "LevelUpMoves": [
     {
-      "Move": "MOVE_POUND",
+      "Move": "MOVE_FLAME_BURST",
+      "Level": 0
+    },
+    {
+      "Move": "MOVE_FLAME_BURST",
       "Level": 1
     },
     {
-      "Move": "MOVE_TACKLE",
+      "Move": "MOVE_FLOWER_SHIELD",
+      "Level": 1
+    },
+    {
+      "Move": "MOVE_ABSORB",
+      "Level": 1
+    },
+    {
+      "Move": "MOVE_POUND",
       "Level": 1
     },
     {
@@ -20,7 +32,7 @@
       "Level": 4
     },
     {
-      "Move": "MOVE_ABSORB",
+      "Move": "MOVE_GRASS_WHISTLE",
       "Level": 7
     },
     {
@@ -48,28 +60,44 @@
       "Level": 25
     },
     {
-      "Move": "MOVE_PETAL_DANCE",
+      "Move": "MOVE_SUNNY_DAY",
       "Level": 28
     },
     {
-      "Move": "MOVE_SOLAR_BEAM",
+      "Move": "MOVE_NATURAL_GIFT",
       "Level": 31
     },
     {
-      "Move": "MOVE_DOUBLE_EDGE",
+      "Move": "MOVE_SOLAR_BEAM",
       "Level": 34
     },
     {
-      "Move": "MOVE_SUNNY_DAY",
-      "Level": 39
+      "Move": "MOVE_DOUBLE_EDGE",
+      "Level": 37
+    },
+    {
+      "Move": "MOVE_PETAL_DANCE",
+      "Level": 40
     },
     {
       "Move": "MOVE_LEAF_STORM",
       "Level": 43
     },
     {
+      "Move": "MOVE_HEAT_WAVE",
+      "Level": 47
+    },
+    {
       "Move": "MOVE_PETAL_BLIZZARD",
       "Level": 50
+    },
+    {
+      "Move": "MOVE_FIERY_DANCE",
+      "Level": 57
+    },
+    {
+      "Move": "MOVE_D2D_SUNFLARE",
+      "Level": 70
     }
   ],
   "TutorMoves": [
@@ -83,17 +111,22 @@
     "MOVE_ENDURE",
     "MOVE_ENERGY_BALL",
     "MOVE_FACADE",
+    "MOVE_FIRE_BLAST",
+    "MOVE_FLAMETHROWER",
     "MOVE_GIGA_DRAIN",
     "MOVE_GIGA_IMPACT",
     "MOVE_GRASS_KNOT",
     "MOVE_GRASSY_GLIDE",
     "MOVE_GRASSY_TERRAIN",
+    "MOVE_HEAT_WAVE",
     "MOVE_HELPING_HAND",
     "MOVE_HIDDEN_POWER",
     "MOVE_HYPER_BEAM",
     "MOVE_LEAF_STORM",
     "MOVE_LIGHT_SCREEN",
     "MOVE_MAGICAL_LEAF",
+    "MOVE_MYSTICAL_FIRE",
+    "MOVE_OVERHEAT",
     "MOVE_PETAL_BLIZZARD",
     "MOVE_PROTECT",
     "MOVE_RAIN_DANCE",
