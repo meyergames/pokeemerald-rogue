@@ -30,6 +30,10 @@
     {
       "Move": "MOVE_FAKE_OUT",
       "Level": 50
+    },
+    {
+      "Move": "MOVE_D2D_TOPPLE",
+      "Level": 70
     }
   ],
   "TutorMoves": [
