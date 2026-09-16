@@ -39,6 +39,7 @@
 #define ABILITY_HARVEST 139
 #define ABILITY_TELEPATHY 140
 #define ABILITY_POISON_TOUCH 143
+#define ABILITY_REGENERATOR 144
 #define ABILITY_PRANKSTER 158
 #define ABILITY_D2D_HYBRID_POWER 254
 #define ABILITY_D2D_ELEMENTAL 255
@@ -4988,10 +4989,10 @@ const struct Item gItems[] =
 
     [ITEM_FLYING_GEM] =
     {
-        .name = _("X Sniper"),
+        .name = _("X Regeneratr"),
         .price = 40000,
         .holdEffect = HOLD_EFFECT_GEMS,
-        .holdEffectParam = ABILITY_SNIPER,
+        .holdEffectParam = ABILITY_REGENERATOR,
         .description = sFlyingGemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,

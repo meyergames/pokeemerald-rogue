@@ -15128,6 +15128,22 @@ static void Cmd_switchoutabilities(void)
 
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
+
+    // D2D: This should not be here...
+    u8 holdEffect = GetBattlerHoldEffect(battler, TRUE);
+    u8 holdEffectParam = GetBattlerHoldEffectParam(battler);
+    if (holdEffect == HOLD_EFFECT_GEMS && holdEffectParam == ABILITY_REGENERATOR)
+    {
+        gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 3;
+        gBattleMoveDamage += gBattleMons[battler].hp;
+        if (gBattleMoveDamage > gBattleMons[battler].maxHP)
+            gBattleMoveDamage = gBattleMons[battler].maxHP;
+        BtlController_EmitSetMonData(battler, BUFFER_A, REQUEST_HP_BATTLE,
+                                     gBitTable[*(gBattleStruct->battlerPartyIndexes + battler)],
+                                     sizeof(gBattleMoveDamage),
+                                     &gBattleMoveDamage);
+        MarkBattlerForControllerExec(battler);
+    }
 }
 
 static void Cmd_jumpifhasnohp(void)
