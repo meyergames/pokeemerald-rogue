@@ -7107,8 +7107,8 @@ bool32 HasEnoughHpToEatBerry(u32 battler, u32 hpFraction, u32 itemId)
     if (gBattleMons[battler].hp <= gBattleMons[battler].maxHP / hpFraction)
         return TRUE;
 
-    if (hpFraction <= 4 && GetBattlerAbility(battler) == ABILITY_GLUTTONY && isBerry
-         && gBattleMons[battler].hp <= gBattleMons[battler].maxHP / 2)
+    if (hpFraction <= 2 && GetBattlerAbility(battler) == ABILITY_GLUTTONY && isBerry
+         && gBattleMons[battler].hp <= gBattleMons[battler].maxHP / 1.333)
     {
         RecordAbilityBattle(battler, ABILITY_GLUTTONY);
         return TRUE;

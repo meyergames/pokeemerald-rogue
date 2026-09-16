@@ -2962,38 +2962,38 @@ static const u8 sRoseliBerryDesc[] = _(
 
 static const u8 sLiechiBerryDesc[] = _(
     "A hold item that\n"
-    "raises Attack in\n"
-    "a pinch.");
+    "raises Attack\n"
+    "below half HP.");
 
 static const u8 sGanlonBerryDesc[] = _(
     "A hold item that\n"
-    "raises Defense in\n"
-    "a pinch.");
+    "raises Defense\n"
+    "below half HP.");
 
 static const u8 sSalacBerryDesc[] = _(
     "A hold item that\n"
-    "raises Speed in\n"
-    "a pinch.");
+    "raises Speed\n"
+    "below half HP.");
 
 static const u8 sPetayaBerryDesc[] = _(
     "A hold item that\n"
-    "raises Sp. Atk in\n"
-    "a pinch.");
+    "raises Sp. Atk\n"
+    "below half HP.");
 
 static const u8 sApicotBerryDesc[] = _(
     "A hold item that\n"
-    "raises Sp. Def in\n"
-    "a pinch.");
+    "raises Sp. Def\n"
+    "below half HP.");
 
 static const u8 sLansatBerryDesc[] = _(
-    "A hold item that\n"
-    "ups the critical-\n"
-    "hit rate in a pinch.");
+    "Ups the critical-\n"
+    "hit rate below\n"
+    "half HP.");
 
 static const u8 sStarfBerryDesc[] = _(
     "A hold item that\n"
     "sharply boosts a\n"
-    "stat in a pinch.");
+    "stat below half HP.");
 
 static const u8 sEnigmaBerryDesc[] = _(
     "Restores lots of HP\n"
@@ -3003,7 +3003,7 @@ static const u8 sEnigmaBerryDesc[] = _(
 static const u8 sMicleBerryDesc[] = _(
     "When held, it ups\n"
     "the Accuracy of a\n"
-    "move in a pinch.");
+    "move below half HP.");
 
 static const u8 sCustapBerryDesc[] = _(
     "It allows a Pokémon\n"
