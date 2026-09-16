@@ -9517,9 +9517,8 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
         }
         break;
     case EFFECT_ACROBATICS:
-        if (gBattleMons[battlerAtk].item == ITEM_NONE)
-            // Edge case, because removal of items happens after damage calculation.
-            // || (gSpecialStatuses[battlerAtk].gemBoost && GetBattlerHoldEffect(battlerAtk, FALSE) == HOLD_EFFECT_GEMS))
+        // Edge case, because removal of items happens after damage calculation.
+        if ((gBattleMons[battlerAtk].item == ITEM_NONE) || (GetBattlerHoldEffect(battlerAtk, FALSE) == HOLD_EFFECT_MAGOST_BERRY ))
             basePower *= 2;
         break;
     case EFFECT_LOW_KICK:
@@ -10835,6 +10834,8 @@ static inline uq4_12_t GetDefenderPartnerAbilitiesModifier(u32 battlerPartnerDef
 static inline uq4_12_t GetAttackerItemsModifier(u32 battlerAtk, uq4_12_t typeEffectivenessModifier, u32 holdEffectAtk)
 {
     u32 percentBoost;
+    u32 holdEffectParam = GetBattlerHoldEffectParam(battlerAtk);
+
     switch (holdEffectAtk)
     {
     case HOLD_EFFECT_METRONOME:
@@ -10849,7 +10850,6 @@ static inline uq4_12_t GetAttackerItemsModifier(u32 battlerAtk, uq4_12_t typeEff
         return UQ_4_12(1.3);
         break;
     case HOLD_EFFECT_GEMS:
-        u32 holdEffectParam = GetBattlerHoldEffectParam(battlerAtk);
         switch (holdEffectParam)
         {
             case ABILITY_SNIPER:
@@ -10859,6 +10859,11 @@ static inline uq4_12_t GetAttackerItemsModifier(u32 battlerAtk, uq4_12_t typeEff
                 break;
             }
         }
+        break;
+    case HOLD_EFFECT_MAGOST_BERRY:
+        gSpecialStatuses[battlerAtk].gemBoost = TRUE;
+        return UQ_4_12(1.0 + (holdEffectParam * 0.01));
+        break;
     }
     return UQ_4_12(1.0);
 }

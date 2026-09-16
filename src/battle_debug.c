@@ -2171,6 +2171,7 @@ static const u8 sText_HoldEffectHeavyDutyBoots[] = _("Heavy Duty Boots");
 static const u8 sText_HoldEffectThroatSpray[] = _("Throat Spray");
 // D2D
 static const u8 sText_HoldEffectHoney[] = _("Honey");
+static const u8 sText_HoldEffectMagostBerry[] = _("Magost Berry");
 static const u8 *const sHoldEffectNames[] =
 {
     [HOLD_EFFECT_NONE] = sText_HoldEffectNone,
@@ -2314,6 +2315,7 @@ static const u8 *const sHoldEffectNames[] =
     [HOLD_EFFECT_HEAVY_DUTY_BOOTS] = sText_HoldEffectHeavyDutyBoots,
     [HOLD_EFFECT_THROAT_SPRAY] = sText_HoldEffectThroatSpray,
     [HOLD_EFFECT_HONEY] = sText_HoldEffectHoney,
+    [HOLD_EFFECT_MAGOST_BERRY] = sText_HoldEffectMagostBerry,
 };
 static const u8 *GetHoldEffectName(u16 holdEffect)
 {

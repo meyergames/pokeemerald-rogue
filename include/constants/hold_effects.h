@@ -167,6 +167,7 @@
 
 // D2D hold effects
 #define HOLD_EFFECT_HONEY	            185
+#define HOLD_EFFECT_MAGOST_BERRY		186
 
 #define HOLD_EFFECT_CHOICE(holdEffect)((holdEffect == HOLD_EFFECT_CHOICE_BAND || holdEffect == HOLD_EFFECT_CHOICE_SCARF || holdEffect == HOLD_EFFECT_CHOICE_SPECS))
 
