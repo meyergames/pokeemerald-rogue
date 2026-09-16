@@ -8826,7 +8826,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     [MOVE_SCALD] =
     {
         .effect = EFFECT_BURN_HIT,
-        .power = 80,
+        .power = 70,
         .type = TYPE_WATER,
         .accuracy = 100,
         .pp = 15,
