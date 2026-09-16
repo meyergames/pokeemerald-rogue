@@ -6354,18 +6354,18 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 
     [SPECIES_CHIMECHO] =
     {
-        .baseAttack    = 50,
-        .baseSpeed     = 65,
-        .baseSpAttack  = 95,
+        .baseAttack    = 40, // -10
+        .baseSpAttack  = 110, // +15
         #if P_UPDATED_STATS >= GEN_7
             .baseHP        = 75,
             .baseDefense   = 80,
-            .baseSpDefense = 90,
+            .baseSpDefense = 100, // +10
         #else
-            .baseHP        = 65,
-            .baseDefense   = 70,
-            .baseSpDefense = 80,
+            .baseHP        = 75, // +10
+            .baseDefense   = 80, // +10
+            .baseSpDefense = 100, // +20
         #endif
+        .baseSpeed     = 65,
         .types = { TYPE_PSYCHIC, TYPE_STELLAR },
         .catchRate = 45,
         .expYield = 159,
@@ -6413,12 +6413,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     [SPECIES_CHIMECHO_MEGA] =
     {
         .baseHP        = 75,
-        .baseAttack    = 50,
+        .baseAttack    = 40, // -10
         .baseDefense   = 110,
-        .baseSpeed     = 65,
         .baseSpAttack  = 135,
-        .baseSpDefense = 120,
-        .types = { TYPE_PSYCHIC, TYPE_STEEL },
+        .baseSpDefense = 145, // +25
+        .baseSpeed     = 65,
+        .types = { TYPE_STELLAR, TYPE_STEEL },
         .catchRate = 45,
         .expYield = 159,
         .evYield_SpAttack = 1,
