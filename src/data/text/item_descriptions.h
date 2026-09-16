@@ -2836,9 +2836,9 @@ static const u8 sMagostBerryDesc[] = _(
     "move by +30%.");
 
 static const u8 sRabutaBerryDesc[] = _(
-    "{POKEBLOCK} ingredient.\n"
-    "Plant in loamy soil\n"
-    "to grow Rabuta.");
+    "A hold item that\n"
+    "restores any\n"
+    "lowered stat.");
 
 static const u8 sNomelBerryDesc[] = _(
     "{POKEBLOCK} ingredient.\n"

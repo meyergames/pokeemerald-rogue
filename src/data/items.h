@@ -7431,6 +7431,7 @@ const struct Item gItems[] =
     {
         .name = _("Rabuta Berry"),
         .price = 20,
+        .holdEffect = HOLD_EFFECT_RESTORE_STATS,
         .description = sRabutaBerryDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_BAG_MENU,
