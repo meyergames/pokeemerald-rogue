@@ -1251,6 +1251,7 @@ const void* Rogue_GetItemIconPicOrPalette(u16 itemId, u8 which)
 
 #define HELD_ITEM_HIGH_PRICE 8000
 #define HELD_ITEM_MID_PRICE  5000
+#define HELD_ITEM_D2D_ABILITY_GEM  50000
 
 u16 Rogue_GetPrice(u16 itemId)
 {
@@ -1400,6 +1401,11 @@ u16 Rogue_GetPrice(u16 itemId)
     if((itemId >= ITEM_BUG_TERA_SHARD && itemId <= ITEM_WATER_TERA_SHARD) || itemId == ITEM_STELLAR_TERA_SHARD)
     {
         price = HELD_ITEM_MID_PRICE + 1000;
+    }
+
+    if(itemId >= ITEM_NORMAL_GEM && itemId <= ITEM_FAIRY_GEM)
+    {
+        price = HELD_ITEM_D2D_ABILITY_GEM;
     }
 
 #endif
