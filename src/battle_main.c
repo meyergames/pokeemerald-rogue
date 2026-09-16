@@ -6057,15 +6057,7 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
         if (gStatuses4[battlerAtk] & STATUS4_D2D_ENTHUNDER)
             gBattleStruct->dynamicMoveType = TYPE_ELECTRIC | F_DYNAMIC_TYPE_SET;
     }
-    
-    // Check if a gem should activate.
-    // GET_MOVE_TYPE(move, moveType);
-    // if (holdEffect == HOLD_EFFECT_GEMS
-    //     && moveType == ItemId_GetSecondaryId(gBattleMons[battlerAtk].item))
-    // {
-    //     gSpecialStatuses[battlerAtk].gemParam = GetBattlerHoldEffectParam(battlerAtk);
-    //     gSpecialStatuses[battlerAtk].gemBoost = TRUE;
-    // }
+
     GET_MOVE_TYPE(move, moveType);
     if (holdEffect == HOLD_EFFECT_GEMS)
     {

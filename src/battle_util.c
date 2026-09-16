@@ -9667,11 +9667,7 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
             basePower *= 2;
         break;
     case EFFECT_D2D_TOPPLE:
-        // u32 ownBst = gBattleMons[battlerAtk].hp + gBattleMons[battlerAtk].attack + gBattleMons[battlerAtk].defense
-        // + gBattleMons[battlerAtk].spAttack + gBattleMons[battlerAtk].spDefense + gBattleMons[battlerAtk].speed
-
         u16 foeBst = gSpeciesInfo[gBattleMons[battlerDef].species].baseHP + gSpeciesInfo[gBattleMons[battlerDef].species].baseAttack + gSpeciesInfo[gBattleMons[battlerDef].species].baseDefense + gSpeciesInfo[gBattleMons[battlerDef].species].baseSpAttack + gSpeciesInfo[gBattleMons[battlerDef].species].baseSpDefense + gSpeciesInfo[gBattleMons[battlerDef].species].baseSpeed;
-
         basePower = 40 + min( max( ( foeBst - 400 ) / 2, 0 ), 140 );
         PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 3, basePower);
         break;
@@ -10382,18 +10378,6 @@ static inline u32 CalcAttackStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 m
     case HOLD_EFFECT_CHOICE_SPECS:
         if (IS_MOVE_SPECIAL(move) && !IsDynamaxed(battlerAtk))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
-        break;
-    case HOLD_EFFECT_GEMS:
-        u32 holdEffectParam = GetBattlerHoldEffectParam(battlerAtk);
-        switch (holdEffectParam)
-        {
-            case ABILITY_GUTS:
-            {
-                if (gBattleMons[battlerAtk].status1 & STATUS1_ANY && IS_MOVE_PHYSICAL(move))
-                    modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
-                break;
-            }
-        }
         break;
     }
 
