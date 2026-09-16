@@ -16116,9 +16116,9 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     [MOVE_D2D_CIRCUIT_BREAK] =
     {
         .effect = EFFECT_D2D_CIRCUIT_BREAK,
-        .power = 100,
+        .power = 90,
         .type = TYPE_ELECTRIC,
-        .accuracy = 90,
+        .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
