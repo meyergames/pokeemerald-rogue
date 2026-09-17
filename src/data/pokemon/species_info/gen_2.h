@@ -5499,9 +5499,9 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
     [SPECIES_RAIKOU] =
     {
         .baseHP        = 90,
-        .baseAttack    = 85,
+        .baseAttack    = 115, // +30
         .baseDefense   = 75,
-        .baseSpAttack  = 115,
+        .baseSpAttack  = 85, // -30
         .baseSpDefense = 100,
         .baseSpeed     = 115,
         .types = { TYPE_ELECTRIC, TYPE_ELECTRIC },
@@ -5515,7 +5515,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_NO_EGGS_DISCOVERED, EGG_GROUP_NO_EGGS_DISCOVERED },
         #if P_UPDATED_ABILITIES >= GEN_7
-            .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_INNER_FOCUS },
+            .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_VOLT_ABSORB },
         #else
             .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_VOLT_ABSORB },
         #endif
