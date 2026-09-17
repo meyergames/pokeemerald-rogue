@@ -11447,6 +11447,7 @@ BattleScript_EffectD2DEnergize::
 	call BattleScript_EffectHit_Ret
 	call BattleScript_TryFaintMon_Ret
 	jumpiffainted BS_TARGET, TRUE, BattleScript_MoveEnd
+	@ jumpifnothit
 	setstatchanger STAT_SPEED, 2, FALSE
 	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_D2D_Cancel
 	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_D2D_PostMoveTargetStatRaiseAnim

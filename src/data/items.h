@@ -6220,6 +6220,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        // .fieldUseFunc = ItemUseOutOfBattle_ApplyBurn,
         .flingPower = 30,
     },
 

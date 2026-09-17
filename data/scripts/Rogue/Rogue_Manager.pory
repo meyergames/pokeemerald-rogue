@@ -1453,6 +1453,8 @@ script Rogue_Battle_Rival
             giveitem(ITEM_FLYING_GEM)
         case 14:
             giveitem(ITEM_FIGHTING_GEM)
+        // case 15:
+            // giveitem(ITEM_ELECTRIC_GEM)
     }
     // }
     // setflag(FLAG_ROGUE_D2D_GEM_AWARDED)

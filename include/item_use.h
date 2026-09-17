@@ -57,6 +57,9 @@ u8 CheckIfItemIsTMHMOrEvolutionStone(u16 itemId);
 void FieldUseFunc_VsSeeker(u8 taskId);
 void Task_ItemUse_CloseMessageBoxAndReturnToField_VsSeeker(u8 taskId);
 
+// D2D additions
+void ItemUseOutOfBattle_ApplyUse(u8);
+
 enum {
     BALL_THROW_UNABLE_TWO_MONS,
     BALL_THROW_UNABLE_NO_ROOM,

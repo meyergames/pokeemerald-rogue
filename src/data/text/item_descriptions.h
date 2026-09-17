@@ -1798,7 +1798,7 @@ static const u8 sWaterGemDesc[] = _(
     "in.");
 
 static const u8 sElectricGemDesc[] = _(
-    "Draws Electric\n"
+    "Draws in Electric\n"
     "moves to raise\n"
     "Special Attack.");
 
@@ -2464,9 +2464,9 @@ static const u8 sSmokeBallDesc[] = _(
     "from wild Pokémon.");
 
 static const u8 sFocusBandDesc[] = _(
-    "A hold item that\n"
-    "occasionally\n"
-    "prevents fainting.");
+    "Prevents fainting\n"
+    "if damage is lower\n"
+    "than twice user's HP.");
 
 static const u8 sLuckyEggDesc[] = _(
     "A hold item that\n"

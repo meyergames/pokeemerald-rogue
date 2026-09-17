@@ -12792,7 +12792,9 @@ static void Cmd_tryKO(void)
 
     gPotentialItemEffectBattler = gBattlerTarget;
     if (holdEffect == HOLD_EFFECT_FOCUS_BAND
-        && (Random() % 100) < GetBattlerHoldEffectParam(gBattlerTarget))
+        // && (Random() % 100) < GetBattlerHoldEffectParam(gBattlerTarget))
+        && ( gBattleMoveDamage < gBattleMons[gBattlerTarget].hp * 2 ))
+        // D2D Focus Band buff: prevent KO if the attack deals less than 2x the holder's remaining HP
     {
         gSpecialStatuses[gBattlerTarget].focusBanded = TRUE;
         RecordItemEffectBattle(gBattlerTarget, holdEffect);

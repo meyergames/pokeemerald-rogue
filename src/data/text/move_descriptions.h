@@ -3375,8 +3375,8 @@ static const u8 sDevourDescription[] = _(
     "max HP on knock-out.");
 
 static const u8 sSereneScentDescription[] = _(
-    "A pacifying scent heals the\n"
-    "target, lowering offenses.");
+    "A pacifying scent heals all\n"
+    "and resets changed stats.");
 
 static const u8 sFlexDescription[] = _(
     "Raises the user's Attack,\n"
@@ -3505,6 +3505,11 @@ static const u8 sHindKickDescription[] = _(
 static const u8 sSkybreakerDescription[] = _(
     "Strikes down on a random\n"
     "foe. May paralyze.");
+
+static const u8 sMonoPowerDescription[] = _(
+    "Type and damage is based\n"
+    "on allies of same type.");
+
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4413,4 +4418,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_MONEY_SHOT - 1] = sMoneyShotDescription,
     [MOVE_D2D_HIND_KICK - 1] = sHindKickDescription,
     [MOVE_D2D_SKYBREAKER - 1] = sSkybreakerDescription,
+    [MOVE_D2D_MONO_POWER - 1] = sMonoPowerDescription,
 };

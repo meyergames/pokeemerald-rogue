@@ -447,13 +447,13 @@
 #define ITEM_NORMAL_GEM 350 		// Elemental
 #define ITEM_FIRE_GEM 351 			// Drought
 #define ITEM_WATER_GEM 352 			// Drizzle
-#define ITEM_ELECTRIC_GEM 353 	// Lightning Rod
+#define ITEM_ELECTRIC_GEM 353 		// Lightning Rod
 #define ITEM_GRASS_GEM 354 		// Grassy Surge
 #define ITEM_ICE_GEM 355 			// Snow Warning
 #define ITEM_FIGHTING_GEM 356 		// Hybrid Power
 #define ITEM_POISON_GEM 357 	// Poison Touch <-- not working
 #define ITEM_GROUND_GEM 358 		// Sand Stream
-#define ITEM_FLYING_GEM 359 	// Speed Boost <-- not working
+#define ITEM_FLYING_GEM 359 	// Speed Boost <-- not working <-- fuck it, Regenerator
 #define ITEM_PSYCHIC_GEM 360 		// Telepathy
 #define ITEM_BUG_GEM 361 			// Technician <-- this could be something better
 #define ITEM_ROCK_GEM 362  		// Rock Head <-- not working

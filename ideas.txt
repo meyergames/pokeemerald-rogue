@@ -28,11 +28,13 @@
 [] "AnimTask_ShakeTargetBasedOnMovePowerOrDmg" for Topple, Scatterblast, etc..?
 [] make Ice resist Ground, [x] Steel weak to Electric, [x] Poison weak to Water
 [x] 225 BP Topple against Primal Kyogre (780 BST) is wayyyyy too much lol
-
-
+[] klefki signature ability: permanent imprison (i.e. opponent can't use moves Klefki also knows)
+[] "echolocation: user's sound moves are calculated using Defense and deal +20% damage"
+[] "inflate: when the user (wigglytuff)'s hp drops below 100%, enemies are forced to attack it for 2 turns"
+[] healing move that scales with the user's Sp.Atk (incl. raised/lowered stages)
 [x] Trample / Stampede / Hind Kick (Fighting moves for horse-like mons)
-
-
+[]	Mono Power: like Beat Up, but it checks how many mons there are that share 1+ types with the user; the type that returns the most matches
+	determines the move's type, and the amount of mons with the same type determines how often it'll hit. could be a TM for mono runs.
 
 "imo both of the mega-twos are actually kind of underwhelming uses of mega evolution since their abilities are not very useful
 mega-y is weaker than regular mewtwo + any offensive item, although you get a little speed

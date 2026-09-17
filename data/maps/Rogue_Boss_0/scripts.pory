@@ -249,6 +249,8 @@ script Rogue_BattleDefeated_Boss0
 
     msgbox(gPlaceholder_Gym_PostBattleCloser)
     waitmessage()
+    // // msgbox(gPlaceholder_Gym_OfferAbilityGem)
+    // // waitmessage()
     call(Rogue_EventScript_AttemptPostGymHeal)
     special(RemoveCameraObject)
     warp(MAP_ROGUE_HUB_TRANSITION, 0)

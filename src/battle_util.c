@@ -465,16 +465,22 @@ void HandleAction_UseMove(void)
             battler = gBattlerByTurnOrder[var];
             battlerAbility = GetBattlerAbility(battler);
 
+            // D2D: X LightngRod check
+            // u8 itemId = gBattleMons[battler].item;
+            u8 holdEffect = GetBattlerHoldEffect(battler, TRUE);
+            u8 holdEffectParam = GetBattlerHoldEffectParam(battler);
+
             RecordAbilityBattle(battler, gBattleMons[battler].ability);
             if (battlerAbility == ABILITY_LIGHTNING_ROD && gCurrentMove != MOVE_TEATIME)
+                gSpecialStatuses[battler].lightningRodRedirected = TRUE;
+            else if (holdEffect == HOLD_EFFECT_GEMS && holdEffectParam == ABILITY_LIGHTNING_ROD)
                 gSpecialStatuses[battler].lightningRodRedirected = TRUE;
             else if (battlerAbility == ABILITY_STORM_DRAIN)
                 gSpecialStatuses[battler].stormDrainRedirected = TRUE;
             gBattlerTarget = battler;
         }
     }
-    else if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE
-          && moveTarget & MOVE_TARGET_RANDOM)
+    else if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE && moveTarget & MOVE_TARGET_RANDOM)
     {
         if (GetBattlerSide(gBattlerAttacker) == B_SIDE_PLAYER)
         {
@@ -4001,6 +4007,13 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
                     && !GetMonData(&party[i], MON_DATA_IS_EGG)
                     && !GetMonData(&party[i], MON_DATA_STATUS))
                         gMultiHitCounter++;
+                    // else if ( gCurrentMove == MOVE_D2D_MONO_POWER )
+                    // {
+                    //     if ( gSpeciesInfo[GetMonData( &party[i], MON_DATA_SPECIES)].type1 == GetBattlerType( battlerId, 1, TRUE ) )
+                    //         type1matches += 1;
+                    //     if ( gSpeciesInfo[GetMonData( &party[i], MON_DATA_SPECIES)].type2 == GetBattlerType( battlerId, 2, TRUE ) )
+                    //         type2matches += 1;
+                    // }
                     // }
                     // else if ( gCurrentMove == MOVE_D2D_SWARM )
                     // {
@@ -4010,6 +4023,9 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
                     //         gMultiHitCounter++;
                     // }
                 }
+
+                // if ( gCurrentMove == MOVE_D2D_MONO_POWER )
+                //     gMultiHitCounter += max( type1matches, type2matches );
 
                 gBattleStruct->beatUpSlot = 0;
                 PREPARE_BYTE_NUMBER_BUFFER(gBattleScripting.multihitString, 1, 0)
