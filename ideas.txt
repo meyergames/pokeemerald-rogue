@@ -33,8 +33,10 @@
 [] "inflate: when the user (wigglytuff)'s hp drops below 100%, enemies are forced to attack it for 2 turns"
 [] healing move that scales with the user's Sp.Atk (incl. raised/lowered stages)
 [x] Trample / Stampede / Hind Kick (Fighting moves for horse-like mons)
-[]	Mono Power: like Beat Up, but it checks how many mons there are that share 1+ types with the user; the type that returns the most matches
+[x?]	Mono Power: like Beat Up, but it checks how many mons there are that share 1+ types with the user; the type that returns the most matches
 	determines the move's type, and the amount of mons with the same type determines how often it'll hit. could be a TM for mono runs.
+[] "stomping grounds: the pokemon becomes extremely territorial, unleashing a huge wave of rocky power - but then refuses to switch out"
+	^ coool, the poster gave it 120 pow 100 acc special and gave it to o.a. tyranitar
 
 "imo both of the mega-twos are actually kind of underwhelming uses of mega evolution since their abilities are not very useful
 mega-y is weaker than regular mewtwo + any offensive item, although you get a little speed

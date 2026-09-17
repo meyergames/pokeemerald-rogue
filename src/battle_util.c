@@ -9758,27 +9758,12 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
             }
         }
         break;
-    }
-
-    // Move-specific base power changes
-    switch (move)
-    {
-    case MOVE_WATER_SHURIKEN:
-        if (gBattleMons[battlerAtk].species == SPECIES_GRENINJA_ASH)
-            basePower = 20;
-        break;
-    case MOVE_ROCK_SMASH:
-        if (GetBattlerType(battlerDef, 0, FALSE) == TYPE_ROCK
-        || GetBattlerType(battlerDef, 1, FALSE) == TYPE_ROCK
-        || GetBattlerType(battlerDef, 2, FALSE) == TYPE_ROCK)
-            basePower = 100;
-        break;
-    case MOVE_D2D_MONO_POWER:
+    case EFFECT_D2D_MONO_POWER:
         struct Pokemon* party = GetBattlerParty( battlerAtk );
         int i;
 
-        u8 userType1 = GetBattlerType( battlerAtk, 1, TRUE );
-        u8 userType2 = GetBattlerType( battlerAtk, 2, TRUE );
+        u8 userType1 = gSpeciesInfo[gBattleMons[battlerAtk].species].types[0];
+        u8 userType2 = gSpeciesInfo[gBattleMons[battlerAtk].species].types[1];
         u8 type1matches = 0;
         u8 type2matches = 0;
 
@@ -9796,7 +9781,22 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
         }
 
         u8 matches = max( type1matches, type2matches );
-        basePower = 25 + ( matches * 25 ); // 50, 75, 100, 125, 150, 175
+        basePower = 60 + ( matches * 15 ); // 75, 90, 105, 120, 135, 150
+    }
+
+    // Move-specific base power changes
+    switch (move)
+    {
+    case MOVE_WATER_SHURIKEN:
+        if (gBattleMons[battlerAtk].species == SPECIES_GRENINJA_ASH)
+            basePower = 20;
+        break;
+    case MOVE_ROCK_SMASH:
+        if (GetBattlerType(battlerDef, 0, FALSE) == TYPE_ROCK
+        || GetBattlerType(battlerDef, 1, FALSE) == TYPE_ROCK
+        || GetBattlerType(battlerDef, 2, FALSE) == TYPE_ROCK)
+            basePower = 100;
+        break;
     }
 
     if (basePower == 0)

@@ -10495,8 +10495,8 @@ static void Cmd_various(void)
         struct Pokemon* party = GetBattlerParty( battler );
         int i;
 
-        u8 userType1 = GetBattlerType( battler, 1, TRUE );
-        u8 userType2 = GetBattlerType( battler, 2, TRUE );
+        u8 userType1 = gSpeciesInfo[gBattleMons[battler].species].types[0];
+        u8 userType2 = gSpeciesInfo[gBattleMons[battler].species].types[1];
         u8 type1matches = 0;
         u8 type2matches = 0;
 
@@ -10514,7 +10514,7 @@ static void Cmd_various(void)
         }
 
         u8 matches = max( type1matches, type2matches );
-        u16 basePower = 25 + ( matches * 25 ); // 50, 75, 100, 125, 150, 175
+        u16 basePower = 60 + ( matches * 15 ); // 75, 90, 105, 120, 135, 150
 
         PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 3, basePower);
         break;

@@ -12290,20 +12290,6 @@ BattleScript_D2D_EffectHindKick:
 	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
 	goto BattleScript_HitFromAtkString
 
-BattleScript_D2D_EffectSkyBreaker::
-	call BattleScript_AbilityPopUp
-	savetarget
-	setbyte gBattlerTarget, 0
-BattleScript_D2D_EffectSkyBreaker_TargetLoop:
-	copybyte sBATTLER, gBattlerTarget
-	tryroomservice BS_TARGET, BattleScript_D2D_EffectSkyBreaker_TargetLoop_NextBattler
-	removeitem BS_TARGET
-BattleScript_D2D_EffectSkyBreaker_TargetLoop_NextBattler:
-	addbyte gBattlerTarget, 0x1
-	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_D2D_EffectSkyBreaker_TargetLoop
-	restoretarget
-	end3
-
 BattleScript_D2D_EffectMonoPower:
 	jumpifword CMP_COMMON_BITS, gHitMarker, HITMARKER_NO_ATTACKSTRING | HITMARKER_NO_PPDEDUCT, BattleScript_D2D_MonoPower_Target
 	attackcanceler

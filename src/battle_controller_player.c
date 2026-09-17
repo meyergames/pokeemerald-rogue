@@ -1803,6 +1803,9 @@ static u8 GetMoveDisplayTyping(u32 battler, u16 move)
     if(move == MOVE_HIDDEN_POWER)
         return CalcMonHiddenPowerType(&gPlayerParty[gBattlerPartyIndexes[battler]]);
 
+    if(move == MOVE_D2D_MONO_POWER)
+        return gSpeciesInfo[gBattleMons[battler].species].types[0];
+
 #ifdef ROGUE_EXPANSION
     else if (move == MOVE_IVY_CUDGEL)
     {
