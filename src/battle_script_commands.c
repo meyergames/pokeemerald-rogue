@@ -1740,6 +1740,11 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
         moveAcc = 50;
     if (atkAbility == ABILITY_D2D_SINGING_STAR && (gBattleMoves[move].type == TYPE_STELLAR))
         moveAcc = 100;
+    // D2D: Check Skybreaker in singles clause.
+    if (!(gBattleTypeFlags & BATTLE_TYPE_DOUBLE))
+    {
+        moveAcc = 80;
+    }
 
     u8 moveType;
     GET_MOVE_TYPE(move, moveType);
