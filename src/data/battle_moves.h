@@ -16273,11 +16273,11 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     [MOVE_D2D_SPORE_BOMB] =
     {
         .effect = EFFECT_DIRE_CLAW,
-        .power = 90,
+        .power = 85,
         .type = TYPE_GRASS,
         .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 50,
+        .pp = 10,
+        .secondaryEffectChance = 30,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_SPECIAL,
