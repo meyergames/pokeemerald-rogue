@@ -493,8 +493,8 @@ static const u8 sSelfDestructDescription[] = _(
     "with 1 HP and must recharge.");
 
 static const u8 sEggBombDescription[] = _(
-    "An egg is forcibly hurled at\n"
-    "the foe.");
+    "Deals physical damage to\n"
+    "both foes.");
 
 static const u8 sLickDescription[] = _(
     "Licks with a long tongue to\n"
