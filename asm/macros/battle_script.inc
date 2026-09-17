@@ -2451,6 +2451,10 @@
 	.4byte \failInstr
 	.endm
 
+	.macro targetstrongestfoe
+	various BS_ATTACKER, VARIOUS_TARGET_STRONGEST_FOE
+	.endm
+
 
 @ D2D INSTRUCTIONS END
 

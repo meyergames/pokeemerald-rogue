@@ -10554,6 +10554,23 @@ static void Cmd_various(void)
 
         return;
     }
+    case VARIOUS_TARGET_STRONGEST_FOE:
+    {
+        VARIOUS_ARGS();
+
+        u8 opponentA = GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerSide(battler)));
+        u8 opponentB = BATTLE_PARTNER(opponentA);
+        u16 bstOpponentA = gSpeciesInfo[gBattleMons[opponentA].species].baseHP + gSpeciesInfo[gBattleMons[opponentA].species].baseAttack + gSpeciesInfo[gBattleMons[opponentA].species].baseDefense + gSpeciesInfo[gBattleMons[opponentA].species].baseSpAttack + gSpeciesInfo[gBattleMons[opponentA].species].baseSpDefense + gSpeciesInfo[gBattleMons[opponentA].species].baseSpeed;
+        u16 bstOpponentB = gSpeciesInfo[gBattleMons[opponentB].species].baseHP + gSpeciesInfo[gBattleMons[opponentB].species].baseAttack + gSpeciesInfo[gBattleMons[opponentB].species].baseDefense + gSpeciesInfo[gBattleMons[opponentB].species].baseSpAttack + gSpeciesInfo[gBattleMons[opponentB].species].baseSpDefense + gSpeciesInfo[gBattleMons[opponentB].species].baseSpeed;
+        if ( bstOpponentA >= bstOpponentB )
+            gBattlerTarget = opponentA;
+        else
+            gBattlerTarget = bstOpponentB;
+        break;
+
+        gBattlescriptCurrInstr = cmd->nextInstr;
+        return;
+    }
     case VARIOUS_TRY_THIRD_TYPE:
     {
         VARIOUS_ARGS(const u8 *failInstr);
