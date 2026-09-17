@@ -52,6 +52,10 @@
       "Level": 48
     },
     {
+      "Move": "MOVE_D2D_SKYBREAKER",
+      "Level": 50
+    },
+    {
       "Move": "MOVE_CRUNCH",
       "Level": 52
     },

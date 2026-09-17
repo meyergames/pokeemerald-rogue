@@ -16677,4 +16677,21 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .zMoveEffect = Z_EFFECT_NONE,
         .makesContact = TRUE,
     },
+
+    [MOVE_D2D_SKYBREAKER] =
+    {
+        .effect = EFFECT_PARALYZE_HIT,
+        .type = TYPE_ELECTRIC,
+        .power = 115, // deal 50 special Electric-based damage to the highest-HP battler, at the end of each turn
+        .accuracy = 95,
+        .pp = 10,
+        .secondaryEffectChance = 30,
+        .target = MOVE_TARGET_RANDOM,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .sheerForceBoost = TRUE,
+        .gravityBanned = TRUE,
+        .assistBanned = TRUE,
+    },
 };

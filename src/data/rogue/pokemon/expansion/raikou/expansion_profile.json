@@ -36,20 +36,24 @@
       "Level": 18
     },
     {
-      "Move": "MOVE_ROAR",
-      "Level": 24
+      "Move": "MOVE_THUNDER_FANG",
+      "Level": 22
     },
     {
-      "Move": "MOVE_THUNDER_FANG",
-      "Level": 30
+      "Move": "MOVE_ROAR",
+      "Level": 27
     },
     {
       "Move": "MOVE_HOWL",
       "Level": 36
     },
     {
+      "Move": "MOVE_VOLT_TACKLE",
+      "Level": 38
+    },
+    {
       "Move": "MOVE_CRUNCH",
-      "Level": 42
+      "Level": 45
     },
     {
       "Move": "MOVE_EXTRASENSORY",
@@ -57,23 +61,35 @@
     },
     {
       "Move": "MOVE_DISCHARGE",
+      "Level": 51
+    },
+    {
+      "Move": "MOVE_D2D_SKYBREAKER",
       "Level": 54
     },
     {
       "Move": "MOVE_REFLECT",
-      "Level": 60
+      "Level": 57
     },
     {
       "Move": "MOVE_RAIN_DANCE",
       "Level": 66
     },
     {
+      "Move": "MOVE_D2D_CIRCUIT_BREAK",
+      "Level": 70
+    },
+    {
       "Move": "MOVE_THUNDER",
       "Level": 72
     },
     {
-      "Move": "MOVE_D2D_CIRCUIT_BREAK",
-      "Level": 78
+      "Move": "MOVE_VOLT_TACKLE",
+      "Level": 86
+    },
+    {
+      "Move": "MOVE_BOLT_STRIKE",
+      "Level": 99
     }
   ],
   "TutorMoves": [

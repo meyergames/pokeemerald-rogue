@@ -3502,6 +3502,9 @@ static const u8 sHindKickDescription[] = _(
     "Strikes hard and first, if\n"
     "foe plans to make contact.");
 
+static const u8 sSkybreakerDescription[] = _(
+    "Strikes down on a random\n"
+    "foe. May paralyze.");
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
@@ -4409,4 +4412,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_D2D_LASER_BEAM - 1] = sLaserBeamDescription,
     [MOVE_D2D_MONEY_SHOT - 1] = sMoneyShotDescription,
     [MOVE_D2D_HIND_KICK - 1] = sHindKickDescription,
+    [MOVE_D2D_SKYBREAKER - 1] = sSkybreakerDescription,
 };
