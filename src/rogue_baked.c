@@ -1811,6 +1811,10 @@ u32 Rogue_CalculateMovePrice(u16 move, u16 itemId)
     case MOVE_SPLASH:
         power = 1;
         break;
+
+    case MOVE_D2D_MONO_POWER:
+        power = 175;
+        break;
     }
 
     // accuracy cost

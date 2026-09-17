@@ -263,6 +263,7 @@
 #define VARIOUS_JUMP_IF_ITEM 						 169
 #define VARIOUS_SET_TRICK_ROOM 						 170
 #define VARIOUS_HIND_KICK_CHECK						 171
+#define VARIOUS_DETERMINE_MONO_POWER			 	 172
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0

@@ -2432,6 +2432,10 @@
 	various BS_ATTACKER, VARIOUS_DETERMINE_MONEY_SHOT_POWER
 	.endm
 
+	.macro determinemonopower
+	various BS_ATTACKER, VARIOUS_DETERMINE_MONO_POWER
+	.endm
+
 	.macro jumpifitem battler:req, item:req, jumpInstr:req
 	various \battler, VARIOUS_JUMP_IF_ITEM
 	.byte \item

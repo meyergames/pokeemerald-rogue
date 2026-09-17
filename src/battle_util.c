@@ -9757,6 +9757,30 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
         || GetBattlerType(battlerDef, 2, FALSE) == TYPE_ROCK)
             basePower = 100;
         break;
+    case MOVE_D2D_MONO_POWER:
+        struct Pokemon* party = GetBattlerParty( battlerAtk );
+        int i;
+
+        u8 userType1 = GetBattlerType( battlerAtk, 1, TRUE );
+        u8 userType2 = GetBattlerType( battlerAtk, 2, TRUE );
+        u8 type1matches = 0;
+        u8 type2matches = 0;
+
+        for (i = 0; i < PARTY_SIZE; i++)
+        {
+            if (GetMonData(&party[i], MON_DATA_HP)
+                && GetMonData(&party[i], MON_DATA_SPECIES) != SPECIES_NONE
+                && !GetMonData(&party[i], MON_DATA_IS_EGG))
+            {
+                if ( gSpeciesInfo[GetMonData(&party[i], MON_DATA_SPECIES)].types[0] == userType1 )
+                    type1matches += 1;
+                if ( gSpeciesInfo[GetMonData(&party[i], MON_DATA_SPECIES)].types[1] == userType2 )
+                    type2matches += 1;
+            }
+        }
+
+        u8 matches = max( type1matches, type2matches );
+        basePower = 25 + ( matches * 25 ); // 50, 75, 100, 125, 150, 175
     }
 
     if (basePower == 0)

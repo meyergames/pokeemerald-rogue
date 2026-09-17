@@ -930,6 +930,7 @@ gBattleAnims_Moves::
 	.4byte Move_D2D_MONEY_SHOT
 	.4byte Move_D2D_HIND_KICK
 	.4byte Move_D2D_SKYBREAKER
+	.4byte Move_D2D_MONO_POWER
 
 
 
@@ -35872,4 +35873,22 @@ Move_D2D_SKYBREAKER:
 	clearmonbg ANIM_TARGET
 	clearmonbg ANIM_DEF_PARTNER
 	blendoff
+	end
+
+Move_D2D_MONO_POWER:
+	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
+	loadspritegfx ANIM_TAG_METEOR
+	loadspritegfx ANIM_TAG_FLAT_ROCK
+	monbg ANIM_ATK_PARTNER
+	splitbgprio ANIM_ATTACKER
+	setalpha 12, 8
+	createsprite gSuperpowerOrbSpriteTemplate, ANIM_TARGET, 2, 0
+	playsewithpan SE_M_MEGA_KICK, SOUND_PAN_ATTACKER
+	waitforvisualfinish
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 8, 0, 16, 1
+	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET
+	waitforvisualfinish
+	clearmonbg ANIM_ATK_PARTNER
+	blendoff
+	delay 1
 	end

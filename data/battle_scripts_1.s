@@ -501,6 +501,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_D2D_EffectHeadEmpty			  @ EFFECT_D2D_HEAD_EMPTY
 	.4byte BattleScript_D2D_EffectMoneyShot 		  @ EFFECT_D2D_MONEY_SHOT
 	.4byte BattleScript_D2D_EffectHindKick			  @ EFFECT_D2D_HIND_KICK
+	.4byte BattleScript_D2D_EffectMonoPower			  @ EFFECT_D2D_MONO_POWER
 
 @ The game doesn't seem to like having EffectHit as the last item in the list...
 
@@ -12300,3 +12301,17 @@ BattleScript_D2D_EffectSkyBreaker_TargetLoop_NextBattler:
 	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_D2D_EffectSkyBreaker_TargetLoop
 	restoretarget
 	end3
+
+BattleScript_D2D_EffectMonoPower:
+	jumpifword CMP_COMMON_BITS, gHitMarker, HITMARKER_NO_ATTACKSTRING | HITMARKER_NO_PPDEDUCT, BattleScript_D2D_MonoPower_Target
+	attackcanceler
+	attackstring
+	ppreduce
+	setphotongeysercategory
+	determinemonopower
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_D2D_MONO_POWER
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_D2D_MonoPower_Target:
+	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
+	goto BattleScript_HitFromCritCalc

@@ -16694,4 +16694,42 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
         .gravityBanned = TRUE,
         .assistBanned = TRUE,
     },
+
+    // [MOVE_D2D_DRAIN] =
+    // {
+    //     #if B_UPDATED_MOVE_DATA >= GEN_5
+    //         .power = 75, // +5
+    //         .pp = 10,
+    //     #elif B_UPDATED_MOVE_DATA == GEN_4
+    //         .power = 60,
+    //         .pp = 10,
+    //     #else
+    //         .power = 60,
+    //         .pp = 5,
+    //     #endif
+    //     .effect = EFFECT_ABSORB,
+    //     .type = TYPE_NORMAL,
+    //     .accuracy = 100,
+    //     .secondaryEffectChance = 0,
+    //     .target = MOVE_TARGET_SELECTED,
+    //     .priority = 0,
+    //     .split = SPLIT_SPECIAL,
+    //     .zMoveEffect = Z_EFFECT_NONE,
+    //     .ignoresKingsRock = B_UPDATED_MOVE_FLAGS < GEN_5,
+    //     .healBlockBanned = B_HEAL_BLOCKING >= GEN_6,
+    // },
+
+    [MOVE_D2D_MONO_POWER] =
+    {
+        .effect = EFFECT_D2D_MONO_POWER,
+        .type = TYPE_NORMAL,
+        .power = 0,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
 };

@@ -10488,6 +10488,37 @@ static void Cmd_various(void)
         PREPARE_BYTE_NUMBER_BUFFER( gBattleTextBuff1, 3, basePower );
         break;
     }
+    case VARIOUS_DETERMINE_MONO_POWER:
+    {
+        VARIOUS_ARGS();
+
+        struct Pokemon* party = GetBattlerParty( battler );
+        int i;
+
+        u8 userType1 = GetBattlerType( battler, 1, TRUE );
+        u8 userType2 = GetBattlerType( battler, 2, TRUE );
+        u8 type1matches = 0;
+        u8 type2matches = 0;
+
+        for (i = 0; i < PARTY_SIZE; i++)
+        {
+            if (GetMonData(&party[i], MON_DATA_HP)
+                && GetMonData(&party[i], MON_DATA_SPECIES) != SPECIES_NONE
+                && !GetMonData(&party[i], MON_DATA_IS_EGG))
+            {
+                if ( gSpeciesInfo[GetMonData(&party[i], MON_DATA_SPECIES)].types[0] == userType1 )
+                    type1matches += 1;
+                if ( gSpeciesInfo[GetMonData(&party[i], MON_DATA_SPECIES)].types[1] == userType2 )
+                    type2matches += 1;
+            }
+        }
+
+        u8 matches = max( type1matches, type2matches );
+        u16 basePower = 25 + ( matches * 25 ); // 50, 75, 100, 125, 150, 175
+
+        PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 3, basePower);
+        break;
+    }
     case VARIOUS_TEACH_MOVE:
     {
         VARIOUS_ARGS(const u8 *failInstr);

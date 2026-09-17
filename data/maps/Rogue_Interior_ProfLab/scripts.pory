@@ -172,7 +172,7 @@ script Rogue_Interior_ProfLab_TalkAssistant
                 {
                     givemon(SPECIES_TAUROS, 63)
                 }
-                msgbox(format("Would you like some ability gems?"), MSGBOX_YESNO)
+                msgbox(format("Would you like a TM51?"), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES)
                 {
                     // giveitem(ITEM_NORMAL_GEM, 1)
@@ -190,7 +190,12 @@ script Rogue_Interior_ProfLab_TalkAssistant
                     // giveitem(ITEM_FAIRY_GEM, 1)
                     // giveitem(ITEM_ICE_GEM, 1)
                     // giveitem(ITEM_FLYING_GEM, 1)
-                    giveitem(ITEM_FIGHTING_GEM, 1)
+                    // giveitem(ITEM_FIGHTING_GEM, 1)
+                    // giveitem(ITEM_FOCUS_BAND, 1)
+                    // giveitem(ITEM_MAGOST_BERRY, 99)
+                    // giveitem(ITEM_LIECHI_BERRY, 99)
+                    // giveitem(ITEM_ELECTRIC_GEM, 1)
+                    giveitem(ITEM_TM51, 1)
                 }
                 // msgbox(format("Would you like some snacks with that?"), MSGBOX_YESNO)
                 // if(var(VAR_RESULT) == YES)

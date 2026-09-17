@@ -5998,6 +5998,29 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
     {
         gBattleStruct->dynamicMoveType = TYPE_STELLAR | F_DYNAMIC_TYPE_SET;
     }
+    else if ( move == MOVE_D2D_MONO_POWER )
+    {
+        struct Pokemon* party = GetBattlerParty(gBattlerAttacker);
+        int i;
+
+        u8 userType1 = GetBattlerType( battlerAtk, 1, TRUE );
+        u8 userType2 = GetBattlerType( battlerAtk, 2, TRUE );
+        u16 type1matches = 0;
+        u16 type2matches = 0;
+
+        for (i = 0; i < PARTY_SIZE; i++)
+        {
+            if ( gSpeciesInfo[GetMonData(&party[i], MON_DATA_SPECIES)].types[0] == userType1 )
+                type1matches += 1;
+            if ( gSpeciesInfo[GetMonData(&party[i], MON_DATA_SPECIES)].types[1] == userType2 )
+                type2matches += 1;
+        }
+
+        if ( type1matches >= type2matches )
+            gBattleStruct->dynamicMoveType = userType1 | F_DYNAMIC_TYPE_SET;
+        else
+            gBattleStruct->dynamicMoveType = userType2 | F_DYNAMIC_TYPE_SET;
+    }
 
     attackerAbility = GetBattlerAbility(battlerAtk);
 
