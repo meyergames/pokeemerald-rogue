@@ -68,6 +68,10 @@
       "Level": 32
     },
     {
+      "Move": "MOVE_SHADOW_CLAW",
+      "Level": 33
+    },
+    {
       "Move": "MOVE_CURSE",
       "Level": 36
     },
@@ -136,6 +140,7 @@
     "MOVE_LEECH_LIFE",
     "MOVE_MEMENTO",
     "MOVE_METRONOME",
+    "MOVE_D2D_MONO_POWER",
     "MOVE_NIGHT_SHADE",
     "MOVE_PAIN_SPLIT",
     "MOVE_PHANTOM_FORCE",

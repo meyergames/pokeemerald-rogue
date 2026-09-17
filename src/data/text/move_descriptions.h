@@ -3503,12 +3503,16 @@ static const u8 sHindKickDescription[] = _(
     "foe plans to make contact.");
 
 static const u8 sSkybreakerDescription[] = _(
-    "Strikes down on a random\n"
-    "foe. May paralyze.");
+    "Targets the strongest foe.\n"
+    "May paralyze.");
 
 static const u8 sMonoPowerDescription[] = _(
-    "Type and damage is based\n"
-    "on allies of same type.");
+    "Adaptive category. Same-\n"
+    "type allies raise power.");
+    // "User determines type and\n"
+    // "split, allies raise damage.");
+    // "Type matches user's. Same-\n"
+    // "type allies raise damage.");
 
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"

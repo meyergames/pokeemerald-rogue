@@ -310,8 +310,8 @@ static u16 const sDynamicCustomMonMoves[] =
 #endif
 };
 
-STATIC_ASSERT(ARRAY_COUNT(sDynamicCustomMonAbilities) <= 63, SizeOfDynamicCustomMonAbilities);
-STATIC_ASSERT(ARRAY_COUNT(sDynamicCustomMonMoves) <= 63, SizeOfDynamicCustomMonMoves);
+STATIC_ASSERT(ARRAY_COUNT(sDynamicCustomMonAbilities) <= 67, SizeOfDynamicCustomMonAbilities);
+STATIC_ASSERT(ARRAY_COUNT(sDynamicCustomMonMoves) <= 74, SizeOfDynamicCustomMonMoves);
 
 const u16 sTypeTintColors[NUMBER_OF_MON_TYPES] = 
 {

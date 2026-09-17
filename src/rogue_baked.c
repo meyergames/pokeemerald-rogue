@@ -1813,7 +1813,7 @@ u32 Rogue_CalculateMovePrice(u16 move, u16 itemId)
         break;
 
     case MOVE_D2D_MONO_POWER:
-        power = 175;
+        power = 180;
         break;
     }
 

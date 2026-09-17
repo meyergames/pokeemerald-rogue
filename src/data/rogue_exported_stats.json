@@ -6313,13 +6313,13 @@
 		},
 		{
 			"baseHP":85,
-			"baseAttack":97,
+			"baseAttack":105,
 			"baseDefense":66,
 			"baseSpeed":65,
-			"baseSpAttack":105,
+			"baseSpAttack":97,
 			"baseSpDefense":66,
 			"types": [10, 10],
-			"abilities": [82, 18, 73]
+			"abilities": [104, 18, 73]
 		},
 		{
 			"baseHP":58,

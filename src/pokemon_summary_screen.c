@@ -4428,6 +4428,8 @@ static void SetMoveTypeIcons(void)
     {
         if (summary->moves[i] == MOVE_HIDDEN_POWER)
             SetTypeSpritePosAndPal(summary->hiddenPowerType, 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE);
+        else if (summary->moves[i] == MOVE_D2D_MONO_POWER)
+            SetTypeSpritePosAndPal(gSpeciesInfo[summary->species].types[0], 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE);
         else if (summary->moves[i] != MOVE_NONE)
         {
             if (summary->moves[i] == MOVE_IVY_CUDGEL && ItemId_GetHoldEffect(summary->item) == HOLD_EFFECT_MASK)
@@ -4459,6 +4461,8 @@ static void SetNewMoveTypeIcon(void)
         {
             if (sMonSummaryScreen->newMove == MOVE_HIDDEN_POWER)
                 SetTypeSpritePosAndPal(summary->hiddenPowerType, 85, 96, SPRITE_ARR_ID_TYPE + 4);
+            else if (sMonSummaryScreen->newMove == MOVE_D2D_MONO_POWER)
+                SetTypeSpritePosAndPal(gSpeciesInfo[summary->species].types[0], 85, 96, SPRITE_ARR_ID_TYPE + 4);
             else
                 SetTypeSpritePosAndPal(gBattleMoves[sMonSummaryScreen->newMove].type, 85, 96, SPRITE_ARR_ID_TYPE + 4);
         }
