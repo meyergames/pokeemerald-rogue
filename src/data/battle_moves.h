@@ -16667,7 +16667,7 @@ const struct BattleMove gBattleMoves_Mainline[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_D2D_HIND_KICK,
         .type = TYPE_FIGHTING,
-        .power = 140,
+        .power = 110,
         .accuracy = 100,
         .pp = 5,
         .secondaryEffectChance = 0,
